@@ -71,7 +71,7 @@ export default function Navbar() {
       {
         label: "About",
         children: [
-          { label: "Company Overview", href: "/about" },
+          { label: "Company Overview", href: "/company-overview" },
           { label: "Portfolio", href: "/portfolio" },
           { label: "Team", href: "/teams" },
         ],
