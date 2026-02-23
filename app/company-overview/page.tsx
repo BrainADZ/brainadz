@@ -67,6 +67,7 @@ export default function AboutPage() {
       </section>
       {/* Core Value */}
       <CoreValuesSection />
+      <WhyChooseSection/>
       <BrandLogosCarouselReplica />
       <ClientsFirstSection />
       <FounderDeskSameToSame/>
@@ -80,7 +81,7 @@ export default function AboutPage() {
 
 function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden mt-[-90px] pt-10">
       {/* Background */}
       <div
         className="absolute inset-0"
@@ -525,7 +526,84 @@ function ValueCard({
   );
 }
 
+function WhyChooseSection() {
+  const items = [
+    {
+      title: "Marketing Strategy",
+      desc: "We research your business, competitors, and audience before executing campaigns—so every action is data-backed and conversion-focused.",
+      icon: "/icons/strategy.png",
+    },
+    {
+      title: "Targeted Approach",
+      desc: "Every brand is different. We design custom digital and on-ground solutions aligned with your specific goals and customer journey.",
+      icon: "/icons/target.png",
+    },
+    {
+      title: "Performance Optimization",
+      desc: "Our campaigns are optimized continuously to reach the right audience while reducing ad waste and improving ROI.",
+      icon: "/icons/performance.png",
+    },
+    {
+      title: "On-Time Delivery",
+      desc: "We respect deadlines. From websites to exhibitions, we deliver projects on time with clear communication throughout.",
+      icon: "/icons/delivery.png",
+    },
+  ];
 
+  return (
+<section className="bg-[#F7FBFB] py-14">
+  <div className="mx-auto max-w-[1300px] px-4 grid lg:grid-cols-2 gap-10 items-center">
+
+    {/* LEFT */}
+    <div className="max-w-xl">
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-black/50">
+        Why Choose BrainADZ
+      </p>
+
+      <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-black leading-tight">
+        Our Goal Is Client Success <br /> And Long-Term Growth
+      </h2>
+
+      <p className="mt-5 text-sm leading-relaxed text-black/70">
+        We help brands grow through strategy-driven marketing, premium design
+        systems, and execution excellence. Our focus is simple—deliver
+        measurable outcomes while building long-term partnerships.
+      </p>
+
+      <a
+        href="/contact"
+        className="inline-block mt-6 text-sm font-semibold text-[#00AAB7] border-b border-[#00AAB7]"
+      >
+        Let’s Talk →
+      </a>
+    </div>
+
+    {/* RIGHT CARDS */}
+    <div className="grid sm:grid-cols-2 gap-5">
+      {items.map((i) => (
+        <div
+          key={i.title}
+          className="rounded-2xl border border-[#00AAB7]/40 bg-white p-6 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] transition"
+        >
+          <div className="h-12 w-12 rounded-full bg-[#00AAB7] flex items-center justify-center">
+            <img src={i.icon} className="h-6 w-6" />
+          </div>
+
+          <h4 className="mt-4 text-lg font-bold text-black">
+            {i.title}
+          </h4>
+
+          <p className="mt-3 text-sm text-black/70 leading-relaxed">
+            {i.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+  );
+}
 
 // function MiniCard({ title, value }: { title: string; value: string }) {
 //   return (
