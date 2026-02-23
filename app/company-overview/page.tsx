@@ -2,9 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
-import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
+import { FiArrowRight} from "react-icons/fi";
 import BrandLogosCarouselReplica from "@/section/aboutbrands";
 import { ClientsFirstSection } from "@/section/roadMap";
+import GlobalPresenceSection from "@/section/Maps";
+import FounderDeskSameToSame from "@/section/CeoDesks";
+import TestimonialSection from "@/section/Testimonials";
 
 const ACCENT = "#00AAB7";
 
@@ -28,7 +31,7 @@ export default function AboutPage() {
           <div className="mt-5 grid gap-8 md:grid-cols-2">
 
             {/* VISION */}
-            <div className="rounded-2xl bg-white p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+            <div className=" bg-white p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
               <div className="flex items-center gap-3">
                 <span className="inline-block h-3 w-3 rounded-full" style={{ background: ACCENT }} />
                 <h3 className="text-xl font-bold text-black">Our Vision</h3>
@@ -44,7 +47,7 @@ export default function AboutPage() {
             </div>
 
             {/* MISSION */}
-            <div className="rounded-2xl bg-white p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
+            <div className=" bg-white p-8 shadow-[0_18px_45px_rgba(0,0,0,0.06)]">
               <div className="flex items-center gap-3">
                 <span className="inline-block h-3 w-3 rounded-full" style={{ background: ACCENT }} />
                 <h3 className="text-xl font-bold text-black">Our Mission</h3>
@@ -63,10 +66,12 @@ export default function AboutPage() {
         </div>
       </section>
       {/* Core Value */}
-      <CoreValuesSection/>
-      <BrandLogosCarouselReplica/>
-      <ClientsFirstSection/>
-
+      <CoreValuesSection />
+      <BrandLogosCarouselReplica />
+      <ClientsFirstSection />
+      <FounderDeskSameToSame/>
+      <TestimonialSection/>
+      <GlobalPresenceSection/>
     </main>
   );
 }
@@ -168,26 +173,100 @@ function HeroSection() {
           <div className="lg:col-span-5">
             <div className="relative max-w-[520px] ml-auto">
               {/* card */}
+              {/* card */}
               <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-6 md:p-7 shadow-[0_18px_50px_rgba(0,0,0,0.35)]">
-                <p className="text-white/90 text-sm font-semibold uppercase tracking-[0.16em]">
-                  What we’re known for
-                </p>
+                <h2 className="text-white/90 text-lg font-semibold uppercase tracking-[0.16em]">
+                  Connect with our Digital Marketing Experts
+                </h2>
 
-                <div className="mt-5 space-y-3">
-                  <Bullet text="Strategy that converts into execution." />
-                  <Bullet text="Design systems that look premium & stay consistent." />
-                  <Bullet text="Delivery timelines that clients can trust." />
-                  <Bullet text="Clear reporting & measurable outcomes." />
-                </div>
+
 
                 <div className="mt-6 h-px w-full bg-white/15" />
 
-                <div className="mt-6 grid grid-cols-2 gap-3">
-                  <SoftChip>SEO + Performance</SoftChip>
-                  <SoftChip>Social + Creatives</SoftChip>
-                  <SoftChip>Web + UI/UX</SoftChip>
-                  <SoftChip>Exhibits + Live</SoftChip>
-                </div>
+                {/* FORM */}
+                <form className="mt-6 space-y-3">
+                  {/* Row 1: Name + Email */}
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div>
+                      <label className="sr-only" htmlFor="lead-name">Name</label>
+                      <input
+                        id="lead-name"
+                        name="name"
+                        type="text"
+                        placeholder="Your name"
+                        className="h-11 w-full rounded-xl border border-white/20 bg-white/10 px-4 text-sm text-white placeholder:text-white/60 outline-none backdrop-blur
+                     focus:border-white/40 focus:bg-white/15"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="sr-only" htmlFor="lead-email">Email</label>
+                      <input
+                        id="lead-email"
+                        name="email"
+                        type="email"
+                        placeholder="Email address"
+                        className="h-11 w-full rounded-xl border border-white/20 bg-white/10 px-4 text-sm text-white placeholder:text-white/60 outline-none backdrop-blur
+                     focus:border-white/40 focus:bg-white/15"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Row 2: Phone + Company */}
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div>
+                      <label className="sr-only" htmlFor="lead-phone">Phone</label>
+                      <input
+                        id="lead-phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="Phone"
+                        className="h-11 w-full rounded-xl border border-white/20 bg-white/10 px-4 text-sm text-white placeholder:text-white/60 outline-none backdrop-blur
+                     focus:border-white/40 focus:bg-white/15"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="sr-only" htmlFor="lead-company">Company</label>
+                      <input
+                        id="lead-company"
+                        name="company"
+                        type="text"
+                        placeholder="Company"
+                        className="h-11 w-full rounded-xl border border-white/20 bg-white/10 px-4 text-sm text-white placeholder:text-white/60 outline-none backdrop-blur
+                     focus:border-white/40 focus:bg-white/15"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Row 3: Services dropdown */}
+                  <div>
+                    <label className="sr-only" htmlFor="lead-service">Choose service</label>
+                    <select
+                      id="lead-service"
+                      name="service"
+                      defaultValue=""
+                      className="h-11 w-full rounded-xl border border-white/20 bg-white/10 px-4 text-sm text-white outline-none backdrop-blur
+                   focus:border-white/40 focus:bg-white/15"
+                    >
+                      <option value="" disabled className="text-black">
+                        Choose services
+                      </option>
+                      <option value="seo-performance" className="text-black">SEO + Performance</option>
+                      <option value="social-creatives" className="text-black">Social + Creatives</option>
+                      <option value="web-uiux" className="text-black">Web + UI/UX</option>
+                      <option value="exhibits-live" className="text-black">Exhibits + Live</option>
+                    </select>
+                  </div>
+
+                  {/* Optional submit (remove if you don’t want button inside card) */}
+                  <button
+                    type="submit"
+                    className="mt-2 inline-flex h-[46px] w-full items-center justify-center rounded-xl bg-white text-sm font-semibold text-black hover:opacity-95"
+                  >
+                    Request a Callback
+                  </button>
+                </form>
               </div>
 
               {/* accent corner */}
@@ -212,30 +291,13 @@ function MiniStat({ label, value }: { label: string; value: string }) {
   );
 }
 
-function Bullet({ text }: { text: string }) {
-  return (
-    <div className="flex items-start gap-2 text-white/90">
-      <FiCheckCircle className="mt-0.5 text-white/90" />
-      <p className="text-sm leading-relaxed">{text}</p>
-    </div>
-  );
-}
-
-function SoftChip({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold text-white/90">
-      {children}
-    </div>
-  );
-}
-
 /* ========================= ABOUT (UPDATED SAME-TO-SAME) ========================= */
 /**
  * ✅ Left: image long scroll, screen se chipka (no left spacing)
  * ✅ Right: content sticky/fixed on desktop
  * ✅ Mobile: stacked (image then content)
  */
-function AboutSection() {
+function AboutSection() { 
   return (
     <section className="relative w-full bg-white ">
       <div className="grid lg:grid-cols-12">
@@ -255,7 +317,7 @@ function AboutSection() {
             <div className="absolute left-0 bottom-0 w-full p-4 sm:p-6">
               <div className="relative max-w-[560px] rounded-[22px] bg-[#0B3A57] text-white overflow-hidden shadow-[0_18px_55px_rgba(0,0,0,0.28)]">
                 {/* orange top stroke */}
-                <div className="absolute left-0 top-0 h-[4px] w-full bg-[#F59E0B]" />
+                <div className="absolute left-0 top-0 h-1 w-full bg-[#F59E0B]" />
 
                 <div className="relative p-5 sm:p-6">
                   <p className="text-xl sm:text-2xl font-extrabold leading-tight">
@@ -355,42 +417,48 @@ function AboutSection() {
 
   );
 }
+/* ====================== CORE VALUES ====================== */
+
 function CoreValuesSection() {
-  const values: { title: string; desc: string; tone: "blue" | "green" }[] = [
-    {
-      title: "Digital Excellence",
-      desc: "We deliver growth through strategy, design, and performance execution.",
-      tone: "blue",
-    },
-    {
-      title: "Trusted Partners",
-      desc: "We act like an extension of your team—transparent, reliable, and proactive.",
-      tone: "green",
-    },
-    {
-      title: "End-to-End Ownership",
-      desc: "From planning to execution—we take responsibility and deliver outcomes.",
-      tone: "blue",
-    },
-    {
-      title: "Think Big. Execute Smart.",
-      desc: "Bold ideas backed with data—built to scale and sustain.",
-      tone: "green",
-    },
-    {
-      title: "Customer Growth First",
-      desc: "Everything we do is aligned to leads, sales, retention, and brand trust.",
-      tone: "blue",
-    },
-    {
-      title: "Keep Learning, Keep Improving",
-      desc: "We adapt fast—new trends, new tech, better systems.",
-      tone: "green",
-    },
+  const values: {
+    title: string;
+    desc: string;
+    icon: string; // <img> path
+  }[] = [
+  {
+  title: "Digital Excellence",
+  desc: "We combine strategy, UI/UX design, and performance marketing to build digital systems that don’t just look good—but generate leads, engagement, and measurable business growth across platforms.",
+  icon: "/icons/digital.png",
+},
+{
+  title: "Trusted Partners",
+  desc: "We work as an extended part of your internal team—offering complete transparency, proactive communication, and dependable execution so you always know what’s happening and what’s next.",
+  icon: "/icons/patner.png",
+},
+{
+  title: "End-to-End Ownership",
+  desc: "From initial concept and planning to final deployment and reporting, we take full responsibility for every project—ensuring timelines, quality, and outcomes are always delivered as promised.",
+  icon: "/icons/endtoend.png",
+},
+{
+  title: "Think Big. Execute Smart.",
+  desc: "We believe in bold ideas supported by data-driven strategy. Every campaign, website, or exhibition build is carefully planned, tested, and optimized to scale sustainably.",
+  icon: "/icons/think.png",
+},
+{
+  title: "Customer Growth First",
+  desc: "Your growth is our priority. Everything we design and execute is aligned with real business goals—lead generation, sales performance, customer retention, and long-term brand trust.",
+  icon: "/icons/Customer.png",
+},
+{
+  title: "Keep Learning, Keep Improving",
+  desc: "Digital trends evolve fast—and so do we. Our team constantly upgrades skills, tools, and workflows to deliver smarter solutions, better experiences, and stronger results every time.",
+  icon: "/icons/learning.png",
+},
   ];
 
   return (
-    <section className="relative w-full bg-[#F8FAFB] py-8 md:py-12">
+    <section className="relative w-full bg-[#F8FAFB] py-10 md:py-14">
       <div className="mx-auto max-w-[1300px] px-4 sm:px-6">
         {/* Heading */}
         <div className="mx-auto max-w-2xl text-center">
@@ -402,14 +470,17 @@ function CoreValuesSection() {
           </h2>
 
           <div className="mt-5 flex justify-center">
-            <span className="h-1 w-16 rounded-full" style={{ background: ACCENT }} />
+            <span
+              className="h-1 w-16 rounded-full"
+              style={{ background: ACCENT }}
+            />
           </div>
         </div>
 
         {/* GRID */}
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {values.map((v) => (
-            <ValueCard key={v.title} title={v.title} desc={v.desc} tone={v.tone} />
+            <ValueCard key={v.title} title={v.title} desc={v.desc} icon={v.icon} />
           ))}
         </div>
       </div>
@@ -420,52 +491,52 @@ function CoreValuesSection() {
 function ValueCard({
   title,
   desc,
-  tone,
+  icon,
 }: {
   title: string;
   desc: string;
-  tone: "blue" | "green";
+  icon: string;
 }) {
-  const isBlue = tone === "blue";
-
   return (
-    <div
-      className={[
-        "rounded-2xl p-7 border border-black/10",
-        "shadow-[0_14px_40px_rgba(0,0,0,0.06)] transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)]",
-        isBlue ? "bg-[#0B5E8A] text-white" : "bg-[#00aab7] text-white",
-      ].join(" ")}
-    >
-      <div className="flex items-start justify-between gap-3">
-        <h3 className="text-lg font-extrabold leading-snug">{title}</h3>
-
-        <span
-          className="mt-1 inline-block h-2.5 w-2.5 rounded-full"
-          style={{ background: ACCENT }}
-        />
+    <div className=" bg-white border border-black/10 p-7 transition-all hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
+      {/* Icon */}
+      <div className="flex items-center justify-start">
+        <div className="h-20 w-auto rounded-xl flex items-center justify-center">
+          <img
+            src={icon}
+            alt={title}
+            className="h-full w-full   object-contain"
+            loading="lazy"
+          />
+        </div>
       </div>
 
-      <p className="mt-3 text-sm leading-relaxed text-white/90">{desc}</p>
-
-      <div className="mt-5 h-px w-full bg-white/20" />
-
-      <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/85">
-        BrainADZ Marketing
-      </p>
-    </div>
-  );
-}
-
-function MiniCard({ title, value }: { title: string; value: string }) {
-  return (
-    <div className="rounded-xl border border-black/10 bg-white px-4 py-3 shadow-[0_14px_35px_rgba(0,0,0,0.06)]">
-      <p className="text-xs font-semibold text-black/50 uppercase tracking-[0.14em]">
+      {/* Title */}
+      <h3 className="mt-5 text-lg font-extrabold text-black leading-snug">
         {title}
-      </p>
-      <p className="mt-1 text-sm font-extrabold text-black">{value}</p>
-      <div className="mt-2 h-[2px] w-10 bg-black/10">
-        <div className="h-full w-1/2" style={{ background: ACCENT }} />
-      </div>
+      </h3>
+
+      {/* Divider */}
+      <div className="mt-3 h-px w-12 bg-black/20" />
+
+      {/* Desc */}
+      <p className="mt-4 text-sm leading-relaxed text-black/70">{desc}</p>
     </div>
   );
 }
+
+
+
+// function MiniCard({ title, value }: { title: string; value: string }) {
+//   return (
+//     <div className="rounded-xl border border-black/10 bg-white px-4 py-3 shadow-[0_14px_35px_rgba(0,0,0,0.06)]">
+//       <p className="text-xs font-semibold text-black/50 uppercase tracking-[0.14em]">
+//         {title}
+//       </p>
+//       <p className="mt-1 text-sm font-extrabold text-black">{value}</p>
+//       <div className="mt-2 h-[2px] w-10 bg-black/10">
+//         <div className="h-full w-1/2" style={{ background: ACCENT }} />
+//       </div>
+//     </div>
+//   );
+// }

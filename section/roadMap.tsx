@@ -50,13 +50,13 @@ function JourneyRoadmap() {
       year: "2020",
       title: "Performance Driven Era",
       desc: "Focused heavily on ROI marketing, analytics, automation and scalable funnels.",
-      image: "/journey/2020.jpg",
+      image: "/perfomance.png",
     },
     {
       year: "Today",
       title: "15+ Years of Excellence",
       desc: "500+ projects delivered, 120+ experts, and a culture built on performance & long-term partnerships.",
-      image: "/journey/today.jpg",
+      image: "/15+years.png",
     },
   ];
 
@@ -82,7 +82,7 @@ function JourneyRoadmap() {
           Over the last 15+ years, we have evolved, scaled, and consistently
           delivered measurable growth for brands across industries.
         </p>
-          <div className="mx-auto mt-4 h-[2px] w-56 bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
+          <div className="mx-auto mt-4 h-0.5 w-56 bg-linear-to-r from-transparent via-gray-500 to-transparent" />
       </div>
 
       {/* Timeline */}

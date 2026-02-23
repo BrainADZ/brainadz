@@ -1,5 +1,6 @@
 import AboutSection from "@/section/about";
 import BrandLogosCarousel from "@/section/brandslogoSection";
+import FounderDeskSameToSame from "@/section/CeoDesks";
 import CeoDeskSection from "@/section/CeoDesks";
 import CollageSection from "@/section/collageSection";
 import ContactFormSection from "@/section/contact";
@@ -29,7 +30,7 @@ export default function Home() {
         <TechExpertiseSection/>
         <ContactCtaSection/>
         <ImpactStartsHereSection/>
-        <CeoDeskSection/>
+        <FounderDeskSameToSame/>
         <PillarsSection/>
         <CollageSection/>
         <TestimonialSection/>
