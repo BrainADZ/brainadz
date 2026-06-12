@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-import React from "react";
+import Image from "next/image";
 
 const ACCENT = "#00AAB7";
 
@@ -163,10 +162,13 @@ function ImageCard({
 }) {
   return (
     <div className="overflow-hidden rounded-3xl ">
-      <img
+      <Image
         src={item.image}
         alt={item.title}
+        width={350}
+        height={240}
         className="w-[350px] h-auto object-contain hover:scale-105 transition duration-500"
+        sizes="(max-width: 768px) 80vw, 350px"
       />
     </div>
   );

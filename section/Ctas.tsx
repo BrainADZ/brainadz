@@ -1,7 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
 import React from "react";
+import Image from "next/image";
 import { ArrowUpRight, BadgeCheck, Award, DollarSign } from "lucide-react";
 
 export default function ContactCtaSection() {
@@ -78,10 +76,13 @@ export default function ContactCtaSection() {
             <div className="flex w-full flex-col items-center gap-5 md:w-[420px] md:items-end">
               {/* Replace src with your image */}
               <div className="relative w-full max-w-[320px] overflow-hidden rounded-2xl ">
-                <img
+                <Image
                   src="/cta.png"
                   alt="CTA Illustration"
+                  width={320}
+                  height={240}
                   className="h-auto w-full object-contain"
+                  sizes="(max-width: 768px) 80vw, 320px"
                 />
               </div>
 

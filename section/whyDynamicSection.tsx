@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
-
-import React, { useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
+import { Layers, Lightbulb, MessageCircle, TrendingUp } from "lucide-react";
 
 const ACCENT = "#00AAB7";
 
@@ -10,81 +8,29 @@ const FEATURES = [
     title: "Innovative and Passionate",
     desc:
       "We serve as the catalyst propelling your brand’s journey to success, leveraging the transformative power of captivating storytelling and strategic brand building. Our strong passion for creativity makes us the best digital marketing agency in Noida and other areas as well.",
-    icon: "/icons/why/idea.svg",
+    icon: <Lightbulb className="h-7 w-7" strokeWidth={1.8} />,
   },
   {
     title: "Communication is a key",
     desc:
       "Effective communication helps to build a healthy relationship with our clients. So, at every stage of the project, we are transparent with our work, constantly updating results, delivering projects on time, and keeping you on loop. No surprises, just smooth sailing and high-fives prevailing!",
-    icon: "/icons/why/chat.svg",
+    icon: <MessageCircle className="h-7 w-7" strokeWidth={1.8} />,
   },
   {
     title: "Good Return on Investment",
     desc:
       "Working with us implies significant cost benefits for your company. We provide all of our web development and digital marketing solutions at reasonable prices. Our experts take every measure possible to guarantee that all money invested in the project will provide a profit.",
-    icon: "/icons/why/roi.svg",
+    icon: <TrendingUp className="h-7 w-7" strokeWidth={1.8} />,
   },
   {
     title: "A Gamut of Services under One Roof",
     desc:
       "All of the services you might need are included in our list, from designing your website to advertising it online. Proudly recognised as the best digital marketing agency in Noida, we provide a comprehensive range of services, including web development, CMS development, e-commerce and more.",
-    icon: "/icons/why/stack.svg",
+    icon: <Layers className="h-7 w-7" strokeWidth={1.8} />,
   },
-];
-
-// Simple typewriter hook (no libs)
-function useTypewriter(
-  words: string[],
-  opts?: { typeSpeed?: number; deleteSpeed?: number; pauseMs?: number }
-) {
-  const typeSpeed = opts?.typeSpeed ?? 85;
-  const deleteSpeed = opts?.deleteSpeed ?? 45;
-  const pauseMs = opts?.pauseMs ?? 900;
-
-  const safeWords = useMemo(
-    () => (words?.length ? words : ["Dynamic"]),
-    [words]
-  );
-
-  const [wordIndex, setWordIndex] = useState(0);
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = safeWords[wordIndex % safeWords.length];
-
-    let timer: any;
-
-    if (!isDeleting) {
-      timer = setTimeout(() => {
-        setText(current.slice(0, text.length + 1));
-        if (text.length + 1 === current.length) {
-          setTimeout(() => setIsDeleting(true), pauseMs);
-        }
-      }, typeSpeed);
-    } else {
-      timer = setTimeout(() => {
-        setText(current.slice(0, Math.max(0, text.length - 1)));
-        if (text.length - 1 === 0) {
-          setIsDeleting(false);
-          setWordIndex((i) => (i + 1) % safeWords.length);
-        }
-      }, deleteSpeed);
-    }
-
-    return () => clearTimeout(timer);
-  }, [text, isDeleting, wordIndex, safeWords, typeSpeed, deleteSpeed, pauseMs]);
-
-  return text;
-}
+] satisfies Array<{ title: string; desc: string; icon: ReactNode }>;
 
 export default function WhyDynamicSection() {
-  const rotating = useTypewriter(["Dynamic", "Creative", "Result-Driven", "Reliable", "Bold"], {
-    typeSpeed: 75,
-    deleteSpeed: 40,
-    pauseMs: 800,
-  });
-
   return (
     <section className="relative overflow-hidden bg-[#FBF6F4] text-[#0b0d10]">
       {/* premium background accents */}
@@ -112,10 +58,10 @@ export default function WhyDynamicSection() {
 
               <span className="mt-2 block">
                 <span
-                  className="italic font-light underline underline-offset-8 decoration-white/30"
+                  className="relative italic font-light underline underline-offset-8 decoration-white/30"
                   style={{ color: ACCENT }}
                 >
-                  {rotating}
+                  Dynamic
                   {/* underline swoosh */}
                   <span className="pointer-events-none absolute -bottom-2 left-0 h-[10px] w-full rounded-full opacity-25"
                     style={{ backgroundColor: ACCENT }}
@@ -143,7 +89,7 @@ export default function WhyDynamicSection() {
 
           {/* Right Paragraph */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-[0_14px_40px_rgba(0,0,0,0.06)] backdrop-blur">
+            <div className="rounded-3xl border border-black/5 bg-white/70 p-6 shadow-[0_14px_40px_rgba(0,0,0,0.06)]">
               <p className="text-sm leading-relaxed text-black/75 md:text-base">
                 In this convoluted industry that is subjected to exponential growth and constant evolution,
                 the first impression lasts a lifetime. As the best digital marketing company in India, our aim
@@ -195,12 +141,7 @@ export default function WhyDynamicSection() {
                     bg-white shadow-[0_10px_25px_rgba(0,0,0,0.08)]
                   "
                 >
-                  <img
-                    src={f.icon}
-                    alt=""
-                    className="h-7 w-7 object-contain"
-                    loading="lazy"
-                  />
+                  <span className="text-[#00AAB7]">{f.icon}</span>
                 </div>
 
                 <h3 className="text-lg font-extrabold tracking-tight md:text-xl">

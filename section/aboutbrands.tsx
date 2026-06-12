@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import path from "path";
 import fs from "fs/promises";
 
@@ -37,18 +37,21 @@ function LogoItem({ logo }: { logo: BrandLogo }) {
         <div
             className="
         flex items-center justify-center
-        rounded-2xl border border-black/5 bg-white/80 backdrop-blur
+        rounded-2xl border border-black/5 bg-white/80
         shadow-[0_10px_24px_rgba(17,24,39,0.06)]
         h-20 w-[155px] sm:w-44 md:w-[170px] lg:w-[185px]
         px-4
         transition-transform duration-300 hover:-translate-y-0.5
       "
         >
-            <img
+            <Image
                 src={logo.src}
                 alt={logo.name}
+                width={160}
+                height={56}
                 className="max-h-14 w-auto max-w-[140px] object-contain opacity-90 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
                 loading="lazy"
+                sizes="160px"
             />
         </div>
     );

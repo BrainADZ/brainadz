@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import FooterCta from "@/section/ctaSection";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -26,12 +26,14 @@ export default function Footer() {
             {/* Locations */}
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {/* Delhi */}
-              <div className="rounded-2xl border border-white/10 bg-white/3 p-5 backdrop-blur">
+              <div className="rounded-2xl border border-white/10 bg-white/3 p-5">
                 <div className="flex items-start gap-4">
                   <div className="grid h-30 w-30 place-items-center rounded-xl">
-                    <img
+                    <Image
                       src="/icons/delhi.png"
                       alt="Delhi Office"
+                      width={120}
+                      height={120}
                       className="object-contain"
                     />
                   </div>
@@ -46,12 +48,14 @@ export default function Footer() {
               </div>
 
               {/* Mumbai */}
-              <div className="rounded-2xl border border-white/10 bg-white/3 p-5 backdrop-blur">
+              <div className="rounded-2xl border border-white/10 bg-white/3 p-5">
                 <div className="flex items-start gap-4">
                   <div className="grid h-30 w-30 place-items-center rounded-xl ">
-                    <img
+                    <Image
                       src="/icons/mumbai.png"
                       alt="Delhi Office"
+                      width={120}
+                      height={120}
                       className="object-contain"
                     />
                   </div>
@@ -65,12 +69,14 @@ export default function Footer() {
               </div>
 
               {/* Dubai */}
-              <div className="rounded-2xl border border-white/10 bg-white/3 p-5 backdrop-blur">
+              <div className="rounded-2xl border border-white/10 bg-white/3 p-5">
                 <div className="flex items-start gap-4">
                   <div className="grid h-30 w-30 place-items-center rounded-xl">
-                    <img
+                    <Image
                       src="/icons/dubai.png"
                       alt="Delhi Office"
+                      width={120}
+                      height={120}
                       className="object-contain"
                     />
                   </div>
@@ -96,9 +102,11 @@ export default function Footer() {
                 <div className="flex items-center gap-3">
                   {/* Replace with your logo */}
 <div className="flex items-center">
-  <img
+  <Image
     src="/logo/black.png"
     alt="Your Brand Name Logo"
+    width={180}
+    height={40}
     className="h-10 w-auto object-contain"
   />
 </div>

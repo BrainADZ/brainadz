@@ -1,7 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
-import React, { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   FiMapPin,
@@ -44,26 +41,22 @@ const SERVICES = [
   "Exhibitions & Live Events",
 ];
 
+const BG_DOTS = {
+  backgroundImage: "radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px)",
+  backgroundSize: "16px 16px",
+};
+
 export default function ContactFormSection() {
-  const [agreed, setAgreed] = useState(true);
-
-  const bgDots = useMemo(
-    () => ({
-      backgroundImage:
-        "radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px)",
-      backgroundSize: "16px 16px",
-    }),
-    []
-  );
-
   return (
     <section className="relative w-full bg-white py-12 md:py-16 overflow-x-hidden">
       {/* subtle background pattern */}
-      <div className="pointer-events-none absolute inset-0 opacity-60" style={bgDots} />
+      <div className="pointer-events-none absolute inset-0 opacity-60" style={BG_DOTS} />
       {/* ✅ TOP RIGHT OVERLAY IMAGE */}
-      <img
+      <Image
         src="/homepage/clienticon.svg"
         alt="Decor"
+        width={420}
+        height={420}
         className="
           pointer-events-none select-none
           absolute right-[-30] top-[-9]
@@ -226,8 +219,7 @@ export default function ContactFormSection() {
                   <label className="flex items-start gap-3 pt-2">
                     <input
                       type="checkbox"
-                      checked={agreed}
-                      onChange={(e) => setAgreed(e.target.checked)}
+                      defaultChecked
                       className="mt-1 h-5 w-5 rounded border-black/20"
                       style={{ accentColor: ACCENT }}
                     />

@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import path from "path";
 import fs from "fs/promises";
 
@@ -43,11 +43,14 @@ function LogoItem({ logo }: { logo: BrandLogo }) {
         w-[150px] sm:w-40 md:w-[170px] lg:w-[180px] 2xl:w-[190px]
       "
     >
-      <img
+      <Image
         src={logo.src}
         alt={logo.name}
+        width={160}
+        height={64}
         className="max-h-16 w-auto max-w-[140px] object-contain opacity-90 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
         loading="lazy"
+        sizes="160px"
       />
     </div>
   );
@@ -80,9 +83,11 @@ export default async function BrandLogosCarousel() {
     // ✅ section relative + overflow hidden (so image doesn’t go outside)
     <section className="relative overflow-hidden bg-white py-14">
       {/* ✅ TOP RIGHT OVERLAY IMAGE */}
-      <img
+      <Image
         src="/homepage/clienticon.svg"  // ✅ apna path yaha
         alt="Decor"
+        width={420}
+        height={420}
         className="
           pointer-events-none select-none
           absolute right-[-30] top-[-9]
@@ -93,9 +98,11 @@ export default async function BrandLogosCarousel() {
         "
         loading="lazy"
       />
-      <img
+      <Image
         src="/homepage/clienticon.svg"  // ✅ apna path yaha
         alt="Decor"
+        width={420}
+        height={420}
         className="
           pointer-events-none select-none
           absolute left-[-19] bottom-[-5] rotate-222
@@ -180,10 +187,13 @@ export default async function BrandLogosCarousel() {
                     key={i}
                     className="group flex h-20 w-[180px] items-center justify-center rounded-xl bg-white shadow p-4"
                   >
-                    <img
+                    <Image
                       src={logo.src}
                       alt={logo.name}
+                      width={160}
+                      height={64}
                       className="max-h-16 grayscale opacity-80 transition group-hover:grayscale-0 group-hover:opacity-100"
+                      sizes="160px"
                     />
                   </div>
                 ))}

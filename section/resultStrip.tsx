@@ -1,9 +1,8 @@
-"use client";
-
+import type { ReactNode } from "react";
 import { FiTrendingUp, FiUsers, FiBell, FiAward } from "react-icons/fi";
 
 type Stat = {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   value: string;
 };

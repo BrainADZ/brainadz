@@ -1,30 +1,28 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
+import Image from "next/image";
 
 export default function GlobalPresenceSection() {
   return (
     <section className="w-full bg-[#F3F3F3] py-4 md:py-8">
-      <div className="mx-auto max-w-[1500px] px-4 sm:px-6 text-center">
-        
-        {/* Heading */}
+      <div className="mx-auto max-w-[1500px] px-4 text-center sm:px-6">
         <h2 className="leading-tight">
-          <span className="block text-3xl md:text-6xl font-light text-[#3F3F3F] font-sans">
+          <span className="block font-sans text-3xl font-light text-[#3F3F3F] md:text-6xl">
             Working with clients
           </span>
-          <span className="block text-4xl md:text-6xl font-bold text-[#B7B800] mt-2">
+          <span className="mt-2 block text-4xl font-bold text-[#B7B800] md:text-6xl">
             Across the globe
           </span>
         </h2>
 
-        {/* Map Image */}
         <div className="mt-2">
-          <img
-            src="/map.png"   // apna map image path yaha daalo
+          <Image
+            src="/map.png"
             alt="Global Clients Map"
-            className="mx-auto w-full max-w-[1200px] h-auto object-contain"
+            width={1200}
+            height={620}
+            className="mx-auto h-auto w-full max-w-[1200px] object-contain"
+            sizes="(max-width: 1280px) 100vw, 1200px"
           />
         </div>
-
       </div>
     </section>
   );

@@ -1,5 +1,3 @@
-"use client";
-
 export default function FooterCta() {
   return (
     <section className=" bg-white">
@@ -25,7 +23,7 @@ export default function FooterCta() {
           />
 
           {/* Content */}
-          <div className="relative grid md:grid-cols-2 gap-8 items-center px-10 py-14 max-w-7xl mx-auto">
+          <div className="relative grid md:grid-cols-2 gap-8 items-center px-8 py-14 max-w-[1500px] mx-auto">
 
             {/* Left */}
             <div>

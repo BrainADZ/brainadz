@@ -1,7 +1,7 @@
 import AboutSection from "@/section/about";
 import BrandLogosCarousel from "@/section/brandslogoSection";
 import FounderDeskSameToSame from "@/section/CeoDesks";
-import CeoDeskSection from "@/section/CeoDesks";
+// import CeoDeskSection from "@/section/CeoDesks";
 import CollageSection from "@/section/collageSection";
 import ContactFormSection from "@/section/contact";
 import ContactCtaSection from "@/section/Ctas";

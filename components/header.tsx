@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -29,8 +28,26 @@ export default function Navbar() {
   const navRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
+    let ticking = false;
+    let lastScrolled = false;
+
+    const update = () => {
+      const nextScrolled = window.scrollY > 40;
+      if (nextScrolled !== lastScrolled) {
+        lastScrolled = nextScrolled;
+        setScrolled(nextScrolled);
+      }
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+
+    window.requestAnimationFrame(update);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -151,10 +168,8 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? // ✅ scroll pe "transparent black" + shadow + blur (links visible)
-              "bg-black/55 backdrop-blur-md shadow-[0_10px_30px_rgba(0,0,0,0.55)]"
-            : // ✅ top pe pure transparent
-              "bg-transparent"
+            ? "bg-black/75 shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
+            : "bg-transparent"
         }`}
       >
         <div ref={navRef} className="w-full max-w-[1500px] mx-auto px-4 sm:px-6 py-2">

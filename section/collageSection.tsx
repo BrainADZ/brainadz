@@ -1,6 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
 import Image from "next/image";
 
 type Tile = {
@@ -61,21 +58,20 @@ export default function CollageSection() {
                   hover:border-black/20
                 "
               >
-                <img
+                <Image
                   src={l.src}
                   alt={l.alt}
+                  width={320}
+                  height={80}
                   className="
                     h-20 w-auto
                     max-w-[280px] md:max-w-[320px]
                     object-contain
-                    opacity-90
-                    grayscale
-                    transition-all duration-200 ease-out
-                    group-hover:grayscale-0
+                    opacity-95
+                    transition-opacity duration-200 ease-out
                     group-hover:opacity-100
-                    group-hover:scale-[1.03]
                   "
-                  loading="lazy"
+                  sizes="(max-width: 768px) 280px, 320px"
                 />
               </div>
             ))}
@@ -100,15 +96,14 @@ export default function CollageSection() {
         {/* Mobile fallback */}
         <div className="grid md:hidden grid-cols-2 gap-4">
           {TILES.map((t, i) => (
-            <div key={i} className="relative aspect-4/3 overflow-hidden bg-black">
+            <div key={i} className="relative aspect-4/3 overflow-hidden bg-[#eef3f4]">
               <Image
                 src={t.src}
                 alt={t.alt}
                 fill
-                className="object-cover grayscale"
+                className="object-cover"
                 sizes="(max-width: 768px) 50vw, 0px"
               />
-              <div className="absolute inset-0 bg-black/55" />
             </div>
           ))}
         </div>
@@ -121,8 +116,7 @@ function TileCard({ src, alt, className }: Tile) {
   return (
     <div
       className={[
-        "group relative overflow-hidden bg-black", // bg-black optional (edges nice)
-        "transform-[translateZ(0)] backface-hidden will-change-transform",
+        "group relative overflow-hidden bg-[#eef3f4]",
         className,
       ].join(" ")}
     >
@@ -133,20 +127,9 @@ function TileCard({ src, alt, className }: Tile) {
         className="
           object-cover
           transition-transform duration-300 ease-out
-          scale-[1.01] group-hover:scale-[1.05]
-          grayscale group-hover:grayscale-0
+          group-hover:scale-[1.02]
         "
         sizes="(max-width: 1200px) 33vw, 25vw"
-      />
-
-      <div
-        className="
-          pointer-events-none
-          absolute inset-0
-          bg-black/55
-          transition-opacity duration-300 ease-out
-          group-hover:opacity-0
-        "
       />
     </div>
   );

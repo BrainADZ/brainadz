@@ -1,6 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -212,11 +210,13 @@ function PillarCardLarge({ name, designation, image, social }: Pillar) {
     >
       {/* Image (shorter) */}
       <div className="relative aspect-[1/1.1] w-full">
-        <img
+        <Image
           src={image}
           alt={`${name} - ${designation}`}
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          className="object-cover"
           loading="lazy"
+          sizes="(max-width: 1024px) 0px, 32vw"
         />
 
         {/* Badge */}
@@ -299,15 +299,17 @@ function PillarCard({ name, designation, image, social }: Pillar) {
 
         {/* Image (shorter) */}
         <div className="relative aspect-[1/1.1] w-full">
-          <img
+          <Image
             src={image}
             alt={`${name} - ${designation}`}
+            fill
             className="
-              absolute inset-0 h-full w-full object-cover
+              object-cover
               transition-transform duration-500 ease-out
               group-hover:scale-[1.05]
             "
             loading="lazy"
+            sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 22vw"
           />
 
           {/* Top-right: social menu */}

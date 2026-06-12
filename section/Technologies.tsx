@@ -1,7 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
-import React from "react";
+import Image from "next/image";
 
 type Tech = { src: string; label: string };
 
@@ -139,12 +136,11 @@ function TechTile({ tech }: { tech: Tech }) {
         rounded-xl
         border border-white/20
         bg-black/35
-        backdrop-blur-sm
-        shadow-[0_14px_30px_rgba(0,0,0,0.35)]
+        shadow-[0_10px_22px_rgba(0,0,0,0.26)]
         transition-all duration-300
         hover:-translate-y-1
         hover:border-white/35
-        hover:shadow-[0_18px_45px_rgba(0,0,0,0.45)]
+        hover:shadow-[0_14px_34px_rgba(0,0,0,0.34)]
       "
     >
       {/* glow ring */}
@@ -153,19 +149,22 @@ function TechTile({ tech }: { tech: Tech }) {
         <div className="absolute -inset-6 rounded-[18px] bg-[radial-gradient(circle,rgba(255,255,255,0.10),transparent_60%)]" />
       </div>
 
-<img
+<Image
   src={tech.src}
   alt={tech.label}
+  width={40}
+  height={40}
   loading="lazy"
   className="
     relative z-10 h-10 w-10 object-contain
     opacity-90
     grayscale
-    drop-shadow-[0_6px_18px_rgba(0,0,0,0.25)]
+    drop-shadow-[0_4px_10px_rgba(0,0,0,0.20)]
     transition duration-300
     group-hover:grayscale-0
     group-hover:opacity-100
   "
+  sizes="40px"
 />
 
 

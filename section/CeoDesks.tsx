@@ -1,12 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
-import React from "react";
-import { BsFillMegaphoneFill } from "react-icons/bs";
-import { FiTarget, FiMessageCircle } from "react-icons/fi";
+import Image from "next/image";
 import { FaLinkedinIn } from "react-icons/fa";
-
-const ACCENT = "#00AAB7";
 
 type Founder = {
   name: string;
@@ -132,10 +125,13 @@ export default function FounderDeskSameToSame() {
               />
 
               {/* Person cutout */}
-              <img
+              <Image
                 src={FOUNDER.photo}
                 alt={FOUNDER.name}
+                width={360}
+                height={400}
                 className="relative z-10 ml-auto h-[400px] w-auto object-contain drop-shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
+                sizes="(max-width: 1024px) 80vw, 360px"
               />
 
 

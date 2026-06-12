@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
-
-import React from "react";
+import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
+import { Lightbulb, Target, Timer, TrendingUp } from "lucide-react";
 import { FiArrowRight} from "react-icons/fi";
 import BrandLogosCarouselReplica from "@/section/aboutbrands";
 import { ClientsFirstSection } from "@/section/roadMap";
@@ -308,10 +308,12 @@ function AboutSection() {
 
           {/* adjust height for “long image scroll” */}
           <div className="relative h-[95vh] lg:h-[155vh] w-full">
-            <img
+            <Image
               src="/dummy about.webp" // ✅ replace with your about image
               alt="BrainADZ About"
-              className="absolute inset-0 h-full w-full object-cover"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 42vw"
             />
 
             {/* Optional bottom CTA like reference */}
@@ -424,7 +426,7 @@ function CoreValuesSection() {
   const values: {
     title: string;
     desc: string;
-    icon: string; // <img> path
+    icon: string;
   }[] = [
   {
   title: "Digital Excellence",
@@ -503,11 +505,14 @@ function ValueCard({
       {/* Icon */}
       <div className="flex items-center justify-start">
         <div className="h-20 w-auto rounded-xl flex items-center justify-center">
-          <img
+          <Image
             src={icon}
             alt={title}
-            className="h-full w-full   object-contain"
+            width={80}
+            height={80}
+            className="h-full w-full object-contain"
             loading="lazy"
+            sizes="80px"
           />
         </div>
       </div>
@@ -527,26 +532,26 @@ function ValueCard({
 }
 
 function WhyChooseSection() {
-  const items = [
+  const items: { title: string; desc: string; icon: ReactNode }[] = [
     {
       title: "Marketing Strategy",
       desc: "We research your business, competitors, and audience before executing campaigns—so every action is data-backed and conversion-focused.",
-      icon: "/icons/strategy.png",
+      icon: <Lightbulb className="h-6 w-6" strokeWidth={1.8} />,
     },
     {
       title: "Targeted Approach",
       desc: "Every brand is different. We design custom digital and on-ground solutions aligned with your specific goals and customer journey.",
-      icon: "/icons/target.png",
+      icon: <Target className="h-6 w-6" strokeWidth={1.8} />,
     },
     {
       title: "Performance Optimization",
       desc: "Our campaigns are optimized continuously to reach the right audience while reducing ad waste and improving ROI.",
-      icon: "/icons/performance.png",
+      icon: <TrendingUp className="h-6 w-6" strokeWidth={1.8} />,
     },
     {
       title: "On-Time Delivery",
       desc: "We respect deadlines. From websites to exhibitions, we deliver projects on time with clear communication throughout.",
-      icon: "/icons/delivery.png",
+      icon: <Timer className="h-6 w-6" strokeWidth={1.8} />,
     },
   ];
 
@@ -585,8 +590,8 @@ function WhyChooseSection() {
           key={i.title}
           className="rounded-2xl border border-[#00AAB7]/40 bg-white p-6 hover:shadow-[0_14px_40px_rgba(0,0,0,0.06)] transition"
         >
-          <div className="h-12 w-12 rounded-full bg-[#00AAB7] flex items-center justify-center">
-            <img src={i.icon} className="h-6 w-6" />
+          <div className="h-12 w-12 rounded-full bg-[#00AAB7] flex items-center justify-center text-white">
+            {i.icon}
           </div>
 
           <h4 className="mt-4 text-lg font-bold text-black">

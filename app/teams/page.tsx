@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
-import ContactCtaSection from "@/section/Ctas";
+// import ContactCtaSection from "@/section/Ctas";
+import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 
 type Social = {
@@ -225,11 +224,13 @@ export default function TeamPage() {
             <div className="lg:col-span-7">
               <div className="relative overflow-hidden bg-white ">
                 <div className="relative aspect-2/1 w-full">
-                  <img
+                  <Image
                     src="/teams/teams.png" /* ✅ change */
                     alt="BrainADZ Team"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    fill
+                    className="object-cover"
                     loading="lazy"
+                    sizes="(max-width: 1024px) 100vw, 58vw"
                   />
                 </div>
               </div>
@@ -276,7 +277,7 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
-      <ContactCtaSection />
+      {/* <ContactCtaSection /> */}
     </main>
   );
 }
@@ -298,15 +299,17 @@ function TeamCard({ name, designation, image, social }: TeamMember) {
         "
       >
         <div className="relative aspect-square w-full">
-          <img
+          <Image
             src={image}
             alt={`${name} - ${designation}`}
+            fill
             className="
-              absolute inset-0 h-full w-full object-cover
+              object-cover
               transition-transform duration-300 ease-out
               group-hover:scale-[1.03]
             "
             loading="lazy"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
 
           {/* plus button + social menu */}
@@ -388,7 +391,7 @@ function SocialIcon({
 }: {
   href: string;
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <Link
