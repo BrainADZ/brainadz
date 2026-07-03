@@ -1,287 +1,176 @@
+"use client";
+
 import Image from "next/image";
-import type { ReactNode } from "react";
 
-const ACCENT = "#00AAB7";
+type ImpactStat = {
+  value: string;
+  label: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  imageClassName?: string;
+};
 
-function Counter({
-  target,
-  suffix = "",
-  decimals = 0,
-  color,
-}: {
-  target: number;
-  suffix?: string;
-  decimals?: number;
-  color?: string;
-}) {
-  const formatted = target.toLocaleString(undefined, {
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals,
-  });
-
-  return (
-    <span style={{ color: color ?? "black" }}>
-      {formatted}
-      {suffix}
-    </span>
-  );
-}
+const IMPACT_STATS: ImpactStat[] = [
+  {
+    value: "550+",
+    label: "CLIENTS SERVED",
+    description:
+      "trusted by businesses across industries for digital marketing, branding, creative, website, and performance-driven growth solutions",
+    image: "/slider.jpg",
+    imageAlt: "BrainADZ Marketing clients and brand growth",
+    imageClassName: "object-cover object-center",
+  },
+  {
+    value: "600+",
+    label: "PROJECTS DELIVERED",
+    description:
+      "successfully completed across digital campaigns, website development, creative design, paid ads, social media, and brand experiences",
+    image: "/Mask-Group-22.jpg",
+    imageAlt: "BrainADZ Marketing project delivery",
+    imageClassName: "object-cover object-center",
+  },
+  {
+    value: "98%",
+    label: "ON-TIME PROJECTS DELIVERED",
+    description:
+      "delivered with structured planning, clear execution, team coordination, and a result-focused workflow for every client project",
+    image: "/perfomance.png",
+    imageAlt: "On-time project delivery by BrainADZ Marketing",
+    imageClassName: "object-contain p-8",
+  },
+  {
+    value: "10+",
+    label: "YEARS OF EXPERIENCE",
+    description:
+      "building marketing strategies, creative campaigns, websites, digital platforms, and performance systems for growing businesses",
+    image: "/gallery/5.jpeg",
+    imageAlt: "BrainADZ Marketing experience and team expertise",
+    imageClassName: "object-cover object-center",
+  },
+  {
+    value: "150+",
+    label: "FULL-TIME EXPERTS",
+    description:
+      "working across strategy, SEO, paid ads, social media, design, content, video, development, automation, and client servicing",
+    image: "/scale.png",
+    imageAlt: "BrainADZ Marketing full-time expert team",
+    imageClassName: "object-contain p-8",
+  },
+  {
+    value: "360°",
+    label: "MARKETING SOLUTIONS",
+    description:
+      "covering digital marketing, creative and media services, website development, performance marketing, automation, and brand growth execution",
+    image: "/gallery/1.jpeg",
+    imageAlt: "360 degree marketing solutions by BrainADZ Marketing",
+    imageClassName: "object-cover object-center",
+  },
+];
 
 export default function ImpactStartsHereSection() {
   return (
-    <section className="overflow-x-hidden bg-white text-black">
-      <div
-        className="mx-auto max-w-[1500px] px-4 py-16 md:py-20"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 15% 20%, rgba(0,170,183,0.08), transparent 40%), radial-gradient(circle at 80% 10%, rgba(0,0,0,0.04), transparent 35%)",
-        }}
-      >
-        <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
-          <div className="lg:col-span-5">
-            <h2 className="text-xl font-extrabold leading-[1.02] tracking-tight md:text-5xl">
-              <span className="relative inline-block">Impact</span>
-              <br />
-              Starts
-              <br />
-              Here
-            </h2>
+    <section className="overflow-hidden bg-black py-16 text-white md:py-20">
+      <div className="mx-auto mb-12 grid max-w-[1800px] gap-7 px-5 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+        <h2 className="text-[42px] font-medium leading-[0.95] tracking-[-0.04em] sm:text-[58px]">
+          Impact
+          <span className="block">Starts Here</span>
+        </h2>
+
+        <div className="lg:pb-1">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[12px] text-white/70">
+            <span className="h-2 w-2 rounded-full bg-[#1467f5]" />
+            One ecosystem. Multiple outcomes.
           </div>
 
-          <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-3 py-1 text-xs text-black/70">
-              <span className="h-2 w-2 rounded-full" style={{ background: ACCENT }} />
-              One ecosystem. Multiple outcomes.
-            </div>
-
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-black/70 md:text-base">
-              BrainADZ Group brings together growth marketing, live event
-              execution, and exhibition fabrication under one ecosystem. From
-              performance-driven digital campaigns and websites, to LED screen
-              setups, standees, and large-scale exhibition stalls - we help
-              brands scale with clarity, consistency, and impact.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-14">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-0">
-            <StatCard
-              className="md:col-span-3 md:border-r"
-              value={<Counter target={8.2} decimals={1} suffix=" MN+" />}
-              lines={["Audience Reach", "Annually"]}
-            />
-
-            <BgImageStatCard
-              className="md:col-span-2 md:row-span-2 md:border-r"
-              value={<Counter target={200} suffix="+" color="white" />}
-              lines={["Projects Delivered", "Across India"]}
-              imageSrc="/Mask-Group-22.jpg"
-            />
-
-            <StatCard
-              className="md:col-span-3 md:border-r"
-              value={<Counter target={300} suffix="%" color={ACCENT} />}
-              lines={["Growth Lift For", "Key Campaigns"]}
-              accent
-            />
-
-            <StatCard
-              className="md:col-span-3"
-              value={<Counter target={62} suffix=" MN+" color={ACCENT} />}
-              lines={["Monthly Content", "Engagement"]}
-              accent
-              showAccentLine
-            />
-
-            <WhiteHighlightCard
-              className="md:col-start-7 md:row-start-2 md:col-span-3 md:border-t md:border-r"
-              value={<Counter target={12} suffix=" MN+" />}
-              lines={["Leads & Conversions", "Driven For Brands"]}
-            />
-
-            <AccentImageCard
-              className="md:col-start-10 md:row-start-2 md:col-span-3 md:border-t"
-              value={<Counter target={15} suffix=" BN+" color="black" />}
-              lines={["Brand Visibility", "Generated Annually"]}
-              imageSrc="/Mask-Group-39.jpg"
-            />
-          </div>
+          <p className="mt-5 max-w-[820px] text-[16px] leading-7 text-white/60">
+            BrainADZ Group combines growth marketing, digital products, live
+            event execution, and exhibition fabrication to create measurable
+            outcomes across every customer touchpoint.
+          </p>
         </div>
       </div>
+
+      <div
+        className="impact-carousel overflow-hidden"
+        aria-label="BrainADZ impact statistics"
+      >
+        <div className="impact-track flex w-max">
+          {[0, 1].map((groupIndex) => (
+            <div
+              key={groupIndex}
+              className="flex shrink-0 gap-3 pr-3"
+              aria-hidden={groupIndex === 1}
+            >
+              {IMPACT_STATS.map((stat) => (
+                <ImpactCard
+                  key={`${groupIndex}-${stat.label}`}
+                  stat={stat}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style jsx>{`
+        .impact-track {
+          animation: impact-scroll 42s linear infinite;
+          will-change: transform;
+        }
+
+        .impact-carousel:hover .impact-track {
+          animation-play-state: paused;
+        }
+
+        @keyframes impact-scroll {
+          from {
+            transform: translate3d(0, 0, 0);
+          }
+
+          to {
+            transform: translate3d(-50%, 0, 0);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .impact-track {
+            animation: none;
+          }
+        }
+      `}</style>
     </section>
   );
 }
 
-function CardShell({
-  className = "",
-  children,
-}: {
-  className?: string;
-  children: ReactNode;
-}) {
+function ImpactCard({ stat }: { stat: ImpactStat }) {
   return (
-    <div
-      className={`
-        relative border border-black/10
-        transition-transform duration-300
-        hover:-translate-y-[2px]
-        ${className}
-      `}
-    >
-      {children}
-    </div>
-  );
-}
+    <article className="flex h-[560px] w-[390px] shrink-0 flex-col overflow-hidden rounded-[24px] border border-white/15 bg-[#181818] sm:h-[620px] sm:w-[500px]">
+      <div className="flex h-[218px] shrink-0 flex-col justify-between px-7 py-7 sm:h-[235px] sm:px-8 sm:py-8">
+        <div className="flex items-start gap-6">
+          <p className="shrink-0 text-[50px] font-medium leading-none tracking-[-0.05em] text-white sm:text-[64px]">
+            {stat.value}
+          </p>
 
-function StatCard({
-  className = "",
-  value,
-  lines,
-  accent,
-  showAccentLine,
-}: {
-  className?: string;
-  value: ReactNode;
-  lines: string[];
-  accent?: boolean;
-  showAccentLine?: boolean;
-}) {
-  return (
-    <CardShell className={`min-h-[190px] p-8 ${className}`}>
-      {showAccentLine && (
-        <div className="absolute left-0 top-0 h-full w-[3px]" style={{ background: ACCENT }} />
-      )}
-
-      <div
-        className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full opacity-30 blur-2xl"
-        style={{ background: accent ? "rgba(0,170,183,0.18)" : "rgba(0,0,0,0.05)" }}
-      />
-
-      <div className="relative flex h-full flex-col justify-center">
-        <div className="text-3xl font-semibold md:text-4xl" style={{ color: accent ? ACCENT : "black" }}>
-          {value}
+          <h3 className="max-w-[205px] pt-1 text-[16px] font-semibold leading-7 text-white sm:text-[18px]">
+            {stat.label}
+          </h3>
         </div>
 
-        <div className="mt-4 space-y-1 text-sm text-black/70">
-          {lines.map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-        </div>
+        <p className="max-w-[430px] text-[15px] leading-6 text-white/50 sm:text-[16px] sm:leading-7">
+          {stat.description}
+        </p>
       </div>
-    </CardShell>
-  );
-}
 
-function BgImageStatCard({
-  className = "",
-  value,
-  lines,
-  imageSrc,
-}: {
-  className?: string;
-  value: ReactNode;
-  lines: string[];
-  imageSrc: string;
-}) {
-  return (
-    <CardShell className={`min-h-[420px] overflow-hidden p-8 ${className}`}>
-      <Image
-        src={imageSrc}
-        alt=""
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, 18vw"
-      />
-      <div className="absolute inset-0 bg-black/55" />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(circle at 30% 20%, rgba(0,170,183,0.22), transparent 55%)",
-        }}
-      />
-      <div className="pointer-events-none absolute inset-0 ring-1 ring-white/10" />
-
-      <div className="relative z-10 flex h-full flex-col justify-start">
-        <div className="text-3xl font-semibold text-white md:text-4xl">{value}</div>
-        <div className="mt-4 space-y-1 text-sm text-white/85">
-          {lines.map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-        </div>
+      <div className="relative flex-1 overflow-hidden bg-black">
+        <Image
+          src={stat.image}
+          alt={stat.imageAlt}
+          fill
+          className={stat.imageClassName}
+          sizes="(max-width: 640px) 390px, 500px"
+        />
       </div>
-    </CardShell>
-  );
-}
-
-function WhiteHighlightCard({
-  className = "",
-  value,
-  lines,
-}: {
-  className?: string;
-  value: ReactNode;
-  lines: string[];
-}) {
-  return (
-    <CardShell className={`min-h-[210px] p-8 ${className}`}>
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-16 opacity-70"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(0,170,183,0.10), transparent)",
-        }}
-      />
-
-      <div className="relative flex h-full flex-col justify-start">
-        <div className="text-3xl font-semibold md:text-4xl">
-          {value} <span className="text-[#00AAB7]">+</span>
-        </div>
-        <div className="mt-4 space-y-1 text-sm text-black/70">
-          {lines.map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-        </div>
-      </div>
-    </CardShell>
-  );
-}
-
-function AccentImageCard({
-  className = "",
-  value,
-  lines,
-  imageSrc,
-}: {
-  className?: string;
-  value: ReactNode;
-  lines: string[];
-  imageSrc: string;
-}) {
-  return (
-    <CardShell className={`min-h-[210px] overflow-hidden p-8 ${className}`}>
-      <div className="absolute inset-0" style={{ background: ACCENT }} />
-      <Image
-        src={imageSrc}
-        alt=""
-        fill
-        className="object-cover opacity-20"
-        sizes="(max-width: 768px) 100vw, 25vw"
-      />
-      <div
-        className="pointer-events-none absolute -left-20 top-0 h-full w-40 rotate-12 opacity-15 blur-xl"
-        style={{ background: "rgba(255,255,255,0.55)" }}
-      />
-
-      <div className="relative z-10">
-        <div className="text-3xl font-semibold text-black md:text-4xl">{value}</div>
-        <div className="mt-4 space-y-1 text-sm text-black/80">
-          {lines.map((line) => (
-            <div key={line}>{line}</div>
-          ))}
-        </div>
-      </div>
-    </CardShell>
+    </article>
   );
 }

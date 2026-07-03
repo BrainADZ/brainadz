@@ -1,20 +1,17 @@
 import AboutSection from "@/section/about";
 import BrandLogosCarousel from "@/section/brandslogoSection";
+import CaseStudiesSection from "@/section/caseStudies";
 import FounderDeskSameToSame from "@/section/CeoDesks";
-// import CeoDeskSection from "@/section/CeoDesks";
-import CollageSection from "@/section/collageSection";
-import ContactFormSection from "@/section/contact";
+import CompanyGallerySection from "@/section/companyGallery";
 import ContactCtaSection from "@/section/Ctas";
 import FaqSection from "@/section/faqs";
 import Hero from "@/section/hero";
 import ImpactStartsHereSection from "@/section/ImpactStart";
 import GlobalPresenceSection from "@/section/Maps";
-import PillarsSection from "@/section/pillars";
-import ResultStrip from "@/section/resultStrip";
 import ServicesCardsSection from "@/section/serviceSection";
+import TeamShowcaseSection from "@/section/teamShowcase";
 import TechExpertiseSection from "@/section/Technologies";
 import TestimonialSection from "@/section/Testimonials";
-import WhyDynamicSection from "@/section/whyDynamicSection";
 
 export default function Home() {
   return (
@@ -22,20 +19,19 @@ export default function Home() {
       <main >
         {/* <Hero/> */}
         <Hero/>
-        <AboutSection/>
-        <ResultStrip/>
         <ServicesCardsSection/>
-        <BrandLogosCarousel />
-        <WhyDynamicSection/>
-        <TechExpertiseSection/>
-        <ContactCtaSection/>
+        <AboutSection/>
         <ImpactStartsHereSection/>
+        <CaseStudiesSection/>
+        <BrandLogosCarousel />
+        <ContactCtaSection/>
+        {/* <WhyDynamicSection/> */}
+        <TechExpertiseSection/>
         <FounderDeskSameToSame/>
-        <PillarsSection/>
-        <CollageSection/>
+        <TeamShowcaseSection/>
+        <CompanyGallerySection/>
         <TestimonialSection/>
         <FaqSection/>
-        <ContactFormSection/>
         <GlobalPresenceSection />
       </main>
     </div>

@@ -1,72 +1,139 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { ArrowUpRight } from "lucide-react";
+
+/* eslint-disable @next/next/no-img-element */
+
+const awards = [
+  {
+    src: "/certificate/aws.webp",
+    alt: "BrainADZ Live Award 1",
+  },
+  {
+    src: "/certificate/google.png",
+    alt: "BrainADZ Live Award 2",
+  },
+  {
+    src: "/certificate/meta.webp",
+    alt: "BrainADZ Live Award 3",
+  },
+];
 
 export default function Hero() {
+  const repeatedAwards = [...awards, ...awards];
+
   return (
-    <section className="relative -mt-20 min-h-[70vh] w-full overflow-hidden bg-[#063f46] text-white">
-      <Image
-        src="/hero.jpeg"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+    <section className="relative min-h-[calc(100vh-58px)] overflow-hidden bg-black text-white">
+      {/* BACKGROUND VIDEO */}
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/hero/hero-poster.jpg"
+      >
+        <source src="/hero/hero_video.mp4" type="video/mp4" />
+      </video>
 
-      <div className="absolute inset-0 bg-[#062b31]/35" />
-      <div className="absolute inset-0 bg-linear-to-r from-[#031f24]/70 via-[#063f46]/30 to-transparent" />
+      {/* LIGHT MAIN OVERLAY */}
+      <div className="absolute inset-0 bg-black/5" />
 
-      <div className="relative z-10 mx-auto max-w-[1500px] px-4 sm:px-6">
-        <div className="flex min-h-[calc(90vh-80px)] items-center">
-          <div className="max-w-[800px]">
-            <p className="text-[13px] font-semibold tracking-[0.14em] text-lime-300">
-              We make sure you get found.
-            </p>
+      {/* LEFT BLACK SHADOW - RIGHT SIDE LIGHTER */}
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.78)_18%,rgba(0,0,0,0.48)_36%,rgba(0,0,0,0.20)_55%,rgba(0,0,0,0.06)_72%,rgba(0,0,0,0)_100%)]" />
 
-            <h1 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl md:text-3xl lg:text-4xl">
-              Drive Traffic, Leads &amp; Revenue with Expert Digital Marketing
-              Services
-            </h1>
+      {/* BOTTOM FADE - REDUCED */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.08)_58%,rgba(0,0,0,0.45)_100%)]" />
 
-            <p className="mt-5 max-w-[640px] text-sm leading-relaxed text-white/85 sm:text-base">
-              To succeed in business, you first need to succeed in search
-              results. Our digital marketing services connect you with your
-              customers&apos; journey from end to end - from discovery to
-              retention. Join hundreds of marquee brands who have experienced
-              transformational growth with Techmagnate.
-            </p>
+      {/* MAIN CONTENT WRAPPER */}
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-58px)] max-w-450 items-start md:items-end justify-between gap-10 px-6 pt-27 md:pt-0 pb-4 md:pb-27 md:px-10">
+        {/* LEFT CONTAINER */}
+        <div className="w-full max-w-132.5">
+          <h1 className="text-[38px] font-semibold leading-[1.16] tracking-[-1.2px] text-white sm:text-[40px] md:text-[48px] lg:text-[58px]">
+            360° Marketing Solutions That Turn Brands Into Growth Engines
+          </h1>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
-                className="
-                  inline-flex items-center gap-2
-                  rounded-full bg-[#00AAB7]
-                  px-6 py-3 text-sm font-semibold text-white
-                  transition hover:brightness-110
-                "
-              >
-                Speak to an SEO Expert <span aria-hidden>-&gt;</span>
-              </Link>
+          <p className="mt-7 max-w-190 text-[14px] font-normal leading-[1.65] tracking-[-0.1px] text-white/90 md:text-[16px]">
+           BrainADZ Marketing helps businesses grow with strategy, creativity, performance marketing, SEO, social media, paid ads, website development, branding, and custom digital solutions — all built to generate leads, improve visibility, and scale revenue.
+          </p>
 
-              <Link
-                href="/services"
-                className="
-                  inline-flex items-center gap-2
-                  rounded-full border border-white/70
-                  bg-white/10 px-6 py-3
-                  text-sm font-semibold text-white
-                  transition hover:bg-white/20
-                "
-              >
-                Our Services <span aria-hidden>-&gt;</span>
-              </Link>
+          <div className="mt-8.5">
+            <a
+              href="/contact"
+              className="inline-flex h-14.5 min-w-71.25 cursor-pointer items-center justify-center gap-4 rounded-full bg-[#497dd8] px-8 text-[12px] font-medium text-white shadow-[0_14px_45px_rgba(60,91,155,0.35)] transition duration-300 hover:bg-[#1467f5]"
+            >
+              Get Free Marketing Consultation
+              <span className="text-[20px] leading-none"><ArrowUpRight className="w-5 h-5" /></span>
+            </a>
+          </div>
+        </div>
+
+        {/* RIGHT CONTAINER - CAROUSEL */}
+        <div className="hidden w-175 shrink-0 overflow-hidden md:block">
+          <div className="relative w-full overflow-hidden">
+            {/* LEFT FADE - REDUCED */}
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-linear-to-r from-black/20 to-transparent" />
+
+            {/* RIGHT FADE - REDUCED */}
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-linear-to-l from-black/20 to-transparent" />
+
+            <div className="hero-awards-track flex w-max gap-5">
+              {repeatedAwards.map((award, index) => (
+                <div
+                  key={`${award.alt}-${index}`}
+                  className="flex h-25 w-55 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-black/10 px-5 backdrop-blur-xs transition duration-300 hover:border-white/35 hover:bg-white/10"
+                >
+                  <img
+                    src={award.src}
+                    alt={award.alt}
+                    className="max-h-18 max-w-43 object-contain"
+                  />
+                </div>
+              ))}
             </div>
           </div>
-
-          <div className="hidden flex-1 lg:block" />
         </div>
       </div>
+
+      {/* MOBILE CAROUSEL */}
+      <div className="absolute bottom-7 left-0 right-0 z-20 block overflow-hidden px-5 md:hidden">
+        <div className="hero-awards-track flex w-max gap-4">
+          {repeatedAwards.map((award, index) => (
+            <div
+              key={`mobile-${award.alt}-${index}`}
+              className="flex h-19 w-40 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-black/15 px-4 backdrop-blur-xs"
+            >
+              <img
+                src={award.src}
+                alt={award.alt}
+                className="max-h-13.5 max-w-32 object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CAROUSEL ANIMATION */}
+      <style jsx>{`
+        .hero-awards-track {
+          animation: heroAwardsScroll 24s linear infinite;
+        }
+
+        .hero-awards-track:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes heroAwardsScroll {
+          0% {
+            transform: translateX(0);
+          }
+
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 }

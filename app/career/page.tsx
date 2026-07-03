@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
+
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -60,13 +62,13 @@ function formatType(t: ApiJob["type"]) {
 
 function formatExp(min: number, max: number) {
   if (min === max) return `${min} years`;
-  return `${min}–${max} years`;
+  return `${min}-${max} years`;
 }
 
 export default function CareersPage() {
   const API = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-  const bulletIconClass = "mt-0.5 h-3.5 w-3.5 shrink-0 text-[#00AAB7]";
+  const bulletIconClass = "mt-1 h-4 w-4 shrink-0 text-[#1467f5]";
 
   const [jobs, setJobs] = useState<Job[]>([]);
   const [jobsLoading, setJobsLoading] = useState(true);
@@ -85,12 +87,6 @@ export default function CareersPage() {
   const [noticePeriod, setNoticePeriod] = useState("");
   const [message, setMessage] = useState("");
   const [resume, setResume] = useState<File | null>(null);
-
-  const [callbackName, setCallbackName] = useState("");
-  const [callbackEmail, setCallbackEmail] = useState("");
-  const [callbackPhone, setCallbackPhone] = useState("");
-  const [callbackCompany, setCallbackCompany] = useState("");
-  const [callbackService, setCallbackService] = useState("");
 
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -234,191 +230,103 @@ export default function CareersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#10282d]">
+    <div className="min-h-screen bg-black text-white">
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#06363c_0%,#075059_45%,#0295a0_100%)] mt-[-80] pt-10">
-        {/* dotted pattern */}
-        <div className="absolute inset-0 opacity-[0.16] [background-image:radial-gradient(circle,white_1px,transparent_1px)] [background-size:22px_22px]" />
+      <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
+        <img
+          src="/about/about.avif"
+          alt="BrainADZ office and team workspace"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
 
-        {/* wave shapes */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute left-[-10%] top-[26%] h-[220px] w-[70%] rotate-[-10deg] bg-white/10 [clip-path:polygon(0_45%,15%_32%,33%_52%,51%_35%,70%_58%,100%_22%,100%_62%,0_100%)]" />
-          <div className="absolute left-[20%] top-[48%] h-[250px] w-[85%] rotate-[-8deg] bg-white/10 [clip-path:polygon(0_28%,20%_45%,38%_20%,54%_50%,72%_26%,100%_52%,100%_100%,0_100%)]" />
-        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.78)_30%,rgba(0,0,0,0.38)_55%,rgba(0,0,0,0.02)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.22)_0%,rgba(0,0,0,0.06)_48%,rgba(0,0,0,0.26)_100%)]" />
 
-        <div className="relative mx-auto max-w-[1500px] px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-            {/* Left hero content */}
-            <div className="pt-2 lg:pt-4">
-              <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.2em] text-white/90 backdrop-blur">
-                About BrainADZ • Strategy • Execution • Scale
-              </div>
+        <div className="relative z-10 mx-auto flex min-h-[420px] max-w-[1800px] flex-col px-5 py-8 sm:min-h-[500px] sm:px-8 lg:min-h-[540px] lg:px-10">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center gap-2 text-[14px] font-medium leading-none"
+          >
+            <Link href="/" className="text-[#1467f5] transition hover:text-white">
+              Home
+            </Link>
+            <span className="text-white/70">/</span>
+            <span className="text-white">Career</span>
+          </nav>
 
-              <h1 className="mt-6 max-w-4xl text-3xl font-bold leading-[0.98] text-white sm:text-4xl lg:text-5xl">
-                Build your career with a team that grows brands online & on-ground.
-              </h1>
+          <h1 className="mt-7 max-w-[760px] text-[32px] font-normal leading-[1.04] tracking-[-0.045em] text-white sm:text-[42px] lg:text-[52px]">
+            Build your career with a team that grows brands online & on-ground.
+          </h1>
 
-              <p className="mt-6 max-w-3xl text-base leading-8 text-white/85 sm:text-lg">
-                BrainADZ Marketing brings together branding, social media, design, websites,
-                performance marketing, and execution under one ecosystem. If you want real client
-                exposure, practical learning, and a fast-paced growth environment, join a team that
-                turns ideas into business results.
-              </p>
+          <div className="mt-auto max-w-[650px] pb-6 sm:pb-10 lg:pb-12">
+            <p className="text-[16px] font-normal leading-[1.38] tracking-[-0.02em] text-white sm:text-[18px] lg:text-[22px]">
+              Creators, partners and clients putting digital growth to work in
+              the real world
+            </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="#openings"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-base font-bold text-[#062b31] transition hover:scale-[1.01]"
-                >
-                  View Openings
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-
-                <a
-                  href="#apply"
-                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 py-4 text-base font-bold text-white backdrop-blur transition hover:bg-white/15"
-                >
-                  Apply Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-
-              
-            </div>
-
-            {/* Right hero form */}
-            <div className="lg:pt-6">
-              <div className="rounded-[28px] border border-white/15 bg-white/10 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.22)] backdrop-blur-md sm:p-7">
-                <h2 className="text-2xl font-extrabold uppercase tracking-[0.12em] text-white/95 sm:text-[30px] sm:leading-[1.2]">
-                  Connect with our hiring team
-                </h2>
-
-                <div className="mt-6 h-px w-full bg-white/15" />
-
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  <HeroInput
-                    value={callbackName}
-                    onChange={setCallbackName}
-                    placeholder="Your name"
-                  />
-                  <HeroInput
-                    value={callbackEmail}
-                    onChange={setCallbackEmail}
-                    placeholder="Email address"
-                    type="email"
-                  />
-                  <HeroInput
-                    value={callbackPhone}
-                    onChange={setCallbackPhone}
-                    placeholder="Phone"
-                    type="tel"
-                  />
-                  <HeroInput
-                    value={callbackCompany}
-                    onChange={setCallbackCompany}
-                    placeholder="Current company"
-                  />
-                </div>
-
-                <div className="mt-4">
-                  <select
-                    value={callbackService}
-                    onChange={(e) => setCallbackService(e.target.value)}
-                    className="h-14 w-full rounded-2xl border border-white/15 bg-white/10 px-4 text-base text-white outline-none backdrop-blur placeholder:text-white/55 focus:border-white/30"
-                  >
-                    <option value="" className="bg-[#0a3d44] text-white">
-                      Choose department
-                    </option>
-                    <option value="Graphic Design" className="bg-[#0a3d44] text-white">
-                      Graphic Design
-                    </option>
-                    <option value="Website Development" className="bg-[#0a3d44] text-white">
-                      Website Development
-                    </option>
-                    <option value="SEO" className="bg-[#0a3d44] text-white">
-                      SEO
-                    </option>
-                    <option value="Social Media" className="bg-[#0a3d44] text-white">
-                      Social Media
-                    </option>
-                    <option value="Video Editing" className="bg-[#0a3d44] text-white">
-                      Video Editing
-                    </option>
-                    <option value="Digital Marketing" className="bg-[#0a3d44] text-white">
-                      Digital Marketing
-                    </option>
-                    <option value="Business Development" className="bg-[#0a3d44] text-white">
-                      Business Development
-                    </option>
-                  </select>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => document.getElementById("apply")?.scrollIntoView({ behavior: "smooth" })}
-                  className="mt-5 h-14 w-full rounded-2xl bg-white text-base font-bold text-[#062b31] transition hover:scale-[1.01]"
-                >
-                  Request a Callback
-                </button>
-              </div>
-            </div>
+            <Link
+              href="/contact"
+              className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-[4px] bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
+            >
+              Get in Touch
+              <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
+            </Link>
           </div>
         </div>
       </section>
-      {/* CULTURE */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-[1500px] px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="relative">
-              <div className="absolute -left-3 -top-3 h-20 w-20 rounded-full bg-[#00AAB7]/10 blur-2xl" />
-              <div className="absolute -bottom-3 right-10 h-20 w-20 rounded-full bg-[#00AAB7]/10 blur-2xl" />
 
-              <div className="overflow-hidden rounded-[28px] border border-[#e2eff1] bg-white shadow-sm">
+      {/* CULTURE */}
+      <section className="border-b border-white/10 bg-black py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
+            <div className="relative">
+              <div className="overflow-hidden rounded-[6px] border border-white/10 bg-[#101010]">
                 <Image
                   src="/teams/teams.png"
                   alt="BrainADZ Marketing Team"
                   width={900}
                   height={520}
-                  className="h-[340px] w-full object-cover sm:h-[430px]"
+                  className="h-[360px] w-full object-cover sm:h-[500px]"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
 
-            <div>
-              <div className="inline-flex rounded-full border border-[#00AAB7]/20 bg-[#ecfbfc] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0a7f89]">
+            <div className="max-w-[760px]">
+              <div className="flex items-center gap-3 text-[13px] font-semibold uppercase text-[#6995ff]">
+                <span className="h-2 w-2 rounded-full bg-[#1467f5]" />
                 Career Growth
               </div>
 
-              <h2 className="mt-5 text-3xl font-extrabold leading-tight text-[#0c2227] sm:text-4xl">
+              <h2 className="mt-6 text-[40px] font-medium leading-[1.08] text-white sm:text-[50px] lg:text-[56px]">
                 Work where strategy, creativity and execution come together.
               </h2>
 
-              <p className="mt-5 text-[15px] leading-8 text-[#587379]">
+              <p className="mt-7 text-[16px] leading-8 text-white/65">
                 At BrainADZ Marketing, every role connects to real client growth. Our team works
                 across websites, social media, branding, ad campaigns, videos, creative design,
                 exhibitions, and content. You don’t just work on tasks here — you contribute to
                 visible outcomes.
               </p>
 
-              <p className="mt-4 text-[15px] leading-8 text-[#587379]">
+              <p className="mt-4 text-[16px] leading-8 text-white/65">
                 We look for people who are sharp, responsible, creative, and ready to move with
                 speed. Whether you’re joining as a designer, marketer, developer, editor, content
                 writer, or business development executive, you get room to learn and perform.
               </p>
 
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-2xl border border-[#e2eff1] bg-[#fbfefe] p-5">
-                  <p className="text-sm text-[#6b848a]">Work Culture</p>
-                  <p className="mt-1 text-base font-bold text-[#0c2227]">Practical & Collaborative</p>
+              <div className="mt-10 grid border-y border-white/10 sm:grid-cols-3">
+                <div className="border-b border-white/10 py-5 sm:border-b-0 sm:border-r sm:pr-5">
+                  <p className="text-[12px] font-medium uppercase text-white/38">Work Culture</p>
+                  <p className="mt-2 text-[15px] font-semibold leading-6 text-white">Practical & Collaborative</p>
                 </div>
-                <div className="rounded-2xl border border-[#e2eff1] bg-[#fbfefe] p-5">
-                  <p className="text-sm text-[#6b848a]">Learning</p>
-                  <p className="mt-1 text-base font-bold text-[#0c2227]">Live Project Exposure</p>
+                <div className="border-b border-white/10 py-5 sm:border-b-0 sm:border-r sm:px-5">
+                  <p className="text-[12px] font-medium uppercase text-white/38">Learning</p>
+                  <p className="mt-2 text-[15px] font-semibold leading-6 text-white">Live Project Exposure</p>
                 </div>
-                <div className="rounded-2xl border border-[#e2eff1] bg-[#fbfefe] p-5">
-                  <p className="text-sm text-[#6b848a]">Growth</p>
-                  <p className="mt-1 text-base font-bold text-[#0c2227]">Performance Driven</p>
+                <div className="py-5 sm:pl-5">
+                  <p className="text-[12px] font-medium uppercase text-white/38">Growth</p>
+                  <p className="mt-2 text-[15px] font-semibold leading-6 text-white">Performance Driven</p>
                 </div>
               </div>
             </div>
@@ -427,97 +335,99 @@ export default function CareersPage() {
       </section>
 
       {/* WHY JOIN */}
-{/* WHY JOIN */}
-<section className="bg-[#f8fcfc]">
-  <div className="mx-auto max-w-[1500px] px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-    <h2 className="text-3xl font-extrabold text-[#0c2227] sm:text-4xl">
-      Why Join BrainADZ Marketing?
-    </h2>
-    <p className="mt-4 max-w-3xl text-[15px] leading-8 text-[#587379]">
-      We are building a team that values clarity, ownership, design quality, performance,
-      communication, and execution speed.
-    </p>
-
-    <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-      {[
-        {
-          img: "/icons/1.png",
-          title: "Creative Ownership",
-          desc: "Work on brand communication, visual design, and concepts that go live.",
-        },
-        {
-          img: "/icons/2.png",
-          title: "Digital-First Exposure",
-          desc: "Contribute across websites, SEO, ad creatives, UI, and social platforms.",
-        },
-        {
-          img: "/icons/3.png",
-          title: "Campaign Experience",
-          desc: "Be part of real marketing campaigns with measurable outcomes.",
-        },
-        {
-          img: "/icons/4.png",
-          title: "Performance-Based Growth",
-          desc: "Your consistency, output, and thinking directly influence your growth.",
-        },
-        {
-          img: "/icons/5.png",
-          title: "Team Collaboration",
-          desc: "Work closely with designers, strategists, developers, and marketers.",
-        },
-        {
-          img: "/icons/6.png",
-          title: "Structured Environment",
-          desc: "Clear processes, defined tasks, and execution-focused culture.",
-        },
-      ].map((item, idx) => (
-        <div
-          key={idx}
-          className=" border border-[#e2eff1] bg-white p-6 shadow-sm transition hover:border-[#00AAB7]/30 hover:shadow-md"
-        >
-          <Image
-            src={item.img}
-            alt={item.title}
-            width={96}
-            height={96}
-            className="h-24 w-24 object-contain"
-            sizes="96px"
-          />
-
-          <h3 className="mt-0 text-lg font-bold text-[#0c2227]">
-            {item.title}
-          </h3>
-          <p className="mt-2 text-sm leading-7 text-[#587379]">
-            {item.desc}
+      <section className="border-b border-white/10 bg-[#080808] py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+          <p className="text-[13px] font-semibold uppercase text-[#6995ff]">
+            Why BrainADZ
           </p>
+          <h2 className="mt-4 text-[42px] font-medium leading-[1.08] text-white sm:text-[54px]">
+            Why Join BrainADZ Marketing?
+          </h2>
+          <p className="mt-5 max-w-[820px] text-[16px] leading-8 text-white/58">
+            We are building a team that values clarity, ownership, design quality, performance,
+            communication, and execution speed.
+          </p>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {[
+              {
+                img: "/icons/1.png",
+                title: "Creative Ownership",
+                desc: "Work on brand communication, visual design, and concepts that go live.",
+              },
+              {
+                img: "/icons/2.png",
+                title: "Digital-First Exposure",
+                desc: "Contribute across websites, SEO, ad creatives, UI, and social platforms.",
+              },
+              {
+                img: "/icons/3.png",
+                title: "Campaign Experience",
+                desc: "Be part of real marketing campaigns with measurable outcomes.",
+              },
+              {
+                img: "/icons/4.png",
+                title: "Performance-Based Growth",
+                desc: "Your consistency, output, and thinking directly influence your growth.",
+              },
+              {
+                img: "/icons/5.png",
+                title: "Team Collaboration",
+                desc: "Work closely with designers, strategists, developers, and marketers.",
+              },
+              {
+                img: "/icons/6.png",
+                title: "Structured Environment",
+                desc: "Clear processes, defined tasks, and execution-focused culture.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="min-h-[260px] rounded-[6px] border border-white/10 bg-[#111111] p-6 transition hover:border-[#1467f5] sm:p-7"
+              >
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  width={72}
+                  height={72}
+                  className="h-16 w-16 object-contain"
+                  sizes="64px"
+                />
+
+                <h3 className="mt-8 text-[22px] font-semibold leading-tight text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-4 max-w-[430px] text-[15px] leading-7 text-white/55">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* OPENINGS */}
-      <section id="openings" className="bg-white">
-        <div className="mx-auto max-w-[1500px] px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
+      <section id="openings" className="scroll-mt-24 bg-black py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <div className="inline-flex rounded-full border border-[#00AAB7]/20 bg-[#ecfbfc] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0a7f89]">
+              <div className="text-[13px] font-semibold uppercase text-[#6995ff]">
                 Open Positions
               </div>
 
-              <h2 className="mt-5 text-3xl font-extrabold text-[#0c2227] sm:text-4xl">
+              <h2 className="mt-4 text-[42px] font-medium leading-[1.08] text-white sm:text-[54px]">
                 Current Career Opportunities
               </h2>
 
-              <p className="mt-4 max-w-3xl text-[15px] leading-8 text-[#587379]">
+              <p className="mt-5 max-w-[900px] text-[16px] leading-8 text-white/58">
                 Explore active roles in Graphic Design, Website Development, SEO, Social Media,
                 Content Writing, Video Editing, Digital Marketing, Business Development, and more.
               </p>
 
-              {jobsError && <p className="mt-3 text-sm font-semibold text-red-500">{jobsError}</p>}
-              {jobsLoading && <p className="mt-3 text-sm text-[#6c848a]">Loading jobs...</p>}
+              {jobsError && <p className="mt-4 text-sm font-semibold text-red-400">{jobsError}</p>}
+              {jobsLoading && <p className="mt-4 text-sm text-white/45">Loading jobs...</p>}
               {!jobsLoading && !jobsError && jobs.length === 0 && (
-                <p className="mt-3 text-sm text-[#6c848a]">No openings available right now.</p>
+                <p className="mt-4 text-sm text-white/45">No openings available right now.</p>
               )}
             </div>
 
@@ -527,14 +437,14 @@ export default function CareersPage() {
                 setJobAppliedFor("General Application");
                 setJobAppliedForId(null);
               }}
-              className="inline-flex items-center justify-center rounded-full border border-[#dceef0] bg-white px-6 py-3 text-sm font-bold text-[#0c2227] transition hover:bg-[#f6feff]"
+              className="inline-flex min-h-12 items-center justify-center rounded-[4px] border border-white/20 px-6 text-[13px] font-semibold text-white transition hover:border-[#1467f5] hover:bg-[#1467f5]"
             >
               Submit General Profile
             </a>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            <div className="space-y-4">
+          <div className="mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start xl:gap-8">
+            <div className="space-y-3">
               {jobs.map((job) => {
                 const active = activeJobId === job.id;
 
@@ -547,53 +457,52 @@ export default function CareersPage() {
                       setJobAppliedFor(job.title);
                       setJobAppliedForId(job.id);
                     }}
-                    className={`w-full rounded-[24px] border p-5 text-left transition ${
-                      active
-                        ? "border-[#00AAB7]/40 bg-[#f3fdfe] shadow-sm"
-                        : "border-[#e2eff1] bg-white hover:border-[#ccecef]"
-                    }`}
+                    className={`w-full rounded-[6px] border p-5 text-left transition sm:p-6 ${active
+                        ? "border-[#1467f5] bg-[#101827]"
+                        : "border-white/10 bg-[#0d0d0d] hover:border-white/25"
+                      }`}
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <p className="text-lg font-bold text-[#0c2227]">{job.title}</p>
+                        <p className="text-[19px] font-semibold text-white">{job.title}</p>
                       </div>
                       <ChevronDown
-                        className={`h-5 w-5 text-[#6d858b] transition ${active ? "rotate-180" : ""}`}
+                        className={`h-5 w-5 text-white/42 transition ${active ? "rotate-180 text-[#6995ff]" : ""}`}
                       />
                     </div>
 
-                    <div className="mt-4 grid grid-cols-2 gap-3 text-xs text-[#648087] sm:grid-cols-4">
+                    <div className="mt-5 grid grid-cols-2 gap-4 text-[12px] text-white/48 sm:grid-cols-4">
                       <span className="inline-flex items-center gap-2">
-                        <MapPin className="h-4 w-4 text-[#8aa6ab]" />
+                        <MapPin className="h-4 w-4 text-[#6995ff]" />
                         {job.location}
                       </span>
                       <span className="inline-flex items-center gap-2">
-                        <Clock className="h-4 w-4 text-[#8aa6ab]" />
+                        <Clock className="h-4 w-4 text-[#6995ff]" />
                         {job.type}
                       </span>
                       <span className="inline-flex items-center gap-2">
-                        <Briefcase className="h-4 w-4 text-[#8aa6ab]" />
+                        <Briefcase className="h-4 w-4 text-[#6995ff]" />
                         {job.experience}
                       </span>
                       <span className="inline-flex items-center gap-2">
-                        <IndianRupee className="h-4 w-4 text-[#8aa6ab]" />
+                        <IndianRupee className="h-4 w-4 text-[#6995ff]" />
                         {job.salary}
                       </span>
                     </div>
 
                     {active && job.qualificationAndExperience?.trim() ? (
-                      <div className="mt-4 rounded-2xl border border-[#00AAB7]/15 bg-white p-4">
-                        <p className="text-sm font-bold text-[#0c2227]">Qualification & Experience</p>
-                        <p className="mt-2 whitespace-pre-line text-sm leading-7 text-[#587379]">
+                      <div className="mt-5 border-t border-white/10 pt-5">
+                        <p className="text-[13px] font-semibold text-white">Qualification & Experience</p>
+                        <p className="mt-2 whitespace-pre-line text-[14px] leading-7 text-white/58">
                           {job.qualificationAndExperience}
                         </p>
                       </div>
                     ) : null}
 
                     {active && (
-                      <div className="mt-4 rounded-2xl bg-white p-4 border border-[#eef6f7]">
-                        <p className="text-sm font-bold text-[#0c2227]">Role Summary</p>
-                        <p className="mt-2 text-sm leading-7 text-[#587379]">{job.summary}</p>
+                      <div className="mt-5 border-t border-white/10 pt-5">
+                        <p className="text-[13px] font-semibold text-white">Role Summary</p>
+                        <p className="mt-2 text-[14px] leading-7 text-white/58">{job.summary}</p>
                       </div>
                     )}
                   </button>
@@ -601,38 +510,38 @@ export default function CareersPage() {
               })}
             </div>
 
-            <div className="rounded-[28px] border border-[#e2eff1] bg-white p-6 shadow-sm">
+            <div className="rounded-[6px] border border-white/12 bg-[#101010] p-6 lg:sticky lg:top-28 sm:p-8">
               {selectedJob ? (
                 <>
-                  <h3 className="text-2xl font-bold text-[#0c2227]">{selectedJob.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-[#587379]">{selectedJob.summary}</p>
+                  <h3 className="text-[30px] font-semibold leading-tight text-white">{selectedJob.title}</h3>
+                  <p className="mt-4 text-[15px] leading-7 text-white/58">{selectedJob.summary}</p>
 
-                  <div className="mt-6 grid gap-4 text-sm text-[#587379] sm:grid-cols-2">
+                  <div className="mt-7 grid gap-4 border-y border-white/10 py-6 text-[13px] text-white/58 sm:grid-cols-2">
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-[#8aa6ab]" />
+                      <MapPin className="h-4 w-4 text-[#6995ff]" />
                       {selectedJob.location}
                     </div>
                     <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-[#8aa6ab]" />
+                      <Clock className="h-4 w-4 text-[#6995ff]" />
                       {selectedJob.type}
                     </div>
                     <div className="flex items-center gap-2">
-                      <Briefcase className="h-4 w-4 text-[#8aa6ab]" />
+                      <Briefcase className="h-4 w-4 text-[#6995ff]" />
                       {selectedJob.experience}
                     </div>
                     <div className="flex items-center gap-2">
-                      <IndianRupee className="h-4 w-4 text-[#8aa6ab]" />
+                      <IndianRupee className="h-4 w-4 text-[#6995ff]" />
                       {selectedJob.salary}
                     </div>
                   </div>
 
                   {selectedJob.qualificationAndExperience?.trim() ? (
-                    <div className="mt-6 rounded-2xl border border-[#00AAB7]/15 bg-[#f4fdfe] p-4">
-                      <p className="flex items-center gap-2 text-sm font-bold text-[#0c2227]">
-                        <GraduationCap className="h-4 w-4 text-[#00AAB7]" />
+                    <div className="mt-7 border-b border-white/10 pb-7">
+                      <p className="flex items-center gap-2 text-[14px] font-semibold text-white">
+                        <GraduationCap className="h-4 w-4 text-[#6995ff]" />
                         Qualification & Experience
                       </p>
-                      <p className="mt-2 whitespace-pre-line text-sm leading-7 text-[#587379]">
+                      <p className="mt-3 whitespace-pre-line text-[14px] leading-7 text-white/58">
                         {selectedJob.qualificationAndExperience}
                       </p>
                     </div>
@@ -640,8 +549,8 @@ export default function CareersPage() {
 
                   <div className="mt-8 grid gap-8 sm:grid-cols-2">
                     <div>
-                      <h4 className="text-sm font-bold text-[#0c2227]">Responsibilities</h4>
-                      <ul className="mt-3 space-y-3 text-sm leading-7 text-[#587379]">
+                      <h4 className="text-[14px] font-semibold text-white">Responsibilities</h4>
+                      <ul className="mt-4 space-y-3 text-[14px] leading-7 text-white/58">
                         {selectedJob.responsibilities.map((r, i) => (
                           <li key={i} className="flex gap-2">
                             <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
@@ -652,8 +561,8 @@ export default function CareersPage() {
                     </div>
 
                     <div>
-                      <h4 className="text-sm font-bold text-[#0c2227]">Requirements</h4>
-                      <ul className="mt-3 space-y-3 text-sm leading-7 text-[#587379]">
+                      <h4 className="text-[14px] font-semibold text-white">Requirements</h4>
+                      <ul className="mt-4 space-y-3 text-[14px] leading-7 text-white/58">
                         {selectedJob.requirements.map((r, i) => (
                           <li key={i} className="flex gap-2">
                             <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
@@ -664,8 +573,8 @@ export default function CareersPage() {
 
                       {selectedJob.skillsGoodToHave?.length > 0 && (
                         <>
-                          <h4 className="mt-6 text-sm font-bold text-[#0c2227]">Preferred Skills</h4>
-                          <ul className="mt-3 space-y-3 text-sm leading-7 text-[#587379]">
+                          <h4 className="mt-7 text-[14px] font-semibold text-white">Preferred Skills</h4>
+                          <ul className="mt-4 space-y-3 text-[14px] leading-7 text-white/58">
                             {selectedJob.skillsGoodToHave.map((r, i) => (
                               <li key={i} className="flex gap-2">
                                 <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
@@ -684,13 +593,13 @@ export default function CareersPage() {
                       setJobAppliedFor(selectedJob.title);
                       setJobAppliedForId(selectedJob.id);
                     }}
-                    className="mt-8 inline-flex items-center justify-center rounded-full bg-[#00AAB7] px-6 py-3 text-sm font-bold text-white transition hover:brightness-110"
+                    className="mt-8 inline-flex min-h-13 items-center justify-center rounded-[4px] bg-[#1467f5] px-6 text-[13px] font-semibold text-white transition hover:bg-[#0f56d6]"
                   >
                     Apply for this role
                   </a>
                 </>
               ) : (
-                <p className="text-[#6c848a]">Select a role to view details.</p>
+                <p className="text-white/45">Select a role to view details.</p>
               )}
             </div>
           </div>
@@ -698,26 +607,26 @@ export default function CareersPage() {
       </section>
 
       {/* APPLY FORM */}
-      <section id="apply" className="bg-[#f8fcfc]">
-        <div className="mx-auto max-w-[1500px] px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-2">
-            <div>
-              <div className="inline-flex rounded-full border border-[#00AAB7]/20 bg-[#ecfbfc] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0a7f89]">
+      <section id="apply" className="scroll-mt-24 border-t border-white/10 bg-[#080808] py-16 sm:py-20 lg:py-24">
+        <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:items-start lg:gap-16 xl:gap-24">
+            <div className="lg:sticky lg:top-28">
+              <div className="text-[13px] font-semibold uppercase text-[#6995ff]">
                 Apply Now
               </div>
 
-              <h2 className="mt-5 text-3xl font-extrabold text-[#0c2227] sm:text-4xl">
+              <h2 className="mt-4 text-[42px] font-medium leading-[1.08] text-white sm:text-[54px]">
                 Start your journey with BrainADZ Marketing
               </h2>
 
-              <p className="mt-4 text-[15px] leading-8 text-[#587379]">
+              <p className="mt-6 max-w-[650px] text-[16px] leading-8 text-white/58">
                 Share your details and resume with our team. We review profiles based on role
                 requirement, skill set, experience, and overall fit.
               </p>
 
-              <div className="mt-8 rounded-[24px] border border-[#e2eff1] bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-[#0c2227]">Application Guidelines</h3>
-                <ul className="mt-4 space-y-3 text-sm leading-7 text-[#587379]">
+              <div className="mt-9 border-t border-white/12 pt-6">
+                <h3 className="text-[18px] font-semibold text-white">Application Guidelines</h3>
+                <ul className="mt-5 space-y-3 text-[14px] leading-7 text-white/58">
                   <li className="flex gap-2">
                     <CheckCircle2 className={bulletIconClass} strokeWidth={2} />
                     Upload your resume in PDF, DOC, or DOCX format up to 5 MB.
@@ -733,16 +642,16 @@ export default function CareersPage() {
                 </ul>
               </div>
 
-              <div className="mt-6 rounded-[24px] border border-[#e2eff1] bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-[#0c2227]">HR Contact Details</h3>
-                <div className="mt-4 space-y-3 text-sm text-[#587379]">
+              <div className="mt-8 border-t border-white/12 pt-6">
+                <h3 className="text-[18px] font-semibold text-white">HR Contact Details</h3>
+                <div className="mt-5 space-y-4 text-[14px] text-white/58">
                   <Link
                     href="https://wa.me/919574511152"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 hover:text-[#0c2227]"
+                    className="flex items-center gap-3 transition hover:text-white"
                   >
-                    <MessageCircle className="h-4 w-4 text-[#8aa6ab]" />
+                    <MessageCircle className="h-4 w-4 text-[#6995ff]" />
                     WhatsApp: +91 9574511152
                   </Link>
 
@@ -750,30 +659,30 @@ export default function CareersPage() {
                     href="mailto:hr@brainadzmarketing.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 hover:text-[#0c2227]"
+                    className="flex items-center gap-3 transition hover:text-white"
                   >
-                    <Mail className="h-4 w-4 text-[#8aa6ab]" />
+                    <Mail className="h-4 w-4 text-[#6995ff]" />
                     Email: hr@brainadzmarketing.com
                   </Link>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-[28px] border border-[#e2eff1] bg-white p-6 shadow-sm">
+            <div className="rounded-[6px] border border-white/12 bg-[#101010] p-5 sm:p-8 lg:p-10">
               {success ? (
-                <div className="rounded-2xl border border-green-200 bg-green-50 p-6">
+                <div className="rounded-[4px] border border-emerald-400/25 bg-emerald-400/8 p-6">
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-green-500" />
+                    <CheckCircle2 className="h-6 w-6 text-emerald-400" />
                     <div>
-                      <p className="text-base font-bold text-[#0c2227]">Application submitted</p>
-                      <p className="mt-2 text-sm leading-7 text-[#587379]">
+                      <p className="text-[16px] font-semibold text-white">Application submitted</p>
+                      <p className="mt-2 text-[14px] leading-7 text-white/58">
                         Thank you. Our team will review your profile and contact you if a suitable
                         opening matches your background.
                       </p>
                       <button
                         type="button"
                         onClick={() => setSuccess(false)}
-                        className="mt-4 rounded-full bg-[#00AAB7] px-5 py-2.5 text-sm font-bold text-white"
+                        className="mt-5 min-h-11 rounded-[4px] bg-[#1467f5] px-5 text-[13px] font-semibold text-white transition hover:bg-[#0f56d6]"
                       >
                         Submit another application
                       </button>
@@ -783,13 +692,13 @@ export default function CareersPage() {
               ) : (
                 <form onSubmit={onSubmit} className="space-y-4">
                   {formError && (
-                    <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-600">
+                    <div className="rounded-[4px] border border-red-400/25 bg-red-400/8 px-4 py-3 text-[14px] font-medium text-red-300">
                       {formError}
                     </div>
                   )}
 
                   <div>
-                    <label className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#6b848a]">
+                    <label className="text-[12px] font-semibold uppercase text-white/55">
                       Applying For
                     </label>
                     <select
@@ -806,7 +715,7 @@ export default function CareersPage() {
                         const found = jobs.find((x) => x.title === val);
                         setJobAppliedForId(found?.id ?? null);
                       }}
-                      className="mt-2 h-14 w-full rounded-2xl border border-[#dceef0] bg-[#f9fcfc] px-4 text-sm text-[#10282d] outline-none focus:border-[#00AAB7]/60 focus:ring-1 focus:ring-[#00AAB7]/20"
+                      className="mt-2 h-14 w-full rounded-[4px] border border-white/14 bg-black px-4 text-[14px] text-white outline-none transition focus:border-[#1467f5]"
                     >
                       {jobs.map((j) => (
                         <option key={j.id} value={j.title}>
@@ -822,7 +731,7 @@ export default function CareersPage() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <FormField
                       label="Full Name"
-                      icon={<User className="h-4 w-4 text-[#90a9ae]" />}
+                      icon={<User className="h-4 w-4 text-[#6995ff]" />}
                       value={fullName}
                       onChange={setFullName}
                       type="text"
@@ -831,7 +740,7 @@ export default function CareersPage() {
                     />
                     <FormField
                       label="Phone"
-                      icon={<Phone className="h-4 w-4 text-[#90a9ae]" />}
+                      icon={<Phone className="h-4 w-4 text-[#6995ff]" />}
                       value={phone}
                       onChange={setPhone}
                       type="tel"
@@ -840,7 +749,7 @@ export default function CareersPage() {
                     />
                     <FormField
                       label="Email"
-                      icon={<Mail className="h-4 w-4 text-[#90a9ae]" />}
+                      icon={<Mail className="h-4 w-4 text-[#6995ff]" />}
                       value={email}
                       onChange={setEmail}
                       type="email"
@@ -849,7 +758,7 @@ export default function CareersPage() {
                     />
                     <FormField
                       label="Current Location"
-                      icon={<MapPin className="h-4 w-4 text-[#90a9ae]" />}
+                      icon={<MapPin className="h-4 w-4 text-[#6995ff]" />}
                       value={location}
                       onChange={setLocation}
                       type="text"
@@ -857,7 +766,7 @@ export default function CareersPage() {
                     />
                     <FormField
                       label="Total Experience"
-                      icon={<Briefcase className="h-4 w-4 text-[#90a9ae]" />}
+                      icon={<Briefcase className="h-4 w-4 text-[#6995ff]" />}
                       value={experience}
                       onChange={setExperience}
                       type="text"
@@ -865,7 +774,7 @@ export default function CareersPage() {
                     />
                     <FormField
                       label="Notice Period"
-                      icon={<Clock className="h-4 w-4 text-[#90a9ae]" />}
+                      icon={<Clock className="h-4 w-4 text-[#6995ff]" />}
                       value={noticePeriod}
                       onChange={setNoticePeriod}
                       type="text"
@@ -874,17 +783,17 @@ export default function CareersPage() {
                   </div>
 
                   <div>
-                    <label className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#6b848a]">
+                    <label className="text-[12px] font-semibold uppercase text-white/55">
                       Resume
                     </label>
-                    <div className="mt-2 flex items-center gap-3 rounded-2xl border border-[#dceef0] bg-[#f9fcfc] px-4 py-3 focus-within:border-[#00AAB7]/60 focus-within:ring-1 focus-within:ring-[#00AAB7]/20">
-                      <Upload className="h-4 w-4 text-[#90a9ae]" />
+                    <div className="mt-2 flex min-h-14 items-center gap-3 rounded-[4px] border border-white/14 bg-black px-4 py-3 transition focus-within:border-[#1467f5]">
+                      <Upload className="h-4 w-4 shrink-0 text-[#6995ff]" />
                       <input
                         required
                         ref={resumeInputRef}
                         type="file"
                         accept=".pdf,.doc,.docx"
-                        className="w-full text-sm text-[#10282d] outline-none file:mr-3 file:rounded-md file:border-0 file:bg-[#00AAB7]/10 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-[#0c2227] hover:file:bg-[#00AAB7]/20"
+                        className="w-full text-[13px] text-white/65 outline-none file:mr-3 file:rounded-[3px] file:border-0 file:bg-[#1467f5] file:px-3 file:py-2 file:text-[12px] file:font-semibold file:text-white hover:file:bg-[#0f56d6]"
                         onChange={(e) => {
                           const file = e.target.files?.[0] || null;
                           if (file && file.size > 5 * 1024 * 1024) {
@@ -899,24 +808,24 @@ export default function CareersPage() {
                     </div>
 
                     {resume && (
-                      <p className="mt-2 text-xs text-[#6b848a]">
-                        Selected: <span className="font-semibold text-[#0c2227]">{resume.name}</span>
+                      <p className="mt-2 text-[12px] text-white/45">
+                        Selected: <span className="font-semibold text-white">{resume.name}</span>
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#6b848a]">
+                    <label className="text-[12px] font-semibold uppercase text-white/55">
                       Message
                     </label>
-                    <div className="mt-2 flex items-start gap-3 rounded-2xl border border-[#dceef0] bg-[#f9fcfc] px-4 py-3 focus-within:border-[#00AAB7]/60 focus-within:ring-1 focus-within:ring-[#00AAB7]/20">
-                      <FileText className="mt-1 h-4 w-4 text-[#90a9ae]" />
+                    <div className="mt-2 flex items-start gap-3 rounded-[4px] border border-white/14 bg-black px-4 py-3 transition focus-within:border-[#1467f5]">
+                      <FileText className="mt-1 h-4 w-4 shrink-0 text-[#6995ff]" />
                       <textarea
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         rows={5}
                         placeholder="Write a short note about your experience and role interest."
-                        className="w-full resize-none bg-transparent text-sm text-[#10282d] outline-none placeholder:text-[#9ab1b5]"
+                        className="w-full resize-none bg-transparent text-[14px] text-white outline-none placeholder:text-white/28"
                       />
                     </div>
                   </div>
@@ -924,7 +833,7 @@ export default function CareersPage() {
                   <button
                     disabled={submitting}
                     type="submit"
-                    className="h-14 w-full rounded-2xl bg-[#00AAB7] text-sm font-bold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
+                    className="h-14 w-full rounded-[4px] bg-[#1467f5] text-[14px] font-semibold text-white transition hover:bg-[#0f56d6] disabled:cursor-not-allowed disabled:opacity-70"
                   >
                     {submitting ? "Submitting..." : "Submit Application"}
                   </button>
@@ -935,28 +844,6 @@ export default function CareersPage() {
         </div>
       </section>
     </div>
-  );
-}
-
-function HeroInput({
-  value,
-  onChange,
-  placeholder,
-  type = "text",
-}: {
-  value: string;
-  onChange: (value: string) => void;
-  placeholder: string;
-  type?: string;
-}) {
-  return (
-    <input
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      type={type}
-      placeholder={placeholder}
-      className="h-14 w-full rounded-2xl border border-[#dceef0] bg-[#f9fcfc] px-4 text-sm text-[#10282d] outline-none placeholder:text-[#8fa7ab] focus:border-[#00AAB7]/50"
-    />
   );
 }
 
@@ -979,10 +866,10 @@ function FormField({
 }) {
   return (
     <div>
-      <label className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#6b848a]">
+      <label className="text-[12px] font-semibold uppercase text-white/55">
         {label}
       </label>
-      <div className="mt-2 flex items-center gap-3 rounded-2xl border border-[#dceef0] bg-[#f9fcfc] px-4 py-3 focus-within:border-[#00AAB7]/60 focus-within:ring-1 focus-within:ring-[#00AAB7]/20">
+      <div className="mt-2 flex min-h-14 items-center gap-3 rounded-[4px] border border-white/14 bg-black px-4 py-3 transition focus-within:border-[#1467f5]">
         {icon}
         <input
           value={value}
@@ -990,7 +877,7 @@ function FormField({
           required={required}
           type={type}
           placeholder={placeholder}
-          className="w-full bg-transparent text-sm text-[#10282d] outline-none placeholder:text-[#9ab1b5]"
+          className="w-full bg-transparent text-[14px] text-white outline-none placeholder:text-white/28"
         />
       </div>
     </div>

@@ -63,7 +63,7 @@ export default function WhyDynamicSection() {
                 >
                   Dynamic
                   {/* underline swoosh */}
-                  <span className="pointer-events-none absolute -bottom-2 left-0 h-[10px] w-full rounded-full opacity-25"
+                  <span className="pointer-events-none absolute -bottom-2 left-0 h-2.5 w-full rounded-full opacity-25"
                     style={{ backgroundColor: ACCENT }}
                   />
                 </span>

@@ -1,14 +1,43 @@
 import Image from "next/image";
-import path from "path";
 import fs from "fs/promises";
+import path from "path";
 
 type BrandLogo = {
   name: string;
   src: string;
-  href?: string;
 };
 
 const ALLOWED = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif", ".svg"]);
+
+const BRAND_NAME_BY_FILE: Record<string, string> = {
+  "FINAL cruve file 151.png": "Mrs. Bector's Cremica",
+  "FINAL cruve file 152.png": "Comac India",
+  "FINAL cruve file 153.png": "Rapido",
+  "FINAL cruve file 154.png": "Khadi Organique",
+  "FINAL cruve file 155.png": "Air India",
+  "FINAL cruve file 156.png": "Pudumjee",
+  "FINAL cruve file 157.png": "UK Government",
+  "FINAL cruve file 158.png": "SITA",
+  "FINAL cruve file 159.png": "Atulya",
+  "FINAL cruve file 160.png": "Nexus",
+  "FINAL cruve file 161.png": "Hungritos",
+  "FINAL cruve file 163.png": "GreenTech",
+  "FINAL cruve file 164.png": "Prakash Masala",
+  "FINAL cruve file 165.png": "Dairy Best",
+  "FINAL cruve file 166.png": "eRise",
+  "FINAL cruve file 167.png": "Roleks",
+  "FINAL cruve file 168.png": "Ankit",
+  "FINAL cruve file 169.png": "Amazing Gifts",
+  "FINAL cruve file 170.png": "Dharwala Foods",
+  "FINAL cruve file 171.png": "Tuffbull",
+  "FINAL cruve file 172.png": "Hygear",
+  "FINAL cruve file 173.png": "Super Mexx",
+  "FINAL cruve file 174.png": "Wonder Clean",
+  "FINAL cruve file 175.png": "Aerocide Herbal",
+  "FINAL cruve file 176.png": "Prestige",
+  "FINAL cruve file 177.png": "Dynamo EV",
+  "FINAL cruve file 178.png": "Marwari Jewellers",
+};
 
 async function getBrandLogos(): Promise<BrandLogo[]> {
   const dir = path.join(process.cwd(), "public", "brands");
@@ -17,191 +46,125 @@ async function getBrandLogos(): Promise<BrandLogo[]> {
     const files = await fs.readdir(dir);
 
     return files
-      .filter((f) => ALLOWED.has(path.extname(f).toLowerCase()))
+      .filter((file) => ALLOWED.has(path.extname(file).toLowerCase()))
+      .filter((file) => !file.toLowerCase().includes("digital marketing logo"))
       .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
-      .map((f) => {
-        const name = f
-          .replace(/\.[^/.]+$/, "")
-          .replace(/[-_]+/g, " ")
-          .trim();
-
-        return { name: name || f, src: `/brands/${f}` };
-      });
+      .map((file) => ({
+        name:
+          BRAND_NAME_BY_FILE[file] ||
+          file
+            .replace(/\.[^/.]+$/, "")
+            .replace(/[-_]+/g, " ")
+            .trim(),
+        src: `/brands/${file}`,
+      }));
   } catch {
     return [];
   }
 }
 
-function LogoItem({ logo }: { logo: BrandLogo }) {
-  const item = (
-    <div
-      className="
-        flex items-center justify-center
-        rounded-xl border border-gray-100 bg-white px-4
-        shadow-[0_6px_18px_rgba(17,24,39,0.06)]
-        h-20
-        w-[150px] sm:w-40 md:w-[170px] lg:w-[180px] 2xl:w-[190px]
-      "
-    >
-      <Image
-        src={logo.src}
-        alt={logo.name}
-        width={160}
-        height={64}
-        className="max-h-16 w-auto max-w-[140px] object-contain opacity-90 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-        loading="lazy"
-        sizes="160px"
-      />
+function BrandCard({ logo }: { logo: BrandLogo }) {
+  return (
+    <div className="flex h-[172px] w-[188px] shrink-0 flex-col items-center justify-between rounded-[18px] border border-white/10 bg-[#1b1b1a] px-5 py-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:h-[158px] sm:w-[220px] lg:h-[174px] lg:w-[222px]">
+      <div className="flex min-h-[70px] w-full items-center justify-center">
+        <Image
+          src={logo.src}
+          alt={logo.name}
+          width={170}
+          height={78}
+          className="max-h-[62px] w-auto max-w-[150px] object-contain sm:max-h-[72px] sm:max-w-[170px]"
+          loading="lazy"
+          sizes="(max-width: 640px) 150px, 170px"
+        />
+      </div>
+
+      <p className="max-w-full truncate text-center text-[13px] font-semibold leading-none text-white/90 sm:text-[15px]">
+        {logo.name}
+      </p>
     </div>
   );
+}
 
-  if (logo.href) {
-    return (
-      <a
-        href={logo.href}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={logo.name}
-        className="outline-none focus-visible:ring-2 focus-visible:ring-[#ee9d54] focus-visible:ring-offset-2"
+function BrandMarqueeRow({
+  logos,
+  direction,
+}: {
+  logos: BrandLogo[];
+  direction: "left" | "right";
+}) {
+  const marqueeLogos = [...logos, ...logos];
+
+  return (
+    <div className="group overflow-hidden">
+      <div
+        className={`flex w-max items-center gap-5 will-change-transform group-hover:[animation-play-state:paused] sm:gap-6 ${
+          direction === "right"
+            ? "brand-marquee-right"
+            : "brand-marquee-left"
+        }`}
       >
-        {item}
-      </a>
-    );
-  }
-
-  return item;
+        {marqueeLogos.map((logo, index) => (
+          <BrandCard key={`${logo.name}-${index}`} logo={logo} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default async function BrandLogosCarousel() {
   const logos = await getBrandLogos();
   if (!logos.length) return null;
 
-  const track = [...logos, ...logos];
-  const hasEnough = logos.length >= 6;
+  const splitIndex = Math.ceil(logos.length / 2);
+  const topRow = logos.slice(0, splitIndex);
+  const bottomRow = logos.slice(splitIndex);
 
   return (
-    // ✅ section relative + overflow hidden (so image doesn’t go outside)
-    <section className="relative overflow-hidden bg-white py-14">
-      {/* ✅ TOP RIGHT OVERLAY IMAGE */}
-      <Image
-        src="/homepage/clienticon.svg"  // ✅ apna path yaha
-        alt="Decor"
-        width={420}
-        height={420}
-        className="
-          pointer-events-none select-none
-          absolute right-[-30] top-[-9]
-          z-0
-          w-[220px] opacity-70
-          md:w-[420px] rotate-48 
-          lg:w-[380px]
-        "
-        loading="lazy"
-      />
-      <Image
-        src="/homepage/clienticon.svg"  // ✅ apna path yaha
-        alt="Decor"
-        width={420}
-        height={420}
-        className="
-          pointer-events-none select-none
-          absolute left-[-19] bottom-[-5] rotate-222
-          z-0
-          w-[220px] opacity-70
-          md:w-[420px]
-          lg:w-[360px] hidden md:block
-        "
-        loading="lazy"
-      />
-
-      {/* ✅ content ko image ke upar lane ke liye */}
-      <div className="relative z-10 px-2 lg:px-4 max-w-[1500px] mx-auto">
-        {/* Heading */}
-        <div className="flex items-center justify-start gap-6 text-left px-8">
-          <div>
-            <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#00AAB7]/40 bg-[#00AAB7]/10 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#00AAB7] md:text-xs">
-              OUR ASSOCIATED BRANDS
-            </p>
-
-            <h2 className="mt-2 text-2xl font-medium text-gray-900 md:text-6xl font-sans">
-              450+ Clients Trusted Us
-            </h2>
-
-            <h2 className="mt-2 text-xl font-semibold text-gray-900 md:text-2xl">
-              Here are our esteemed allies in smart disrupting thinking.
-            </h2>
-
-            <p className="mt-2 max-w-2xl text-base text-gray-600">
-              A heartfelt recognition of these visionary brands who stand with us in building impactful
-              campaigns and brand building quests:
-            </p>
-          </div>
-        </div>
-
-        <div className="relative mt-10 overflow-hidden rounded-2xl bg-white">
-          <div className="h-1 w-full bg-[#30B8C8] block md:hidden" />
-
-          {/* fade edges only for mobile marquee */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-14 bg-linear-to-r from-white to-transparent sm:hidden" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-14 bg-linear-to-l from-white to-transparent sm:hidden" />
-
-          <div className="p-6 md:p-8">
-            {/* ✅ MOBILE: marquee */}
-            <div className="sm:hidden">
-              <div className="group overflow-hidden">
-                <div
-                  className={[
-                    "flex w-max items-center",
-                    hasEnough ? "gap-10" : "gap-14",
-                    "motion-reduce:animate-none",
-                    "group-hover:[animation-play-state:paused]",
-                    "animate-[logoMarquee_45s_linear_infinite]",
-                    "max-sm:[animation-duration:40s]",
-                  ].join(" ")}
-                >
-                  {track.map((logo, i) => (
-                    <div key={`${logo.name}-${i}`}>
-                      <LogoItem logo={logo} />
-                    </div>
-                  ))}
-                </div>
-
-                <style
-                  dangerouslySetInnerHTML={{
-                    __html: `
-                      @keyframes logoMarquee {
-                        0% { transform: translateX(0); }
-                        100% { transform: translateX(-50%); }
-                      }
-                    `,
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* ✅ TABLET + DESKTOP grid */}
-            <div className="hidden sm:block">
-              <div className="mx-auto max-w-[1500px] flex flex-wrap justify-center gap-4 md:gap-5 lg:gap-6">
-                {logos.map((logo, i) => (
-                  <div
-                    key={i}
-                    className="group flex h-20 w-[180px] items-center justify-center rounded-xl bg-white shadow p-4"
-                  >
-                    <Image
-                      src={logo.src}
-                      alt={logo.name}
-                      width={160}
-                      height={64}
-                      className="max-h-16 grayscale opacity-80 transition group-hover:grayscale-0 group-hover:opacity-100"
-                      sizes="160px"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+    <section className="overflow-hidden bg-black py-16 text-white sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-[1500px] px-5 text-center">
+        <h2 className="mx-auto max-w-[760px] text-[38px] font-semibold leading-[1.12] tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
+          Strategic Alliances that Power Innovation
+        </h2>
       </div>
+
+      <div className="mt-14 space-y-5 sm:mt-16 sm:space-y-6">
+        <BrandMarqueeRow logos={topRow} direction="right" />
+        <BrandMarqueeRow
+          logos={bottomRow.length ? bottomRow : topRow}
+          direction="left"
+        />
+      </div>
+
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes brandMarqueeLeft {
+              from { transform: translate3d(0, 0, 0); }
+              to { transform: translate3d(-50%, 0, 0); }
+            }
+
+            @keyframes brandMarqueeRight {
+              from { transform: translate3d(-50%, 0, 0); }
+              to { transform: translate3d(0, 0, 0); }
+            }
+
+            .brand-marquee-left {
+              animation: brandMarqueeLeft 42s linear infinite;
+            }
+
+            .brand-marquee-right {
+              animation: brandMarqueeRight 46s linear infinite;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+              .brand-marquee-left,
+              .brand-marquee-right {
+                animation: none;
+              }
+            }
+          `,
+        }}
+      />
     </section>
   );
 }

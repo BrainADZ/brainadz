@@ -1,165 +1,124 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Quote } from "lucide-react";
 import { FaLinkedinIn } from "react-icons/fa";
 
 type Founder = {
   name: string;
   title: string;
-  photo: string; // preferably transparent cutout PNG
+  photo: string;
+  experience: string;
   p1: string;
   p2: string;
-  experience: string; // "13+"
 };
 
 const FOUNDER: Founder = {
   name: "Preeti Jaiswal",
-  title: "Co-Founder, BrainADZ",
-  photo: "/13+.png",
+  title: "Founder & MD, BrainADZ",
+  photo: "/teams/Co-Founder.png",
   experience: "13+",
-  p1: "Known to be truly generous when it comes to the satisfaction of his clients, Prashant Chhibber has done his MBA in Digital Marketing and has over 12+ years of experience in the field of marketing. He founded Battersea Web Expert back in 2012 which has only continued to grow over time.",
-  p2: "With his immense knowledge and experience in marketing, he has set Battersea Web Expert as an example for many, that how a company can grow to unexpected heights when one works fully dedicated. And this fact clearly reflects in the company’s results and reputation.",
+  p1: "BrainADZ was built with a simple belief: marketing should make business clearer, sharper, and easier to trust. Every campaign, website, and brand experience we create starts with understanding the client, the market, and the outcome that matters.",
+  p2: "Our role is to bring strategy, creativity, technology, media, and execution together in one accountable workflow. We focus on transparent communication, measurable work, and long-term partnerships that help brands grow with confidence.",
 };
+
+const STATS = [
+  { value: FOUNDER.experience, label: "Years of industry experience" },
+  { value: "200+", label: "Projects delivered across sectors" },
+  { value: "8.2MN+", label: "Audience reach generated annually" },
+];
 
 export default function FounderDeskSameToSame() {
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* ===== Background (same vibe) ===== */}
-      {/* ===== Accent Teal Background ===== */}
+    <section className="relative overflow-hidden bg-black text-white">
       <div
-        className="absolute inset-0"
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
-          background: `linear-gradient(90deg, #003F42 0%, #005E63 35%, #00AAB7 120%)`,
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
         }}
       />
 
-      {/* Geometric mountains layer (Teal tones) */}
-      <div className="absolute inset-0 opacity-40">
-        <svg
-          className="absolute inset-0 h-full w-full"
-          viewBox="0 0 1600 520"
-          preserveAspectRatio="none"
-        >
-          <polygon
-            points="0,520 0,250 220,160 420,240 520,190 720,300 920,220 1100,320 1300,200 1600,320 1600,520"
-            fill="#007E85"
+      <div className="relative mx-auto grid max-w-[1800px] border-y border-white/10 lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="relative min-h-[520px] overflow-hidden border-white/10 bg-[#090909] sm:min-h-[620px] lg:min-h-[760px] lg:border-r">
+          <Image
+            src={FOUNDER.photo}
+            alt={FOUNDER.name}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 1024px) 100vw, 46vw"
+            priority={false}
           />
-          <polygon
-            points="0,520 0,320 260,240 420,320 560,260 760,360 980,280 1180,380 1400,300 1600,380 1600,520"
-            fill="#005E63"
-          />
-          <polygon
-            points="0,520 0,380 240,330 430,380 600,330 820,420 1040,350 1240,430 1460,370 1600,420 1600,520"
-            fill="#003F42"
-          />
-        </svg>
-      </div>
 
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/12 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 border-t border-white/15 bg-black/75 px-5 py-5 backdrop-blur sm:px-8">
+            <p className="text-[24px] font-semibold leading-tight tracking-[-0.02em]">
+              {FOUNDER.name}
+            </p>
+            <p className="mt-1 text-[14px] font-medium text-white/62">
+              {FOUNDER.title}
+            </p>
+          </div>
+        </div>
 
-      {/* Subtle diagonal overlay blocks (like reference) */}
-      <div className="absolute inset-0 opacity-[0.18]">
-        <div className="absolute inset-y-0 left-0 w-1/5 bg-black/10" />
-        <div className="absolute inset-y-0 left-[20%] w-1/5 bg-black/5" />
-        <div className="absolute inset-y-0 left-[40%] w-1/5 bg-black/10" />
-        <div className="absolute inset-y-0 left-[60%] w-1/5 bg-black/5" />
-        <div className="absolute inset-y-0 left-[80%] w-1/5 bg-black/10" />
-      </div>
+        <div className="flex items-center px-5 py-14 sm:px-8 md:py-16 lg:px-12 xl:px-20">
+          <div className="w-full max-w-[920px]">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/68">
+              MD Desk
+              <span className="h-1.5 w-1.5 rounded-full bg-[#1467f5]" />
+              Leadership Note
+            </p>
 
-      <div className="relative mx-auto max-w-[1500px] px-4 py-12 md:py-16">
-        <div className="grid items-center gap-10 lg:grid-cols-12">
-          {/* ===== LEFT TEXT ===== */}
-          <div className="lg:col-span-7">
-            <h2 className="text-white font-extrabold tracking-tight text-3xl md:text-5xl">
-              Words Of Founder &amp; MD
+            <h2 className="mt-8 max-w-[820px] text-[42px] font-medium leading-[1.02] tracking-[-0.045em] sm:text-[54px] lg:text-[68px]">
+              Words From The Founder &amp; MD
             </h2>
 
-            <div className="mt-7 space-y-5 text-white/85 text-sm md:text-base leading-relaxed max-w-3xl">
-              <p>{FOUNDER.p1}</p>
-              <p>{FOUNDER.p2}</p>
+            <div className="mt-8 flex items-start gap-5">
+              <Quote
+                className="mt-1 h-9 w-9 shrink-0 text-[#1467f5]"
+                strokeWidth={1.6}
+              />
+              <div className="space-y-6 text-[17px] leading-8 text-white/68 sm:text-[18px]">
+                <p>{FOUNDER.p1}</p>
+                <p>{FOUNDER.p2}</p>
+              </div>
             </div>
 
-            <div className="mt-10 space-y-4">
-              <div>
-                <p className="text-white font-bold text-lg">{FOUNDER.name}</p>
-                <p className="text-white/80 text-sm">{FOUNDER.title}</p>
-              </div>
+            <div className="mt-10 grid gap-6 border-y border-white/10 py-7 sm:grid-cols-3">
+              {STATS.map((stat) => (
+                <div key={stat.label}>
+                  <p className="text-[36px] font-medium leading-none tracking-[-0.04em] text-white">
+                    {stat.value}
+                  </p>
+                  <p className="mt-3 max-w-[190px] text-[13px] font-medium leading-5 text-white/48">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
 
-              {/* LinkedIn Button */}
+            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Link
+                href="/contact"
+                className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-white px-7 text-[12px] font-semibold text-black transition-colors hover:bg-[#1467f5] hover:text-white"
+              >
+                Start A Conversation
+                <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
+              </Link>
+
               <a
                 href="#"
                 target="_blank"
-                className="
-      inline-flex items-center gap-2
-      bg-white text-[#003F42]
-      px-5 py-2.5
-      text-sm font-semibold
-      rounded-full
-      border border-white
-      shadow-[0_10px_25px_rgba(0,0,0,0.25)]
-      transition-all duration-300
-      hover:bg-[#00AAB7]
-      hover:text-white
-      hover:scale-105
-    "
+                rel="noreferrer"
+                className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/25 px-7 text-[12px] font-semibold text-white transition-colors hover:border-[#1467f5] hover:bg-[#1467f5]"
               >
-                <FaLinkedinIn className="text-base" />
+                <FaLinkedinIn className="text-[15px]" />
                 Connect on LinkedIn
               </a>
-            </div>
-
-          </div>
-
-          {/* ===== RIGHT VISUAL ===== */}
-          <div className="lg:col-span-5 relative">
-            {/* dotted blocks like reference */}
-            <DotGrid className="absolute -left-6 top-10 hidden lg:block" />
-            <DotGrid className="absolute right-8 bottom-10 hidden lg:block opacity-70" />
-
-            {/* yellow blob behind person */}
-            <div className="relative mx-auto w-full max-w-[420px]">
-              <div
-                className="absolute right-10 top-16 h-80 w-[260px] rounded-[36px]"
-                style={{ background: "#FFC24B" }}
-              />
-              <div
-                className="absolute right-10 top-16 h-80 w-[260px] rounded-[36px] opacity-25"
-                style={{ boxShadow: "0 30px 80px rgba(0,0,0,0.35)" }}
-              />
-
-              {/* Person cutout */}
-              <Image
-                src={FOUNDER.photo}
-                alt={FOUNDER.name}
-                width={360}
-                height={400}
-                className="relative z-10 ml-auto h-[400px] w-auto object-contain drop-shadow-[0_18px_40px_rgba(0,0,0,0.35)]"
-                sizes="(max-width: 1024px) 80vw, 360px"
-              />
-
-
-
-
-
-
-
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-
-
-function DotGrid({ className = "" }: { className?: string }) {
-  return (
-    <div className={className}>
-      <div
-        className="h-[70px] w-[70px]"
-        style={{
-          backgroundImage: "radial-gradient(rgba(255,255,255,0.75) 1.2px, transparent 1.2px)",
-          backgroundSize: "12px 12px",
-        }}
-      />
-    </div>
   );
 }

@@ -1,9 +1,16 @@
+"use client";
+
 import Image from "next/image";
-import { Star } from "lucide-react";
+import {
+  ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+  Star,
+} from "lucide-react";
+import { useEffect, useState, type TransitionEvent } from "react";
 
-const ACCENT = "#00AAB7";
-
-type T = {
+type Testimonial = {
   id: number;
   text: string;
   name: string;
@@ -12,7 +19,7 @@ type T = {
   rating?: number;
 };
 
-const testimonials: T[] = [
+const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
     text: "We were struggling to get quality leads for our manufacturing business. Within 2 months of working with them, our inquiries increased significantly. Very systematic and result-focused team.",
@@ -29,110 +36,345 @@ const testimonials: T[] = [
     initial: "P",
     rating: 5,
   },
+  {
+    id: 2,
+    text: "Their SEO and paid ads strategy helped our RO business grow online. Reporting is transparent and communication is always clear.",
+    name: "Priya Sharma",
+    location: "Delhi NCR",
+    initial: "P",
+    rating: 5,
+  },
+  {
+    id: 2,
+    text: "Their SEO and paid ads strategy helped our RO business grow online. Reporting is transparent and communication is always clear.",
+    name: "Priya Sharma",
+    location: "Delhi NCR",
+    initial: "P",
+    rating: 5,
+  },
+  {
+    id: 2,
+    text: "Their SEO and paid ads strategy helped our RO business grow online. Reporting is transparent and communication is always clear.",
+    name: "Priya Sharma",
+    location: "Delhi NCR",
+    initial: "P",
+    rating: 5,
+  },
+  {
+    id: 2,
+    text: "Their SEO and paid ads strategy helped our RO business grow online. Reporting is transparent and communication is always clear.",
+    name: "Priya Sharma",
+    location: "Delhi NCR",
+    initial: "P",
+    rating: 5,
+  },
 ];
+
+const AUTO_PLAY_DELAY_MS = 5000;
+const SLIDE_TRANSITION_MS = 700;
 
 function Stars({ count = 5 }: { count?: number }) {
   return (
-    <div className="flex gap-1">
-      {Array.from({ length: count }).map((_, i) => (
+    <div className="flex gap-1" aria-label={`${count} out of 5 stars`}>
+      {Array.from({ length: count }).map((_, index) => (
         <Star
-          key={i}
-          size={16}
-          className="text-[#F59E0B]"
-          fill="#F59E0B"
-          stroke="none"
+          key={index}
+          className="h-4 w-4 fill-[#ffb82e] text-[#ffb82e]"
+          strokeWidth={1.5}
         />
       ))}
     </div>
   );
 }
 
-function ReviewCard({ item }: { item: T }) {
+function ReviewCard({ item }: { item: Testimonial }) {
   return (
-    <div className="relative flex h-full min-h-[280px] flex-col rounded-2xl border border-black/5 bg-white p-6 shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
-      <div className="mb-4">
+    <article className="group relative flex h-full min-h-0 flex-col overflow-hidden rounded-[22px] border border-white/10 bg-[#0d0d0d] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#397cf5]/45 sm:p-8">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#397cf5]/80 to-transparent opacity-0 transition group-hover:opacity-100" />
+
+      <div className="flex items-start justify-between gap-5">
         <Stars count={item.rating ?? 5} />
+        <span className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-white/35">
+          <Quote className="h-5 w-5 fill-current" strokeWidth={1.5} />
+        </span>
       </div>
 
-      <div className="absolute right-5 top-5 opacity-80">
-        <Image src="/quote.png" alt="" width={32} height={32} />
-      </div>
+      <blockquote className="mt-9 flex-1 text-[16px] font-medium leading-8 text-white/76">
+        “{item.text}”
+      </blockquote>
 
-      <p className="flex-1 pr-10 text-[15px] leading-7 text-black/70">
-        &quot;{item.text}&quot;
-      </p>
-
-      <div className="mt-6 flex items-center gap-3">
-        <div
-          className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full font-semibold text-white"
-          style={{ backgroundColor: ACCENT }}
-        >
+      <div className="mt-8 flex items-center gap-4 border-t border-white/10 pt-6">
+        <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#1467f5] text-[15px] font-bold text-white shadow-[0_10px_28px_rgba(20,103,245,0.3)]">
           {item.initial}
         </div>
-
         <div className="min-w-0">
-          <div className="truncate font-semibold text-black">{item.name}</div>
-          <div className="truncate text-sm text-black/50">{item.location}</div>
+          <p className="truncate text-[15px] font-semibold text-white">
+            {item.name}
+          </p>
+          <p className="mt-1 truncate text-[12px] font-medium text-white/42">
+            {item.location}
+          </p>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
 export default function TestimonialSection() {
-  return (
-    <section className="bg-white py-16">
-      <div className="mx-auto max-w-7xl px-5">
-        <div className="mb-12 text-center">
-          <p className="mb-3 inline-flex items-center border border-black/10 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-black/70">
-            Pillars
-          </p>
+  const [itemsPerView, setItemsPerView] = useState(1);
+  const [slidePosition, setSlidePosition] = useState(1);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
+  const totalPages = Math.ceil(TESTIMONIALS.length / itemsPerView);
+  const testimonialPages = Array.from({ length: totalPages }, (_, pageIndex) =>
+    TESTIMONIALS.slice(
+      pageIndex * itemsPerView,
+      pageIndex * itemsPerView + itemsPerView,
+    ),
+  );
+  const loopPages = [
+    testimonialPages[totalPages - 1],
+    ...testimonialPages,
+    testimonialPages[0],
+  ];
+  const slideOffset = Math.min(Math.max(slidePosition, 0), totalPages + 1);
+  const activePage =
+    slideOffset === 0
+      ? totalPages - 1
+      : slideOffset === totalPages + 1
+        ? 0
+        : slideOffset - 1;
 
-          <h2 className="mt-3 text-4xl font-extrabold leading-tight text-black md:text-5xl">
-            What <span className="font-extrabold">Our Happy Clients</span> Say
-            About
-            <br />
-            <span className="font-extrabold">Working</span> With Us
-          </h2>
+  useEffect(() => {
+    const breakpoint = window.matchMedia("(min-width: 768px)");
+    const updateItemsPerView = () => {
+      setItemsPerView(breakpoint.matches ? 2 : 1);
+      setTransitionEnabled(false);
+      setSlidePosition(1);
+    };
+
+    updateItemsPerView();
+    breakpoint.addEventListener("change", updateItemsPerView);
+
+    return () => breakpoint.removeEventListener("change", updateItemsPerView);
+  }, []);
+
+  useEffect(() => {
+    if (totalPages <= 1) {
+      return;
+    }
+
+    const timer = window.setInterval(() => {
+      setTransitionEnabled(true);
+      setSlidePosition((current) => {
+        if (current < 1 || current >= totalPages + 1) {
+          return 1;
+        }
+
+        return current + 1;
+      });
+    }, AUTO_PLAY_DELAY_MS);
+
+    return () => window.clearInterval(timer);
+  }, [totalPages]);
+
+  useEffect(() => {
+    if (slidePosition > totalPages + 1 || slidePosition < 0) {
+      const resetTimer = window.setTimeout(() => {
+        setTransitionEnabled(false);
+        setSlidePosition(slidePosition < 0 ? totalPages : 1);
+      }, 0);
+
+      return () => window.clearTimeout(resetTimer);
+    }
+
+    if (slidePosition !== 0 && slidePosition !== totalPages + 1) {
+      return;
+    }
+
+    const resetTimer = window.setTimeout(() => {
+      setTransitionEnabled(false);
+      setSlidePosition(slidePosition === 0 ? totalPages : 1);
+    }, SLIDE_TRANSITION_MS + 80);
+
+    return () => window.clearTimeout(resetTimer);
+  }, [slidePosition, totalPages]);
+
+  const showPrevious = () => {
+    setTransitionEnabled(true);
+    setSlidePosition((current) => {
+      if (current <= 0) {
+        return totalPages;
+      }
+
+      return current - 1;
+    });
+  };
+
+  const showNext = () => {
+    setTransitionEnabled(true);
+    setSlidePosition((current) => {
+      if (current >= totalPages + 1) {
+        return 1;
+      }
+
+      return current + 1;
+    });
+  };
+
+  const handleTransitionEnd = (event: TransitionEvent<HTMLDivElement>) => {
+    if (
+      event.target !== event.currentTarget ||
+      event.propertyName !== "transform"
+    ) {
+      return;
+    }
+
+    if (slidePosition === totalPages + 1) {
+      setTransitionEnabled(false);
+      setSlidePosition(1);
+    } else if (slidePosition === 0) {
+      setTransitionEnabled(false);
+      setSlidePosition(totalPages);
+    }
+  };
+
+  return (
+    <section
+      id="testimonials"
+      className="relative overflow-hidden border-b border-white/10 bg-[#050505] py-16 text-white md:py-24"
+    >
+      <div className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#1467f5]/12 blur-[140px]" />
+
+      <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8">
+        <div className="mb-12 grid gap-7 lg:grid-cols-[1fr_0.62fr] lg:items-end lg:gap-16">
+          <div>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#4e8cff]">
+              Client Stories
+            </p>
+            <h2 className="mt-3 max-w-[820px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] sm:text-[52px] lg:text-[58px]">
+              Trusted Partnerships. Measurable Growth.
+            </h2>
+          </div>
+
+          <p className="max-w-[500px] text-[14px] font-medium leading-7 text-white/58 lg:justify-self-end">
+            Honest feedback from businesses that partnered with BrainADZ to
+            strengthen their digital presence and create meaningful growth.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="relative flex min-h-[280px] flex-col overflow-hidden rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(135deg, #0B4E8F 0%, #0A4F97 40%, #0A3F7D 100%)",
-              }}
-            />
+        <div className="grid items-start gap-5 xl:grid-cols-3">
+          <article className="relative flex h-[410px] flex-col overflow-hidden rounded-[22px] border border-white/15 bg-[linear-gradient(145deg,#1467f5_0%,#0e48b1_58%,#071f58_100%)] p-7 sm:p-8">
+            <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full border-[38px] border-white/[0.06]" />
 
-            <div className="relative flex h-full flex-1 flex-col justify-between p-6">
-              <div>
-                <div className="flex items-center gap-3">
-                  <Image src="/google.svg" alt="Google" width={40} height={40} />
-                  <div className="text-4xl font-extrabold text-white">4.9</div>
-                </div>
+            <div className="relative flex items-center justify-between gap-4">
+              <div className="grid h-12 w-12 place-items-center rounded-full bg-white shadow-[0_12px_30px_rgba(0,0,0,0.2)]">
+                <Image src="/google.svg" alt="Google" width={27} height={27} />
+              </div>
+              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/75">
+                Google Reviews
+              </span>
+            </div>
 
-                <div className="mt-3 flex gap-1">
-                  <Stars />
-                </div>
+            <div className="relative mt-10">
+              <div className="flex items-end gap-3">
+                <span className="text-[64px] font-semibold leading-none tracking-[-0.06em]">
+                  4.9
+                </span>
+                <span className="pb-1.5 text-[13px] font-medium text-white/60">
+                  out of 5
+                </span>
+              </div>
+              <div className="mt-4">
+                <Stars />
+              </div>
+            </div>
+
+            <div className="relative mt-auto pt-9">
+              <p className="max-w-[320px] text-[14px] font-medium leading-6 text-white/74">
+                Worked with us? Share your experience and help others discover
+                BrainADZ.
+              </p>
+              <a
+                href="#"
+                className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-[12px] font-semibold text-[#0b3e9d] transition hover:bg-[#e4edff]"
+              >
+                Write A Review
+                <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
+              </a>
+            </div>
+          </article>
+
+          <div className="min-w-0 xl:col-span-2">
+            <div className="-mx-2.5 overflow-hidden" aria-live="polite">
+              <div
+                onTransitionEnd={handleTransitionEnd}
+                className={`flex items-stretch ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  transitionEnabled
+                    ? "transition-transform duration-700"
+                    : "transition-none"
+                }`}
+                style={{ transform: `translateX(-${slideOffset * 100}%)` }}
+              >
+                {loopPages.map((page, pageIndex) => (
+                  <div
+                    key={pageIndex}
+                    className="flex w-full shrink-0 items-stretch"
+                  >
+                    {page.map((item, itemIndex) => (
+                      <div
+                        key={`${item.id}-${pageIndex}-${itemIndex}`}
+                        className="h-[410px] shrink-0 px-2.5"
+                        style={{ flexBasis: `${100 / itemsPerView}%` }}
+                      >
+                        <ReviewCard item={item} />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-5 flex items-center justify-between gap-5">
+              <div className="flex gap-2">
+                {Array.from({ length: totalPages }).map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => {
+                      setTransitionEnabled(true);
+                      setSlidePosition(index + 1);
+                    }}
+                    aria-label={`Show testimonial page ${index + 1}`}
+                    aria-current={activePage === index ? "true" : undefined}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      activePage === index
+                        ? "w-10 bg-[#397cf5]"
+                        : "w-4 bg-white/20 hover:bg-white/40"
+                    }`}
+                  />
+                ))}
               </div>
 
-              <div>
-                <p className="font-semibold leading-7 text-white/90">
-                  We value your opinion: share your review with us
-                </p>
-
-                <button className="mt-6 w-fit rounded-full bg-[#FBBF24] px-6 py-3 font-semibold text-black transition hover:opacity-95">
-                  Write Your Review Here -&gt;
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={showPrevious}
+                  aria-label="Show previous testimonials"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/[0.04] text-white transition hover:border-[#397cf5] hover:bg-[#1467f5]"
+                >
+                  <ChevronLeft className="h-5 w-5" strokeWidth={1.7} />
+                </button>
+                <button
+                  type="button"
+                  onClick={showNext}
+                  aria-label="Show next testimonials"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/[0.04] text-white transition hover:border-[#397cf5] hover:bg-[#1467f5]"
+                >
+                  <ChevronRight className="h-5 w-5" strokeWidth={1.7} />
                 </button>
               </div>
             </div>
           </div>
-
-          {testimonials.map((item) => (
-            <ReviewCard key={item.id} item={item} />
-          ))}
         </div>
       </div>
     </section>

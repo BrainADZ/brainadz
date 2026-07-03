@@ -57,7 +57,7 @@ const PILLARS: Pillar[] = [
   {
     name: "Rishabh Pratap",
     designation: "Software Developer",
-    image: "/teams/sd.webp",
+    image: "/teams/s.webp",
     social: { linkedin: "#" },
   },
   {

@@ -1,60 +1,45 @@
-export default function FooterCta() {
+import Image from "next/image";
+import Link from "next/link";
+
+export default function ContactCtaSection() {
   return (
-    <section className=" bg-white">
-      <div className="max-w-full mx-auto ">
-        <div className="relative overflow-hidden">
-
-          {/* Background Gradient */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(135deg, #006f75 0%, #00AAB7 50%, #008a93 100%)",
-            }}
+    <section className="bg-black px-5 py-14 text-white sm:px-8 lg:py-20">
+      <div className="mx-auto max-w-[1400px]">
+        <div
+          className="relative min-h-[360px] overflow-hidden rounded-[28px] bg-[#020522]"
+        >
+          <Image
+            src="/home-roadmap-cta.webp"
+            alt=""
+            fill
+            aria-hidden="true"
+            loading="lazy"
+            quality={72}
+            sizes="(min-width: 1400px) 1400px, 100vw"
+            className="object-cover object-center"
           />
-
-          {/* Geometry Overlay */}
-          <div
-            className="absolute inset-0 opacity-25"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(135deg, rgba(255,255,255,0.15) 0px, rgba(255,255,255,0.15) 6px, transparent 6px, transparent 14px)",
-            }}
-          />
-
-          {/* Content */}
-          <div className="relative grid md:grid-cols-2 gap-8 items-center px-8 py-14 max-w-[1500px] mx-auto">
-
-            {/* Left */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
-                Let’s Grow Your Business
-                <br />
-                With Smart Digital Marketing
+          <div className="relative z-10 flex min-h-[360px] items-center">
+            <div className="max-w-[650px] px-7 py-10 sm:px-10 lg:px-12">
+              <h2 className="text-[30px] font-normal leading-[1.32] tracking-[-0.02em] sm:text-[38px] lg:text-[26px]">
+                You&apos;ve seen how we helped{" "}
+                <span className="font-bold">Khadi Organique</span>,{" "}
+                <span className="font-bold">Rubber Hose India</span>, and{" "}
+                <span className="font-bold">Comac India</span> build stronger
+                digital growth.
               </h2>
 
-              <p className="mt-4 text-white/80 max-w-md">
-                Ready to scale? Talk to our experts and discover strategies that
-                actually convert.
+              <p className="mt-7 max-w-[570px] text-[15px] font-semibold leading-7 text-white sm:text-[14px]">
+                From high-performing websites to measurable marketing momentum,
+                our execution goes beyond design to deliver business ROI.
               </p>
+
+              <Link
+                href="/contact"
+                className="mt-11 inline-flex min-h-14 items-center justify-center rounded-full bg-white px-8 text-[13px] font-bold text-black shadow-[0_18px_40px_rgba(0,0,0,0.28)] transition hover:bg-[#eaf6ff]"
+              >
+                Consult our Experts for Growth Roadmap
+              </Link>
             </div>
-
-            {/* Right */}
-            <div className="flex flex-col md:items-end gap-4">
-              <div className="text-white text-sm">
-                Speak with our marketing expert
-              </div>
-
-              <div className="text-white font-semibold text-lg flex items-center gap-2">
-                🇮🇳 +91 8826 916 476
-              </div>
-
-              <button className="mt-2 px-8 py-3 rounded-full bg-[#FFC44D] text-black font-semibold hover:opacity-90 transition flex items-center gap-2">
-                Book Free Consultation
-                <span>↗</span>
-              </button>
-            </div>
-
           </div>
         </div>
       </div>

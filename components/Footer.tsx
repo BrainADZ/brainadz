@@ -1,221 +1,295 @@
 import FooterCta from "@/section/ctaSection";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from "react-icons/fa";
+
+const LOCATIONS = [
+  {
+    icon: "/icons/india.png",
+    iconAlt: "India flag",
+    city: "Delhi",
+    label: "Corporate Office",
+    address:
+      "A-24/8, 1st Floor, Rathi Tower, NH-19, Mohan Cooperative Industrial Estate, New Delhi 110044",
+  },
+  {
+    icon: "/icons/india.png",
+    iconAlt: "India flag",
+    city: "Mumbai",
+    label: "Regional Office",
+    address:
+      "911, 9th Floor, JMMIMA Complex, Off Link Road, Mindspace, Malad West, Mumbai 400064",
+  },
+  {
+    icon: "/icons/united-arab-emirates.png",
+    iconAlt: "United Arab Emirates flag",
+    city: "Dubai",
+    label: "International Office",
+    address: "Dubai, United Arab Emirates",
+  },
+  {
+    icon: "/icons/world.png",
+    iconAlt: "Thailand flag",
+    city: "Thailand",
+    label: "International Office",
+    address: "Bangkok, Thailand",
+  },
+];
+
+const FOOTER_LINKS = [
+  {
+    title: "Our Company",
+    links: [
+      { label: "Company Overview", href: "/company-overview" },
+      { label: "Core Team", href: "/teams" },
+      { label: "Careers", href: "/career" },
+      { label: "Contact Us", href: "/contact" },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      { label: "Digital Marketing", href: "/services/digital-marketing" },
+      { label: "Performance Marketing", href: "/services/performance-marketing" },
+      { label: "Web Development", href: "/services/web-design-development" },
+      { label: "Branding & Creative", href: "/services/graphic-design" },
+    ],
+  },
+  {
+    title: "Portfolio",
+    links: [
+      { label: "Website Projects", href: "/portfolio#portfolio" },
+      { label: "Social Media", href: "/portfolio#portfolio" },
+      { label: "Graphic Design", href: "/portfolio#portfolio" },
+      { label: "Videos & Exhibits", href: "/portfolio#portfolio" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Case Studies", href: "/#case-studies" },
+      { label: "Client Testimonials", href: "/#testimonials" },
+      { label: "FAQs", href: "/#faqs" },
+      { label: "Growth Insights", href: "/#insights" },
+    ],
+  },
+];
+
+const BUSINESS_UNITS = [
+  {
+    name: "BrainADZ Marketing",
+    logo: "/logo/mainlogo-optimized.webp",
+    href: "/",
+  },
+  {
+    name: "BrainADZ Exhibits",
+    logo: "/logo/exhibits-optimized.webp",
+    href: "#",
+  },
+  {
+    name: "BrainADZ Live",
+    logo: "/logo/live-optimized.webp",
+    href: "#",
+  },
+];
+
+const SOCIAL_LINKS = [
+  { label: "Instagram", href: "#", icon: FaInstagram },
+  { label: "LinkedIn", href: "#", icon: FaLinkedinIn },
+  { label: "Facebook", href: "#", icon: FaFacebookF },
+  { label: "YouTube", href: "#", icon: FaYoutube },
+];
 
 export default function Footer() {
   return (
     <>
-    <FooterCta/>
-    <footer className="bg-white text-black">
-      <div className="max-w-[1500px] mx-auto" >
-        {/* TOP FOOTER (Your provided design) */}
-        <section className="relative overflow-hidden border-t border-black/10">
-          {/* subtle background */}
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_300px_at_50%_0%,rgba(255,214,0,0.12),transparent_60%)]" />
-          <div className="mx-auto max-w-425 px-2 py-10 lg:px-4 lg:py-14">
-            <div className="text-center">
-              <h3 className="text-3xl font-extrabold tracking-tight text-[#00AAB7] md:text-4xl">
-                LET&apos;S SPARK YOUR BRAND&apos;S MOMENTUM
-              </h3>
-              <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-black/80 md:text-base">
-                Whether you&apos;re a bold startup or an established brand looking to evolve your marketing,
-                let&apos;s create ideas, campaigns and experiences that don&apos;t just work — they move forward.
-              </p>
-            </div>
+      <FooterCta />
 
-            {/* Locations */}
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {/* Delhi */}
-              <div className="rounded-2xl border border-white/10 bg-white/3 p-5">
-                <div className="flex items-start gap-4">
-                  <div className="grid h-30 w-30 place-items-center rounded-xl">
+      <footer className="overflow-hidden bg-[#020202] bg-[linear-gradient(180deg,#020202_0%,#071a3f_56%,#1467f5_100%)] text-white">
+        <div className="mx-auto max-w-[1900px] px-5 pb-6 pt-5 sm:px-8 lg:px-10">
+          <section
+            aria-label="Our locations"
+            className="grid gap-4 md:grid-cols-2 xl:grid-cols-4"
+          >
+            {LOCATIONS.map((location) => (
+              <article
+                key={location.city}
+                className="min-h-[205px] rounded-[20px] border border-white/15 bg-white/[0.07] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.18)] sm:p-7"
+              >
+                <div className="flex items-center gap-4">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white p-1.5 shadow-[0_10px_26px_rgba(0,0,0,0.22)]">
                     <Image
-                      src="/icons/delhi.png"
-                      alt="Delhi Office"
-                      width={120}
-                      height={120}
-                      className="object-contain"
+                      src={location.icon}
+                      alt={location.iconAlt}
+                      width={42}
+                      height={42}
+                      sizes="42px"
+                      className="h-full w-full rounded-full object-cover"
                     />
-                  </div>
-
-                  <div>
-                    <p className="text-lg font-bold">Delhi</p>
-                    <p className="mt-1 text-sm text-black/70">
-                      Head Office: Apex Square 3, UGF, Plot 6, Pocket B-3, Sector-17, Dwarka, New Delhi 110075, Delhi, India
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-[18px] font-semibold">
+                      {location.city}
+                    </p>
+                    <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/45">
+                      {location.label}
                     </p>
                   </div>
                 </div>
-              </div>
+                <p className="mt-5 max-w-[330px] text-[13px] font-medium leading-6 text-white/72">
+                  {location.address}
+                </p>
+              </article>
+            ))}
+          </section>
 
-              {/* Mumbai */}
-              <div className="rounded-2xl border border-white/10 bg-white/3 p-5">
-                <div className="flex items-start gap-4">
-                  <div className="grid h-30 w-30 place-items-center rounded-xl ">
-                    <Image
-                      src="/icons/mumbai.png"
-                      alt="Delhi Office"
-                      width={120}
-                      height={120}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-lg font-bold">Mumbai</p>
-                    <p className="mt-1 text-sm text-black/70">
-                      911, 9th Floor, JMMIMA Complex, Off Link Road, Mindspace, Malad West, Mumbai 400064, Maharashtra, India
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <section className="py-14 lg:py-16">
+            <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.45fr_repeat(5,minmax(0,1fr))]">
+              <div>
+                <Link href="/" className="inline-flex">
+                  <Image
+                    src="/logo/whitelogo-optimized.webp"
+                    alt="BrainADZ Marketing"
+                    width={190}
+                    height={78}
+                    sizes="165px"
+                    className="h-auto w-[165px] object-contain"
+                  />
+                </Link>
 
-              {/* Dubai */}
-              <div className="rounded-2xl border border-white/10 bg-white/3 p-5">
-                <div className="flex items-start gap-4">
-                  <div className="grid h-30 w-30 place-items-center rounded-xl">
-                    <Image
-                      src="/icons/dubai.png"
-                      alt="Delhi Office"
-                      width={120}
-                      height={120}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-lg font-bold">Dubai</p>
-                    <p className="mt-1 text-sm text-black/70">
-                      Head Office: Apex Square 3, UGF, Plot 6, Pocket B-3, Sector-17, Dwarka, New Delhi 110075, Delhi, India
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        {/* LOWER FOOTER (Added) */}
-        <section className="border-t border-black/10">
-          <div className="mx-auto max-w-425 px-2 py-12 lg:px-4">
-            <div className="grid gap-10 md:grid-cols-12">
-              {/* Brand */}
-              <div className="md:col-span-4">
-                <div className="flex items-center gap-3">
-                  {/* Replace with your logo */}
-<div className="flex items-center">
-  <Image
-    src="/logo/black.png"
-    alt="Your Brand Name Logo"
-    width={180}
-    height={40}
-    className="h-10 w-auto object-contain"
-  />
-</div>
-
-                  <div>
-                    <p className="text-base font-bold tracking-wide">BrainADZ Marketing</p>
-                    <p className="text-xs text-black/60">Ideas. Campaigns. Experiences.</p>
-                  </div>
-                </div>
-
-                <p className="mt-4 text-sm leading-relaxed text-black/70">
-                  Strategy-led creative and performance solutions to help brands grow with clarity, consistency, and measurable impact.
+                <p className="mt-5 max-w-[300px] text-[13px] font-medium leading-6 text-white/68">
+                  BrainADZ is a strategy-led creative and performance agency
+                  helping brands grow through marketing, technology, design,
+                  exhibits, and live experiences.
                 </p>
 
-                {/* Social */}
-                <div className="mt-5 flex gap-3">
-                  {[
-                    { name: "Instagram", href: "#" },
-                    { name: "LinkedIn", href: "#" },
-                    { name: "YouTube", href: "#" },
-                  ].map((s) => (
-                    <a
-                      key={s.name}
-                      href={s.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-black/85 transition hover:bg-white/10"
-                    >
-                      {s.name}
-                    </a>
-                  ))}
+                <div className="mt-6 flex flex-wrap gap-2.5">
+                  {SOCIAL_LINKS.map((social) => {
+                    const Icon = social.icon;
+
+                    return (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        aria-label={social.label}
+                        className="grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-white/5 text-[15px] text-white transition hover:border-white hover:bg-white hover:text-[#0d45a8]"
+                      >
+                        <Icon />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
 
-              {/* Quick Links */}
-              <div className="md:col-span-2">
-                <p className="text-sm font-bold text-black">Quick Links</p>
-                <ul className="mt-4 space-y-2 text-sm text-black/70">
-                  <li><Link className="hover:text-black" href="/about">About</Link></li>
-                  <li><Link className="hover:text-black" href="/work">Work</Link></li>
-                  <li><Link className="hover:text-black" href="/services">Services</Link></li>
-                  <li><Link className="hover:text-black" href="/contact">Contact</Link></li>
-                </ul>
-              </div>
+              {FOOTER_LINKS.map((column) => (
+                <div key={column.title}>
+                  <h3 className="text-[15px] font-semibold text-white">
+                    {column.title}
+                  </h3>
+                  <ul className="mt-6 space-y-3.5">
+                    {column.links.map((link) => (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          className="text-[12px] font-medium leading-5 text-white/65 transition hover:text-white"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
 
-              {/* Services */}
-              <div className="md:col-span-3">
-                <p className="text-sm font-bold text-black">Services</p>
-                <ul className="mt-4 space-y-2 text-sm text-black/70">
-                  <li><span className="hover:text-black">Brand Strategy</span></li>
-                  <li><span className="hover:text-black">Social Media Marketing</span></li>
-                  <li><span className="hover:text-black">Performance Ads</span></li>
-                  <li><span className="hover:text-black">Design & Content</span></li>
-                  <li><span className="hover:text-black">Video Production</span></li>
-                </ul>
-              </div>
-
-              {/* Newsletter / Contact */}
-              <div className="md:col-span-3">
-                <p className="text-sm font-bold text-black">Start a Conversation</p>
-                <p className="mt-3 text-sm text-black/70">
-                  Share your goals. We&apos;ll respond with the next steps and timelines.
-                </p>
-
-                <div className="mt-4 space-y-3">
-                  <a className="block text-sm font-semibold text-black/85 hover:text-black" href="tel:+910000000000">
-                    +91 00000 00000
+              <div>
+                <h3 className="text-[15px] font-semibold text-white">Contact</h3>
+                <div className="mt-6 space-y-4 text-[12px] font-medium leading-5 text-white/68">
+                  <a
+                    href="mailto:enquiry@brainadz.com"
+                    className="flex items-start gap-2.5 transition hover:text-white"
+                  >
+                    <Mail className="mt-0.5 h-4 w-4 shrink-0" />
+                    enquiry@brainadz.com
                   </a>
-                  <a className="block text-sm font-semibold text-black/85 hover:text-black" href="mailto:hello@yourbrand.com">
-                    hello@yourbrand.com
+                  <a
+                    href="tel:+919540468023"
+                    className="flex items-start gap-2.5 transition hover:text-white"
+                  >
+                    <Phone className="mt-0.5 h-4 w-4 shrink-0" />
+                    +91 95404 68023
                   </a>
-
-                  {/* Simple input (UI-only, wire it to your form later) */}
-                  <div className="mt-3 flex overflow-hidden rounded-xl border border-white/10 bg-white/5">
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-                      className="w-full bg-transparent px-4 py-3 text-sm text-black placeholder:text-black/40 outline-none"
-                    />
-                    <button
-                      type="button"
-                      className="bg-[#00AAB7] px-5 text-sm font-bold text-black transition hover:brightness-95"
-                    >
-                      Send
-                    </button>
-                  </div>
-
-                  <p className="text-xs text-black/45">
-                    By submitting, you agree to be contacted regarding your enquiry.
+                  <p className="flex items-start gap-2.5">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+                    Delhi / Mumbai / Dubai / Thailand
                   </p>
                 </div>
+
+                <Link
+                  href="/contact"
+                  className="mt-7 inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-[12px] font-semibold text-[#081737] transition hover:bg-[#dce9ff]"
+                >
+                  Get In Touch
+                </Link>
               </div>
             </div>
+          </section>
 
-            {/* Bottom Bar */}
-            <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
-              <p className="text-xs text-black/55">
-                © {new Date().getFullYear()} Your Brand Name. All rights reserved.
-              </p>
-              <div className="flex flex-wrap gap-4 text-xs text-black/55">
-                <Link className="hover:text-black" href="/privacy-policy">Privacy Policy</Link>
-                <Link className="hover:text-black" href="/terms">Terms</Link>
-                <Link className="hover:text-black" href="/refund-policy">Refund Policy</Link>
-              </div>
+          <section className="border-t border-white/20 py-10">
+            <h3 className="text-[14px] font-semibold text-white">
+              Business Units Under BrainADZ Group
+            </h3>
+
+            <div className="mt-6 grid gap-4 lg:grid-cols-3">
+              {BUSINESS_UNITS.map((unit) => (
+                <Link
+                  key={unit.name}
+                  href={unit.href}
+                  className="group flex min-h-[108px] flex-col items-start justify-between gap-5 rounded-[16px] border border-white/15 bg-white/10 px-6 py-5 transition hover:-translate-y-1 hover:border-white/35 hover:bg-white/15 sm:flex-row sm:items-center"
+                >
+                  <Image
+                    src={unit.logo}
+                    alt={unit.name}
+                    width={180}
+                    height={70}
+                    sizes="180px"
+                    className="max-h-14 w-auto max-w-[180px] object-contain object-left"
+                  />
+                  <span className="flex shrink-0 items-center gap-2 text-[11px] font-semibold text-white/75 transition group-hover:text-white">
+                    <span className="border-b border-white/70 pb-0.5">
+                      Know more about {unit.name}
+                    </span>
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <div className="flex flex-col gap-4 border-t border-white/20 py-6 text-[11px] font-medium text-white/70 md:flex-row md:items-center md:justify-between">
+            <p>
+              &copy; {new Date().getFullYear()} BrainADZ Group. All rights
+              reserved.
+            </p>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              <Link className="transition hover:text-white" href="/privacy-policy">
+                Privacy Policy
+              </Link>
+              <Link className="transition hover:text-white" href="/terms">
+                Terms
+              </Link>
+              <Link className="transition hover:text-white" href="/refund-policy">
+                Refund Policy
+              </Link>
             </div>
           </div>
-        </section>
-      </div>
-    </footer>
+        </div>
+      </footer>
     </>
   );
 }

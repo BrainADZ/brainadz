@@ -1,141 +1,123 @@
 import Link from "next/link";
-import Image from "next/image";
 import {
-  Clapperboard,
+  ArrowUpRight,
+  BarChart3,
   Code2,
   Megaphone,
-  MousePointer2,
   Palette,
-  Search,
-  Share2,
-  ShoppingCart,
+  PanelsTopLeft,
+  Sparkles,
+  Store,
+  TrendingUp,
 } from "lucide-react";
-import ServiceCard, { ServiceCardData } from "../components/ServiceCard";
 
-const HOME_SERVICES: ServiceCardData[] = [
+const SERVICES = [
   {
-    num: "1",
-    title: "WEBSITE DEVELOPMENT",
-    desc: "High-performance websites built for speed, SEO, and conversions - from landing pages to full business sites.",
-    icon: <Code2 className="h-12 w-12" strokeWidth={1.8} />,
-    href: "/services/website-development",
-  },
-  {
-    num: "2",
-    title: "GRAPHIC DESIGN",
-    desc: "Brand identity, social creatives, and marketing designs that look premium and stay consistent across platforms.",
-    icon: <Palette className="h-12 w-12" strokeWidth={1.8} />,
-    href: "/services/graphic-design",
-  },
-  {
-    num: "3",
-    title: "UI UX",
-    desc: "User-focused UI/UX that improves clarity, trust, and flow - so visitors take action faster and stay longer.",
-    icon: <MousePointer2 className="h-12 w-12" strokeWidth={1.8} />,
-    href: "/services/ui-ux",
-  },
-  {
-    num: "4",
-    title: "SEO OPTIMIZATION",
-    desc: "Technical + on-page SEO that improves rankings, traffic quality, and long-term visibility for your business.",
-    icon: <Search className="h-12 w-12" strokeWidth={1.8} />,
-    href: "/services/seo",
-  },
-  {
-    num: "5",
-    title: "DIGITAL MARKETING",
-    desc: "Performance-driven marketing for growth - targeting, creatives, funnels, and optimization across key channels.",
-    icon: <Megaphone className="h-12 w-12" strokeWidth={1.8} />,
+    title: "Digital Marketing Services",
+    description:
+      "Grow your brand online with SEO, social media marketing, content strategy, brand visibility campaigns, and digital solutions designed to attract the right audience.",
     href: "/services/digital-marketing",
+    buttonLabel: "View Digital Marketing",
+    icon: Megaphone,
+    accentIcon: Sparkles,
   },
   {
-    num: "6",
-    title: "VIDEO EDITING",
-    desc: "Reels, ads, and brand videos with scroll-stopping edits, pacing, and storytelling that drives engagement.",
-    icon: <Clapperboard className="h-12 w-12" strokeWidth={1.8} />,
-    href: "/services/video-editing",
+    title: "Creative & Media Services",
+    description:
+      "Make your brand stand out with high-impact creatives, ad designs, videos, reels, product shoots, campaign concepts, and visual content for every digital platform.",
+    href: "/services/creative-media",
+    buttonLabel: "View Creative Services",
+    icon: Palette,
+    accentIcon: Store,
   },
   {
-    num: "7",
-    title: "SMM",
-    desc: "Content planning, posting, and community building - crafted to match your brand voice and boost reach.",
-    icon: <Share2 className="h-12 w-12" strokeWidth={1.8} />,
-    href: "/services/social-media-management",
+    title: "Website Development Services",
+    description:
+      "Build fast, responsive, and conversion-focused websites, landing pages, business platforms, and e-commerce experiences that support your growth goals.",
+    href: "/services/web-design-development",
+    buttonLabel: "View Website Services",
+    icon: Code2,
+    accentIcon: PanelsTopLeft,
   },
   {
-    num: "8",
-    title: "E-COMMERCE SOLUTIONS",
-    desc: "Store setup, product pages, and conversion upgrades - built to increase add-to-carts and drive more sales.",
-    icon: <ShoppingCart className="h-12 w-12" strokeWidth={1.8} />,
-    href: "/services/ecommerce",
+    title: "Performance Marketing",
+    description:
+      "Generate measurable leads and sales through Google Ads, Meta Ads, paid campaigns, retargeting, funnel optimization, and data-driven performance strategies.",
+    href: "/services/performance-marketing",
+    buttonLabel: "View Performance Marketing",
+    icon: TrendingUp,
+    accentIcon: BarChart3,
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 md:py-20">
-      <Image
-        src="/homepage/serviceIcon.png"
-        alt=""
-        width={144}
-        height={100}
-        className="
-          pointer-events-none absolute right-[-30px] top-10
-          block h-[100px] w-36 opacity-90 md:hidden
-        "
-        loading="lazy"
-      />
-      <Image
-        src="/homepage/serviceIcon.png"
-        alt=""
-        width={280}
-        height={184}
-        className="
-          pointer-events-none absolute right-[-30px] top-0
-          hidden h-36 w-[168px] opacity-90 md:right-[-10px] md:top-20
-          md:block md:h-[184px] md:w-[280px]
-        "
-        loading="lazy"
-      />
-
-      <div className="mx-auto max-w-[1500px] px-4 sm:px-6">
-        <div className="mb-14 text-center">
-          <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#00AAB7]/40 bg-[#00AAB7]/10 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#00AAB7] md:text-xs">
-            DIGITAL EXCELLENCE
-          </p>
-
-          <h2 className="text-3xl font-extrabold text-black/80 md:text-5xl">
-            OUR SERVICES
+    <section className="border-y border-black/10 bg-[#f8f7f4] text-[#111111]">
+      <div className="mx-auto max-w-[1800px]">
+        <div className="px-5 py-14 text-center sm:px-8 md:py-20">
+          <h2 className="mx-auto max-w-[900px] text-[38px] font-normal leading-[1.12] tracking-[-0.02em] sm:text-[46px] lg:text-[58px]">
+            Beyond Marketing.
+            <span className="mt-2 block">We Deliver Transformation.</span>
           </h2>
-
-          <p className="mx-auto mt-5 max-w-4xl text-base leading-relaxed text-black/75 md:text-lg">
-            From strategy to execution, we help brands build a strong digital
-            presence that looks premium, loads fast, and converts better.
-            Whether you need a new website, creatives, growth marketing, or
-            consistent content - our team delivers end-to-end solutions built
-            for results.
-          </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {HOME_SERVICES.map((s) => (
-            <ServiceCard key={s.title} service={s} />
-          ))}
+        <div className="grid border-t border-black/10 sm:grid-cols-2 xl:grid-cols-4">
+          {SERVICES.map((service, index) => {
+            const Icon = service.icon;
+            const AccentIcon = service.accentIcon;
+
+            return (
+              <article
+                key={service.title}
+                className={`flex min-h-[440px] flex-col border-black/10 px-7 py-9 sm:min-h-[470px] lg:px-9 lg:py-10 ${
+                  index % 2 === 0 ? "sm:border-r" : ""
+                } ${index < SERVICES.length - 1 ? "border-b" : ""} ${
+                  index >= 2 ? "sm:border-b-0" : ""
+                } ${index < SERVICES.length - 1 ? "xl:border-r xl:border-b-0" : ""
+                }`}
+              >
+                <div className="relative h-20 w-20">
+                  <Icon
+                    className="absolute bottom-0 left-0 h-14 w-14 text-black"
+                    strokeWidth={1.7}
+                  />
+                  <AccentIcon
+                    className="absolute right-0 top-0 h-8 w-8 text-[#1467f5]"
+                    strokeWidth={2}
+                  />
+                </div>
+
+                <div className="mt-14 flex flex-1 flex-col">
+                  <h3 className="max-w-[310px] text-[22px] font-medium leading-[1.45] tracking-[-0.01em] lg:text-[24px]">
+                    {service.title}
+                  </h3>
+
+                  <p className="mt-6 max-w-[360px] text-[16px] font-normal leading-7 text-black/70">
+                    {service.description}
+                  </p>
+
+                  <div className="mt-auto pt-9">
+                    <Link
+                      href={service.href}
+                      className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-black/80 px-7 py-3 text-center text-[12px] font-semibold text-black transition-colors hover:border-[#1467f5] hover:bg-[#1467f5] hover:text-white"
+                    >
+                      {service.buttonLabel}
+                      <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="flex justify-center border-t border-black/10 px-5 py-10 md:py-12">
           <Link
             href="/services"
-            className="
-              inline-flex items-center gap-2
-              rounded-full bg-white px-6 py-3
-              text-sm font-semibold text-black
-              shadow-[0_18px_40px_rgba(0,0,0,0.18)]
-              transition-all duration-200
-              hover:-translate-y-0.5
-            "
+            className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-[#1467f5] px-8 py-3 text-[12px] font-semibold text-[#1467f5] transition-colors hover:bg-[#1467f5] hover:text-white"
           >
-            View More Services <span aria-hidden>-&gt;</span>
+            View All Services
+            <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
           </Link>
         </div>
       </div>

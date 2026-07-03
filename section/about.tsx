@@ -1,92 +1,136 @@
 import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowUpRight,
+  BarChart3,
+  Bot,
+  Check,
+  Database,
+  Megaphone,
+} from "lucide-react";
+
+const CAPABILITIES = [
+  {
+    title: "Brand Strategy",
+    icon: BarChart3,
+    points: ["Brand positioning", "Market planning", "Growth roadmap"],
+  },
+  {
+    title: "Digital Marketing",
+    icon: Megaphone,
+    points: ["SEO and paid ads", "Social media campaigns", "Lead generation"],
+  },
+  {
+    title: "Web & Automation",
+    icon: Database,
+    points: ["Web-app development", "Marketing analytics", "AI-led workflows"],
+  },
+];
 
 export default function AboutSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#FBF6F4] py-12 md:py-20">
-      <Image
-        src="/homepage/top_png.png"
-        alt=""
-        width={120}
-        height={184}
-        className="pointer-events-none absolute right-6 top-[-90px] h-36 w-24 opacity-90 md:top-[-40px] md:h-[184px] md:w-[120px]"
-      />
+    <section className="overflow-hidden bg-black text-white">
+      <div className="grid min-h-[760px] lg:grid-cols-2">
+        <div className="relative min-h-[500px] overflow-hidden lg:min-h-full">
+          <Image
+            src="/homepage/about-ai-collaboration.png"
+            alt="Human creativity collaborating with artificial intelligence"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
 
-      <div className="mx-auto max-w-[1500px] px-5 sm:px-6">
-        <div className="grid items-center gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-6">
-            <h2 className="text-[44px] font-extrabold leading-[0.95] tracking-tight text-black/80 md:text-[56px]">
-              WHO WE ARE
+          <div className="absolute inset-0 bg-linear-to-b from-black/35 via-transparent to-black/30" />
+
+          <div className="absolute left-6 top-6 flex items-center gap-2 sm:left-10 sm:top-8">
+            <span className="text-[36px] font-light leading-none tracking-[-0.04em] sm:text-[48px]">
+              BrainADZ
+            </span>
+            <span className="relative text-[34px] font-light italic leading-none text-white sm:text-[44px]">
+              AI
+              <span className="absolute -right-4 -top-2 text-[18px] not-italic text-[#42d7ee]">
+                +
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div className="flex items-center px-5 py-14 sm:px-9 lg:px-10 lg:py-16 xl:px-16">
+          <div className="w-full">
+            <p className="text-[30px] font-light leading-tight text-white/90 sm:text-[38px] lg:text-[42px]">
+              Integrated Marketing Solutions
+            </p>
+
+            <h2 className="mt-3 max-w-[830px] text-[38px] font-semibold leading-[1.08] tracking-[-0.03em] sm:text-[48px] lg:text-[54px]">
+             Building Brands That Grow Across Every Digital Touchpoint
             </h2>
 
-            <p className="mt-4 text-[18px] font-semibold leading-snug text-[#00AAB7] md:text-[20px]">
-              BrainADZ Marketing is an agile and{" "}
-              <br className="hidden md:block" />
-              future-forward marketing
+            <p className="mt-7 max-w-[900px] text-[17px] font-normal leading-8 text-white/82 sm:text-[18px]">
+              <strong className="font-semibold text-white">
+                BrainADZ Marketing 
+              </strong>{" "}
+             helps businesses build strong visibility, generate qualified leads, and scale faster through strategy, creative campaigns, performance marketing, SEO, social media, websites, automation, and data-driven execution.
             </p>
 
-            <p className="mt-2 text-[15px] text-black/75 md:text-[16px]">
-              fueled by ideas that spark momentum.
-            </p>
+            <div className="mt-10 grid gap-3 md:grid-cols-3">
+              {CAPABILITIES.map((capability) => {
+                const Icon = capability.icon;
 
-            <div className="mt-6 space-y-4 text-[14.5px] leading-relaxed text-black/60 md:text-[15px]">
-              <p>
-                We craft bold brand strategies and ad campaigns that don&apos;t
-                just turn heads - they move markets.
-              </p>
+                return (
+                  <article
+                    key={capability.title}
+                    className="min-h-[270px] rounded-[22px] border border-white/25 px-5 py-6"
+                  >
+                    <div className="relative inline-flex">
+                      <Icon className="h-11 w-11 text-white" strokeWidth={1.5} />
+                      <Bot
+                        className="absolute -right-3 -top-2 h-5 w-5 text-[#1467f5]"
+                        strokeWidth={2}
+                      />
+                    </div>
 
-              <p>
-                Our in-house branding experts infuse insight, innovation, and
-                cultural relevance to develop campaigns that do more than
-                communicate - they catalyze growth. For this - they leverage
-                advanced technology, data analytics, and strategy in tandem.
-              </p>
+                    <h3 className="mt-7 text-[18px] font-semibold leading-6">
+                      {capability.title}
+                    </h3>
+
+                    <ul className="mt-6 space-y-4">
+                      {capability.points.map((point) => (
+                        <li
+                          key={point}
+                          className="flex items-start gap-3 text-[15px] leading-6 text-white/88"
+                        >
+                          <Check
+                            className="mt-1 h-4 w-4 shrink-0 text-[#1467f5]"
+                            strokeWidth={2.2}
+                          />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                );
+              })}
             </div>
 
-            <a
-              href="/about"
-              className="
-                mt-8 inline-flex items-center gap-3
-                rounded-full border border-[#00AAB7] bg-white
-                px-6 py-2.5 text-sm font-semibold tracking-wide
-                text-[#00AAB7] transition-all duration-300 ease-out
-                hover:bg-[#00AAB7] hover:text-white
-              "
-            >
-              READ MORE
-            </a>
-          </div>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="tel:+919540468023"
+                className="inline-flex min-h-16 items-center justify-center rounded-full bg-white px-8 text-[12px] font-semibold text-black transition hover:bg-[#1467f5] hover:text-white"
+              >
+               Book Free Consultation
+              </Link>
 
-          <div className="lg:col-span-6">
-            <div className="relative">
-              <div className="relative overflow-hidden">
-                <Image
-                  src="/homepage/about.png"
-                  alt="BrainADZ Team"
-                  width={760}
-                  height={360}
-                  className="h-[280px] w-full object-contain md:h-[360px]"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-
-                <div className="pointer-events-none absolute inset-0 bg-white/5" />
-              </div>
-
-              <div className="absolute left-4 top-4 rounded-md bg-white/80 px-3 py-1 text-xs font-semibold text-black/70">
-                BrainADZ
-              </div>
+              <Link
+                href="/company-overview"
+                className="inline-flex min-h-16 items-center justify-center gap-3 rounded-full border-2 border-white px-8 text-[12px] font-semibold text-white transition hover:border-[#1467f5] hover:bg-[#1467f5]"
+              >
+                Know More
+                <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
+              </Link>
             </div>
           </div>
         </div>
       </div>
-
-      <Image
-        src="/homepage/top_png.png"
-        alt=""
-        width={120}
-        height={184}
-        className="pointer-events-none absolute bottom-[-40px] left-8 hidden h-36 w-24 rotate-90 opacity-90 md:block md:h-[184px] md:w-[120px]"
-        loading="lazy"
-      />
     </section>
   );
 }

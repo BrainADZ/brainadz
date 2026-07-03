@@ -1,200 +1,268 @@
 "use client";
 
-import React, { useMemo, useRef, useState } from "react";
+import { useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
 
-type Faq = { q: string; a: string };
-type Tab = { key: string; label: string; faqs: Faq[] };
+type Faq = {
+  question: string;
+  answer: string;
+};
 
-// ✅ Move outside component (stable)
-const TABS: Tab[] = [
+const FAQS: Faq[] = [
   {
-    key: "seo",
-    label: "SEO Services",
-    faqs: [
-      {
-        q: "What can BrainADZ SEO service do for my business?",
-        a: "BrainADZ helps you rank higher, attract local customers, and increase conversions with technical SEO, content strategy, and measurable optimization.",
-      },
-      {
-        q: "How does BrainADZ SEO strategy differ from other agencies?",
-        a: "We combine technical fixes + intent-led content + conversion optimization with clear reporting and iteration.",
-      },
-    ],
+    question: "How can BrainADZ help my business grow online?",
+    answer:
+      "BrainADZ combines strategy, design, content, paid media, SEO, and development so your digital presence can attract, convert, and retain better customers.",
   },
   {
-    key: "ppc",
-    label: "PPC and Paid Advertising",
-    faqs: [
-      {
-        q: "Which platforms do you run ads on?",
-        a: "Google Ads (Search/Display/YouTube) and Meta Ads (Facebook/Instagram) depending on goals and budget.",
-      },
-      {
-        q: "How do you control cost per lead?",
-        a: "Continuous creative testing, targeting refinement, landing page improvements, and bidding optimization.",
-      },
-    ],
+    question: "Do you handle both website development and marketing?",
+    answer:
+      "Yes. We build websites, landing pages, campaigns, social media systems, paid ads, SEO plans, and analytics dashboards under one execution team.",
   },
   {
-    key: "smm",
-    label: "Social Media Marketing",
-    faqs: [
-      { q: "Do you handle reels and content planning?", a: "Yes. Strategy, scripts, creatives, publishing, and performance improvement." },
-      { q: "Do you manage community?", a: "Yes. Reply frameworks, DM templates, and moderation support as per SOP." },
-    ],
+    question: "What types of businesses do you work with?",
+    answer:
+      "We work with service brands, manufacturers, e-commerce companies, events, exhibitions, startups, and established businesses that need measurable growth.",
   },
   {
-    key: "content",
-    label: "Content Marketing",
-    faqs: [
-      { q: "Do you write SEO blogs and landing pages?", a: "Yes. SEO + conversion copy aligned with keyword intent and brand tone." },
-      { q: "Do you provide content calendars?", a: "Yes. Weekly/monthly calendars with hooks, formats, and posting guidance." },
-    ],
+    question: "How long does it take to launch a project?",
+    answer:
+      "Timelines depend on scope. Smaller landing pages and campaigns can move quickly, while custom websites, apps, and full digital systems are planned in milestones.",
   },
   {
-    key: "aso",
-    label: "ASO (App Store Optimization)",
-    faqs: [
-      { q: "Do you optimize titles, descriptions, and keywords?", a: "Yes. Metadata, keywords, creatives, and store conversion improvements." },
-      { q: "Can you help with ratings and review strategy?", a: "Yes. Compliant review-growth flows and messaging suggestions." },
-    ],
+    question: "Can BrainADZ manage paid ads and performance reporting?",
+    answer:
+      "Yes. We set up campaigns, tracking, creative testing, landing page improvements, and reporting so the campaign is optimized around real business outcomes.",
   },
   {
-    key: "martech",
-    label: "Martech Services",
-    faqs: [
-      { q: "Do you set up tracking and analytics?", a: "Yes. GA4, GTM, Meta Pixel, events, and reporting dashboards." },
-      { q: "Can you integrate CRM and lead pipelines?", a: "Yes. Forms, webhooks, routing logic, and automation based on workflow." },
-    ],
+    question: "Do you provide creative design and brand support?",
+    answer:
+      "Yes. Our team supports logo design, campaign creatives, social media content, brand assets, presentations, brochures, and exhibition communication.",
   },
   {
-    key: "process",
-    label: "Process-Related",
-    faqs: [
-      { q: "What is your onboarding process?", a: "Discovery, audit, goals, plan, implementation, weekly updates, and optimization." },
-      { q: "How frequently do you report?", a: "Weekly snapshots + monthly deep-dive reports (customizable)." },
-    ],
+    question: "Do you provide creative design and brand support?",
+    answer:
+      "Yes. Our team supports logo design, campaign creatives, social media content, brand assets, presentations, brochures, and exhibition communication.",
+  },
+  {
+    question: "Do you provide creative design and brand support?",
+    answer:
+      "Yes. Our team supports logo design, campaign creatives, social media content, brand assets, presentations, brochures, and exhibition communication.",
+  },
+  {
+    question: "Do you provide creative design and brand support?",
+    answer:
+      "Yes. Our team supports logo design, campaign creatives, social media content, brand assets, presentations, brochures, and exhibition communication.",
+  },
+  {
+    question: "Do you provide creative design and brand support?",
+    answer:
+      "Yes. Our team supports logo design, campaign creatives, social media content, brand assets, presentations, brochures, and exhibition communication.",
   },
 ];
 
+const MARKETING_SERVICES = [
+  "SEO and organic growth",
+  "Performance ads",
+  "Social media marketing",
+  "Website and landing pages",
+  "Branding and creative design",
+  "Complete digital marketing",
+];
+
 export default function FaqSection() {
-  const [activeTab, setActiveTab] = useState<string>("seo");
-  const active = useMemo(() => TABS.find((t) => t.key === activeTab) ?? TABS[0], [activeTab]);
-
-  const [openIndex, setOpenIndex] = useState<number>(-1);
-
-  const tabsRef = useRef<HTMLDivElement | null>(null);
-
-  const scrollTabs = (dir: "left" | "right") => {
-    if (!tabsRef.current) return;
-    tabsRef.current.scrollBy({ left: dir === "left" ? -320 : 320, behavior: "smooth" });
-  };
-
-  const onTab = (k: string) => {
-    setActiveTab(k);
-    setOpenIndex(-1);
-  };
+  const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="relative w-full py-16 md:py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-[#F3FAFF]" />
-      <div className="pointer-events-none absolute right-[-140px] bottom-[-140px] h-[520px] w-[520px] rounded-full border border-black/5" />
-      <div className="pointer-events-none absolute right-[-70px] bottom-[-70px] h-[380px] w-[380px] rounded-full border border-black/5" />
-      <div className="pointer-events-none absolute right-0 bottom-0 h-[260px] w-[260px] rounded-full border border-black/5" />
+    <section className="bg-black px-5 py-16 text-white sm:px-8 lg:py-20">
+      <div className="mx-auto max-w-[1500px]">
+        <h2 className="text-center text-[38px] font-extrabold leading-tight tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
+          Frequently Asked Questions
+        </h2>
 
-      <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6">
-        <h2 className="text-center text-3xl md:text-4xl font-extrabold text-black">Frequently Asked Questions</h2>
+        <div className="mt-12 grid gap-8 lg:h-[660px] lg:min-h-0 lg:grid-cols-[0.86fr_1.14fr]">
+          <ContactMiniForm />
 
-        <div className="mt-8 flex items-center justify-center gap-4">
-          <ArrowButton onClick={() => scrollTabs("left")} dir="left" />
-
-          <div className="relative w-full max-w-[980px]">
-            <div className="pointer-events-none absolute left-0 top-0 h-full w-10 bg-linear-to-r from-[#F3FAFF] to-transparent" />
-            <div className="pointer-events-none absolute right-0 top-0 h-full w-10 bg-linear-to-l from-[#F3FAFF] to-transparent" />
-
-            <div ref={tabsRef} className="no-scrollbar flex items-center gap-3 overflow-x-auto whitespace-nowrap scroll-smooth px-10">
-              {TABS.map((t) => {
-                const isActive = t.key === activeTab;
+          <div className="max-h-[560px] min-h-0 overflow-hidden rounded-[22px] bg-[#f5f4f1] text-black lg:h-full lg:max-h-none">
+            <div className="faq-panel-scroll max-h-[560px] overflow-y-auto lg:h-full lg:max-h-none">
+              {FAQS.map((faq, index) => {
+                const isOpen = openIndex === index;
 
                 return (
-                  <button
-                    key={t.key}
-                    type="button"
-                    onClick={() => onTab(t.key)}
-                    className={[
-                      "shrink-0 rounded-full px-5 py-2.5 text-xs md:text-[13px] font-semibold border transition-colors",
-                      isActive
-                        ? "bg-[#00AAB7] text-white border-[#00AAB7]"
-                        : "bg-white text-black/70 border-black/10 hover:text-black hover:border-black/20",
-                    ].join(" ")}
+                  <div
+                    key={`${faq.question}-${index}`}
+                    className="border-b border-black/10 last:border-b-0"
                   >
-                    {t.label}
-                  </button>
+                    <button
+                      type="button"
+                      onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                      className="flex w-full items-start justify-between gap-6 px-6 py-6 text-left sm:px-9"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="flex gap-7 text-[20px] font-semibold leading-snug sm:text-[24px]">
+                        <span className="shrink-0 font-mono text-[17px] font-medium text-black/90">
+                          [{index + 1}]
+                        </span>
+                        <span>{faq.question}</span>
+                      </span>
+
+                      <FiChevronDown
+                        className={`mt-1 h-6 w-6 shrink-0 transition-transform duration-300 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    <div
+                      className={`grid transition-all duration-300 ease-out ${
+                        isOpen
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <p className="max-w-[760px] px-6 pb-7 pl-[86px] text-[15px] leading-7 text-black/65 sm:px-9 sm:pl-[104px]">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 );
               })}
             </div>
           </div>
-
-          <ArrowButton onClick={() => scrollTabs("right")} dir="right" />
-        </div>
-
-        <div className="mt-10 space-y-4">
-          {active?.faqs?.map((f, idx) => {
-            const isOpen = idx === openIndex;
-
-            return (
-              <div key={f.q} className="rounded-xl bg-white border border-black/10 shadow-[0_10px_30px_rgba(0,0,0,0.06)] overflow-hidden">
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex((p) => (p === idx ? -1 : idx))}
-                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
-                  aria-expanded={isOpen}
-                >
-                  <span className="text-sm md:text-[15px] font-semibold text-black">{f.q}</span>
-
-                  <span
-                    className={[
-                      "flex h-7 w-7 items-center justify-center rounded-full border transition-all duration-200",
-                      isOpen ? "border-[#0B66C3] bg-[#0B66C3] text-white" : "border-[#0B66C3] text-[#0B66C3] bg-white",
-                    ].join(" ")}
-                    aria-hidden="true"
-                  >
-                    {isOpen ? <span className="text-[16px] leading-none">×</span> : <span className="text-[16px] leading-none">+</span>}
-                  </span>
-                </button>
-
-                <div className={["grid transition-all duration-200 ease-out", isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"].join(" ")}>
-                  <div className="overflow-hidden">
-                    <div className="px-6 pb-6 text-sm md:text-[14px] leading-relaxed text-black/70">{f.a}</div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="mt-10 flex justify-center">
-          <button
-            type="button"
-            className="inline-flex items-center gap-2 rounded-full bg-[#00AAB7] px-7 py-3 text-white font-semibold text-sm shadow-[0_12px_28px_rgba(244,124,32,0.25)] transition-all duration-200 hover:scale-[1.02]"
-          >
-            View All <span aria-hidden="true">→</span>
-          </button>
         </div>
       </div>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .faq-panel-scroll {
+              overscroll-behavior: contain;
+              scrollbar-gutter: stable;
+              scrollbar-width: thin;
+              scrollbar-color: rgba(0, 0, 0, 0.32) transparent;
+            }
+
+            .faq-panel-scroll::-webkit-scrollbar {
+              width: 8px;
+            }
+
+            .faq-panel-scroll::-webkit-scrollbar-track {
+              background: transparent;
+              margin: 14px 0;
+            }
+
+            .faq-panel-scroll::-webkit-scrollbar-thumb {
+              background: rgba(0, 0, 0, 0.32);
+              border: 2px solid #f5f4f1;
+              border-radius: 999px;
+            }
+
+            .faq-panel-scroll:hover::-webkit-scrollbar-thumb {
+              background: rgba(0, 0, 0, 0.5);
+            }
+          `,
+        }}
+      />
     </section>
   );
 }
 
-function ArrowButton({ dir, onClick }: { dir: "left" | "right"; onClick: () => void }) {
+function ContactMiniForm() {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="hidden md:inline-flex h-9 w-9 items-center justify-center rounded-full bg-white border border-black/10 text-black/60 shadow-[0_10px_22px_rgba(0,0,0,0.06)] transition-all duration-200 hover:border-black/20 hover:text-black"
-      aria-label={dir === "left" ? "Scroll left" : "Scroll right"}
-    >
-      {dir === "left" ? "‹" : "›"}
-    </button>
+    <div className="rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,#092456_0%,#1354d8_100%)] p-6 shadow-[0_24px_70px_rgba(0,50,180,0.35)] sm:p-7 lg:flex lg:h-full lg:flex-col lg:overflow-hidden">
+      <h3 className="text-[24px] font-extrabold leading-tight">
+        Didn&apos;t Find What You Were Looking For?
+      </h3>
+
+      <p className="mt-3 max-w-[620px] text-[14px] font-semibold leading-6 text-white">
+        We&apos;ve got more answers waiting for you. Share a few details and our
+        team will reach out with the right next step.
+      </p>
+
+      <form className="mt-7 flex flex-col gap-6 lg:flex-1 lg:gap-5">
+        <div className="grid gap-6 sm:grid-cols-2 lg:gap-x-6 lg:gap-y-5">
+          <MinimalField label="Name" placeholder="Full Name" />
+          <MinimalField label="Company / Brand" placeholder="Brand Name" />
+          <MinimalField label="Contact Number" placeholder="Enter Your Number*" />
+          <MinimalField label="Work Email" placeholder="Enter Email Address*" />
+        </div>
+
+        <MinimalSelect
+          label="Marketing Need"
+          placeholder="Select Marketing Service"
+          options={MARKETING_SERVICES}
+        />
+        <MinimalTextarea placeholder="Tell us your marketing goal" />
+
+      
+        <div className="flex justify-end">
+          <button
+            type="button"
+            className="min-h-12 rounded-full bg-white px-12 text-[14px] font-semibold text-black transition hover:bg-white/90"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+function MinimalField({
+  label,
+  placeholder,
+}: {
+  label: string;
+  placeholder: string;
+}) {
+  return (
+    <label className="block">
+      <span className="text-[11px] font-bold text-white">{label}</span>
+      <input
+        type="text"
+        placeholder={placeholder}
+        className="mt-2 h-8 w-full border-b border-white/25 bg-transparent text-[15px] text-white outline-none placeholder:text-white/45 focus:border-white"
+      />
+    </label>
+  );
+}
+
+function MinimalSelect({
+  label,
+  placeholder,
+  options,
+}: {
+  label: string;
+  placeholder: string;
+  options: string[];
+}) {
+  return (
+    <label className="block">
+      <span className="text-[11px] font-bold text-white">{label}</span>
+      <select
+        defaultValue=""
+        className="mt-2 h-9 w-full border-b border-white/25 bg-transparent text-[15px] text-white outline-none focus:border-white"
+      >
+        <option value="" disabled className="text-black">
+          {placeholder}
+        </option>
+        {options.map((option) => (
+          <option key={option} value={option} className="text-black">
+            {option}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+function MinimalTextarea({ placeholder }: { placeholder: string }) {
+  return (
+    <textarea
+      placeholder={placeholder}
+      rows={3}
+      className="min-h-[68px] w-full resize-none border-b border-white/25 bg-transparent text-[15px] text-white outline-none placeholder:text-white/45 focus:border-white"
+    />
   );
 }
