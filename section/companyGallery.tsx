@@ -76,7 +76,7 @@ export default function CompanyGallerySection() {
           {COMPANY_GLIMPSES.map((item) => (
             <figure
               key={item.src}
-              className="group relative aspect-[4/3] overflow-hidden rounded-[16px] border border-white/10 bg-[#111111]"
+              className="group relative aspect-4/3 overflow-hidden rounded-2xl border border-white/10 bg-[#111111]"
             >
               <Image
                 src={item.src}
@@ -86,7 +86,7 @@ export default function CompanyGallerySection() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-90 transition duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent opacity-90 transition duration-500 group-hover:opacity-100" />
 
               <figcaption className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#73a4ff]">

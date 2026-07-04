@@ -507,7 +507,7 @@ function CoreValuesSection() {
 function MarketingApproachSection() {
   return (
     <section className="overflow-hidden bg-black px-5 py-16 text-white sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         {/* TOP IMAGE WITH FLOATING CARD */}
         <div className="relative">
           <div className="relative ml-auto h-[360px] overflow-hidden rounded-[10px] sm:h-[430px] lg:w-[78%]">
@@ -522,7 +522,7 @@ function MarketingApproachSection() {
             <div className="absolute inset-0 bg-black/10" />
           </div>
 
-          <div className="left-0 top-[-6px] mt-6 rounded-[22px] bg-[#181818] p-7 shadow-[0_24px_70px_rgba(0,0,0,0.45)] sm:p-8 lg:absolute lg:mt-0 lg:w-[410px]">
+          <div className="left-0 -top-1.5 mt-6 rounded-[22px] bg-[#181818] p-7 shadow-[0_24px_70px_rgba(0,0,0,0.45)] sm:p-8 lg:absolute lg:mt-0 lg:w-[410px]">
             <h2 className="text-[22px] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[24px]">
               We Keep Our Eye On The ROI
             </h2>

@@ -250,7 +250,7 @@ export default function Footer() {
                 <Link
                   key={unit.name}
                   href={unit.href}
-                  className="group flex min-h-[108px] flex-col items-start justify-between gap-5 rounded-[16px] border border-white/15 bg-white/10 px-6 py-5 transition hover:-translate-y-1 hover:border-white/35 hover:bg-white/15 sm:flex-row sm:items-center"
+                  className="group flex min-h-[108px] flex-col items-start justify-between gap-5 rounded-2xl border border-white/15 bg-white/10 px-6 py-5 transition hover:-translate-y-1 hover:border-white/35 hover:bg-white/15 sm:flex-row sm:items-center"
                 >
                   <Image
                     src={unit.logo}

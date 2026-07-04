@@ -66,7 +66,7 @@ const menuContent = {
     "Website Maintenance",
     "UI/UX Design",
   ],
-    "Creative & Media Services": [
+  "Creative & Media Services": [
     "Graphic Design Services",
     "Creative Design Services",
     "Motion Graphics Services",
@@ -114,18 +114,6 @@ type Category = keyof typeof menuContent;
 
 const menuItems = Object.keys(menuContent) as Category[];
 
-const SERVICES_HOME_HREF = "/services";
-
-const categoryHrefs: Record<Category, string> = {
-  "Digital Marketing Services": "/services/digital-marketing",
-  "Web Design & Development": "/services/web-design-development",
-  "Creative & Media Services": "/services/creative-media",
-  "SEO Services": "/services/seo-services",
-  "Performance Marketing": "/services/performance-marketing",
-};
-
-const getCategoryHref = (category: Category) => categoryHrefs[category];
-
 const serviceIconRules: Array<[string[], LucideIcon]> = [
   [["local"], MapPin],
   [["ecommerce", "shopping", "shopify"], ShoppingCart],
@@ -169,25 +157,18 @@ const getServiceIcon = (service: string) => {
   );
 };
 
-const getServiceHref = (service: string) => {
-  const serviceSlug = service
+const getServiceHref = (service: string) =>
+  `/services/${service
     .toLowerCase()
     .replace(/&/g, "and")
     .replace(/\//g, "-")
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-
-  if (service === "SMM Services") {
-    return "/services/digital-marketing/smm-services";
-  }
-
-  return `/services/${serviceSlug}`;
-};
+    .replace(/^-+|-+$/g, "")}`;
 
 const normalLinks = [
   {
-    label: "Career",
-    href: "/career",
+    label: "Infrastructure",
+    href: "/infrastructure",
   },
   {
     label: "Consulting",
@@ -198,8 +179,12 @@ const normalLinks = [
     href: "/about-us",
   },
   {
-    label: "Get in Touch",
-    href: "/contact",
+    label: "Support",
+    href: "/support",
+  },
+  {
+    label: "Think",
+    href: "/think",
   },
 ];
 
@@ -210,9 +195,7 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
 
-  const [activeCategory, setActiveCategory] = useState<Category>(
-    "Digital Marketing Services"
-  );
+  const [activeCategory, setActiveCategory] = useState<Category>("SEO Services");
 
   const closeMobileMenu = () => {
     setMobileOpen(false);
@@ -240,10 +223,7 @@ export default function Navbar() {
               onMouseEnter={() => setShowMegaMenu(true)}
               onMouseLeave={() => setShowMegaMenu(false)}
             >
-              <Link
-                href={SERVICES_HOME_HREF}
-                className="flex items-center gap-1 text-[15px] font-normal text-white transition hover:text-[#4f7cff]"
-              >
+              <button className="flex items-center gap-1 text-[15px] font-normal text-white transition hover:text-[#4f7cff]">
                 Services
                 <ChevronDown
                   size={18}
@@ -251,37 +231,36 @@ export default function Navbar() {
                   className={`transition duration-300 ${showMegaMenu ? "rotate-180" : ""
                     }`}
                 />
-              </Link>
+              </button>
 
               <div
                 className={`fixed left-0 top-21 w-full border-t border-white/10 bg-[#050505] shadow-2xl transition-all duration-200 ${showMegaMenu
-                    ? "visible opacity-100"
-                    : "invisible opacity-0"
+                  ? "visible opacity-100"
+                  : "invisible opacity-0"
                   }`}
               >
                 <div className="mx-auto flex min-h-130 max-w-450 px-0">
                   <div className="w-82.5 border-r border-white/10 bg-[#101010] p-8">
                     <div className="space-y-2">
                       {menuItems.map((item) => (
-                        <Link
+                        <button
                           key={item}
-                          href={getCategoryHref(item)}
                           onMouseEnter={() => setActiveCategory(item)}
                           className={`flex w-full items-center justify-between rounded-[3px] px-4 py-4 text-left text-[15px] font-normal transition-all ${activeCategory === item
-                              ? "bg-[#1b1b1b] text-white"
-                              : "text-white/75 hover:bg-[#181818] hover:text-white"
+                            ? "bg-[#1b1b1b] text-white"
+                            : "text-white/75 hover:bg-[#181818] hover:text-white"
                             }`}
                         >
                           <span className="truncate">{item}</span>
                           <span className="ml-3 text-lg text-[#4f7cff]">
                             -&gt;
                           </span>
-                        </Link>
+                        </button>
                       ))}
                     </div>
 
                     <Link
-                      href={SERVICES_HOME_HREF}
+                      href="/services"
                       className="mt-8 flex w-full items-center justify-between bg-[#3c5b9b] px-5 py-4 text-[15px] font-normal text-white transition hover:bg-[#2f4a82]"
                     >
                       Explore all services
@@ -346,8 +325,8 @@ export default function Navbar() {
 
               <div
                 className={`absolute left-0 top-full z-50 pt-4 transition-all duration-200 ${showResources
-                    ? "visible opacity-100"
-                    : "invisible opacity-0"
+                  ? "visible opacity-100"
+                  : "invisible opacity-0"
                   }`}
               >
                 <div className="min-w-57.5 rounded-[3px] border border-white/10 bg-[#101010] py-2 shadow-lg">
@@ -422,8 +401,8 @@ export default function Navbar() {
 
       <div
         className={`fixed left-0 top-21 z-40 h-[calc(100dvh-84px)] w-full overflow-y-auto bg-[#050505] transition-all duration-300 xl:hidden ${mobileOpen
-            ? "visible translate-x-0 opacity-100"
-            : "invisible translate-x-full opacity-0"
+          ? "visible translate-x-0 opacity-100"
+          : "invisible translate-x-full opacity-0"
           }`}
       >
         <div className="flex flex-col border-t border-white/10">
@@ -465,8 +444,8 @@ export default function Navbar() {
                   type="button"
                   onClick={() => setActiveCategory(item)}
                   className={`flex w-full items-center justify-between px-6 py-4 text-left text-[15px] font-normal ${activeCategory === item
-                      ? "bg-[#1b1b1b] text-[#7fa0ff]"
-                      : "text-white/75"
+                    ? "bg-[#1b1b1b] text-[#7fa0ff]"
+                    : "text-white/75"
                     }`}
                 >
                   <span>{item}</span>
@@ -479,15 +458,6 @@ export default function Navbar() {
                   {activeCategory}
                 </h3>
 
-                <Link
-                  href={getCategoryHref(activeCategory)}
-                  onClick={closeMobileMenu}
-                  className="mt-4 flex items-center justify-between border border-white/10 bg-[#1467f5] px-5 py-4 text-[15px] font-medium text-white"
-                >
-                  View {activeCategory}
-                  <span>-&gt;</span>
-                </Link>
-
                 <div className="mt-4 space-y-5">
                   {menuContent[activeCategory].map((item) => {
                     const ServiceIcon = getServiceIcon(item);
@@ -499,7 +469,7 @@ export default function Navbar() {
                         onClick={closeMobileMenu}
                         className="flex items-center gap-3"
                       >
-                        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-[3px] border border-white/10 bg-white/[0.04] text-[#7fa0ff]">
+                        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-[3px] border border-white/10 bg-white/4 text-[#7fa0ff]">
                           <ServiceIcon className="h-4 w-4" />
                         </span>
                         <p className="text-[16px] font-normal text-white">
@@ -511,7 +481,7 @@ export default function Navbar() {
                 </div>
 
                 <Link
-                  href={SERVICES_HOME_HREF}
+                  href="/services"
                   onClick={closeMobileMenu}
                   className="mt-6 flex items-center justify-between bg-[#3c5b9b] px-5 py-4 text-[15px] text-white"
                 >
