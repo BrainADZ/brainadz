@@ -165,6 +165,19 @@ const getServiceHref = (service: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")}`;
 
+const getServiceBadge = (service: string) => {
+  const badges: Record<string, string> = {
+    "SMM Services": "TRENDING",
+    "Performance Marketing": "MOST DEMANDED",
+    "Google Ads": "HOT",
+    "E-Commerce Development": "BESTSELLER",
+    "SEO Audit Services": "NEW",
+    "Visual Content Creation": "POPULAR",
+  };
+
+  return badges[service];
+};
+
 const normalLinks = [
   {
     label: "Infrastructure",
@@ -204,12 +217,12 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]">
-      <nav className="mx-auto flex h-21 max-w-450 items-center justify-between px-5 md:px-8 lg:px-12">
-        <div className="flex items-center">
-          <Link href="/" className="mr-10 flex items-center xl:mr-14">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
+      <nav className="mx-auto flex h-21 max-w-450 items-center justify-between gap-6 px-5 md:px-8 lg:px-12">
+        <div className="flex flex-1 items-center justify-between">
+          <Link href="/" className="flex items-center">
             <img
-              src="/logo/whitelogo-optimized.webp"
+              src="/logo/mainlogo.png"
               alt="BrainADZ Marketing Logo"
               width={420}
               height={248}
@@ -217,13 +230,13 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className="hidden items-center gap-8 xl:flex">
+          <div className="hidden items-center justify-end gap-8 xl:flex">
             <div
               className="relative"
               onMouseEnter={() => setShowMegaMenu(true)}
               onMouseLeave={() => setShowMegaMenu(false)}
             >
-              <button className="flex items-center gap-1 text-[15px] font-normal text-white transition hover:text-[#4f7cff]">
+              <button className="flex items-center gap-1 text-[15px] font-normal text-[#111111] transition hover:text-[#e50914]">
                 Services
                 <ChevronDown
                   size={18}
@@ -234,65 +247,63 @@ export default function Navbar() {
               </button>
 
               <div
-                className={`fixed left-0 top-21 w-full border-t border-white/10 bg-[#050505] shadow-2xl transition-all duration-200 ${showMegaMenu
+                className={`fixed left-0 top-21 w-full border-t border-black/10 bg-white/95 shadow-2xl backdrop-blur transition-all duration-200 ${showMegaMenu
                   ? "visible opacity-100"
                   : "invisible opacity-0"
                   }`}
               >
-                <div className="mx-auto flex min-h-130 max-w-450 px-0">
-                  <div className="w-82.5 border-r border-white/10 bg-[#101010] p-8">
-                    <div className="space-y-2">
-                      {menuItems.map((item) => (
-                        <button
-                          key={item}
-                          onMouseEnter={() => setActiveCategory(item)}
-                          className={`flex w-full items-center justify-between rounded-[3px] px-4 py-4 text-left text-[15px] font-normal transition-all ${activeCategory === item
-                            ? "bg-[#1b1b1b] text-white"
-                            : "text-white/75 hover:bg-[#181818] hover:text-white"
-                            }`}
-                        >
-                          <span className="truncate">{item}</span>
-                          <span className="ml-3 text-lg text-[#4f7cff]">
-                            -&gt;
-                          </span>
-                        </button>
-                      ))}
-                    </div>
+                <div className="mx-auto max-h-[calc(100vh-84px)] max-w-450 overflow-y-auto px-8 py-8">
+                  <div className="grid grid-cols-5 gap-x-10 gap-y-9">
+                    {menuItems.map((category) => (
+                      <div key={category} className="min-w-0">
+                        <h3 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#e50914]">
+                          {category}
+                        </h3>
+                        <div className="mt-5 h-px w-full bg-[#e50914]" />
 
-                    <Link
-                      href="/services"
-                      className="mt-8 flex w-full items-center justify-between bg-[#3c5b9b] px-5 py-4 text-[15px] font-normal text-white transition hover:bg-[#2f4a82]"
-                    >
-                      Explore all services
-                      <span>-&gt;</span>
-                    </Link>
+                        <div className="mt-6 space-y-5">
+                          {menuContent[category].map((item) => {
+                            const badge = getServiceBadge(item);
+
+                            return (
+                              <Link
+                                key={item}
+                                href={getServiceHref(item)}
+                                className="group flex min-h-6 items-center justify-between gap-3 text-[15px] font-bold leading-snug text-[#050505] transition hover:text-[#e50914]"
+                              >
+                                <span className="min-w-0">{item}</span>
+                                {badge ? (
+                                  <span className="shrink-0 rounded-full bg-[#ffe7e9] px-2 py-1 text-[9px] font-black uppercase tracking-[0.04em] text-[#e50914]">
+                                    {badge}
+                                  </span>
+                                ) : (
+                                  <span className="shrink-0 text-[12px] font-bold text-[#e50914] transition group-hover:translate-x-0.5">
+                                    -&gt;
+                                  </span>
+                                )}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    ))}
                   </div>
 
-                  <div className="flex-1 bg-[#050505] p-10">
-                    <h2 className="mb-12 text-[36px] font-light leading-none tracking-[-1.5px] text-[#7fa0ff]">
-                      {activeCategory} <span>-&gt;</span>
-                    </h2>
+                  <div className="mt-10 flex items-center justify-between gap-6 border-t border-black/10 pt-5">
+                    <p className="text-[14px] font-normal text-black/75">
+                      Not sure where to start?{" "}
+                      <span className="font-bold text-black">
+                        Talk to a strategist
+                      </span>{" "}
+                      - we&apos;ll map the right mix for your goals.
+                    </p>
 
-                    <div className="grid grid-cols-3 gap-x-14 gap-y-12">
-                      {menuContent[activeCategory]?.map((item) => {
-                        const ServiceIcon = getServiceIcon(item);
-
-                        return (
-                          <Link
-                            href={getServiceHref(item)}
-                            key={item}
-                            className="group flex cursor-pointer items-center gap-4"
-                          >
-                            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-[3px] border border-white/10 bg-white/4 text-[#7fa0ff] transition group-hover:border-[#7fa0ff]/50 group-hover:bg-[#7fa0ff]/10">
-                              <ServiceIcon className="h-5 w-5" />
-                            </span>
-                            <h3 className="mb-0 text-[18px] font-normal text-white transition group-hover:text-[#7fa0ff]">
-                              {item}
-                            </h3>
-                          </Link>
-                        );
-                      })}
-                    </div>
+                    <Link
+                      href="/contact"
+                      className="inline-flex h-10 shrink-0 items-center justify-center rounded-full bg-[#e50914] px-7 text-[13px] font-bold text-white transition hover:bg-[#b70710]"
+                    >
+                      Get a Free Audit -&gt;
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -302,7 +313,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[15px] font-normal text-white transition hover:text-[#4f7cff]"
+                className="text-[15px] font-normal text-[#111111] transition hover:text-[#e50914]"
               >
                 {link.label}
               </Link>
@@ -313,7 +324,7 @@ export default function Navbar() {
               onMouseEnter={() => setShowResources(true)}
               onMouseLeave={() => setShowResources(false)}
             >
-              <button className="flex items-center gap-1 text-[15px] font-normal text-white transition hover:text-[#4f7cff]">
+              <button className="flex items-center gap-1 text-[15px] font-normal text-[#111111] transition hover:text-[#e50914]">
                 Resources
                 <ChevronDown
                   size={18}
@@ -329,17 +340,17 @@ export default function Navbar() {
                   : "invisible opacity-0"
                   }`}
               >
-                <div className="min-w-57.5 rounded-[3px] border border-white/10 bg-[#101010] py-2 shadow-lg">
+                <div className="min-w-57.5 rounded-[3px] border border-black/10 bg-white py-2 shadow-lg">
                   <Link
                     href="/blog"
-                    className="block px-5 py-3 text-[15px] font-normal text-white/80 transition hover:bg-[#181818] hover:text-[#7fa0ff]"
+                    className="block px-5 py-3 text-[15px] font-normal text-black/70 transition hover:bg-[#fff1f2] hover:text-[#e50914]"
                   >
                     Blog
                   </Link>
 
                   <Link
                     href="/case-studies"
-                    className="block px-5 py-3 text-[15px] font-normal text-white/80 transition hover:bg-[#181818] hover:text-[#7fa0ff]"
+                    className="block px-5 py-3 text-[15px] font-normal text-black/70 transition hover:bg-[#fff1f2] hover:text-[#e50914]"
                   >
                     Case Studies
                   </Link>
@@ -351,7 +362,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[15px] font-normal text-white transition hover:text-[#4f7cff]"
+                className="text-[15px] font-normal text-[#111111] transition hover:text-[#e50914]"
               >
                 {link.label}
               </Link>
@@ -363,7 +374,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label="Search"
-            className="text-white/75 transition hover:text-[#4f7cff]"
+            className="text-black/70 transition hover:text-[#e50914]"
           >
             <Search size={20} strokeWidth={1.5} />
           </button>
@@ -371,7 +382,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label="Language"
-            className="text-white/75 transition hover:text-[#4f7cff]"
+            className="text-black/70 transition hover:text-[#e50914]"
           >
             <Globe size={20} strokeWidth={1.5} />
           </button>
@@ -379,7 +390,7 @@ export default function Navbar() {
           <button
             type="button"
             aria-label="Account"
-            className="text-white/75 transition hover:text-[#4f7cff]"
+            className="text-black/70 transition hover:text-[#e50914]"
           >
             <CircleUserRound size={23} strokeWidth={1.5} />
           </button>
@@ -389,7 +400,7 @@ export default function Navbar() {
           type="button"
           aria-label="Open menu"
           onClick={() => setMobileOpen((prev) => !prev)}
-          className="ml-4 flex h-10 w-10 items-center justify-center text-white transition hover:text-[#4f7cff] xl:hidden"
+          className="ml-4 flex h-10 w-10 items-center justify-center text-[#111111] transition hover:text-[#e50914] xl:hidden"
         >
           {mobileOpen ? (
             <X size={28} strokeWidth={1.6} />
@@ -400,24 +411,24 @@ export default function Navbar() {
       </nav>
 
       <div
-        className={`fixed left-0 top-21 z-40 h-[calc(100dvh-84px)] w-full overflow-y-auto bg-[#050505] transition-all duration-300 xl:hidden ${mobileOpen
+        className={`fixed left-0 top-21 z-40 h-[calc(100dvh-84px)] w-full overflow-y-auto bg-white transition-all duration-300 xl:hidden ${mobileOpen
           ? "visible translate-x-0 opacity-100"
           : "invisible translate-x-full opacity-0"
           }`}
       >
-        <div className="flex flex-col border-t border-white/10">
-          <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
-            <button className="flex items-center gap-3 text-[15px] text-white">
+        <div className="flex flex-col border-t border-black/10">
+          <div className="flex items-center justify-between border-b border-black/10 px-5 py-4">
+            <button className="flex items-center gap-3 text-[15px] text-[#111111]">
               <Search size={19} strokeWidth={1.5} />
               Search
             </button>
 
             <div className="flex items-center gap-5">
-              <Globe size={20} strokeWidth={1.5} className="text-white/70" />
+              <Globe size={20} strokeWidth={1.5} className="text-black/70" />
               <CircleUserRound
                 size={23}
                 strokeWidth={1.5}
-                className="text-white/70"
+                className="text-black/70"
               />
             </div>
           </div>
@@ -425,7 +436,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileServicesOpen((prev) => !prev)}
-            className="flex items-center justify-between border-b border-white/10 px-5 py-5 text-left text-[18px] font-normal text-white"
+            className="flex items-center justify-between border-b border-black/10 px-5 py-5 text-left text-[18px] font-normal text-[#111111]"
           >
             Services
             <ChevronDown
@@ -437,15 +448,15 @@ export default function Navbar() {
           </button>
 
           {mobileServicesOpen && (
-            <div className="border-b border-white/10 bg-[#101010]">
+            <div className="border-b border-black/10 bg-[#f7f8fb]">
               {menuItems.map((item) => (
                 <button
                   key={item}
                   type="button"
                   onClick={() => setActiveCategory(item)}
                   className={`flex w-full items-center justify-between px-6 py-4 text-left text-[15px] font-normal ${activeCategory === item
-                    ? "bg-[#1b1b1b] text-[#7fa0ff]"
-                    : "text-white/75"
+                    ? "bg-[#e50914] text-white"
+                    : "text-black/70"
                     }`}
                 >
                   <span>{item}</span>
@@ -453,8 +464,8 @@ export default function Navbar() {
                 </button>
               ))}
 
-              <div className="bg-[#050505] px-6 py-5">
-                <h3 className="text-[24px] font-light text-[#7fa0ff]">
+              <div className="bg-white px-6 py-5">
+                <h3 className="text-[24px] font-semibold text-[#111111]">
                   {activeCategory}
                 </h3>
 
@@ -469,10 +480,10 @@ export default function Navbar() {
                         onClick={closeMobileMenu}
                         className="flex items-center gap-3"
                       >
-                        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-[3px] border border-white/10 bg-white/4 text-[#7fa0ff]">
+                        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-[3px] border border-[#e50914]/15 bg-[#fff1f2] text-[#e50914]">
                           <ServiceIcon className="h-4 w-4" />
                         </span>
-                        <p className="text-[16px] font-normal text-white">
+                        <p className="text-[16px] font-normal text-[#111111]">
                           {item}
                         </p>
                       </Link>
@@ -483,7 +494,7 @@ export default function Navbar() {
                 <Link
                   href="/services"
                   onClick={closeMobileMenu}
-                  className="mt-6 flex items-center justify-between bg-[#3c5b9b] px-5 py-4 text-[15px] text-white"
+                  className="mt-6 flex items-center justify-between bg-[#111111] px-5 py-4 text-[15px] text-white transition hover:bg-[#e50914]"
                 >
                   Explore all services
                   <span>-&gt;</span>
@@ -497,7 +508,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={closeMobileMenu}
-              className="border-b border-white/10 px-5 py-5 text-[18px] font-normal text-white"
+              className="border-b border-black/10 px-5 py-5 text-[18px] font-normal text-[#111111]"
             >
               {link.label}
             </Link>
@@ -506,7 +517,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileResourcesOpen((prev) => !prev)}
-            className="flex items-center justify-between border-b border-white/10 px-5 py-5 text-left text-[18px] font-normal text-white"
+            className="flex items-center justify-between border-b border-black/10 px-5 py-5 text-left text-[18px] font-normal text-[#111111]"
           >
             Resources
             <ChevronDown
@@ -518,11 +529,11 @@ export default function Navbar() {
           </button>
 
           {mobileResourcesOpen && (
-            <div className="border-b border-white/10 bg-[#101010]">
+            <div className="border-b border-black/10 bg-[#f7f8fb]">
               <Link
                 href="/blog"
                 onClick={closeMobileMenu}
-                className="block px-8 py-4 text-[16px] font-normal text-white/80"
+                className="block px-8 py-4 text-[16px] font-normal text-black/70"
               >
                 Blog
               </Link>
@@ -530,7 +541,7 @@ export default function Navbar() {
               <Link
                 href="/case-studies"
                 onClick={closeMobileMenu}
-                className="block px-8 py-4 text-[16px] font-normal text-white/80"
+                className="block px-8 py-4 text-[16px] font-normal text-black/70"
               >
                 Case Studies
               </Link>
@@ -542,7 +553,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={closeMobileMenu}
-              className="border-b border-white/10 px-5 py-5 text-[18px] font-normal text-white"
+              className="border-b border-black/10 px-5 py-5 text-[18px] font-normal text-[#111111]"
             >
               {link.label}
             </Link>
