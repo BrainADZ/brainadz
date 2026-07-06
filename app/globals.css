@@ -1,13 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import "tailwindcss";
 
 :root {
   --background: #050505;
   --foreground: #171717;
+  --font-dm-sans: "DM Sans", sans-serif;
 }
 
 html,
 body {
   background: var(--background);
+  font-family: var(--font-dm-sans);
+  font-optical-sizing: auto;
 }
 
 html {
@@ -23,6 +27,12 @@ button,
 button:disabled,
 [aria-disabled="true"] {
   cursor: not-allowed;
+}
+
+.dm-sans {
+  font-family: var(--font-dm-sans);
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 @media (prefers-reduced-motion: reduce) {

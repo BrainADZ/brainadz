@@ -217,7 +217,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/10 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
+    <header className="dm-sans sticky top-0 z-50 border-b border-black/10 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
       <nav className="mx-auto flex h-21 max-w-450 items-center justify-between gap-6 px-5 md:px-8 lg:px-12">
         <div className="flex flex-1 items-center justify-between">
           <Link href="/" className="flex items-center">
@@ -236,7 +236,7 @@ export default function Navbar() {
               onMouseEnter={() => setShowMegaMenu(true)}
               onMouseLeave={() => setShowMegaMenu(false)}
             >
-              <button className="flex items-center gap-1 text-[15px] font-normal text-[#111111] transition hover:text-[#e50914]">
+              <button className="flex items-center gap-1 text-[15px] font-medium text-[#111111] transition hover:text-[#e50914]">
                 Services
                 <ChevronDown
                   size={18}
@@ -247,16 +247,16 @@ export default function Navbar() {
               </button>
 
               <div
-                className={`fixed left-0 top-21 w-full border-t border-black/10 bg-white/95 shadow-2xl backdrop-blur transition-all duration-200 ${showMegaMenu
+                className={`fixed left-0 top-21 w-full border-t border-black/10 bg-white shadow-[0_16px_40px_rgba(15,23,42,0.08)] transition-all duration-200 ${showMegaMenu
                   ? "visible opacity-100"
                   : "invisible opacity-0"
                   }`}
               >
-                <div className="mx-auto max-h-[calc(100vh-84px)] max-w-450 overflow-y-auto px-8 py-8">
-                  <div className="grid grid-cols-5 gap-x-10 gap-y-9">
+                <div className="mx-auto max-h-[calc(100vh-84px)] max-w-450 overflow-y-auto px-9 py-9">
+                  <div className="grid grid-cols-5 gap-x-9 gap-y-10">
                     {menuItems.map((category) => (
                       <div key={category} className="min-w-0">
-                        <h3 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#e50914]">
+                        <h3 className="text-[11px] font-black uppercase tracking-[0.18em] text-[#e50914]">
                           {category}
                         </h3>
                         <div className="mt-5 h-px w-full bg-[#e50914]" />
@@ -273,7 +273,7 @@ export default function Navbar() {
                               >
                                 <span className="min-w-0">{item}</span>
                                 {badge ? (
-                                  <span className="shrink-0 rounded-full bg-[#ffe7e9] px-2 py-1 text-[9px] font-black uppercase tracking-[0.04em] text-[#e50914]">
+                                  <span className="shrink-0 whitespace-nowrap rounded-full bg-[#e50914] px-2 py-1 text-[9px] font-black uppercase tracking-[0.04em] text-white">
                                     {badge}
                                   </span>
                                 ) : (
@@ -313,7 +313,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[15px] font-normal text-[#111111] transition hover:text-[#e50914]"
+                className="text-[15px] font-medium text-[#111111] transition hover:text-[#e50914]"
               >
                 {link.label}
               </Link>
@@ -324,7 +324,7 @@ export default function Navbar() {
               onMouseEnter={() => setShowResources(true)}
               onMouseLeave={() => setShowResources(false)}
             >
-              <button className="flex items-center gap-1 text-[15px] font-normal text-[#111111] transition hover:text-[#e50914]">
+              <button className="flex items-center gap-1 text-[15px] font-medium text-[#111111] transition hover:text-[#e50914]">
                 Resources
                 <ChevronDown
                   size={18}
@@ -340,19 +340,25 @@ export default function Navbar() {
                   : "invisible opacity-0"
                   }`}
               >
-                <div className="min-w-57.5 rounded-[3px] border border-black/10 bg-white py-2 shadow-lg">
+                <div className="min-w-64 border border-black/10 border-t-2 border-t-[#e50914] bg-white/95 p-2 shadow-[0_18px_50px_rgba(15,23,42,0.14)] backdrop-blur">
                   <Link
                     href="/blog"
-                    className="block px-5 py-3 text-[15px] font-normal text-black/70 transition hover:bg-[#fff1f2] hover:text-[#e50914]"
+                    className="group flex items-center justify-between px-4 py-3 text-[15px] font-semibold text-[#050505] transition hover:bg-[#fff1f2] hover:text-[#e50914]"
                   >
-                    Blog
+                    <span>Blog</span>
+                    <span className="text-[12px] font-bold text-[#e50914] transition group-hover:translate-x-0.5">
+                      -&gt;
+                    </span>
                   </Link>
 
                   <Link
                     href="/case-studies"
-                    className="block px-5 py-3 text-[15px] font-normal text-black/70 transition hover:bg-[#fff1f2] hover:text-[#e50914]"
+                    className="group flex items-center justify-between px-4 py-3 text-[15px] font-semibold text-[#050505] transition hover:bg-[#fff1f2] hover:text-[#e50914]"
                   >
-                    Case Studies
+                    <span>Case Studies</span>
+                    <span className="text-[12px] font-bold text-[#e50914] transition group-hover:translate-x-0.5">
+                      -&gt;
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -362,7 +368,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[15px] font-normal text-[#111111] transition hover:text-[#e50914]"
+                className="text-[15px] font-medium text-[#111111] transition hover:text-[#e50914]"
               >
                 {link.label}
               </Link>
@@ -529,21 +535,27 @@ export default function Navbar() {
           </button>
 
           {mobileResourcesOpen && (
-            <div className="border-b border-black/10 bg-[#f7f8fb]">
+            <div className="border-b border-black/10 border-t-2 border-t-[#e50914] bg-white">
               <Link
                 href="/blog"
                 onClick={closeMobileMenu}
-                className="block px-8 py-4 text-[16px] font-normal text-black/70"
+                className="flex items-center justify-between px-8 py-4 text-[16px] font-semibold text-[#050505] transition hover:bg-[#fff1f2] hover:text-[#e50914]"
               >
-                Blog
+                <span>Blog</span>
+                <span className="text-[12px] font-bold text-[#e50914]">
+                  -&gt;
+                </span>
               </Link>
 
               <Link
                 href="/case-studies"
                 onClick={closeMobileMenu}
-                className="block px-8 py-4 text-[16px] font-normal text-black/70"
+                className="flex items-center justify-between px-8 py-4 text-[16px] font-semibold text-[#050505] transition hover:bg-[#fff1f2] hover:text-[#e50914]"
               >
-                Case Studies
+                <span>Case Studies</span>
+                <span className="text-[12px] font-bold text-[#e50914]">
+                  -&gt;
+                </span>
               </Link>
             </div>
           )}
