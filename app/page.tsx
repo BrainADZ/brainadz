@@ -20,9 +20,9 @@ export default function Home() {
         {/* <Hero/> */}
         <Hero/>
         <ServicesCardsSection/>
+        <CaseStudiesSection/>
         <AboutSection/>
         <ImpactStartsHereSection/>
-        <CaseStudiesSection/>
         <BrandLogosCarousel />
         <ContactCtaSection/>
         {/* <WhyDynamicSection/> */}

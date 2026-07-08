@@ -1,450 +1,268 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-import {
-  type CSSProperties,
-  type PointerEvent as ReactPointerEvent,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { ArrowUpRight } from "lucide-react";
+import { useMemo, useState } from "react";
 
-type CaseStudy = {
-  client: string;
-  shortName: string;
-  summary: string;
-  outcomeOne: string;
-  outcomeOneLabel: string;
-  outcomeTwo: string;
-  outcomeTwoLabel: string;
-  image: string;
-  background: string;
-  foreground: string;
+type WorkCategory =
+  | "Digital Marketing"
+  | "Website Development"
+  | "Creative Media"
+  | "SEO"
+  | "Performance Marketing";
+
+type FilterKey = "All" | WorkCategory;
+
+type CaseStudyItem = {
+  title: string;
+  category: WorkCategory;
+  media: string;
+  mediaType: "image" | "video";
+  href: string;
 };
 
-type CarouselPosition =
-  | "center"
-  | "left"
-  | "right"
-  | "farLeft"
-  | "farRight"
-  | "hidden";
+const FILTERS: FilterKey[] = [
+  "All",
+  "Digital Marketing",
+  "Website Development",
+  "Creative Media",
+  "SEO",
+  "Performance Marketing",
+];
 
-type PositionStyle = {
-  x: number;
-  scale: number;
-  rotate: number;
-  zIndex: number;
-  visibility: "visible" | "hidden";
-};
+const CASE_STUDIES: CaseStudyItem[] = [
+  {
+    title: "Apps Discover",
+    category: "Digital Marketing",
+    media: "/portfolio/app-discover.jpg",
+    mediaType: "image",
+    href: "/case-studies",
+  },
+  {
+    title: "Blind Relief Association",
+    category: "Creative Media",
+    media: "/portfolio/Blind-Relief-Association.webp",
+    mediaType: "image",
+    href: "/case-studies",
+  },
+  {
+    title: "Calm Thumbnail",
+    category: "Creative Media",
+    media: "/portfolio/calm_thumbnail.webp",
+    mediaType: "image",
+    href: "/case-studies",
+  },
+    {
+    title: "Allure Website",
+    category: "Website Development",
+    media: "/portfolio/Allure-website-creativenexus.in-Thumbnail.webp",
+    mediaType: "image",
+    href: "/case-studies",
+  },
 
-const CASE_STUDIES: CaseStudy[] = [
   {
-    client: "Khadi Organique",
-    shortName: "KO",
-    summary:
-      "Built a premium e-commerce experience that makes a large natural-care catalogue easier to discover and shop.",
-    outcomeOne: "E-commerce",
-    outcomeOneLabel: "product-first shopping journey",
-    outcomeTwo: "Mobile-first",
-    outcomeTwoLabel: "responsive buying experience",
-    image: "/portfolio/web/1.png",
-    background: "#e7ff8e",
-    foreground: "#111111",
+    title: "Everest Global",
+    category: "Performance Marketing",
+    media: "/portfolio/Everest-global-3.webp",
+    mediaType: "image",
+    href: "/case-studies",
   },
   {
-    client: "National Engineers",
-    shortName: "NE",
-    summary:
-      "Developed an industrial brand presence that communicates manufacturing capability, products, and trust at a glance.",
-    outcomeOne: "Industrial",
-    outcomeOneLabel: "capability-led storytelling",
-    outcomeTwo: "Responsive",
-    outcomeTwoLabel: "desktop and mobile delivery",
-    image: "/portfolio/web/4.png",
-    background: "#bdf8f5",
-    foreground: "#111111",
+    title: "Framework",
+    category: "Website Development",
+    media: "/portfolio/Framework-Thumbnail.webp",
+    mediaType: "image",
+    href: "/case-studies",
   },
   {
-    client: "Country Home",
-    shortName: "CH",
-    summary:
-      "Designed a clean commerce experience for home and hospital textiles with simple discovery and purchase flows.",
-    outcomeOne: "Commerce",
-    outcomeOneLabel: "catalogue and category UX",
-    outcomeTwo: "Trust-led",
-    outcomeTwoLabel: "clear shopping assurances",
-    image: "/portfolio/web/5.png",
-    background: "#d9efff",
-    foreground: "#111111",
+    title: "Muskaan Consulting Service",
+    category: "Creative Media",
+    media: "/portfolio/Muskaan.jpg",
+    mediaType: "image",
+    href: "/case-studies",
   },
   {
-    client: "Rubber Hose India",
-    shortName: "RHI",
-    summary:
-      "Structured a technical product website for an industrial hose manufacturer with stronger visibility and navigation.",
-    outcomeOne: "SEO-ready",
-    outcomeOneLabel: "structured product content",
-    outcomeTwo: "B2B UX",
-    outcomeTwoLabel: "faster technical discovery",
-    image: "/portfolio/web/6.png",
-    background: "#ffe45c",
-    foreground: "#111111",
+    title: "Native Krea",
+    category: "Website Development",
+    media: "/portfolio/native-krea-creativenexus.in-thumbnail.webp",
+    mediaType: "image",
+    href: "/case-studies",
   },
   {
-    client: "Jaskirat Exports",
-    shortName: "JE",
-    summary:
-      "Created a bold export catalogue platform covering multiple equipment categories with a modern visual system.",
-    outcomeOne: "2 markets",
-    outcomeOneLabel: "India and China divisions",
-    outcomeTwo: "Scalable",
-    outcomeTwoLabel: "multi-category product system",
-    image: "/portfolio/web/3.png",
-    background: "#ffbd4b",
-    foreground: "#111111",
+    title: "Water Treatment Supply",
+    category: "SEO",
+    media: "/portfolio/watertreatmentsupply-1024x1024-1.webp",
+    mediaType: "image",
+    href: "/case-studies",
   },
   {
-    client: "Comac India",
-    shortName: "CI",
-    summary:
-      "Redesigned an industrial product website around clear categories, stronger navigation, and faster enquiry journeys.",
-    outcomeOne: "B2B",
-    outcomeOneLabel: "clear product architecture",
-    outcomeTwo: "Lead-ready",
-    outcomeTwoLabel: "focused enquiry pathways",
-    image: "/portfolio/web/2.png",
-    background: "#ff3150",
-    foreground: "#ffffff",
+    title: "Capri Loans Impact Report",
+    category: "Creative Media",
+    media: "/portfolio/CapriLoans_CreativeNexus-Impact-Report-1.png",
+    mediaType: "image",
+    href: "/case-studies",
+  },
+  {
+    title: "Nore",
+    category: "Website Development",
+    media: "/portfolio/Nore-Thumbnail.webp",
+    mediaType: "image",
+    href: "/case-studies",
+  },
+  {
+    title: "Tiger Logistics",
+    category: "Creative Media",
+    media:
+      "/portfolio/Creative-nexus_Tiger-Logistics-branding-Annual-Report-Website-Development-Secrets_Video-Production-Filmmaking_Digital-Marketing.webp",
+    mediaType: "image",
+    href: "/case-studies",
+  },
+  {
+    title: "Robinsons",
+    category: "Creative Media",
+    media: "/portfolio/Robinsons-1.webp",
+    mediaType: "image",
+    href: "/case-studies",
+  },
+  {
+    title: "Blume Planters",
+    category: "Creative Media",
+    media: "/portfolio/Blume.mp4",
+    mediaType: "video",
+    href: "/case-studies",
+  },
+  {
+    title: "ICICI Report",
+    category: "Creative Media",
+    media: "/portfolio/Icici.mp4",
+    mediaType: "video",
+    href: "/case-studies",
+  },
+  {
+    title: "Growgether",
+    category: "Creative Media",
+    media: "/portfolio/Growgether.mp4",
+    mediaType: "video",
+    href: "/case-studies",
   },
 ];
 
-const DESKTOP_POSITIONS: Record<CarouselPosition, PositionStyle> = {
-  center: {
-    x: 0,
-    scale: 1,
-    rotate: 0,
-    zIndex: 5,
-    visibility: "visible",
-  },
-  left: {
-    x: -420,
-    scale: 0.88,
-    rotate: -14,
-    zIndex: 4,
-    visibility: "visible",
-  },
-  right: {
-    x: 420,
-    scale: 0.88,
-    rotate: 14,
-    zIndex: 4,
-    visibility: "visible",
-  },
-  farLeft: {
-    x: -760,
-    scale: 0.78,
-    rotate: -18,
-    zIndex: 3,
-    visibility: "visible",
-  },
-  farRight: {
-    x: 760,
-    scale: 0.78,
-    rotate: 18,
-    zIndex: 3,
-    visibility: "visible",
-  },
-  hidden: {
-    x: 0,
-    scale: 0.6,
-    rotate: 0,
-    zIndex: 1,
-    visibility: "hidden",
-  },
-};
-
-function getPosition(
-  index: number,
-  activeIndex: number,
-  total: number
-): CarouselPosition {
-  const offset = (index - activeIndex + total) % total;
-
-  if (offset === 0) return "center";
-  if (offset === 1) return "right";
-  if (offset === 2) return "farRight";
-  if (offset === total - 1) return "left";
-  if (offset === total - 2) return "farLeft";
-  return "hidden";
-}
-
 export default function CaseStudiesSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [viewportWidth, setViewportWidth] = useState(1440);
-  const [dragX, setDragX] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const dragStartX = useRef(0);
-  const tabsContainerRef = useRef<HTMLDivElement | null>(null);
-  const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const [activeFilter, setActiveFilter] = useState<FilterKey>("All");
 
-  const previousIndex =
-    (activeIndex - 1 + CASE_STUDIES.length) % CASE_STUDIES.length;
-  const nextIndex = (activeIndex + 1) % CASE_STUDIES.length;
-
-  const goPrevious = () => setActiveIndex(previousIndex);
-  const goNext = () => setActiveIndex(nextIndex);
-
-  useEffect(() => {
-    const updateViewportWidth = () => setViewportWidth(window.innerWidth);
-
-    updateViewportWidth();
-    window.addEventListener("resize", updateViewportWidth);
-    return () => window.removeEventListener("resize", updateViewportWidth);
-  }, []);
-
-  useEffect(() => {
-    const container = tabsContainerRef.current;
-    const activeTab = tabRefs.current[activeIndex];
-
-    if (!container || !activeTab) return;
-
-    container.scrollTo({
-      left:
-        activeTab.offsetLeft -
-        container.clientWidth / 2 +
-        activeTab.clientWidth / 2,
-      behavior: "smooth",
-    });
-  }, [activeIndex]);
-
-  const positionScale =
-    viewportWidth >= 1400
-      ? 1
-      : viewportWidth >= 1100
-        ? 0.82
-        : viewportWidth >= 768
-          ? 0.62
-          : 0.48;
-
-  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    dragStartX.current = event.clientX;
-    setDragX(0);
-    setIsDragging(true);
-    event.currentTarget.setPointerCapture(event.pointerId);
-  };
-
-  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!isDragging) return;
-
-    const nextDragX = event.clientX - dragStartX.current;
-    setDragX(Math.max(-160, Math.min(160, nextDragX)));
-  };
-
-  const finishDrag = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!isDragging) return;
-
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId);
-    }
-
-    const shouldMoveNext = dragX < -65;
-    const shouldMovePrevious = dragX > 65;
-
-    setIsDragging(false);
-    setDragX(0);
-
-    if (shouldMoveNext) goNext();
-    if (shouldMovePrevious) goPrevious();
-  };
+  const visibleCaseStudies = useMemo(() => {
+    if (activeFilter === "All") return CASE_STUDIES;
+    return CASE_STUDIES.filter((item) => item.category === activeFilter);
+  }, [activeFilter]);
 
   return (
-    <section className="overflow-hidden bg-black py-14 text-white md:py-18">
+    <section className="bg-[#f7f7f2] py-16 text-black sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1500px] px-5 sm:px-8">
-        <h2 className="text-center text-[38px] font-normal leading-tight tracking-[-0.04em] sm:text-[48px] lg:text-[58px]">
-          Innovation, Engineered by BrainADZ
-        </h2>
-
-        <div className="mt-9 flex items-center justify-center gap-3">
-          <button
-            type="button"
-            onClick={goPrevious}
-            aria-label="Previous case study"
-            className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-white/25 text-white transition-colors hover:border-white hover:bg-white hover:text-black"
-          >
-            <ArrowLeft className="h-5 w-5" />
-          </button>
-
-          <div
-            ref={tabsContainerRef}
-            className="no-scrollbar flex max-w-[calc(100vw-150px)] items-center gap-3 overflow-x-auto"
-          >
-            {CASE_STUDIES.map((study, index) => (
-              <button
-                key={study.client}
-                ref={(element) => {
-                  tabRefs.current[index] = element;
-                }}
-                type="button"
-                onClick={() => setActiveIndex(index)}
-                className={`h-14 shrink-0 px-5 text-[15px] font-semibold transition-colors ${
-                  index === activeIndex
-                    ? "rounded-full bg-white text-black"
-                    : "bg-[#181818] text-white hover:bg-[#292929]"
-                }`}
-              >
-                {study.client}
-              </button>
-            ))}
+        <div className="text-center">
+          <div>
+            <p className="text-[12px] font-semibold uppercase text-[#1467f5]">
+              Our Work
+            </p>
+            <h2 className="mt-3 text-[38px] font-semibold leading-[1.05] sm:text-[48px] lg:text-[58px]">
+              Case Studies
+            </h2>
           </div>
 
-          <button
-            type="button"
-            onClick={goNext}
-            aria-label="Next case study"
-            className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-white/25 text-white transition-colors hover:border-white hover:bg-white hover:text-black"
-          >
-            <ArrowRight className="h-5 w-5" />
-          </button>
+          <div className="no-scrollbar -mx-5 mt-7 flex gap-2 overflow-x-auto px-5 sm:mx-0 sm:flex-wrap sm:justify-center sm:px-0">
+            {FILTERS.map((filter) => {
+              const isActive = filter === activeFilter;
+
+              return (
+                <button
+                  key={filter}
+                  type="button"
+                  onClick={() => setActiveFilter(filter)}
+                  aria-pressed={isActive}
+                  className={[
+                    "h-10 shrink-0 rounded-[4px] border px-4 text-[12px] font-semibold uppercase transition-colors",
+                    isActive
+                      ? "border-black bg-black text-white"
+                      : "border-black/10 bg-white text-black/65 hover:border-black hover:text-black",
+                  ].join(" ")}
+                >
+                  {filter}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
 
-      <div
-        className={`relative mt-11 h-[590px] touch-pan-y select-none sm:h-[650px] lg:h-[720px] ${
-          isDragging ? "cursor-grabbing" : "cursor-grab"
-        }`}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={finishDrag}
-        onPointerCancel={finishDrag}
-      >
-        {CASE_STUDIES.map((study, index) => {
-          const position = getPosition(
-            index,
-            activeIndex,
-            CASE_STUDIES.length
-          );
-          const positionStyle = DESKTOP_POSITIONS[position];
-          const dragInfluence =
-            position === "hidden"
-              ? 0
-              : position === "center"
-                ? dragX
-                : dragX * 0.45;
-          const x = positionStyle.x * positionScale + dragInfluence;
+        <div className="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-3">
+          {visibleCaseStudies.map((item) => (
+            <CaseStudyCard
+              key={`${item.title}-${item.category}`}
+              item={item}
+            />
+          ))}
+        </div>
 
-          const cardStyle: CSSProperties = {
-            zIndex: positionStyle.zIndex,
-            visibility: positionStyle.visibility,
-            transform: `translate3d(calc(-50% + ${x}px), 0, 0) scale(${positionStyle.scale}) rotateZ(${positionStyle.rotate}deg)`,
-            transition: isDragging
-              ? "none"
-              : "transform 650ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear",
-          };
-
-          return (
-            <div
-              key={study.client}
-              className="absolute left-1/2 top-0 w-[min(390px,calc(100vw-48px))] will-change-transform sm:w-[430px]"
-              style={cardStyle}
-              aria-hidden={position === "hidden"}
-            >
-              <CaseStudyCard
-                study={study}
-                active={position === "center"}
-              />
-            </div>
-          );
-        })}
-
-        {/* <div className="pointer-events-none absolute left-[calc(50%+275px)] top-24 z-10 hidden h-[72px] w-[72px] place-items-center rounded-full bg-[#242020] text-[11px] font-semibold xl:grid">
-          DRAG
-        </div> */}
-      </div>
-
-      <div className="flex justify-center px-5">
-        <Link
-          href="/portfolio"
-          className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/30 px-7 text-[12px] font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-black"
-        >
-          View All Case Studies
-          <ArrowUpRight className="h-4 w-4" />
-        </Link>
+        <div className="mt-12 flex justify-center">
+          <Link
+            href="/case-studies"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[4px] border border-black px-5 text-[13px] font-semibold text-black transition-colors hover:bg-black hover:text-white"
+          >
+            View All Case Studies
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
 
-function CaseStudyCard({
-  study,
-  active,
-}: {
-  study: CaseStudy;
-  active: boolean;
-}) {
+function CaseStudyCard({ item }: { item: CaseStudyItem }) {
   return (
-    <article
-      className="group relative flex h-[540px] w-full flex-col overflow-hidden rounded-[22px] text-left shadow-[0_28px_90px_rgba(0,0,0,0.35)] sm:h-[600px]"
-      style={{ backgroundColor: study.background, color: study.foreground }}
-    >
-      <div className="px-7 pt-7 sm:px-8 sm:pt-8">
-        <div className="flex items-center gap-5">
-          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-white text-[14px] font-bold text-black shadow-sm">
-            {study.shortName}
-          </div>
+    <article className="group mb-8 inline-block w-full break-inside-avoid">
+      <a
+        href={item.href}
+        aria-label={`View ${item.title} project`}
+        className="block"
+      >
+        <div className="overflow-hidden bg-white shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-[border-radius] duration-500 ease-out group-hover:rounded-[2px]">
+          {item.mediaType === "video" ? (
+            <video
+              src={item.media}
+              aria-label={`${item.title} project video`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="block h-auto w-full transition-transform duration-500 ease-out group-hover:scale-[1.04] group-hover:rotate-1"
+            />
+          ) : (
+            <img
+              src={item.media}
+              alt={`${item.title} project preview`}
+              loading="lazy"
+              decoding="async"
+              className="block h-auto w-full transition-transform duration-500 ease-out group-hover:scale-[1.04] group-hover:rotate-1"
+            />
+          )}
+        </div>
 
-          <h3 className="text-[23px] font-medium sm:text-[26px]">
-            {study.client}
+        <div className="pt-4">
+          <h3 className="text-[18px] font-semibold leading-tight text-black">
+            {item.title}
           </h3>
-        </div>
 
-        <p className="mt-6 text-[14px] leading-6 opacity-80 sm:text-[15px]">
-          {study.summary}
-        </p>
-
-        <div className="mt-7 grid grid-cols-2 gap-7">
-          <div>
-            <p className="text-[24px] font-medium leading-tight">
-              {study.outcomeOne}
-            </p>
-            <p className="mt-3 text-[13px] leading-5 opacity-75">
-              {study.outcomeOneLabel}
-            </p>
-          </div>
-
-          <div>
-            <p className="text-[24px] font-medium leading-tight">
-              {study.outcomeTwo}
-            </p>
-            <p className="mt-3 text-[13px] leading-5 opacity-75">
-              {study.outcomeTwoLabel}
-            </p>
+          <div className="relative mt-1 h-5 overflow-hidden text-[12px] font-medium">
+            <span className="absolute left-0 top-0 text-black/50 transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0">
+              {item.category}
+            </span>
+            <span className="absolute left-0 top-0 inline-flex translate-y-4 items-center gap-1 text-[#1467f5] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              View Project
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </span>
           </div>
         </div>
-      </div>
-
-      {active ? (
-        <Link
-          href="/portfolio"
-          onPointerDown={(event) => event.stopPropagation()}
-          className="invisible absolute right-8 top-[205px] z-20 hidden min-h-12 items-center justify-center rounded-full bg-[#242020] px-6 text-[12px] font-semibold text-white shadow-lg group-hover:visible sm:inline-flex"
-        >
-          View case study
-        </Link>
-      ) : null}
-
-      <div className="relative mx-7 mt-auto h-[235px] overflow-hidden rounded-t-[68px] bg-black sm:mx-8 sm:h-[275px]">
-        <Image
-          src={study.image}
-          alt={`${study.client} website project`}
-          fill
-          draggable={false}
-          className="pointer-events-none select-none object-cover object-top"
-          sizes="(max-width: 640px) calc(100vw - 104px), 366px"
-        />
-      </div>
+      </a>
     </article>
   );
 }
