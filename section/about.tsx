@@ -1,132 +1,161 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  BarChart3,
-  Bot,
-  Check,
-  Database,
-  Megaphone,
-} from "lucide-react";
 
-const CAPABILITIES = [
+const PILLARS = [
   {
-    title: "Brand Strategy",
-    icon: BarChart3,
-    points: ["Brand positioning", "Market planning", "Growth roadmap"],
+    title: "Strategy",
+    copy: "Positioning, offer, funnel and campaign plan.",
+    iconSrc: "/icons/strategy.svg",
   },
   {
-    title: "Digital Marketing",
-    icon: Megaphone,
-    points: ["SEO and paid ads", "Social media campaigns", "Lead generation"],
+    title: "Creative",
+    copy: "Ad visuals, social content, reels and brand assets.",
+    iconSrc: "/icons/creative.svg",
   },
   {
-    title: "Web & Automation",
-    icon: Database,
-    points: ["Web-app development", "Marketing analytics", "AI-led workflows"],
+    title: "Performance",
+    copy: "SEO, paid media, tracking and clear reporting.",
+    iconSrc: "/icons/performance.svg",
   },
+];
+
+const TAGS = ["Ads", "Creative", "Marketing", "Web", "SEO", "Automation"];
+
+const STEPS = [
+  "Plan the right message",
+  "Create campaign assets",
+  "Track, learn and scale",
 ];
 
 export default function AboutSection() {
   return (
-    <section className="overflow-hidden bg-black text-white">
-      <div className="grid min-h-[760px] lg:grid-cols-2">
-        <div className="relative min-h-[500px] overflow-hidden lg:min-h-full">
-          <Image
-            src="/homepage/about-ai-collaboration.png"
-            alt="Human creativity collaborating with artificial intelligence"
-            fill
-            className="object-cover object-center"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
+    <section className="bg-white px-5 py-16 text-[#111111] sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <div className="mx-auto max-w-[1800px] overflow-hidden rounded-[14px] border border-black/10 bg-white">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+          <div
+            className="relative min-h-[430px] overflow-hidden border-b border-black/10 bg-[#111111] lg:min-h-full lg:border-b-0 lg:border-r"
+            data-aos="fade-up"
+          >
+            <Image
+              src="/homepage/about.png"
+              alt="BrainADZ Marketing team"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 45vw"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04)_0%,rgba(0,0,0,0.08)_45%,rgba(0,0,0,0.72)_100%)]" />
 
-          <div className="absolute inset-0 bg-linear-to-b from-black/35 via-transparent to-black/30" />
+            <div className="absolute left-5 top-5 rounded-[8px] border border-white/20 bg-black/70 px-4 py-3 text-white backdrop-blur-sm sm:left-7 sm:top-7">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#ff5a64]">
+                About BrainADZ
+              </p>
+              <p className="mt-1 text-[22px] font-semibold leading-none">
+                Creative Growth Agency
+              </p>
+            </div>
 
-          <div className="absolute left-6 top-6 flex items-center gap-2 sm:left-10 sm:top-8">
-            <span className="text-[36px] font-light leading-none tracking-[-0.04em] sm:text-[48px]">
-              BrainADZ
-            </span>
-            <span className="relative text-[34px] font-light italic leading-none text-white sm:text-[44px]">
-              AI
-              <span className="absolute -right-4 -top-2 text-[18px] not-italic text-[#42d7ee]">
-                +
-              </span>
-            </span>
+            <div className="absolute inset-x-5 bottom-5 rounded-[8px] border border-white/20 bg-white/92 p-5 text-black shadow-[0_18px_45px_rgba(0,0,0,0.24)] sm:inset-x-7 sm:bottom-7">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[#d71920]">
+                We build attention into action
+              </p>
+              <p className="mt-3 text-[24px] font-normal leading-[1.14] tracking-[-0.03em] sm:text-[30px]">
+                Strategy, creative and media working as one team.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="flex items-center px-5 py-14 sm:px-9 lg:px-10 lg:py-16 xl:px-16">
-          <div className="w-full">
-            <p className="text-[30px] font-light leading-tight text-white/90 sm:text-[38px] lg:text-[42px]">
-              Integrated Marketing Solutions
-            </p>
+          <div className="bg-[#fbfbfb]">
+            <div className="p-6 sm:p-8 lg:p-12 xl:p-14">
+              <div className="flex items-center gap-3">
+                <span className="h-[2px] w-8 bg-[#d71920]" />
+                <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#d71920]">
+                  Integrated Marketing Studio
+                </span>
+              </div>
 
-            <h2 className="mt-3 max-w-[830px] text-[38px] font-semibold leading-[1.08] tracking-[-0.03em] sm:text-[48px] lg:text-[54px]">
-             Building Brands That Grow Across Every Digital Touchpoint
-            </h2>
+              <h2 className="mt-6 max-w-[920px] text-[38px] font-normal leading-[1.07] tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
+                We make brands look sharper, sound clearer and grow faster.
+              </h2>
 
-            <p className="mt-7 max-w-[900px] text-[17px] font-normal leading-8 text-white/82 sm:text-[18px]">
-              <strong className="font-semibold text-white">
-                BrainADZ Marketing 
-              </strong>{" "}
-             helps businesses build strong visibility, generate qualified leads, and scale faster through strategy, creative campaigns, performance marketing, SEO, social media, websites, automation, and data-driven execution.
-            </p>
+              <p className="mt-6 max-w-[760px] text-[16px] leading-8 text-black/64">
+                BrainADZ Marketing helps businesses turn scattered digital
+                activity into a clear growth system. We plan the message, build
+                strong campaign creatives, improve your website and search
+                presence, and use performance data to keep every campaign moving
+                toward better leads, visibility and trust.
+              </p>
 
-            <div className="mt-10 grid gap-3 md:grid-cols-3">
-              {CAPABILITIES.map((capability) => {
-                const Icon = capability.icon;
-
-                return (
-                  <article
-                    key={capability.title}
-                    className="min-h-[270px] rounded-[22px] border border-white/25 px-5 py-6"
+              <div className="mt-8 flex flex-wrap gap-2">
+                {TAGS.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-black/10 bg-white px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-black/64"
                   >
-                    <div className="relative inline-flex">
-                      <Icon className="h-11 w-11 text-white" strokeWidth={1.5} />
-                      <Bot
-                        className="absolute -right-3 -top-2 h-5 w-5 text-[#1467f5]"
-                        strokeWidth={2}
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-10 grid gap-4 md:grid-cols-3">
+                {PILLARS.map((pillar, index) => (
+                  <article
+                    key={pillar.title}
+                    className="group rounded-[8px] border border-black/10 bg-white p-5 shadow-[0_16px_42px_rgba(0,0,0,0.05)] transition-colors duration-300 hover:border-[#d71920] hover:bg-[#fff8f8]"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 80}
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-[8px] border border-[#d71920]/20 bg-[#fff1f1]">
+                      <img
+                        src={pillar.iconSrc}
+                        alt=""
+                        className="h-11 w-11 object-contain"
                       />
                     </div>
 
-                    <h3 className="mt-7 text-[18px] font-semibold leading-6">
-                      {capability.title}
+                    <h3 className="mt-6 text-[22px] font-normal leading-none tracking-[-0.03em]">
+                      {pillar.title}
                     </h3>
-
-                    <ul className="mt-6 space-y-4">
-                      {capability.points.map((point) => (
-                        <li
-                          key={point}
-                          className="flex items-start gap-3 text-[15px] leading-6 text-white/88"
-                        >
-                          <Check
-                            className="mt-1 h-4 w-4 shrink-0 text-[#1467f5]"
-                            strokeWidth={2.2}
-                          />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="mt-4 text-[14px] leading-6 text-black/58">
+                      {pillar.copy}
+                    </p>
                   </article>
-                );
-              })}
+                ))}
+              </div>
+
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="tel:+919540468023"
+                  className="inline-flex min-h-[54px] items-center justify-center gap-3 rounded-full bg-[#d71920] px-7 text-[13px] font-semibold text-white transition hover:bg-black"
+                >
+                  Book Free Consultation
+                  <span aria-hidden>-&gt;</span>
+                </Link>
+
+                <Link
+                  href="/company-overview"
+                  className="inline-flex min-h-[54px] items-center justify-center gap-3 rounded-full border border-black/18 bg-white px-7 text-[13px] font-semibold text-black transition hover:border-[#d71920] hover:text-[#d71920]"
+                >
+                  Know More
+                  <span aria-hidden>-&gt;</span>
+                </Link>
+              </div>
             </div>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="tel:+919540468023"
-                className="inline-flex min-h-16 items-center justify-center rounded-full bg-white px-8 text-[12px] font-semibold text-black transition hover:bg-[#1467f5] hover:text-white"
-              >
-               Book Free Consultation
-              </Link>
-
-              <Link
-                href="/company-overview"
-                className="inline-flex min-h-16 items-center justify-center gap-3 rounded-full border-2 border-white px-8 text-[12px] font-semibold text-white transition hover:border-[#1467f5] hover:bg-[#1467f5]"
-              >
-                Know More
-                <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
-              </Link>
+            <div className="grid border-t border-black/10 bg-white sm:grid-cols-3">
+              {STEPS.map((item, index) => (
+                <div
+                  key={item}
+                  className="border-b border-black/10 px-6 py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
+                >
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#d71920]">
+                    0{index + 1}
+                  </p>
+                  <p className="mt-2 text-[20px] font-normal leading-[1.2] tracking-[-0.03em] text-black">
+                    {item}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

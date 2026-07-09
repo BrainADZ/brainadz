@@ -65,7 +65,7 @@ async function getBrandLogos(): Promise<BrandLogo[]> {
 
 function BrandCard({ logo }: { logo: BrandLogo }) {
   return (
-    <div className="flex h-[172px] w-[188px] shrink-0 flex-col items-center justify-between rounded-[18px] border border-white/10 bg-[#1b1b1a] px-5 py-7 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] sm:h-[158px] sm:w-[220px] lg:h-[174px] lg:w-[222px]">
+    <div className="flex h-[172px] w-[188px] shrink-0 flex-col items-center justify-between rounded-[14px] border border-black/10 bg-white px-5 py-7 shadow-[0_16px_42px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-[#d71920] hover:bg-[#fff8f8] sm:h-[158px] sm:w-[220px] lg:h-[174px] lg:w-[222px]">
       <div className="flex min-h-[70px] w-full items-center justify-center">
         <Image
           src={logo.src}
@@ -78,7 +78,7 @@ function BrandCard({ logo }: { logo: BrandLogo }) {
         />
       </div>
 
-      <p className="max-w-full truncate text-center text-[13px] font-semibold leading-none text-white/90 sm:text-[15px]">
+      <p className="max-w-full truncate text-center text-[13px] font-semibold leading-none text-black/72 sm:text-[15px]">
         {logo.name}
       </p>
     </div>
@@ -120,11 +120,21 @@ export default async function BrandLogosCarousel() {
   const bottomRow = logos.slice(splitIndex);
 
   return (
-    <section className="overflow-hidden bg-black py-16 text-white sm:py-20 lg:py-24">
+    <section className="overflow-hidden bg-white py-16 text-[#111111] sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1500px] px-5 text-center">
+        <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-[#d71920]/18 bg-[#fff7f7] px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#d71920]">
+          <span className="h-2 w-2 rounded-full bg-[#d71920]" />
+          Brand Partners
+        </div>
+
         <h2 className="mx-auto max-w-[760px] text-[38px] font-semibold leading-[1.12] tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
-          Strategic Alliances that Power Innovation
+          Strategic Alliances that <span className="text-[#d71920]">Power Innovation</span>
         </h2>
+
+        <p className="mx-auto mt-5 max-w-[720px] text-[16px] leading-7 text-black/58">
+          Trusted collaborations across marketing, technology, creative, and
+          growth-led brand experiences.
+        </p>
       </div>
 
       <div className="mt-14 space-y-5 sm:mt-16 sm:space-y-6">

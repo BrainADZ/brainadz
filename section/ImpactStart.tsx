@@ -70,20 +70,20 @@ const IMPACT_STATS: ImpactStat[] = [
 
 export default function ImpactStartsHereSection() {
   return (
-    <section className="overflow-hidden bg-black py-16 text-white md:py-20">
+    <section className="overflow-hidden bg-white py-16 text-[#111111] md:py-20">
       <div className="mx-auto mb-12 grid max-w-[1800px] gap-7 px-5 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
         <h2 className="text-[42px] font-medium leading-[0.95] tracking-[-0.04em] sm:text-[58px]">
-          Impact
-          <span className="block">Starts Here</span>
+          <span className="text-[#d71920]">Impact</span>
+          <span className="block text-[#193175]">Starts Here</span>
         </h2>
 
         <div className="lg:pb-1">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-[12px] text-white/70">
-            <span className="h-2 w-2 rounded-full bg-[#1467f5]" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#d71920]/18 bg-[#fff7f7] px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#d71920]">
+            <span className="h-2 w-2 rounded-full bg-[#d71920]" />
             One ecosystem. Multiple outcomes.
           </div>
 
-          <p className="mt-5 max-w-[820px] text-[16px] leading-7 text-white/60">
+          <p className="mt-5 max-w-[820px] text-[16px] leading-7 text-black/62">
             BrainADZ Group combines growth marketing, digital products, live
             event execution, and exhibition fabrication to create measurable
             outcomes across every customer touchpoint.
@@ -145,24 +145,24 @@ export default function ImpactStartsHereSection() {
 
 function ImpactCard({ stat }: { stat: ImpactStat }) {
   return (
-    <article className="flex h-[560px] w-[390px] shrink-0 flex-col overflow-hidden rounded-[24px] border border-white/15 bg-[#181818] sm:h-[620px] sm:w-[500px]">
+    <article className="flex h-[560px] w-[390px] shrink-0 flex-col overflow-hidden rounded-[18px] border border-black/10 bg-white shadow-[0_18px_55px_rgba(0,0,0,0.08)] transition-colors duration-300 hover:border-[#d71920] sm:h-[620px] sm:w-[500px]">
       <div className="flex h-[218px] shrink-0 flex-col justify-between px-7 py-7 sm:h-[235px] sm:px-8 sm:py-8">
         <div className="flex items-start gap-6">
-          <p className="shrink-0 text-[50px] font-medium leading-none tracking-[-0.05em] text-white sm:text-[64px]">
+          <p className="shrink-0 text-[50px] font-medium leading-none tracking-[-0.05em] text-[#d71920] sm:text-[64px]">
             {stat.value}
           </p>
 
-          <h3 className="max-w-[205px] pt-1 text-[16px] font-semibold leading-7 text-white sm:text-[18px]">
+          <h3 className="max-w-[205px] pt-1 text-[16px] font-semibold leading-7 text-[#193175] sm:text-[18px]">
             {stat.label}
           </h3>
         </div>
 
-        <p className="max-w-[430px] text-[15px] leading-6 text-white/50 sm:text-[16px] sm:leading-7">
+        <p className="max-w-[430px] text-[15px] leading-6 text-black/58 sm:text-[16px] sm:leading-7">
           {stat.description}
         </p>
       </div>
 
-      <div className="relative flex-1 overflow-hidden bg-black">
+      <div className="relative flex-1 overflow-hidden border-t border-black/10 bg-[#f7f7f7]">
         <Image
           src={stat.image}
           alt={stat.imageAlt}

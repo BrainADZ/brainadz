@@ -157,11 +157,11 @@ export default function CaseStudiesSection() {
   }, [activeFilter]);
 
   return (
-    <section className="bg-[#ffffff] py-16 text-black sm:py-20 lg:py-24">
+    <section className="bg-[#ffffff] py-6 text-black sm:py-10 lg:py-14">
       <div className="mx-auto max-w-[1800px] px-5 px:4 md:px-8 lg:px-12">
         <div className="text-center">
           <div>
-            <p className="text-[12px] font-semibold uppercase text-[#e50914]">
+            <p className="text-[12px] font-semibold uppercase text-[#1467f5]">
               Our Work
             </p>
             <h2 className="mt-3 text-[38px] font-semibold leading-[1.05] sm:text-[48px] lg:text-[58px]">
@@ -218,16 +218,13 @@ export default function CaseStudiesSection() {
 
 function CaseStudyCard({ item }: { item: CaseStudyItem }) {
   return (
-    <article
-      className="group mb-8 inline-block w-full break-inside-avoid"
-      data-aos="fade-up"
-    >
+    <article className="group mb-8 inline-block w-full break-inside-avoid">
       <a
         href={item.href}
         aria-label={`View ${item.title} project`}
         className="block"
       >
-        <div className="overflow-hidden bg-white shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-[border-radius] duration-500 ease-out group-hover:rounded-[2px]">
+        <div className="overflow-hidden bg-white shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-[border-radius] duration-500 ease-out group-hover:rounded-[8px]">
           {item.mediaType === "video" ? (
             <video
               src={item.media}
@@ -259,7 +256,7 @@ function CaseStudyCard({ item }: { item: CaseStudyItem }) {
             <span className="absolute left-0 top-0 text-black/50 transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0">
               {item.category}
             </span>
-            <span className="absolute left-0 top-0 inline-flex translate-y-4 items-center gap-1 text-[#e50914] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            <span className="absolute left-0 top-0 inline-flex translate-y-4 items-center gap-1 text-[#1467f5] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
               View Project
               <ArrowUpRight className="h-3.5 w-3.5" />
             </span>
