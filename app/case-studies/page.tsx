@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { FiArrowRight, FiExternalLink } from "react-icons/fi";
 
-const ACCENT = "#1467f5";
+const ACCENT = "#e50914";
 
 /* ========================= TABS ========================= */
 
@@ -253,7 +253,7 @@ function CaseStudiesHero() {
           aria-label="Breadcrumb"
           className="flex items-center gap-2 text-[14px] font-medium leading-none"
         >
-          <Link href="/" className="text-[#6995ff] transition hover:text-white">
+          <Link href="/" className="text-[#ff5a64] transition hover:text-white">
             Home
           </Link>
           <span className="text-white/60">/</span>
@@ -273,14 +273,14 @@ function CaseStudiesHero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="#portfolio"
-              className="inline-flex min-h-14 items-center justify-center gap-7 rounded-[4px] bg-[#1467f5] px-6 text-[15px] font-medium text-white transition hover:bg-[#0f56d6]"
+              className="inline-flex min-h-14 items-center justify-center gap-7 rounded-[4px] bg-[#e50914] px-6 text-[15px] font-medium text-white transition hover:bg-[#b70710]"
             >
               Explore our work
               <FiArrowRight />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex min-h-14 items-center justify-center gap-7 rounded-[4px] border border-white/24 bg-black/30 px-6 text-[15px] font-medium text-white transition hover:border-[#1467f5] hover:bg-[#1467f5]"
+              className="inline-flex min-h-14 items-center justify-center gap-7 rounded-[4px] border border-white/24 bg-black/30 px-6 text-[15px] font-medium text-white transition hover:border-[#e50914] hover:bg-[#e50914]"
             >
               Start a project
               <FiArrowRight />
@@ -524,8 +524,8 @@ function PortfolioTabsSection() {
                 className={[
                   "min-h-12 rounded-[4px] border px-5 text-sm font-semibold transition-all duration-200",
                   isActive
-                    ? "border-[#1467f5] text-white"
-                    : "border-white/12 bg-black text-white/70 hover:border-[#1467f5] hover:text-white",
+                    ? "border-[#e50914] text-white"
+                    : "border-white/12 bg-black text-white/70 hover:border-[#e50914] hover:text-white",
                 ].join(" ")}
                 style={
                   isActive
@@ -576,7 +576,7 @@ function BrowserGrid({ items }: { items: PortfolioItem[] }) {
       {items.map((item, index) => (
         <article
           key={`${item.title}-${index}`}
-          className="group overflow-hidden rounded-[6px] border border-white/12 bg-black transition-all duration-300 hover:-translate-y-1 hover:border-[#1467f5]/70"
+          className="group overflow-hidden rounded-[6px] border border-white/12 bg-black transition-all duration-300 hover:-translate-y-1 hover:border-[#e50914]/70"
         >
           <div className="border-b border-white/10 bg-[#101010] px-4 py-3">
             <div className="flex items-center justify-between gap-4">
@@ -615,7 +615,7 @@ function BrowserGrid({ items }: { items: PortfolioItem[] }) {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-[4px] border border-[#1467f5]/45 px-4 py-2 text-sm font-semibold text-[#6995ff] transition-all duration-200 hover:bg-[#1467f5] hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-[4px] border border-[#e50914]/45 px-4 py-2 text-sm font-semibold text-[#ff5a64] transition-all duration-200 hover:bg-[#e50914] hover:text-white"
                   style={{ background: `${ACCENT}1A` }}
                 >
                   Visit Project <FiExternalLink />
@@ -637,7 +637,7 @@ function GraphicGrid({ items }: { items: PortfolioItem[] }) {
       {items.map((item, index) => (
         <div
           key={`${item.title}-${index}`}
-          className="group overflow-hidden rounded-[6px] border border-white/12 bg-black transition-colors hover:border-[#1467f5]/70"
+          className="group overflow-hidden rounded-[6px] border border-white/12 bg-black transition-colors hover:border-[#e50914]/70"
         >
           <div className="relative aspect-4/5 w-full overflow-hidden bg-[#080808]">
             <Image

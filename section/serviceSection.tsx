@@ -63,10 +63,12 @@ export default function ServicesSection() {
 
         {/* Service Cards */}
         <div className="grid border-l border-t border-black/10 sm:grid-cols-2 xl:grid-cols-4">
-          {SERVICES.map((service) => (
+          {SERVICES.map((service, index) => (
             <Link
               key={service.title}
               href={service.href}
+              data-aos="fade-up"
+              data-aos-delay={(index % 4) * 80}
               className="group relative flex min-h-[410px] flex-col overflow-hidden border-b border-r border-black/10 bg-white p-7 transition-colors duration-300 hover:bg-[#fff8f8] sm:min-h-[440px] lg:p-9"
             >
               {/* Red top accent */}
