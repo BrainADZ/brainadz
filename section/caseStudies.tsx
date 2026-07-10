@@ -161,10 +161,10 @@ export default function CaseStudiesSection() {
       <div className="mx-auto max-w-[1800px] px-5 px:4 md:px-8 lg:px-12">
         <div className="text-center">
           <div>
-            <p className="text-[12px] font-semibold uppercase text-[#1467f5]">
+            <p className="text-[12px] font-semibold uppercase text-[#d71920]">
               Our Work
             </p>
-            <h2 className="mt-3 text-[38px] font-semibold leading-[1.05] sm:text-[48px] lg:text-[58px]">
+            <h2 className="mt-3 text-[38px] font-semibold leading-[1.05] sm:text-[48px] lg:text-[58px] text-[#193175]">
               Case Studies
             </h2>
           </div>
@@ -182,8 +182,8 @@ export default function CaseStudiesSection() {
                   className={[
                     "h-10 shrink-0 rounded-[4px] border px-4 text-[12px] font-semibold uppercase transition-colors",
                     isActive
-                      ? "border-black bg-black text-white"
-                      : "border-black/10 bg-white text-black/65 hover:border-black hover:text-black",
+                      ? "border-[#d71920] bg-[#d71920] text-white"
+                      : "border-black/10 bg-white text-black/65 hover:border-[#d71920] hover:text-[#d71920]",
                   ].join(" ")}
                 >
                   {filter}
@@ -194,10 +194,11 @@ export default function CaseStudiesSection() {
         </div>
 
         <div className="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-3">
-          {visibleCaseStudies.map((item) => (
+          {visibleCaseStudies.map((item, index) => (
             <CaseStudyCard
               key={`${item.title}-${item.category}`}
               item={item}
+              index={index}
             />
           ))}
         </div>
@@ -205,7 +206,7 @@ export default function CaseStudiesSection() {
         <div className="mt-12 flex justify-center">
           <Link
             href="/case-studies"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[4px] border border-black px-5 text-[13px] font-semibold text-black transition-colors hover:bg-black hover:text-white"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[4px] border border-[#d71920] px-5 text-[13px] font-semibold text-[#d71920] transition-colors hover:bg-[#d71920] hover:text-white"
           >
             View All Case Studies
             <ArrowUpRight className="h-4 w-4" />
@@ -216,9 +217,19 @@ export default function CaseStudiesSection() {
   );
 }
 
-function CaseStudyCard({ item }: { item: CaseStudyItem }) {
+function CaseStudyCard({
+  item,
+  index,
+}: {
+  item: CaseStudyItem;
+  index: number;
+}) {
   return (
-    <article className="group mb-8 inline-block w-full break-inside-avoid">
+    <article
+      data-aos="fade-up"
+      data-aos-delay={(index % 3) * 80}
+      className="group mb-8 inline-block w-full break-inside-avoid"
+    >
       <a
         href={item.href}
         aria-label={`View ${item.title} project`}
@@ -256,7 +267,7 @@ function CaseStudyCard({ item }: { item: CaseStudyItem }) {
             <span className="absolute left-0 top-0 text-black/50 transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0">
               {item.category}
             </span>
-            <span className="absolute left-0 top-0 inline-flex translate-y-4 items-center gap-1 text-[#1467f5] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            <span className="absolute left-0 top-0 inline-flex translate-y-4 items-center gap-1 text-[#d71920] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
               View Project
               <ArrowUpRight className="h-3.5 w-3.5" />
             </span>
