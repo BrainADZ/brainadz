@@ -112,7 +112,7 @@ export default function Footer() {
     <>
       <FooterCta />
 
-      <footer className="overflow-hidden bg-[#273D7D] text-white">
+      <footer className="overflow-hidden bg-[#232323] text-white">
         <div className="mx-auto max-w-[1800px] px-5 pb-6 pt-5 sm:px-8 lg:px-12">
           <section
             aria-label="Our locations"

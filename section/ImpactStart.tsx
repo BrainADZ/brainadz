@@ -73,7 +73,7 @@ export default function ImpactStartsHereSection() {
       <div className="mx-auto mb-12 grid max-w-[1800px] gap-7 px-5 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
         <h2 className="text-[42px] font-medium leading-[0.95] tracking-[-0.04em] sm:text-[58px]">
           <span className="text-[#d71920]">Impact</span>
-          <span className="block text-[#193175]">Starts Here</span>
+          <span className="block text-black">Starts Here</span>
         </h2>
 
         <div className="lg:pb-1">
@@ -151,7 +151,7 @@ function ImpactCard({ stat }: { stat: ImpactStat }) {
             {stat.value}
           </p>
 
-          <h3 className="max-w-[205px] pt-1 text-[16px] font-semibold leading-7 text-[#193175] sm:text-[18px]">
+          <h3 className="max-w-[205px] pt-1 text-[16px] font-semibold leading-7 text-black sm:text-[18px]">
             {stat.label}
           </h3>
         </div>

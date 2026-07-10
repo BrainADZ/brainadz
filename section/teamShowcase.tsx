@@ -132,7 +132,7 @@ function TeamGroupBlock({ group }: { group: TeamGroup }) {
           {group.label}
         </p>
 
-        <h3 className="mt-3 text-[34px] font-semibold leading-tight tracking-[-0.035em] text-[#193175] sm:text-[44px]">
+        <h3 className="mt-3 text-[34px] font-semibold leading-tight tracking-[-0.035em] text-black sm:text-[44px]">
           {group.title}
         </h3>
 

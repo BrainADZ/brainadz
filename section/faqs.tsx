@@ -84,7 +84,7 @@ export default function FaqSection() {
             </p>
           </div>
 
-          <h2 className="mt-3 text-[#193175] max-w-[820px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] sm:text-[52px] lg:text-[58px]">
+          <h2 className="mt-3 max-w-[820px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-black sm:text-[52px] lg:text-[58px]">
             Frequently Asked
             <span className="block text-[#E1122B]">Questions.</span>
           </h2>

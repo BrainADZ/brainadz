@@ -6,10 +6,10 @@ export default function ContactCtaSection() {
   return (
     <section className="bg-white py-12 text-white  lg:py-16">
       <div className="mx-auto max-w-[1800px] px-5 md:px-10 lg:px-12">
-        <div className="grid overflow-hidden bg-[#273D7D] md:grid-cols-[32%_68%]">
+        <div className="grid overflow-hidden bg-[#0e276f] md:grid-cols-[32%_68%]">
           <div className="relative min-h-[220px] md:min-h-[330px]">
             <img
-              src="/home-roadmap-cta.webp"
+              src="/about/about.avif"
               alt="BrainADZ digital growth planning"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-center"

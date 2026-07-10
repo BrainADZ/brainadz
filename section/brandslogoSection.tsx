@@ -122,7 +122,7 @@ export default async function BrandLogosCarousel() {
           Brand Partners
         </div>
 
-        <h2 className="mx-auto text-[#193175] max-w-[760px] text-[38px] font-semibold leading-[1.12] tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
+        <h2 className="mx-auto text-black max-w-[760px] text-[38px] font-semibold leading-[1.12] tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
           Strategic Alliances that <span className="text-[#d71920]">Power Innovation</span>
         </h2>
 

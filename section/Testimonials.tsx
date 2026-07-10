@@ -252,7 +252,7 @@ export default function TestimonialSection() {
                 Client Stories
               </p>
             </div>
-            <h2 className="text-[#193175] mt-3 max-w-[820px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] sm:text-[52px] lg:text-[58px]">
+            <h2 className="mt-3 max-w-[820px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-black sm:text-[52px] lg:text-[58px]">
               Trusted Partnerships.
               <span className="block text-[#E1122B]">Measurable Growth.</span>
             </h2>
@@ -279,7 +279,7 @@ export default function TestimonialSection() {
 
             <div className="relative mt-10">
               <div className="flex items-end gap-3">
-                <span className="text-[64px] font-semibold leading-none tracking-[-0.06em] text-[#193175]">
+                <span className="text-[64px] font-semibold leading-none tracking-[-0.06em] text-black">
                   4.9
                 </span>
                 <span className="pb-1.5 text-[13px] font-medium text-black/50">

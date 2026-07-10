@@ -32,7 +32,7 @@ export default function FounderDeskSameToSame() {
             </p>
           </div>
 
-          <h2 className=" text-[#193175] mt-5 text-[36px] font-semibold leading-[1.1] tracking-[-0.02em] sm:text-[44px] lg:text-[50px]">
+          <h2 className="mt-5 text-[36px] font-semibold leading-[1.1] tracking-[-0.02em] text-black sm:text-[44px] lg:text-[50px]">
             Words From The
             <br />
             Founder <span className="text-[#E1122B]">&amp;</span> MD
@@ -47,7 +47,7 @@ export default function FounderDeskSameToSame() {
           <div className="mt-8">
             <Link
               href="/company-overview"
-              className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#193175] px-6 text-[12px] font-semibold text-white transition-colors duration-300 hover:bg-[#E1122B]"
+              className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#E1122B] px-6 text-[12px] font-semibold text-white transition-colors duration-300 hover:bg-[#193175]"
             >
               Know Our Story
 
