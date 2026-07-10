@@ -348,7 +348,7 @@ export default function Navbar() {
                   >
                     <span>Blog</span>
                     <span className="text-[12px] font-bold text-[#e50914] transition group-hover:translate-x-0.5">
-                      -&gt;
+                      <ArrowRight className="h-3 w-3" strokeWidth={1.8} />
                     </span>
                   </Link>
 
@@ -358,7 +358,7 @@ export default function Navbar() {
                   >
                     <span>Case Studies</span>
                     <span className="text-[12px] font-bold text-[#e50914] transition group-hover:translate-x-0.5">
-                      -&gt;
+                      <ArrowRight className="h-3 w-3" strokeWidth={1.8} />
                     </span>
                   </Link>
                 </div>
@@ -467,7 +467,7 @@ export default function Navbar() {
                     }`}
                 >
                   <span>{item}</span>
-                  <span>-&gt;</span>
+                  <ArrowRight className="h-3 w-3" strokeWidth={1.8} />
                 </button>
               ))}
 
@@ -504,7 +504,7 @@ export default function Navbar() {
                   className="mt-6 flex items-center justify-between bg-[#111111] px-5 py-4 text-[15px] text-white transition hover:bg-[#e50914]"
                 >
                   Explore all services
-                  <span>-&gt;</span>
+                  <ArrowRight className="h-3 w-3" strokeWidth={1.8} />
                 </Link>
               </div>
             </div>

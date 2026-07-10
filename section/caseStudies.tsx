@@ -161,9 +161,13 @@ export default function CaseStudiesSection() {
       <div className="mx-auto max-w-[2000px] px-4">
         <div className="text-center">
           <div>
-            <p className="text-[12px] font-semibold uppercase text-[#d71920]">
-              Our Work
+          <div className="flex justify-center items-center gap-3">
+            <span className="h-0.5 w-8 bg-[#E1122B]" />
+
+            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-black/50">
+              Portfolio
             </p>
+          </div>
             <h2 className="mt-3 text-[38px] font-semibold leading-[1.05] text-black sm:text-[48px] lg:text-[58px]">
               Case Studies
             </h2>

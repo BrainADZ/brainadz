@@ -77,11 +77,14 @@ export default function ImpactStartsHereSection() {
         </h2>
 
         <div className="lg:pb-1">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#d71920]/18 bg-[#fff7f7] px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#d71920]">
-            <span className="h-2 w-2 rounded-full bg-[#d71920]" />
-            One ecosystem. Multiple outcomes.
-          </div>
 
+          <div className="flex items-center gap-3">
+            <span className="h-0.5 w-8 bg-[#E1122B]" />
+
+            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-black/50">
+              One ecosystem. Multiple outcomes.
+            </p>
+          </div>
           <p className="mt-5 max-w-[820px] text-[16px] leading-7 text-black/62">
             BrainADZ Group combines growth marketing, digital products, live
             event execution, and exhibition fabrication to create measurable

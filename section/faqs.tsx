@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 
@@ -76,18 +77,30 @@ export default function FaqSection() {
   return (
     <section className=" bg-white  py-16 text-black  lg:py-20">
       <div className="mx-auto max-w-[1800px] px-5 md:px-8 lg:px-12">
-        <div className="mb-12 border-b border-black/10 pb-10 lg:pb-12">
-          <div className="flex items-center gap-3">
-            <span className="h-0.5 w-8 bg-[#E1122B]" />
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-black/45">
-              FAQ
-            </p>
+        <div className="mb-12 grid gap-8 border-b border-black/10 pb-10 lg:grid-cols-[0.72fr_1fr] lg:items-center lg:gap-12 lg:pb-12">
+          <div>
+            <div className="flex items-center gap-3">
+              <span className="h-0.5 w-8 bg-[#E1122B]" />
+              <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-black/45">
+                FAQ
+              </p>
+            </div>
+
+            <h2 className="mt-3 max-w-[820px] text-[32px] font-semibold leading-[1.06] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[52px]">
+              Frequently Asked
+              <span className="block text-[#E1122B]">Questions.</span>
+            </h2>
           </div>
 
-          <h2 className="mt-3 max-w-[820px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-black sm:text-[52px] lg:text-[58px]">
-            Frequently Asked
-            <span className="block text-[#E1122B]">Questions.</span>
-          </h2>
+          <div className="relative min-h-[190px] overflow-hidden sm:min-h-[230px] lg:min-h-[350px] hidden md:block">
+            <img
+              src="/asdFCAF.png"
+              alt="Marketing questions illustration"
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-contain object-right-bottom"
+            />
+          </div>
         </div>
 
         <div className="grid gap-8 lg:h-[660px] lg:min-h-0 lg:grid-cols-[0.86fr_1.14fr]">

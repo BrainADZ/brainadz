@@ -117,11 +117,14 @@ export default async function BrandLogosCarousel() {
   return (
     <section className="overflow-hidden bg-white py-6 text-[#111111] sm:py-10 lg:py-14">
       <div className="mx-auto max-w-[1500px] px-5 text-center">
-        <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-[#d71920]/18 bg-[#fff7f7] px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#d71920]">
-          <span className="h-2 w-2 rounded-full bg-[#d71920]" />
-          Brand Partners
-        </div>
 
+<div className="flex items-center gap-3">
+            <span className="h-0.5 w-8 bg-[#E1122B]" />
+
+            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-black/50">
+              Brand Partners
+            </p>
+          </div>
         <h2 className="mx-auto text-black max-w-[760px] text-[38px] font-semibold leading-[1.12] tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
           Strategic Alliances that <span className="text-[#d71920]">Power Innovation</span>
         </h2>

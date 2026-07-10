@@ -116,9 +116,11 @@ export default function TeamShowcaseSection({
 
         <div className="space-y-20">
           {TEAM_GROUPS.map((group) => (
+            
             <TeamGroupBlock key={group.title} group={group} />
           ))}
         </div>
+
       </div>
     </section>
   );
@@ -128,9 +130,13 @@ function TeamGroupBlock({ group }: { group: TeamGroup }) {
   return (
     <section className="[contain-intrinsic-size:auto_900px] [content-visibility:auto]">
       <header className="mx-auto mb-10 max-w-[820px] text-center">
-        <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
-          {group.label}
-        </p>
+          <div className="flex justify-center items-center gap-3">
+            <span className="h-0.5 w-8 bg-[#E1122B]" />
+
+            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-black/50">
+              {group.label}
+            </p>
+          </div>
 
         <h3 className="mt-3 text-[34px] font-semibold leading-tight tracking-[-0.035em] text-black sm:text-[44px]">
           {group.title}
