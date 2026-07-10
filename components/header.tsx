@@ -303,7 +303,7 @@ export default function Navbar() {
                       href="/contact"
                       className="inline-flex h-10 shrink-0 items-center justify-center rounded-full bg-[#e50914] px-7 text-[13px] font-bold text-white transition hover:bg-[#b70710]"
                     >
-                      Get a Free Audit -&gt;
+                      Get a Free Audit <ArrowRight/>
                     </Link>
                   </div>
                 </div>

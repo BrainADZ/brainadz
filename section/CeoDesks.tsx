@@ -27,7 +27,7 @@ export default function FounderDeskSameToSame() {
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
-      <div className="absolute inset-0 bg-white/82" />
+      <div className="absolute inset-0 bg-white/58" />
 
       <div className="relative mx-auto grid max-w-[1200px] gap-10 lg:grid-cols-[1.2fr_0.5fr] lg:items-start lg:gap-8">
         {/* Left: copy */}
