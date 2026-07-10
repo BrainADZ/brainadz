@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+/* eslint-disable @next/next/no-img-element */
 export default function GlobalPresenceSection() {
   return (
     <section className="w-full bg-[#F3F3F3] py-4 md:py-8">
@@ -14,13 +13,12 @@ export default function GlobalPresenceSection() {
         </h2>
 
         <div className="mt-2">
-          <Image
+          <img
             src="/map.png"
             alt="Global Clients Map"
             width={1200}
             height={620}
             className="mx-auto h-auto w-full max-w-[1200px] object-contain"
-            sizes="(max-width: 1280px) 100vw, 1200px"
           />
         </div>
       </div>

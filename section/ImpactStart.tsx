@@ -1,6 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-
-import Image from "next/image";
 
 type ImpactStat = {
   value: string;
@@ -163,12 +162,10 @@ function ImpactCard({ stat }: { stat: ImpactStat }) {
       </div>
 
       <div className="relative flex-1 overflow-hidden border-t border-black/10 bg-[#f7f7f7]">
-        <Image
+        <img
           src={stat.image}
           alt={stat.imageAlt}
-          fill
-          className={stat.imageClassName}
-          sizes="(max-width: 640px) 390px, 500px"
+          className={`absolute inset-0 h-full w-full ${stat.imageClassName || ""}`}
         />
       </div>
     </article>

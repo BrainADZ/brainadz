@@ -47,7 +47,7 @@ const PROJECT_MANAGERS: TeamMember[] = [
     image: "/teams/malika.webp",
     linkedin: "#",
   },
-   
+
 ];
 
 const CORE_TEAM: TeamMember[] = [
@@ -87,13 +87,13 @@ const TEAM_GROUPS: TeamGroup[] = [
   {
     label: "Project Management",
     title: "Meet Our Project Managers",
-   
+
     members: PROJECT_MANAGERS,
   },
   {
     label: "Core Team",
     title: "Meet Our Core Team",
-   
+
     members: CORE_TEAM,
   },
 ];
@@ -111,7 +111,7 @@ export default function TeamShowcaseSection({
       className=" bg-white text-black"
       aria-labelledby="team-showcase-title"
     >
-      <div className="mx-auto max-w-[1700px] px-5 py-16 sm:px-8 md:py-20">
+      <div className="mx-auto max-w-[1800px] px-5 md:px-10 lg:px-12 py-16 md:py-20">
 
 
         <div className="space-y-20">

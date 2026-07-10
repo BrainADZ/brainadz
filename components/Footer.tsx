@@ -1,5 +1,4 @@
 import FooterCta from "@/section/ctaSection";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import {
@@ -14,31 +13,33 @@ const LOCATIONS = [
     icon: "/icons/india.png",
     iconAlt: "India flag",
     city: "Delhi",
-    label: "Corporate Office",
+    label: "Head Office",
     address:
-      "A-24/8, 1st Floor, Rathi Tower, NH-19, Mohan Cooperative Industrial Estate, New Delhi 110044",
+      "Apex Square III, UGF, Plot 6, Pocket B-3, Sector-17, Dwarka, New Delhi 110075",
   },
   {
     icon: "/icons/india.png",
     iconAlt: "India flag",
     city: "Mumbai",
-    label: "Regional Office",
+    label: "Mumbai Office",
     address:
-      "911, 9th Floor, JMMIMA Complex, Off Link Road, Mindspace, Malad West, Mumbai 400064",
+      "911/9th Floor, IJMIMA Complex, Off Link Road, Mindspace, Malad West, Mumbai 400064",
   },
   {
     icon: "/icons/united-arab-emirates.png",
     iconAlt: "United Arab Emirates flag",
     city: "Dubai",
-    label: "International Office",
-    address: "Dubai, United Arab Emirates",
+    label: "Dubai Office",
+    address:
+      "Wood Leads Technical Services LLC (HamdanAbid), Warehouse No -8, Ras Al Khor Indl Area 1, Dubai UAE.",
   },
   {
     icon: "/icons/world.png",
     iconAlt: "Thailand flag",
     city: "Thailand",
-    label: "International Office",
-    address: "Bangkok, Thailand",
+    label: "Thailand Office",
+    address:
+      "96/26, Manthana 2, Soi Si Dan 22, Khambon Bang Kaew Subdistrict, Bang Phli District, Samut Prakan Province, Bangkok 10540, Thailand",
   },
 ];
 
@@ -124,12 +125,11 @@ export default function Footer() {
               >
                 <div className="flex items-center gap-4">
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white p-1.5 shadow-[0_10px_24px_rgba(0,0,0,0.18)]">
-                    <Image
+                    <img
                       src={location.icon}
                       alt={location.iconAlt}
                       width={42}
                       height={42}
-                      sizes="42px"
                       className="h-full w-full rounded-full object-cover"
                     />
                   </span>
@@ -153,12 +153,11 @@ export default function Footer() {
             <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.45fr_repeat(5,minmax(0,1fr))]">
               <div>
                 <Link href="/" className="inline-flex">
-                  <Image
+                  <img
                     src="/logo/whitelogo-optimized.webp"
                     alt="BrainADZ Marketing"
                     width={190}
                     height={78}
-                    sizes="165px"
                     className="h-auto w-[165px] object-contain"
                   />
                 </Link>
@@ -253,12 +252,11 @@ export default function Footer() {
                   className="group flex min-h-[108px] flex-col items-start justify-between gap-5 rounded-[14px] border border-white/20 bg-white/8 px-6 py-5 transition hover:-translate-y-1 hover:border-white/35 hover:bg-white/12 sm:flex-row sm:items-center"
                 >
                   <span className="inline-flex rounded-[10px] bg-white px-4 py-3 shadow-[0_10px_24px_rgba(0,0,0,0.12)]">
-                    <Image
+                    <img
                       src={unit.logo}
                       alt={unit.name}
                       width={180}
                       height={70}
-                      sizes="180px"
                       className="max-h-12 w-auto max-w-40 object-contain object-left"
                     />
                   </span>

@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Image from "next/image";
 import {
   ArrowUpRight,
   ChevronLeft,
@@ -270,7 +270,7 @@ export default function TestimonialSection() {
 
             <div className="relative flex items-center justify-between gap-4">
               <div className="grid h-12 w-12 place-items-center rounded-full border border-black/10 bg-white shadow-[0_10px_24px_rgba(0,0,0,0.08)]">
-                <Image src="/google.svg" alt="Google" width={27} height={27} />
+                <img src="/google.svg" alt="Google" width={27} height={27} />
               </div>
               <span className="rounded-full border border-[#E1122B]/15 bg-[#fff7f7] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#E1122B]">
                 Google Reviews

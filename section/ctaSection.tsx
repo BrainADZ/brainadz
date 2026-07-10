@@ -1,21 +1,18 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export default function ContactCtaSection() {
   return (
-    <section className="bg-white px-5 py-10 text-white sm:px-8 lg:py-12">
-      <div className="mx-auto max-w-[1800px]">
+    <section className="bg-white  py-10 text-white lg:py-12">
+      <div className="mx-auto max-w-[1800px] px-5 md:px-10 lg:px-12">
         <div className="grid overflow-hidden bg-[#273D7D] md:grid-cols-[32%_68%]">
           <div className="relative min-h-[210px] md:min-h-[310px]">
-            <Image
+            <img
               src="/home-roadmap-cta.webp"
               alt="BrainADZ marketing consultation"
-              fill
               loading="lazy"
-              quality={80}
-              sizes="(max-width: 768px) 100vw, 32vw"
-              className="object-cover object-center"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             />
           </div>
 

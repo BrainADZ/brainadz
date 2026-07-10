@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { ArrowUpRight, Linkedin } from "lucide-react";
 
@@ -66,13 +66,10 @@ export default function FounderDeskSameToSame() {
           className="group block w-full max-w-[340px] justify-self-start lg:justify-self-end"
         >
           <div className="relative aspect-3/4 overflow-hidden bg-black">
-            <Image
+            <img
               src={FOUNDER.photo}
               alt={FOUNDER.name}
-              fill
-              className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-              sizes="(max-width: 1024px) 100vw, 340px"
-              priority={false}
+              className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
             />
 
             <span className="absolute inset-x-0 bottom-0 h-[3px] bg-[#E1122B]" />

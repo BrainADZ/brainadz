@@ -180,7 +180,7 @@ export default function CaseStudiesSection() {
                   onClick={() => setActiveFilter(filter)}
                   aria-pressed={isActive}
                   className={[
-                    "h-10 shrink-0 rounded-[4px] border px-4 text-[12px] font-semibold uppercase transition-colors",
+                    "h-10 shrink-0 rounded-sm border px-4 text-[12px] font-semibold uppercase transition-colors",
                     isActive
                       ? "border-[#d71920] bg-[#d71920] text-white"
                       : "border-black/10 bg-white text-black/65 hover:border-[#d71920] hover:text-[#d71920]",
@@ -206,7 +206,7 @@ export default function CaseStudiesSection() {
         <div className="mt-12 flex justify-center">
           <Link
             href="/case-studies"
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[4px] border border-[#d71920] px-5 text-[13px] font-semibold text-[#d71920] transition-colors hover:bg-[#d71920] hover:text-white"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border border-[#d71920] px-5 text-[13px] font-semibold text-[#d71920] transition-colors hover:bg-[#d71920] hover:text-white"
           >
             View All Case Studies
             <ArrowUpRight className="h-4 w-4" />
@@ -235,7 +235,7 @@ function CaseStudyCard({
         aria-label={`View ${item.title} project`}
         className="block"
       >
-        <div className="overflow-hidden bg-white shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-[border-radius] duration-500 ease-out group-hover:rounded-[8px]">
+        <div className="overflow-hidden bg-white shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-[border-radius] duration-500 ease-out group-hover:rounded-lg">
           {item.mediaType === "video" ? (
             <video
               src={item.media}

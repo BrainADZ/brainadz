@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
 import Link from "next/link";
 
 const PILLARS = [
@@ -30,23 +29,21 @@ const STEPS = [
 
 export default function AboutSection() {
   return (
-    <section className="bg-white px-5 py-16 text-[#111111] sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+    <section className="bg-white px-5 py-16 text-[#111111] md:px-10 sm:py-20 lg:px-12 lg:py-24">
       <div className="mx-auto max-w-[1800px] overflow-hidden rounded-[14px] border border-black/10 bg-white">
         <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
           <div
             className="relative min-h-[430px] overflow-hidden border-b border-black/10 bg-[#111111] lg:min-h-full lg:border-b-0 lg:border-r"
             data-aos="fade-up"
           >
-            <Image
+            <img
               src="/homepage/about.png"
               alt="BrainADZ Marketing team"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04)_0%,rgba(0,0,0,0.08)_45%,rgba(0,0,0,0.72)_100%)]" />
 
-            <div className="absolute left-5 top-5 rounded-[8px] border border-white/20 bg-black/70 px-4 py-3 text-white backdrop-blur-sm sm:left-7 sm:top-7">
+            <div className="absolute left-5 top-5 rounded-lg border border-white/20 bg-black/70 px-4 py-3 text-white backdrop-blur-sm sm:left-7 sm:top-7">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#ff5a64]">
                 About BrainADZ
               </p>
@@ -55,7 +52,7 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <div className="absolute inset-x-5 bottom-5 rounded-[8px] border border-white/20 bg-white/92 p-5 text-black shadow-[0_18px_45px_rgba(0,0,0,0.24)] sm:inset-x-7 sm:bottom-7">
+            <div className="absolute inset-x-5 bottom-5 rounded-lg border border-white/20 bg-white/92 p-5 text-black shadow-[0_18px_45px_rgba(0,0,0,0.24)] sm:inset-x-7 sm:bottom-7">
               <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[#d71920]">
                 We build attention into action
               </p>
@@ -68,7 +65,7 @@ export default function AboutSection() {
           <div className="bg-[#fbfbfb]">
             <div className="p-6 sm:p-8 lg:p-12 xl:p-14">
               <div className="flex items-center gap-3">
-                <span className="h-[2px] w-8 bg-[#d71920]" />
+                <span className="h-0.5 w-8 bg-[#d71920]" />
                 <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#d71920]">
                   Integrated Marketing Studio
                 </span>
@@ -101,11 +98,11 @@ export default function AboutSection() {
                 {PILLARS.map((pillar, index) => (
                   <article
                     key={pillar.title}
-                    className="group rounded-[8px] border border-black/10 bg-white p-5 shadow-[0_16px_42px_rgba(0,0,0,0.05)] transition-colors duration-300 hover:border-[#d71920] hover:bg-[#fff8f8]"
+                    className="group rounded-lg border border-black/10 bg-white p-5 shadow-[0_16px_42px_rgba(0,0,0,0.05)] transition-colors duration-300 hover:border-[#d71920] hover:bg-[#fff8f8]"
                     data-aos="fade-up"
                     data-aos-delay={index * 80}
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-[8px] border border-[#d71920]/20 bg-[#fff1f1]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[#d71920]/20 bg-[#fff1f1]">
                       <img
                         src={pillar.iconSrc}
                         alt=""

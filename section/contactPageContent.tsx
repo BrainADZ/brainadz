@@ -122,7 +122,7 @@ export default function ContactPageContent() {
 
             <a
               href="#contact-form"
-              className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-[4px] bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
+              className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-sm bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
             >
               Start your enquiry
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -175,7 +175,7 @@ export default function ContactPageContent() {
               />
             </div>
 
-            <div className="relative mt-10 aspect-[16/9] min-h-[240px] overflow-hidden rounded-[6px] sm:min-h-[300px]">
+            <div className="relative mt-10 aspect-video min-h-60 overflow-hidden rounded-md sm:min-h-[300px]">
               <Image
                 src="/gallery/8.jpeg"
                 alt="BrainADZ team at the Delhi office"
@@ -188,7 +188,7 @@ export default function ContactPageContent() {
           </div>
 
           <div className="border-t border-white/10 py-14 sm:py-16 lg:border-l lg:border-t-0 lg:py-20 lg:pl-14 xl:pl-20">
-              <div className="rounded-[6px] border border-white/12 bg-[#101010] p-5 sm:p-8 lg:p-10">
+              <div className="rounded-md border border-white/12 bg-[#101010] p-5 sm:p-8 lg:p-10">
                 <p className="text-[13px] font-semibold uppercase text-[#6995ff]">
                   Start a project
                 </p>
@@ -246,7 +246,7 @@ export default function ContactPageContent() {
                         name="service"
                         required
                         defaultValue=""
-                        className="h-14 w-full appearance-none rounded-[4px] border border-white/14 bg-black px-4 pr-12 text-[15px] text-white outline-none transition focus:border-[#1467f5]"
+                        className="h-14 w-full appearance-none rounded-sm border border-white/14 bg-black px-4 pr-12 text-[15px] text-white outline-none transition focus:border-[#1467f5]"
                       >
                         <option value="" disabled>
                           Select a service
@@ -274,7 +274,7 @@ export default function ContactPageContent() {
                       required
                       rows={6}
                       placeholder="Tell us about your goals, challenges, and timeline"
-                      className="w-full resize-none rounded-[4px] border border-white/14 bg-black px-4 py-4 text-[15px] leading-6 text-white outline-none transition placeholder:text-white/28 focus:border-[#1467f5]"
+                      className="w-full resize-none rounded-sm border border-white/14 bg-black px-4 py-4 text-[15px] leading-6 text-white outline-none transition placeholder:text-white/28 focus:border-[#1467f5]"
                     />
                   </div>
 
@@ -298,7 +298,7 @@ export default function ContactPageContent() {
 
                   <button
                     type="submit"
-                    className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-[4px] bg-[#1467f5] px-7 text-[15px] font-semibold text-white transition hover:bg-[#0f56d6] sm:w-auto"
+                    className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-sm bg-[#1467f5] px-7 text-[15px] font-semibold text-white transition hover:bg-[#0f56d6] sm:w-auto"
                   >
                     Send enquiry
                     <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -337,7 +337,7 @@ export default function ContactPageContent() {
             </p>
           </div>
 
-          <div className="mt-12 grid overflow-hidden rounded-[6px] border border-white/12 bg-black lg:grid-cols-[0.55fr_1.45fr]">
+          <div className="mt-12 grid overflow-hidden rounded-md border border-white/12 bg-black lg:grid-cols-[0.55fr_1.45fr]">
             <div className="flex flex-col justify-between border-b border-white/12 p-6 sm:p-8 lg:min-h-[500px] lg:border-b-0 lg:border-r lg:p-10">
               <div>
                 <MapPin className="h-8 w-8 text-[#1467f5]" strokeWidth={1.6} />
@@ -355,7 +355,7 @@ export default function ContactPageContent() {
                 href="https://www.google.com/maps/search/?api=1&query=A-24%2F8%20Rathi%20Tower%20Mohan%20Cooperative%20Industrial%20Estate%20New%20Delhi%20110044"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-9 inline-flex min-h-12 items-center justify-center gap-3 self-start rounded-[4px] border border-white/20 px-5 text-[13px] font-semibold text-white transition hover:border-[#1467f5] hover:bg-[#1467f5]"
+                className="mt-9 inline-flex min-h-12 items-center justify-center gap-3 self-start rounded-sm border border-white/20 px-5 text-[13px] font-semibold text-white transition hover:border-[#1467f5] hover:bg-[#1467f5]"
               >
                 Get directions
                 <ArrowUpRight className="h-4 w-4" />
@@ -461,12 +461,12 @@ function ContactLink({
       rel={external ? "noreferrer" : undefined}
       className="group flex items-center gap-4 border-b border-white/10 py-5 last:border-b-0"
     >
-      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[4px] border border-white/12 text-[#6995ff] transition group-hover:border-[#1467f5] group-hover:bg-[#1467f5] group-hover:text-white">
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-sm border border-white/12 text-[#6995ff] transition group-hover:border-[#1467f5] group-hover:bg-[#1467f5] group-hover:text-white">
         <Icon className="h-5 w-5" strokeWidth={1.7} />
       </span>
       <span className="min-w-0">
         <span className="block text-[12px] font-medium text-white/42">{label}</span>
-        <span className="mt-1 block break-words text-[15px] font-medium text-white">
+        <span className="mt-1 block wrap-break-word text-[15px] font-medium text-white">
           {value}
         </span>
       </span>
@@ -498,7 +498,7 @@ function FormField({
         name={name}
         type={type}
         {...props}
-        className="h-14 w-full rounded-[4px] border border-white/14 bg-black px-4 text-[15px] text-white outline-none transition placeholder:text-white/28 focus:border-[#1467f5]"
+        className="h-14 w-full rounded-sm border border-white/14 bg-black px-4 text-[15px] text-white outline-none transition placeholder:text-white/28 focus:border-[#1467f5]"
       />
     </div>
   );
