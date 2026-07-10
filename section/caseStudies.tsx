@@ -158,7 +158,7 @@ export default function CaseStudiesSection() {
 
   return (
     <section className="bg-[#ffffff] py-6 text-black sm:py-10 lg:py-14">
-      <div className="mx-auto max-w-[1800px] px-5 px:4 md:px-8 lg:px-12">
+      <div className="mx-auto max-w-[2000px] px-4">
         <div className="text-center">
           <div>
             <p className="text-[12px] font-semibold uppercase text-[#d71920]">

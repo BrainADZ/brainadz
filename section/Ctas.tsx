@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 export default function ContactCtaSection() {
   return (
     <section className="bg-white py-12 text-white  lg:py-16">
-      <div className="mx-auto max-w-[1800px] px-5 md:px-10 lg:px-12">
+      <div className="mx-auto max-w-full px-0">
         <div className="grid overflow-hidden bg-[#0e276f] md:grid-cols-[32%_68%]">
           <div className="relative min-h-[220px] md:min-h-[330px]">
             <img

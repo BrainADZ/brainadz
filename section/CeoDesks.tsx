@@ -20,8 +20,16 @@ const FOUNDER: Founder = {
 
 export default function FounderDeskSameToSame() {
   return (
-    <section className="bg-white px-5 py-14 text-black sm:px-8 md:py-6 lg:px-12">
-      <div className="mx-auto grid max-w-[1200px] gap-10 lg:grid-cols-[1.2fr_0.5fr] lg:items-start lg:gap-8">
+    <section className="relative overflow-hidden bg-white px-5 py-14 text-black sm:px-8 md:py-6 lg:px-12">
+      <img
+        src="/mddesk.jpeg"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-white/82" />
+
+      <div className="relative mx-auto grid max-w-[1200px] gap-10 lg:grid-cols-[1.2fr_0.5fr] lg:items-start lg:gap-8">
         {/* Left: copy */}
         <div className="max-w-[640px]">
           <div className="flex items-center gap-3">
