@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 
 const SERVICES = [
@@ -40,7 +41,7 @@ export default function ServicesSection() {
         <div className="mb-12 flex flex-col gap-7 border-b border-black/10 pb-10 md:mb-14 md:flex-row md:items-end md:justify-between md:pb-12">
           <div>
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-[2px] w-8 bg-[#d71920]" />
+              <span className="h-0.5 w-8 bg-[#d71920]" />
 
               <span className="text-[12px] font-medium uppercase tracking-[0.18em] text-[#d71920]">
                 Our Services
@@ -85,7 +86,7 @@ export default function ServicesSection() {
 
               {/* Content */}
               <div className="mt-12">
-                <h3 className="max-w-[280px] text-[25px] font-normal leading-[1.25] tracking-[-0.02em] transition-colors duration-300 group-hover:text-[#d71920] lg:text-[28px]">
+                <h3 className="max-w-[280px] text-[25px] font-normal leading-tight tracking-[-0.02em] transition-colors duration-300 group-hover:text-[#d71920] lg:text-[28px]">
                   {service.title}
                 </h3>
 
@@ -108,7 +109,7 @@ export default function ServicesSection() {
         <div className="mt-10 flex justify-center md:mt-12">
           <Link
             href="/services"
-            className="inline-flex min-h-[56px] items-center justify-center gap-4 rounded-full bg-[#d71920] px-8 text-[13px] font-medium text-white transition-colors duration-300 hover:bg-[#193175]"
+            className="inline-flex min-h-14 items-center justify-center gap-4 rounded-full bg-[#d71920] px-8 text-[13px] font-medium text-white transition-colors duration-300 hover:bg-[#193175]"
           >
             View All Services
             <span className="text-[18px]">↗</span>

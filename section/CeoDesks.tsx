@@ -25,7 +25,7 @@ export default function FounderDeskSameToSame() {
         {/* Left: copy */}
         <div className="max-w-[640px]">
           <div className="flex items-center gap-3">
-            <span className="h-[2px] w-8 bg-[#E1122B]" />
+            <span className="h-0.5 w-8 bg-[#E1122B]" />
 
             <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-black/50">
               MD Desk
@@ -65,7 +65,7 @@ export default function FounderDeskSameToSame() {
           aria-label={`Read more about ${FOUNDER.name}`}
           className="group block w-full max-w-[340px] justify-self-start lg:justify-self-end"
         >
-          <div className="relative aspect-[3/4] overflow-hidden bg-black">
+          <div className="relative aspect-3/4 overflow-hidden bg-black">
             <Image
               src={FOUNDER.photo}
               alt={FOUNDER.name}

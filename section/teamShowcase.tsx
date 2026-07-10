@@ -104,8 +104,7 @@ type TeamShowcaseSectionProps = {
 };
 
 export default function TeamShowcaseSection({
-  ctaHref = "/teams",
-  ctaLabel = "View Full Team",
+
 }: TeamShowcaseSectionProps) {
   return (
     <section
@@ -185,7 +184,7 @@ function TeamCard({ member }: { member: TeamMember }) {
 
       <div className="pt-4">
         <h4 className="inline-block text-[17px] font-semibold leading-tight text-black">
-          <span className="bg-[linear-gradient(#E1122B,#E1122B)] bg-[length:0%_2px] bg-left-bottom bg-no-repeat pb-[2px] transition-[background-size] duration-300 group-hover:bg-[length:100%_2px]">
+          <span className="bg-[linear-gradient(#E1122B,#E1122B)] bg-size-[0%_2px] bg-bottom-left bg-no-repeat pb-0.5 transition-[background-size] duration-300 group-hover:bg-size-[100%_2px]">
             {member.name}
           </span>
         </h4>

@@ -65,14 +65,14 @@ async function getBrandLogos(): Promise<BrandLogo[]> {
 
 function BrandCard({ logo }: { logo: BrandLogo }) {
   return (
-    <div className="flex h-[112px] w-[144px] shrink-0 items-center justify-center rounded-[12px] border border-black/10 bg-white px-4 py-5 shadow-[0_10px_28px_rgba(0,0,0,0.055)] transition-colors duration-300 hover:border-[#d71920] hover:bg-[#fff8f8] sm:h-[120px] sm:w-[166px] lg:h-[128px] lg:w-[178px]">
+    <div className="flex h-28 w-36 shrink-0 items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-5 shadow-[0_10px_28px_rgba(0,0,0,0.055)] transition-colors duration-300 hover:border-[#d71920] hover:bg-[#fff8f8] sm:h-[120px] sm:w-[166px] lg:h-32 lg:w-[178px]">
       <div className="flex w-full items-center justify-center">
         <Image
           src={logo.src}
           alt={logo.name}
           width={140}
           height={62}
-          className="max-h-[48px] w-auto max-w-[112px] object-contain sm:max-h-[54px] sm:max-w-[132px]"
+          className="max-h-12 w-auto max-w-28 object-contain sm:max-h-[54px] sm:max-w-[132px]"
           loading="lazy"
           sizes="(max-width: 640px) 112px, 132px"
         />

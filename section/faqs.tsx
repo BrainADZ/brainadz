@@ -78,7 +78,7 @@ export default function FaqSection() {
       <div className="mx-auto max-w-[1800px] px-5 md:px-8 lg:px-12">
         <div className="mb-12 border-b border-black/10 pb-10 lg:pb-12">
           <div className="flex items-center gap-3">
-            <span className="h-[2px] w-8 bg-[#E1122B]" />
+            <span className="h-0.5 w-8 bg-[#E1122B]" />
             <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-black/45">
               FAQ
             </p>

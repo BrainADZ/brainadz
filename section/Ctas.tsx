@@ -33,7 +33,7 @@ export default function ContactCtaSection() {
 
             <Link
               href="/contact"
-              className="inline-flex min-h-[64px] w-full shrink-0 items-center justify-between gap-8 border border-white/65 px-6 text-[15px] font-semibold text-white transition hover:border-[#E1122B] hover:bg-[#E1122B] sm:w-[260px]"
+              className="inline-flex min-h-16 w-full shrink-0 items-center justify-between gap-8 border border-white/65 px-6 text-[15px] font-semibold text-white transition hover:border-[#E1122B] hover:bg-[#E1122B] sm:w-[260px]"
             >
               Enquire Now
               <ArrowUpRight className="h-6 w-6" strokeWidth={1.8} />
