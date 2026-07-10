@@ -120,7 +120,7 @@ export default function Footer() {
             {LOCATIONS.map((location) => (
               <article
                 key={location.city}
-                className="min-h-[205px] rounded-[14px] border border-white/20 bg-white/[0.08] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.12)] sm:p-7"
+                className="min-h-[205px] rounded-[14px] border border-white/20 bg-white/8 p-6 shadow-[0_18px_45px_rgba(0,0,0,0.12)] sm:p-7"
               >
                 <div className="flex items-center gap-4">
                   <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white p-1.5 shadow-[0_10px_24px_rgba(0,0,0,0.18)]">
@@ -178,7 +178,7 @@ export default function Footer() {
                         key={social.label}
                         href={social.href}
                         aria-label={social.label}
-                        className="grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-white/[0.08] text-[15px] text-white transition hover:border-[#E1122B] hover:bg-[#E1122B] hover:text-white"
+                        className="grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-white/8 text-[15px] text-white transition hover:border-[#E1122B] hover:bg-[#E1122B] hover:text-white"
                       >
                         <Icon />
                       </a>
@@ -250,7 +250,7 @@ export default function Footer() {
                 <Link
                   key={unit.name}
                   href={unit.href}
-                  className="group flex min-h-[108px] flex-col items-start justify-between gap-5 rounded-[14px] border border-white/20 bg-white/[0.08] px-6 py-5 transition hover:-translate-y-1 hover:border-white/35 hover:bg-white/[0.12] sm:flex-row sm:items-center"
+                  className="group flex min-h-[108px] flex-col items-start justify-between gap-5 rounded-[14px] border border-white/20 bg-white/8 px-6 py-5 transition hover:-translate-y-1 hover:border-white/35 hover:bg-white/12 sm:flex-row sm:items-center"
                 >
                   <span className="inline-flex rounded-[10px] bg-white px-4 py-3 shadow-[0_10px_24px_rgba(0,0,0,0.12)]">
                     <Image
@@ -259,7 +259,7 @@ export default function Footer() {
                       width={180}
                       height={70}
                       sizes="180px"
-                      className="max-h-12 w-auto max-w-[160px] object-contain object-left"
+                      className="max-h-12 w-auto max-w-40 object-contain object-left"
                     />
                   </span>
                   <span className="flex shrink-0 items-center gap-2 text-[11px] font-semibold text-white/75 transition group-hover:text-white">

@@ -44,7 +44,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useState } from "react";
-import { BiRightArrow } from "react-icons/bi";
 
 const menuContent = {
   "Digital Marketing Services": [
