@@ -41,8 +41,10 @@ import {
   Wrench,
   X,
   Youtube,
+  ArrowRight,
 } from "lucide-react";
 import { useState } from "react";
+import { BiRightArrow } from "react-icons/bi";
 
 const menuContent = {
   "Digital Marketing Services": [
@@ -278,7 +280,7 @@ export default function Navbar() {
                                   </span>
                                 ) : (
                                   <span className="shrink-0 text-[12px] font-bold text-[#e50914] transition group-hover:translate-x-0.5">
-                                    -&gt;
+                                 <ArrowRight className="h-3 w-3" strokeWidth={1.8} />
                                   </span>
                                 )}
                               </Link>

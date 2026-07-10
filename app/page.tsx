@@ -26,10 +26,10 @@ export default function Home() {
         <BrandLogosCarousel />
         <ContactCtaSection/>
         {/* <WhyDynamicSection/> */}
-        <TechExpertiseSection/>
+        {/* <TechExpertiseSection/> */}
         <FounderDeskSameToSame/>
         <TeamShowcaseSection/>
-        <CompanyGallerySection/>
+        {/* <CompanyGallerySection/> */}
         <TestimonialSection/>
         <FaqSection/>
         <GlobalPresenceSection />

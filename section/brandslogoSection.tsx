@@ -65,22 +65,18 @@ async function getBrandLogos(): Promise<BrandLogo[]> {
 
 function BrandCard({ logo }: { logo: BrandLogo }) {
   return (
-    <div className="flex h-[172px] w-[188px] shrink-0 flex-col items-center justify-between rounded-[14px] border border-black/10 bg-white px-5 py-7 shadow-[0_16px_42px_rgba(0,0,0,0.06)] transition-colors duration-300 hover:border-[#d71920] hover:bg-[#fff8f8] sm:h-[158px] sm:w-[220px] lg:h-[174px] lg:w-[222px]">
-      <div className="flex min-h-[70px] w-full items-center justify-center">
+    <div className="flex h-[112px] w-[144px] shrink-0 items-center justify-center rounded-[12px] border border-black/10 bg-white px-4 py-5 shadow-[0_10px_28px_rgba(0,0,0,0.055)] transition-colors duration-300 hover:border-[#d71920] hover:bg-[#fff8f8] sm:h-[120px] sm:w-[166px] lg:h-[128px] lg:w-[178px]">
+      <div className="flex w-full items-center justify-center">
         <Image
           src={logo.src}
           alt={logo.name}
-          width={170}
-          height={78}
-          className="max-h-[62px] w-auto max-w-[150px] object-contain sm:max-h-[72px] sm:max-w-[170px]"
+          width={140}
+          height={62}
+          className="max-h-[48px] w-auto max-w-[112px] object-contain sm:max-h-[54px] sm:max-w-[132px]"
           loading="lazy"
-          sizes="(max-width: 640px) 150px, 170px"
+          sizes="(max-width: 640px) 112px, 132px"
         />
       </div>
-
-      <p className="max-w-full truncate text-center text-[13px] font-semibold leading-none text-black/72 sm:text-[15px]">
-        {logo.name}
-      </p>
     </div>
   );
 }
@@ -97,7 +93,7 @@ function BrandMarqueeRow({
   return (
     <div className="group overflow-hidden">
       <div
-        className={`flex w-max items-center gap-5 will-change-transform group-hover:[animation-play-state:paused] sm:gap-6 ${
+        className={`flex w-max items-center gap-4 will-change-transform group-hover:[animation-play-state:paused] sm:gap-5 ${
           direction === "right"
             ? "brand-marquee-right"
             : "brand-marquee-left"
@@ -120,14 +116,14 @@ export default async function BrandLogosCarousel() {
   const bottomRow = logos.slice(splitIndex);
 
   return (
-    <section className="overflow-hidden bg-white py-16 text-[#111111] sm:py-20 lg:py-24">
+    <section className="overflow-hidden bg-white py-6 text-[#111111] sm:py-10 lg:py-14">
       <div className="mx-auto max-w-[1500px] px-5 text-center">
         <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-[#d71920]/18 bg-[#fff7f7] px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#d71920]">
           <span className="h-2 w-2 rounded-full bg-[#d71920]" />
           Brand Partners
         </div>
 
-        <h2 className="mx-auto max-w-[760px] text-[38px] font-semibold leading-[1.12] tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
+        <h2 className="mx-auto text-[#193175] max-w-[760px] text-[38px] font-semibold leading-[1.12] tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
           Strategic Alliances that <span className="text-[#d71920]">Power Innovation</span>
         </h2>
 
@@ -137,7 +133,7 @@ export default async function BrandLogosCarousel() {
         </p>
       </div>
 
-      <div className="mt-14 space-y-5 sm:mt-16 sm:space-y-6">
+      <div className="mt-12 space-y-4 sm:mt-14 sm:space-y-5">
         <BrandMarqueeRow logos={topRow} direction="right" />
         <BrandMarqueeRow
           logos={bottomRow.length ? bottomRow : topRow}

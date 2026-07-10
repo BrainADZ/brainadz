@@ -1,16 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { Linkedin } from "lucide-react";
 
 type TeamMember = {
   name: string;
   designation: string;
   image: string;
+  linkedin?: string;
 };
 
 type TeamGroup = {
   label: string;
   title: string;
-  description: string;
+  // description: string;
   members: TeamMember[];
 };
 
@@ -18,100 +20,66 @@ const PROJECT_MANAGERS: TeamMember[] = [
   {
     name: "Roshan Kumar",
     designation: "Creative Head",
-    image: "/teams/thumbs/creativehead.webp",
+    image: "/teams/darpan-sharma.webp",
+    linkedin: "#",
   },
   {
     name: "Mayur Sharma",
     designation: "Marketing Head",
-    image: "/teams/thumbs/mh.webp",
+    image: "/teams/Divyani.webp",
+    linkedin: "#",
   },
   {
     name: "Vinay Rathor",
     designation: "IT Head",
-    image: "/teams/thumbs/ithead.webp",
+    image: "/teams/Harshit.webp",
+    linkedin: "#",
   },
   {
     name: "Aastha Singh",
     designation: "Business Development Manager",
-    image: "/teams/thumbs/bdm.webp",
+    image: "/teams/Kavish.webp",
+    linkedin: "#",
   },
   {
     name: "Deepak Awasthi",
     designation: "SEO Manager",
-    image: "/teams/thumbs/seo.webp",
+    image: "/teams/malika.webp",
+    linkedin: "#",
   },
-  {
-    name: "Jai Karan",
-    designation: "Social Media Manager",
-    image: "/teams/thumbs/smm.webp",
-  },
-  {
-    name: "Shivangi",
-    designation: "Ads Manager",
-    image: "/teams/thumbs/seoe.webp",
-  },
+   
 ];
 
 const CORE_TEAM: TeamMember[] = [
   {
     name: "Shivam Goyal",
     designation: "Data Manager",
-    image: "/teams/thumbs/seo.webp",
+    image: "/teams/Tusharika.webp",
+    linkedin: "#",
   },
   {
     name: "Rishabh Pratap",
     designation: "Software Developer",
-    image: "/teams/thumbs/sd.webp",
+    image: "/teams/darpan-sharma.webp",
+    linkedin: "#",
   },
   {
     name: "Nisha Kushwaha",
     designation: "Social Media Manager",
-    image: "/teams/thumbs/smm.webp",
+    image: "/teams/Divyani.webp",
+    linkedin: "#",
   },
   {
     name: "A. Rahman",
     designation: "Sr. Graphic Designer",
-    image: "/teams/thumbs/sgd3.webp",
+    image: "/teams/Harshit.webp",
+    linkedin: "#",
   },
   {
     name: "Virendar Kumar",
     designation: "Sr. Graphic Designer",
-    image: "/teams/thumbs/sgd4.webp",
-  },
-  {
-    name: "Aashish Saini",
-    designation: "Sr. Graphic Designer",
-    image: "/teams/thumbs/sgd.webp",
-  },
-  {
-    name: "Chirag Quareshi",
-    designation: "Sr. Graphic Designer",
-    image: "/teams/thumbs/sgd2.webp",
-  },
-  {
-    name: "Komal Kushwaha",
-    designation: "Graphic Designer",
-    image: "/teams/thumbs/gd1.webp",
-  },
-  {
-    name: "Akshansa Raw",
-    designation: "Sr. Video Editor",
-    image: "/teams/thumbs/ve.webp",
-  },
-  {
-    name: "Lovneet Pawar",
-    designation: "Social Media Executive",
-    image: "/teams/thumbs/smo.webp",
-  },
-  {
-    name: "Mithun Rai",
-    designation: "Sr. Accountant",
-    image: "/teams/thumbs/seo.webp",
-  },
-  {
-    name: "Simran",
-    designation: "Accountant",
-    image: "/teams/thumbs/gd2.webp",
+    image: "/teams/Kavish.webp",
+    linkedin: "#",
   },
 ];
 
@@ -119,15 +87,13 @@ const TEAM_GROUPS: TeamGroup[] = [
   {
     label: "Project Management",
     title: "Meet Our Project Managers",
-    description:
-      "The people who keep strategy, timelines, communication, and delivery moving with clarity across every active engagement.",
+   
     members: PROJECT_MANAGERS,
   },
   {
     label: "Core Team",
     title: "Meet Our Core Team",
-    description:
-      "Specialists across creative, development, SEO, social, media, data, and operations who turn plans into consistent daily execution.",
+   
     members: CORE_TEAM,
   },
 ];
@@ -143,30 +109,11 @@ export default function TeamShowcaseSection({
 }: TeamShowcaseSectionProps) {
   return (
     <section
-      className="border-y border-white/10 bg-black text-white"
+      className=" bg-white text-black"
       aria-labelledby="team-showcase-title"
     >
       <div className="mx-auto max-w-[1700px] px-5 py-16 sm:px-8 md:py-20">
-        <header className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white/45">
-              People Of BrainADZ
-            </p>
-            <h2
-              id="team-showcase-title"
-              className="mt-3 max-w-[760px] text-[42px] font-semibold leading-[1.02] tracking-[-0.04em] sm:text-[56px]"
-            >
-              Teams That Plan, Build, And Deliver
-            </h2>
-          </div>
 
-          <Link
-            href={ctaHref}
-            className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/25 px-7 text-[12px] font-semibold text-white transition-colors hover:border-[#1467f5] hover:bg-[#1467f5]"
-          >
-            {ctaLabel}
-          </Link>
-        </header>
 
         <div className="space-y-20">
           {TEAM_GROUPS.map((group) => (
@@ -182,20 +129,22 @@ function TeamGroupBlock({ group }: { group: TeamGroup }) {
   return (
     <section className="[contain-intrinsic-size:auto_900px] [content-visibility:auto]">
       <header className="mx-auto mb-10 max-w-[820px] text-center">
-        <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white/45">
+        <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
           {group.label}
         </p>
-        <h3 className="mt-3 text-[34px] font-semibold leading-tight tracking-[-0.035em] sm:text-[44px]">
+
+        <h3 className="mt-3 text-[34px] font-semibold leading-tight tracking-[-0.035em] text-[#193175] sm:text-[44px]">
           {group.title}
         </h3>
-        <p className="mx-auto mt-5 max-w-[720px] text-[15px] font-medium leading-7 text-white/65">
-          {group.description}
-        </p>
+
       </header>
 
       <div className="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
         {group.members.map((member) => (
-          <TeamCard key={`${group.title}-${member.name}`} member={member} />
+          <TeamCard
+            key={`${group.title}-${member.name}`}
+            member={member}
+          />
         ))}
       </div>
     </section>
@@ -204,8 +153,8 @@ function TeamGroupBlock({ group }: { group: TeamGroup }) {
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
-    <article>
-      <div className="relative aspect-square overflow-hidden rounded-[10px] border border-white/10 bg-[#151515]">
+    <article className="group">
+      <div className="relative aspect-square overflow-hidden rounded-[10px] border border-black/10 bg-[#f3f3f3]">
         <img
           src={member.image}
           alt={`${member.name} - ${member.designation}`}
@@ -216,14 +165,32 @@ function TeamCard({ member }: { member: TeamMember }) {
           draggable={false}
           className="block h-full w-full object-cover object-top"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-black/35 to-transparent" />
+
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-black/30 to-transparent" />
+
+        <Link
+          href={member.linkedin || "#"}
+          target={member.linkedin && member.linkedin !== "#" ? "_blank" : undefined}
+          rel={
+            member.linkedin && member.linkedin !== "#"
+              ? "noopener noreferrer"
+              : undefined
+          }
+          aria-label={`${member.name} on LinkedIn`}
+          className="absolute right-3 top-3 z-10 grid h-9 w-9 -translate-y-2 place-items-center rounded-full bg-white text-black opacity-0 shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#193175] hover:text-white"
+        >
+          <Linkedin className="h-4 w-4" strokeWidth={1.8} />
+        </Link>
       </div>
 
       <div className="pt-4">
-        <h4 className="text-[17px] font-semibold leading-tight">
-          {member.name}
+        <h4 className="inline-block text-[17px] font-semibold leading-tight text-black">
+          <span className="bg-[linear-gradient(#E1122B,#E1122B)] bg-[length:0%_2px] bg-left-bottom bg-no-repeat pb-[2px] transition-[background-size] duration-300 group-hover:bg-[length:100%_2px]">
+            {member.name}
+          </span>
         </h4>
-        <p className="mt-1 text-[14px] font-medium leading-5 text-white/50">
+
+        <p className="mt-1 text-[14px] font-medium leading-5 text-black/50">
           {member.designation}
         </p>
       </div>

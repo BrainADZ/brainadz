@@ -79,7 +79,7 @@ function Stars({ count = 5 }: { count?: number }) {
       {Array.from({ length: count }).map((_, index) => (
         <Star
           key={index}
-          className="h-4 w-4 fill-[#ffb82e] text-[#ffb82e]"
+          className="h-4 w-4 fill-[#f5b301] text-[#f5b301]"
           strokeWidth={1.5}
         />
       ))}
@@ -89,29 +89,29 @@ function Stars({ count = 5 }: { count?: number }) {
 
 function ReviewCard({ item }: { item: Testimonial }) {
   return (
-    <article className="group relative flex h-full min-h-0 flex-col overflow-hidden rounded-[22px] border border-white/10 bg-[#0d0d0d] p-7 transition duration-300 hover:-translate-y-1 hover:border-[#397cf5]/45 sm:p-8">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#397cf5]/80 to-transparent opacity-0 transition group-hover:opacity-100" />
+    <article className="group relative flex h-full min-h-0 flex-col overflow-hidden rounded-[14px] border border-black/10 bg-white p-7 shadow-[0_16px_45px_rgba(0,0,0,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/45 hover:shadow-[0_22px_60px_rgba(0,0,0,0.09)] sm:p-8">
+      <div className="absolute inset-x-0 top-0 h-[3px] bg-[#E1122B] opacity-0 transition group-hover:opacity-100" />
 
       <div className="flex items-start justify-between gap-5">
         <Stars count={item.rating ?? 5} />
-        <span className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-white/35">
+        <span className="grid h-11 w-11 place-items-center rounded-full border border-black/10 bg-[#fff7f7] text-[#E1122B]/50">
           <Quote className="h-5 w-5 fill-current" strokeWidth={1.5} />
         </span>
       </div>
 
-      <blockquote className="mt-9 flex-1 text-[16px] font-medium leading-8 text-white/76">
-        “{item.text}”
+      <blockquote className="mt-9 flex-1 text-[16px] font-medium leading-8 text-black/70">
+        {`"${item.text}"`}
       </blockquote>
 
-      <div className="mt-8 flex items-center gap-4 border-t border-white/10 pt-6">
-        <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#1467f5] text-[15px] font-bold text-white shadow-[0_10px_28px_rgba(20,103,245,0.3)]">
+      <div className="mt-8 flex items-center gap-4 border-t border-black/10 pt-6">
+        <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-[#193175] text-[15px] font-bold text-white shadow-[0_10px_26px_rgba(25,49,117,0.22)]">
           {item.initial}
         </div>
         <div className="min-w-0">
-          <p className="truncate text-[15px] font-semibold text-white">
+          <p className="truncate text-[15px] font-semibold text-black">
             {item.name}
           </p>
-          <p className="mt-1 truncate text-[12px] font-medium text-white/42">
+          <p className="mt-1 truncate text-[12px] font-medium text-black/45">
             {item.location}
           </p>
         </div>
@@ -241,46 +241,48 @@ export default function TestimonialSection() {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden border-b border-white/10 bg-[#050505] py-16 text-white md:py-24"
+      className="relative overflow-hidden bg-white py-8 text-black md:py-14"
     >
-      <div className="pointer-events-none absolute -right-40 top-0 h-[520px] w-[520px] rounded-full bg-[#1467f5]/12 blur-[140px]" />
-
-      <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8">
-        <div className="mb-12 grid gap-7 lg:grid-cols-[1fr_0.62fr] lg:items-end lg:gap-16">
+      <div className="relative mx-auto max-w-[1800px] px-5 md:px-8 lg:px-12">
+        <div className="mb-12 grid gap-7 border-b border-black/10 pb-10 lg:grid-cols-[1fr_0.62fr] lg:items-end lg:gap-16 lg:pb-12">
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#4e8cff]">
-              Client Stories
-            </p>
-            <h2 className="mt-3 max-w-[820px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] sm:text-[52px] lg:text-[58px]">
-              Trusted Partnerships. Measurable Growth.
+            <div className="flex items-center gap-3">
+              <span className="h-0.5 w-8 bg-[#E1122B]" />
+              <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-black/45">
+                Client Stories
+              </p>
+            </div>
+            <h2 className="text-[#193175] mt-3 max-w-[820px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] sm:text-[52px] lg:text-[58px]">
+              Trusted Partnerships.
+              <span className="block text-[#E1122B]">Measurable Growth.</span>
             </h2>
           </div>
 
-          <p className="max-w-[500px] text-[14px] font-medium leading-7 text-white/58 lg:justify-self-end">
+          <p className="max-w-[500px] text-[15px] font-medium leading-7 text-black/60 lg:justify-self-end lg:text-right">
             Honest feedback from businesses that partnered with BrainADZ to
             strengthen their digital presence and create meaningful growth.
           </p>
         </div>
 
         <div className="grid items-start gap-5 xl:grid-cols-3">
-          <article className="relative flex h-[410px] flex-col overflow-hidden rounded-[22px] border border-white/15 bg-[linear-gradient(145deg,#1467f5_0%,#0e48b1_58%,#071f58_100%)] p-7 sm:p-8">
-            <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full border-[38px] border-white/[0.06]" />
+          <article className="relative flex h-[410px] flex-col overflow-hidden rounded-[14px] border border-black/10 bg-[#fbfbfb] p-7 shadow-[0_16px_45px_rgba(0,0,0,0.06)] sm:p-8">
+            <span className="absolute inset-x-0 top-0 h-[3px] bg-[#E1122B]" />
 
             <div className="relative flex items-center justify-between gap-4">
-              <div className="grid h-12 w-12 place-items-center rounded-full bg-white shadow-[0_12px_30px_rgba(0,0,0,0.2)]">
+              <div className="grid h-12 w-12 place-items-center rounded-full border border-black/10 bg-white shadow-[0_10px_24px_rgba(0,0,0,0.08)]">
                 <Image src="/google.svg" alt="Google" width={27} height={27} />
               </div>
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/75">
+              <span className="rounded-full border border-[#E1122B]/15 bg-[#fff7f7] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#E1122B]">
                 Google Reviews
               </span>
             </div>
 
             <div className="relative mt-10">
               <div className="flex items-end gap-3">
-                <span className="text-[64px] font-semibold leading-none tracking-[-0.06em]">
+                <span className="text-[64px] font-semibold leading-none tracking-[-0.06em] text-[#193175]">
                   4.9
                 </span>
-                <span className="pb-1.5 text-[13px] font-medium text-white/60">
+                <span className="pb-1.5 text-[13px] font-medium text-black/50">
                   out of 5
                 </span>
               </div>
@@ -290,13 +292,13 @@ export default function TestimonialSection() {
             </div>
 
             <div className="relative mt-auto pt-9">
-              <p className="max-w-[320px] text-[14px] font-medium leading-6 text-white/74">
+              <p className="max-w-[320px] text-[14px] font-medium leading-6 text-black/62">
                 Worked with us? Share your experience and help others discover
                 BrainADZ.
               </p>
               <a
                 href="#"
-                className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-[12px] font-semibold text-[#0b3e9d] transition hover:bg-[#e4edff]"
+                className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#193175] px-6 text-[12px] font-semibold text-white transition hover:bg-[#E1122B]"
               >
                 Write A Review
                 <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
@@ -348,8 +350,8 @@ export default function TestimonialSection() {
                     aria-current={activePage === index ? "true" : undefined}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                       activePage === index
-                        ? "w-10 bg-[#397cf5]"
-                        : "w-4 bg-white/20 hover:bg-white/40"
+                        ? "w-10 bg-[#E1122B]"
+                        : "w-4 bg-black/15 hover:bg-black/30"
                     }`}
                   />
                 ))}
@@ -360,7 +362,7 @@ export default function TestimonialSection() {
                   type="button"
                   onClick={showPrevious}
                   aria-label="Show previous testimonials"
-                  className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/[0.04] text-white transition hover:border-[#397cf5] hover:bg-[#1467f5]"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-black/15 bg-white text-black transition hover:border-[#E1122B] hover:bg-[#E1122B] hover:text-white"
                 >
                   <ChevronLeft className="h-5 w-5" strokeWidth={1.7} />
                 </button>
@@ -368,7 +370,7 @@ export default function TestimonialSection() {
                   type="button"
                   onClick={showNext}
                   aria-label="Show next testimonials"
-                  className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/[0.04] text-white transition hover:border-[#397cf5] hover:bg-[#1467f5]"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-black/15 bg-white text-black transition hover:border-[#E1122B] hover:bg-[#E1122B] hover:text-white"
                 >
                   <ChevronRight className="h-5 w-5" strokeWidth={1.7} />
                 </button>

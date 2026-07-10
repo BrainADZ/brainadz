@@ -47,7 +47,7 @@ export default function ServicesSection() {
               </span>
             </div>
 
-            <h2 className="max-w-[850px] text-[38px] font-normal leading-[1.1] tracking-[-0.03em] sm:text-[46px] lg:text-[58px]">
+            <h2 className="max-w-[850px] text-[38px] font-normal leading-[1.1] tracking-[-0.03em] sm:text-[46px] lg:text-[58px] text-[#193175]">
               Ideas, technology and marketing
               <span className="block text-[#d71920]">
                 working together.

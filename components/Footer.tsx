@@ -111,8 +111,8 @@ export default function Footer() {
     <>
       <FooterCta />
 
-      <footer className="overflow-hidden bg-[#020202] bg-[linear-gradient(180deg,#020202_0%,#071a3f_56%,#1467f5_100%)] text-white">
-        <div className="mx-auto max-w-[1900px] px-5 pb-6 pt-5 sm:px-8 lg:px-10">
+      <footer className="overflow-hidden bg-[#273D7D] text-white">
+        <div className="mx-auto max-w-[1800px] px-5 pb-6 pt-5 sm:px-8 lg:px-12">
           <section
             aria-label="Our locations"
             className="grid gap-4 md:grid-cols-2 xl:grid-cols-4"
@@ -120,10 +120,10 @@ export default function Footer() {
             {LOCATIONS.map((location) => (
               <article
                 key={location.city}
-                className="min-h-[205px] rounded-[20px] border border-white/15 bg-white/[0.07] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.18)] sm:p-7"
+                className="min-h-[205px] rounded-[14px] border border-white/20 bg-white/[0.08] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.12)] sm:p-7"
               >
                 <div className="flex items-center gap-4">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white p-1.5 shadow-[0_10px_26px_rgba(0,0,0,0.22)]">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white p-1.5 shadow-[0_10px_24px_rgba(0,0,0,0.18)]">
                     <Image
                       src={location.icon}
                       alt={location.iconAlt}
@@ -137,12 +137,12 @@ export default function Footer() {
                     <p className="text-[18px] font-semibold">
                       {location.city}
                     </p>
-                    <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/45">
+                    <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/58">
                       {location.label}
                     </p>
                   </div>
                 </div>
-                <p className="mt-5 max-w-[330px] text-[13px] font-medium leading-6 text-white/72">
+                <p className="mt-5 max-w-[330px] text-[13px] font-medium leading-6 text-white/76">
                   {location.address}
                 </p>
               </article>
@@ -163,7 +163,7 @@ export default function Footer() {
                   />
                 </Link>
 
-                <p className="mt-5 max-w-[300px] text-[13px] font-medium leading-6 text-white/68">
+                <p className="mt-5 max-w-[300px] text-[13px] font-medium leading-6 text-white/72">
                   BrainADZ is a strategy-led creative and performance agency
                   helping brands grow through marketing, technology, design,
                   exhibits, and live experiences.
@@ -178,7 +178,7 @@ export default function Footer() {
                         key={social.label}
                         href={social.href}
                         aria-label={social.label}
-                        className="grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-white/5 text-[15px] text-white transition hover:border-white hover:bg-white hover:text-[#0d45a8]"
+                        className="grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-white/[0.08] text-[15px] text-white transition hover:border-[#E1122B] hover:bg-[#E1122B] hover:text-white"
                       >
                         <Icon />
                       </a>
@@ -197,7 +197,7 @@ export default function Footer() {
                       <li key={link.label}>
                         <Link
                           href={link.href}
-                          className="text-[12px] font-medium leading-5 text-white/65 transition hover:text-white"
+                          className="text-[12px] font-medium leading-5 text-white/68 transition hover:text-white"
                         >
                           {link.label}
                         </Link>
@@ -209,7 +209,7 @@ export default function Footer() {
 
               <div>
                 <h3 className="text-[15px] font-semibold text-white">Contact</h3>
-                <div className="mt-6 space-y-4 text-[12px] font-medium leading-5 text-white/68">
+                <div className="mt-6 space-y-4 text-[12px] font-medium leading-5 text-white/72">
                   <a
                     href="mailto:enquiry@brainadz.com"
                     className="flex items-start gap-2.5 transition hover:text-white"
@@ -232,7 +232,7 @@ export default function Footer() {
 
                 <Link
                   href="/contact"
-                  className="mt-7 inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-[12px] font-semibold text-[#081737] transition hover:bg-[#dce9ff]"
+                  className="mt-7 inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 text-[12px] font-semibold text-[#273D7D] transition hover:bg-[#E1122B] hover:text-white"
                 >
                   Get In Touch
                 </Link>
@@ -250,16 +250,18 @@ export default function Footer() {
                 <Link
                   key={unit.name}
                   href={unit.href}
-                  className="group flex min-h-[108px] flex-col items-start justify-between gap-5 rounded-2xl border border-white/15 bg-white/10 px-6 py-5 transition hover:-translate-y-1 hover:border-white/35 hover:bg-white/15 sm:flex-row sm:items-center"
+                  className="group flex min-h-[108px] flex-col items-start justify-between gap-5 rounded-[14px] border border-white/20 bg-white/[0.08] px-6 py-5 transition hover:-translate-y-1 hover:border-white/35 hover:bg-white/[0.12] sm:flex-row sm:items-center"
                 >
-                  <Image
-                    src={unit.logo}
-                    alt={unit.name}
-                    width={180}
-                    height={70}
-                    sizes="180px"
-                    className="max-h-14 w-auto max-w-[180px] object-contain object-left"
-                  />
+                  <span className="inline-flex rounded-[10px] bg-white px-4 py-3 shadow-[0_10px_24px_rgba(0,0,0,0.12)]">
+                    <Image
+                      src={unit.logo}
+                      alt={unit.name}
+                      width={180}
+                      height={70}
+                      sizes="180px"
+                      className="max-h-12 w-auto max-w-[160px] object-contain object-left"
+                    />
+                  </span>
                   <span className="flex shrink-0 items-center gap-2 text-[11px] font-semibold text-white/75 transition group-hover:text-white">
                     <span className="border-b border-white/70 pb-0.5">
                       Know more about {unit.name}
@@ -271,7 +273,7 @@ export default function Footer() {
             </div>
           </section>
 
-          <div className="flex flex-col gap-4 border-t border-white/20 py-6 text-[11px] font-medium text-white/70 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-4 border-t border-white/20 py-6 text-[11px] font-medium text-white/72 md:flex-row md:items-center md:justify-between">
             <p>
               &copy; {new Date().getFullYear()} BrainADZ Group. All rights
               reserved.

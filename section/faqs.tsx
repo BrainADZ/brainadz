@@ -74,16 +74,26 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="bg-black px-5 py-16 text-white sm:px-8 lg:py-20">
-      <div className="mx-auto max-w-[1500px]">
-        <h2 className="text-center text-[38px] font-extrabold leading-tight tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
-          Frequently Asked Questions
-        </h2>
+    <section className=" bg-white  py-16 text-black  lg:py-20">
+      <div className="mx-auto max-w-[1800px] px-5 md:px-8 lg:px-12">
+        <div className="mb-12 border-b border-black/10 pb-10 lg:pb-12">
+          <div className="flex items-center gap-3">
+            <span className="h-[2px] w-8 bg-[#E1122B]" />
+            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-black/45">
+              FAQ
+            </p>
+          </div>
 
-        <div className="mt-12 grid gap-8 lg:h-[660px] lg:min-h-0 lg:grid-cols-[0.86fr_1.14fr]">
+          <h2 className="mt-3 text-[#193175] max-w-[820px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] sm:text-[52px] lg:text-[58px]">
+            Frequently Asked
+            <span className="block text-[#E1122B]">Questions.</span>
+          </h2>
+        </div>
+
+        <div className="grid gap-8 lg:h-[660px] lg:min-h-0 lg:grid-cols-[0.86fr_1.14fr]">
           <ContactMiniForm />
 
-          <div className="max-h-[560px] min-h-0 overflow-hidden rounded-[22px] bg-[#f5f4f1] text-black lg:h-full lg:max-h-none">
+          <div className="max-h-[560px] min-h-0 overflow-hidden rounded-[14px] border border-black/10 bg-white text-black shadow-[0_16px_45px_rgba(0,0,0,0.06)] lg:h-full lg:max-h-none">
             <div className="faq-panel-scroll max-h-[560px] overflow-y-auto lg:h-full lg:max-h-none">
               {FAQS.map((faq, index) => {
                 const isOpen = openIndex === index;
@@ -91,7 +101,9 @@ export default function FaqSection() {
                 return (
                   <div
                     key={`${faq.question}-${index}`}
-                    className="border-b border-black/10 last:border-b-0"
+                    className={`border-b border-black/10 transition-colors last:border-b-0 ${
+                      isOpen ? "bg-[#fff7f7]" : "bg-white hover:bg-[#fbfbfb]"
+                    }`}
                   >
                     <button
                       type="button"
@@ -99,8 +111,8 @@ export default function FaqSection() {
                       className="flex w-full items-start justify-between gap-6 px-6 py-6 text-left sm:px-9"
                       aria-expanded={isOpen}
                     >
-                      <span className="flex gap-7 text-[20px] font-semibold leading-snug sm:text-[24px]">
-                        <span className="shrink-0 font-mono text-[17px] font-medium text-black/90">
+                      <span className="flex gap-7 text-[20px] font-semibold leading-snug tracking-[-0.02em] sm:text-[23px]">
+                        <span className="shrink-0 font-mono text-[15px] font-medium text-[#E1122B]">
                           [{index + 1}]
                         </span>
                         <span>{faq.question}</span>
@@ -108,7 +120,7 @@ export default function FaqSection() {
 
                       <FiChevronDown
                         className={`mt-1 h-6 w-6 shrink-0 transition-transform duration-300 ${
-                          isOpen ? "rotate-180" : ""
+                          isOpen ? "rotate-180 text-[#E1122B]" : "text-black/55"
                         }`}
                       />
                     </button>
@@ -140,7 +152,7 @@ export default function FaqSection() {
               overscroll-behavior: contain;
               scrollbar-gutter: stable;
               scrollbar-width: thin;
-              scrollbar-color: rgba(0, 0, 0, 0.32) transparent;
+              scrollbar-color: rgba(225, 18, 43, 0.55) transparent;
             }
 
             .faq-panel-scroll::-webkit-scrollbar {
@@ -153,13 +165,13 @@ export default function FaqSection() {
             }
 
             .faq-panel-scroll::-webkit-scrollbar-thumb {
-              background: rgba(0, 0, 0, 0.32);
-              border: 2px solid #f5f4f1;
+              background: rgba(225, 18, 43, 0.55);
+              border: 2px solid #ffffff;
               border-radius: 999px;
             }
 
             .faq-panel-scroll:hover::-webkit-scrollbar-thumb {
-              background: rgba(0, 0, 0, 0.5);
+              background: rgba(225, 18, 43, 0.8);
             }
           `,
         }}
@@ -170,12 +182,14 @@ export default function FaqSection() {
 
 function ContactMiniForm() {
   return (
-    <div className="rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,#092456_0%,#1354d8_100%)] p-6 shadow-[0_24px_70px_rgba(0,50,180,0.35)] sm:p-7 lg:flex lg:h-full lg:flex-col lg:overflow-hidden">
-      <h3 className="text-[24px] font-extrabold leading-tight">
+    <div className="relative overflow-hidden rounded-[14px] border border-black/10 bg-[#fbfbfb] p-6 text-black shadow-[0_16px_45px_rgba(0,0,0,0.06)] sm:p-7 lg:flex lg:h-full lg:flex-col">
+      <span className="absolute inset-x-0 top-0 h-[3px] bg-[#E1122B]" />
+
+      <h3 className="text-[24px] font-semibold leading-tight tracking-[-0.02em]">
         Didn&apos;t Find What You Were Looking For?
       </h3>
 
-      <p className="mt-3 max-w-[620px] text-[14px] font-semibold leading-6 text-white">
+      <p className="mt-3 max-w-[620px] text-[14px] font-medium leading-6 text-black/62">
         We&apos;ve got more answers waiting for you. Share a few details and our
         team will reach out with the right next step.
       </p>
@@ -199,7 +213,7 @@ function ContactMiniForm() {
         <div className="flex justify-end">
           <button
             type="button"
-            className="min-h-12 rounded-full bg-white px-12 text-[14px] font-semibold text-black transition hover:bg-white/90"
+            className="min-h-12 rounded-full bg-[#193175] px-12 text-[14px] font-semibold text-white transition hover:bg-[#E1122B]"
           >
             Submit
           </button>
@@ -218,11 +232,13 @@ function MinimalField({
 }) {
   return (
     <label className="block">
-      <span className="text-[11px] font-bold text-white">{label}</span>
+      <span className="text-[11px] font-bold uppercase tracking-[0.08em] text-black/55">
+        {label}
+      </span>
       <input
         type="text"
         placeholder={placeholder}
-        className="mt-2 h-8 w-full border-b border-white/25 bg-transparent text-[15px] text-white outline-none placeholder:text-white/45 focus:border-white"
+        className="mt-2 h-8 w-full border-b border-black/20 bg-transparent text-[15px] text-black outline-none placeholder:text-black/35 focus:border-[#E1122B]"
       />
     </label>
   );
@@ -239,12 +255,14 @@ function MinimalSelect({
 }) {
   return (
     <label className="block">
-      <span className="text-[11px] font-bold text-white">{label}</span>
+      <span className="text-[11px] font-bold uppercase tracking-[0.08em] text-black/55">
+        {label}
+      </span>
       <select
         defaultValue=""
-        className="mt-2 h-9 w-full border-b border-white/25 bg-transparent text-[15px] text-white outline-none focus:border-white"
+        className="mt-2 h-9 w-full border-b border-black/20 bg-transparent text-[15px] text-black outline-none focus:border-[#E1122B]"
       >
-        <option value="" disabled className="text-black">
+        <option value="" disabled className="text-black/45">
           {placeholder}
         </option>
         {options.map((option) => (
@@ -262,7 +280,7 @@ function MinimalTextarea({ placeholder }: { placeholder: string }) {
     <textarea
       placeholder={placeholder}
       rows={3}
-      className="min-h-[68px] w-full resize-none border-b border-white/25 bg-transparent text-[15px] text-white outline-none placeholder:text-white/45 focus:border-white"
+      className="min-h-[68px] w-full resize-none border-b border-black/20 bg-transparent text-[15px] text-black outline-none placeholder:text-black/35 focus:border-[#E1122B]"
     />
   );
 }
