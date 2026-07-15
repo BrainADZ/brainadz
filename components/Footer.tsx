@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import FooterCta from "@/section/ctaSection";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";

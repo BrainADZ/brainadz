@@ -84,7 +84,7 @@ export default function ContactPageContent() {
   };
 
   return (
-    <main className="bg-black text-white">
+    <main className="dm-sans bg-white text-[#111111]">
       {/* CONTACT HERO SECTION */}
       <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
         <Image
@@ -104,14 +104,14 @@ export default function ContactPageContent() {
             aria-label="Breadcrumb"
             className="flex items-center gap-2 text-[14px] font-medium leading-none"
           >
-            <Link href="/" className="text-[#1467f5] transition hover:text-white">
+            <Link href="/" className="text-[#E1122B] transition hover:text-white">
               Home
             </Link>
             <span className="text-white/45">/</span>
             <span>Get in Touch</span>
           </nav>
 
-          <h1 className="mt-7 max-w-[760px] text-[32px] font-normal leading-[1.04] text-white sm:text-[42px] lg:text-[52px]">
+          <h1 className="mt-7 max-w-[760px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
             Get in Touch
           </h1>
 
@@ -122,7 +122,7 @@ export default function ContactPageContent() {
 
             <a
               href="#contact-form"
-              className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-sm bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
+              className="mt-8 inline-flex min-h-14 items-center justify-center gap-5 rounded-full bg-[#E1122B] px-7 text-[13px] font-semibold text-white transition hover:bg-black"
             >
               Start your enquiry
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -134,26 +134,26 @@ export default function ContactPageContent() {
       {/* CONTACT FORM SECTION */}
       <section
         id="contact-form"
-        className="scroll-mt-24 border-b border-white/10 bg-black"
+        className="scroll-mt-24 border-b border-black/10 bg-white"
       >
         <div className="mx-auto grid max-w-[1800px] px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
           <div className="py-14 sm:py-16 lg:pr-14 lg:py-20 xl:pr-20">
-            <p className="flex items-center gap-3 text-[13px] font-semibold uppercase text-white/58">
-              <span className="h-2 w-2 rounded-full bg-[#1467f5]" />
+            <p className="flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
+              <span className="h-0.5 w-8 bg-[#E1122B]" />
               New business enquiries
             </p>
 
-            <h2 className="mt-7 max-w-[700px] text-[42px] font-medium leading-[1.06] sm:text-[54px]">
+            <h2 className="mt-6 max-w-[700px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
               Let&apos;s create your next growth story.
             </h2>
 
-            <p className="mt-7 max-w-[650px] text-[16px] leading-8 text-white/65 sm:text-[17px]">
+            <p className="mt-7 max-w-[650px] text-[16px] leading-8 text-black/62 sm:text-[17px]">
               Tell us where your business is today and where you want it to go.
               We will bring the right mix of strategy, creativity, technology,
               and performance to the table.
             </p>
 
-            <div className="mt-12 border-y border-white/10 sm:mt-14">
+            <div className="mt-12 border-y border-black/10 sm:mt-14">
               <ContactLink
                 href="mailto:enquiry@brainadz.com"
                 icon={Mail}
@@ -175,7 +175,7 @@ export default function ContactPageContent() {
               />
             </div>
 
-            <div className="relative mt-10 aspect-video min-h-60 overflow-hidden rounded-md sm:min-h-[300px]">
+            <div className="relative mt-10 aspect-video min-h-60 overflow-hidden rounded-[14px] border border-black/10 shadow-[0_18px_55px_rgba(0,0,0,0.08)] sm:min-h-[300px]">
               <Image
                 src="/gallery/8.jpeg"
                 alt="BrainADZ team at the Delhi office"
@@ -187,15 +187,15 @@ export default function ContactPageContent() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 py-14 sm:py-16 lg:border-l lg:border-t-0 lg:py-20 lg:pl-14 xl:pl-20">
-              <div className="rounded-md border border-white/12 bg-[#101010] p-5 sm:p-8 lg:p-10">
-                <p className="text-[13px] font-semibold uppercase text-[#6995ff]">
+          <div className="border-t border-black/10 py-14 sm:py-16 lg:border-l lg:border-t-0 lg:py-20 lg:pl-14 xl:pl-20">
+              <div className="rounded-[14px] border border-black/10 bg-[#fbfbfb] p-5 shadow-[0_16px_45px_rgba(0,0,0,0.06)] sm:p-8 lg:p-10">
+                <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
                   Start a project
                 </p>
-                <h2 className="mt-4 text-[32px] font-medium leading-tight sm:text-[40px]">
+                <h2 className="mt-4 text-[32px] font-semibold leading-tight tracking-[-0.03em] text-black sm:text-[40px]">
                   Tell us what you are building
                 </h2>
-                <p className="mt-4 max-w-[650px] text-[15px] leading-7 text-white/58">
+                <p className="mt-4 max-w-[650px] text-[15px] leading-7 text-black/58">
                   Share a few details and we will connect you with the right
                   BrainADZ team.
                 </p>
@@ -236,7 +236,7 @@ export default function ContactPageContent() {
                   <div>
                     <label
                       htmlFor="service"
-                      className="mb-2 block text-[13px] font-medium text-white/72"
+                      className="mb-2 block text-[13px] font-medium text-black/65"
                     >
                       Service you need
                     </label>
@@ -246,7 +246,7 @@ export default function ContactPageContent() {
                         name="service"
                         required
                         defaultValue=""
-                        className="h-14 w-full appearance-none rounded-sm border border-white/14 bg-black px-4 pr-12 text-[15px] text-white outline-none transition focus:border-[#1467f5]"
+                        className="h-14 w-full appearance-none rounded-[10px] border border-black/14 bg-white px-4 pr-12 text-[15px] text-black outline-none transition focus:border-[#E1122B]"
                       >
                         <option value="" disabled>
                           Select a service
@@ -257,14 +257,14 @@ export default function ContactPageContent() {
                           </option>
                         ))}
                       </select>
-                      <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white/48" />
+                      <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-black/45" />
                     </div>
                   </div>
 
                   <div>
                     <label
                       htmlFor="message"
-                      className="mb-2 block text-[13px] font-medium text-white/72"
+                      className="mb-2 block text-[13px] font-medium text-black/65"
                     >
                       Project details
                     </label>
@@ -274,21 +274,21 @@ export default function ContactPageContent() {
                       required
                       rows={6}
                       placeholder="Tell us about your goals, challenges, and timeline"
-                      className="w-full resize-none rounded-sm border border-white/14 bg-black px-4 py-4 text-[15px] leading-6 text-white outline-none transition placeholder:text-white/28 focus:border-[#1467f5]"
+                      className="w-full resize-none rounded-[10px] border border-black/14 bg-white px-4 py-4 text-[15px] leading-6 text-black outline-none transition placeholder:text-black/35 focus:border-[#E1122B]"
                     />
                   </div>
 
-                  <label className="flex items-start gap-3 text-[13px] leading-6 text-white/52">
+                  <label className="flex items-start gap-3 text-[13px] leading-6 text-black/52">
                     <input
                       type="checkbox"
                       required
-                      className="mt-1 h-4 w-4 shrink-0 accent-[#1467f5]"
+                      className="mt-1 h-4 w-4 shrink-0 accent-[#E1122B]"
                     />
                     <span>
                       I agree to be contacted about this enquiry and accept the{" "}
                       <Link
                         href="/privacy-policy"
-                        className="text-white underline decoration-white/35 underline-offset-4"
+                        className="text-black underline decoration-black/35 underline-offset-4"
                       >
                         privacy policy
                       </Link>
@@ -298,7 +298,7 @@ export default function ContactPageContent() {
 
                   <button
                     type="submit"
-                    className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-sm bg-[#1467f5] px-7 text-[15px] font-semibold text-white transition hover:bg-[#0f56d6] sm:w-auto"
+                    className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-[#E1122B] px-7 text-[14px] font-semibold text-white transition hover:bg-black sm:w-auto"
                   >
                     Send enquiry
                     <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -307,7 +307,7 @@ export default function ContactPageContent() {
                   {submitted && (
                     <p
                       role="status"
-                      className="flex items-center gap-2 text-[14px] text-[#7fa0ff]"
+                      className="flex items-center gap-2 text-[14px] text-[#E1122B]"
                     >
                       <CheckCircle2 className="h-5 w-5" />
                       Your email app is ready with the enquiry details.
@@ -320,32 +320,30 @@ export default function ContactPageContent() {
       </section>
 
       {/* OFFICE MAP SECTION */}
-      <section className="border-b border-white/10 bg-[#080808] py-16 sm:py-20 lg:py-24">
+      <section className="border-b border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
           <div className="grid gap-7 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
             <div>
-              <p className="text-[13px] font-semibold uppercase text-[#6995ff]">
-                Our offices
-              </p>
-              <h2 className="mt-4 text-[42px] font-medium leading-none sm:text-[54px]">
+              <div className="flex items-center gap-3"><span className="h-0.5 w-8 bg-[#E1122B]" /><p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">Our offices</p></div>
+              <h2 className="mt-4 text-[38px] font-semibold leading-none tracking-[-0.04em] sm:text-[48px] lg:text-[58px]">
                 Visit our Delhi office
               </h2>
             </div>
-            <p className="max-w-[760px] text-[16px] leading-7 text-white/58 lg:justify-self-end">
+            <p className="max-w-[760px] text-[16px] leading-7 text-black/58 lg:justify-self-end">
               Meet our strategy, creative, performance, and technology teams at
               the BrainADZ corporate office in New Delhi.
             </p>
           </div>
 
-          <div className="mt-12 grid overflow-hidden rounded-md border border-white/12 bg-black lg:grid-cols-[0.55fr_1.45fr]">
-            <div className="flex flex-col justify-between border-b border-white/12 p-6 sm:p-8 lg:min-h-[500px] lg:border-b-0 lg:border-r lg:p-10">
+          <div className="mt-12 grid overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_18px_55px_rgba(0,0,0,0.08)] lg:grid-cols-[0.55fr_1.45fr]">
+            <div className="flex flex-col justify-between border-b border-black/10 p-6 sm:p-8 lg:min-h-[500px] lg:border-b-0 lg:border-r lg:p-10">
               <div>
-                <MapPin className="h-8 w-8 text-[#1467f5]" strokeWidth={1.6} />
-                <p className="mt-8 text-[12px] font-semibold uppercase text-white/42">
+                <MapPin className="h-8 w-8 text-[#E1122B]" strokeWidth={1.6} />
+                <p className="mt-8 text-[12px] font-semibold uppercase tracking-[0.12em] text-black/42">
                   Corporate Office
                 </p>
                 <h3 className="mt-3 text-[30px] font-medium">BrainADZ Delhi</h3>
-                <p className="mt-5 max-w-[390px] text-[15px] leading-7 text-white/62">
+                <p className="mt-5 max-w-[390px] text-[15px] leading-7 text-black/62">
                   A-24/8, 1st Floor, Rathi Tower, NH-19, Mohan Cooperative
                   Industrial Estate, New Delhi 110044
                 </p>
@@ -355,14 +353,14 @@ export default function ContactPageContent() {
                 href="https://www.google.com/maps/search/?api=1&query=A-24%2F8%20Rathi%20Tower%20Mohan%20Cooperative%20Industrial%20Estate%20New%20Delhi%20110044"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-9 inline-flex min-h-12 items-center justify-center gap-3 self-start rounded-sm border border-white/20 px-5 text-[13px] font-semibold text-white transition hover:border-[#1467f5] hover:bg-[#1467f5]"
+                className="mt-9 inline-flex min-h-12 items-center justify-center gap-3 self-start rounded-full border border-black/18 bg-white px-5 text-[13px] font-semibold text-black transition hover:border-[#E1122B] hover:bg-[#E1122B] hover:text-white"
               >
                 Get directions
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
 
-            <div className="h-[420px] bg-white/5 sm:h-[500px]">
+            <div className="h-[420px] bg-[#f3f3f3] sm:h-[500px]">
               <iframe
                 title="BrainADZ Delhi office location"
                 src="https://www.google.com/maps?q=A-24%2F8%20Rathi%20Tower%20Mohan%20Cooperative%20Industrial%20Estate%20New%20Delhi%20110044&output=embed"
@@ -377,25 +375,23 @@ export default function ContactPageContent() {
       </section>
 
       {/* CONTACT FAQ SECTION */}
-      <section className="bg-black py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-16 text-black sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
           <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
             <div className="lg:sticky lg:top-32 lg:self-start">
-              <p className="text-[13px] font-semibold uppercase text-[#6995ff]">
-                Common questions
-              </p>
-              <h2 className="mt-4 max-w-[520px] text-[42px] font-medium leading-[1.08] sm:text-[54px]">
+              <div className="flex items-center gap-3"><span className="h-0.5 w-8 bg-[#E1122B]" /><p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">Common questions</p></div>
+              <h2 className="mt-4 max-w-[520px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] sm:text-[48px] lg:text-[58px]">
                 Before we start a conversation
               </h2>
-              <p className="mt-6 max-w-[500px] text-[16px] leading-7 text-white/55">
+              <p className="mt-6 max-w-[500px] text-[16px] leading-7 text-black/55">
                 Quick answers about enquiries, meetings, services, and working
                 with BrainADZ.
               </p>
             </div>
 
-            <div className="border-t border-white/15">
+            <div className="border-t border-black/12">
               {CONTACT_FAQS.map((faq, index) => (
-                <div key={faq.question} className="border-b border-white/15">
+                <div key={faq.question} className="border-b border-black/12">
                   <button
                     type="button"
                     onClick={() =>
@@ -408,7 +404,7 @@ export default function ContactPageContent() {
                     <span className="text-[18px] font-medium leading-7 sm:text-[20px]">
                       {faq.question}
                     </span>
-                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/15 text-[#6995ff]">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-black/12 bg-[#fff7f7] text-[#E1122B]">
                       <ChevronDown
                         className={`h-5 w-5 transition-transform duration-300 ${
                           openFaq === index ? "rotate-180" : ""
@@ -426,7 +422,7 @@ export default function ContactPageContent() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="max-w-[820px] pb-7 pr-12 text-[15px] leading-7 text-white/58 sm:text-[16px]">
+                      <p className="max-w-[820px] pb-7 pr-12 text-[15px] leading-7 text-black/58 sm:text-[16px]">
                         {faq.answer}
                       </p>
                     </div>
@@ -459,18 +455,18 @@ function ContactLink({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
-      className="group flex items-center gap-4 border-b border-white/10 py-5 last:border-b-0"
+      className="group flex items-center gap-4 border-b border-black/10 py-5 last:border-b-0"
     >
-      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-sm border border-white/12 text-[#6995ff] transition group-hover:border-[#1467f5] group-hover:bg-[#1467f5] group-hover:text-white">
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-[10px] border border-[#E1122B]/20 bg-[#fff1f1] text-[#E1122B] transition group-hover:border-[#E1122B] group-hover:bg-[#E1122B] group-hover:text-white">
         <Icon className="h-5 w-5" strokeWidth={1.7} />
       </span>
       <span className="min-w-0">
-        <span className="block text-[12px] font-medium text-white/42">{label}</span>
-        <span className="mt-1 block wrap-break-word text-[15px] font-medium text-white">
+        <span className="block text-[12px] font-medium text-black/42">{label}</span>
+        <span className="mt-1 block wrap-break-word text-[15px] font-medium text-black">
           {value}
         </span>
       </span>
-      <ArrowUpRight className="ml-auto h-5 w-5 shrink-0 text-white/28 transition group-hover:text-[#6995ff]" />
+      <ArrowUpRight className="ml-auto h-5 w-5 shrink-0 text-black/28 transition group-hover:text-[#E1122B]" />
     </a>
   );
 }
@@ -489,7 +485,7 @@ function FormField({
     <div>
       <label
         htmlFor={name}
-        className="mb-2 block text-[13px] font-medium text-white/72"
+        className="mb-2 block text-[13px] font-medium text-black/65"
       >
         {label}
       </label>
@@ -498,7 +494,7 @@ function FormField({
         name={name}
         type={type}
         {...props}
-        className="h-14 w-full rounded-sm border border-white/14 bg-black px-4 text-[15px] text-white outline-none transition placeholder:text-white/28 focus:border-[#1467f5]"
+        className="h-14 w-full rounded-[10px] border border-black/14 bg-white px-4 text-[15px] text-black outline-none transition placeholder:text-black/35 focus:border-[#E1122B]"
       />
     </div>
   );

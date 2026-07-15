@@ -158,8 +158,16 @@ const getServiceIcon = (service: string) => {
   );
 };
 
-const getServiceHref = (service: string) =>
-  `/services/${service
+const serviceCategoryPaths: Record<Category, string> = {
+  "Digital Marketing Services": "digital-marketing",
+  "Web Design & Development": "web-design-development",
+  "Creative & Media Services": "creative-media",
+  "SEO Services": "seo-services",
+  "Performance Marketing": "performance-marketing",
+};
+
+const getServiceHref = (category: Category, service: string) =>
+  `/services/${serviceCategoryPaths[category]}/${service
     .toLowerCase()
     .replace(/&/g, "and")
     .replace(/\//g, "-")
@@ -181,10 +189,6 @@ const getServiceBadge = (service: string) => {
 
 const normalLinks = [
   {
-    label: "Infrastructure",
-    href: "/infrastructure",
-  },
-  {
     label: "Consulting",
     href: "/consulting",
   },
@@ -194,11 +198,7 @@ const normalLinks = [
   },
   {
     label: "Support",
-    href: "/support",
-  },
-  {
-    label: "Think",
-    href: "/think",
+    href: "/contact",
   },
 ];
 
@@ -269,7 +269,7 @@ export default function Navbar() {
                             return (
                               <Link
                                 key={item}
-                                href={getServiceHref(item)}
+                                href={getServiceHref(category, item)}
                                 className="group flex min-h-6 items-center justify-between gap-3 text-[15px] font-bold leading-snug text-[#050505] transition hover:text-[#e50914]"
                               >
                                 <span className="min-w-0">{item}</span>
@@ -483,7 +483,7 @@ export default function Navbar() {
                     return (
                       <Link
                         key={item}
-                        href={getServiceHref(item)}
+                        href={getServiceHref(activeCategory, item)}
                         onClick={closeMobileMenu}
                         className="flex items-center gap-3"
                       >

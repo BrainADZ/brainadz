@@ -203,7 +203,7 @@ export default function TestimonialSection() {
                 </div>
 
                 <a
-                  href="/contact-us"
+                  href="/contact"
                   className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white/22 px-5 text-[12px] font-semibold text-white transition hover:border-[#E1122B] hover:bg-[#E1122B]"
                 >
                   Start A Project

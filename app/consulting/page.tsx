@@ -117,7 +117,7 @@ const HERO_STATS = [
 
 export default function ConsultingPage() {
   return (
-    <main className="bg-black text-white">
+    <main className="dm-sans bg-white text-[#111111]">
       <ConsultingHero />
       <ConsultingProblemSection />
       <ConsultingServicesSection />
@@ -146,14 +146,14 @@ function ConsultingHero() {
             aria-label="Breadcrumb"
             className="flex items-center gap-2 text-[14px] font-medium leading-none"
           >
-            <Link href="/" className="text-[#1467f5] transition hover:text-white">
+            <Link href="/" className="text-[#E1122B] transition hover:text-white">
               Home
             </Link>
             <span className="text-white/70">/</span>
             <span className="text-white">Consulting</span>
           </nav>
 
-          <h1 className="mt-7 max-w-[900px] text-[34px] font-normal leading-[1.04] tracking-[-0.045em] text-white sm:text-[46px] lg:text-[62px]">
+          <h1 className="mt-7 max-w-[900px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
             Consulting that turns marketing confusion into a clear growth plan.
           </h1>
 
@@ -166,7 +166,7 @@ function ConsultingHero() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex min-h-12 items-center justify-center gap-8 rounded-[4px] bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
+                className="inline-flex min-h-14 items-center justify-center gap-5 rounded-full bg-[#E1122B] px-7 text-[13px] font-semibold text-white transition hover:bg-black"
               >
                 Book a consultation
                 <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -174,7 +174,7 @@ function ConsultingHero() {
 
               <Link
                 href="#consulting-services"
-                className="inline-flex min-h-12 items-center justify-center gap-8 rounded-[4px] border border-white/22 bg-black/25 px-5 text-[15px] font-medium text-white transition hover:border-[#1467f5] hover:bg-[#1467f5] sm:min-h-14 sm:px-6"
+                className="inline-flex min-h-14 items-center justify-center gap-5 rounded-full border border-white/45 bg-black/25 px-7 text-[13px] font-semibold text-white transition hover:border-[#E1122B] hover:bg-[#E1122B]"
               >
                 View services
                 <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -185,17 +185,17 @@ function ConsultingHero() {
       </section>
 
       {/* CONSULTING STATS SECTION */}
-      <section className="border-y border-white/10 bg-black">
+      <section className="border-y border-black/10 bg-[#fbfbfb] text-black">
         <div className="mx-auto grid max-w-[1800px] px-5 sm:grid-cols-3 sm:px-8 lg:px-10">
           {HERO_STATS.map((stat) => (
             <div
               key={stat.value}
-              className="border-b border-white/10 py-7 sm:border-b-0 sm:border-r sm:px-8 first:sm:pl-0 last:sm:border-r-0"
+              className="border-b border-black/10 py-7 sm:border-b-0 sm:border-r sm:px-8 first:sm:pl-0 last:sm:border-r-0"
             >
-              <p className="text-[38px] font-light leading-none tracking-[-0.05em] text-[#1467f5] sm:text-[48px]">
+              <p className="text-[38px] font-medium leading-none tracking-[-0.05em] text-[#E1122B] sm:text-[48px]">
                 {stat.value}
               </p>
-              <p className="mt-3 max-w-[360px] text-[15px] leading-6 text-white/62">
+              <p className="mt-3 max-w-[360px] text-[15px] leading-6 text-black/60">
                 {stat.label}
               </p>
             </div>
@@ -210,18 +210,16 @@ function ConsultingProblemSection() {
   return (
     <>
       {/* CONSULTING PROBLEM SECTION */}
-      <section className="bg-black py-16 text-white sm:py-20 lg:py-24">
+      <section className="bg-white py-16 text-black sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-[1800px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20 lg:px-10">
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#6995ff]">
-              Why consulting
-            </p>
+            <div className="flex items-center gap-3"><span className="h-0.5 w-8 bg-[#E1122B]" /><p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">Why consulting</p></div>
 
-            <h2 className="mt-5 max-w-[720px] text-[40px] font-medium leading-[1.08] tracking-[-0.04em] text-white sm:text-[54px] lg:text-[62px]">
+            <h2 className="mt-5 max-w-[720px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
               Good marketing needs clarity before execution.
             </h2>
 
-            <p className="mt-7 max-w-[650px] text-[16px] leading-8 text-white/62">
+            <p className="mt-7 max-w-[650px] text-[16px] leading-8 text-black/62">
               Most brands do not fail because they lack effort. They struggle
               because strategy, platforms, content, ads, tracking and follow-up
               are not connected properly.
@@ -232,15 +230,17 @@ function ConsultingProblemSection() {
             {BUSINESS_CHALLENGES.map((challenge, index) => (
               <div
                 key={challenge}
-                className="min-h-[190px] rounded-[6px] border border-white/10 bg-[#101010] p-6 transition hover:border-[#1467f5]"
+                data-aos="fade-up"
+                data-aos-delay={(index % 2) * 80}
+                className="min-h-[190px] rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_42px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/45 hover:bg-[#fff8f8] hover:shadow-[0_24px_60px_rgba(0,0,0,0.08)]"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-[4px] border border-[#1467f5]/35 bg-[#1467f5]/12 text-[#6995ff]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-[10px] border border-[#E1122B]/20 bg-[#fff1f1] text-[#E1122B]">
                   <FileSearch className="h-6 w-6" strokeWidth={1.7} />
                 </div>
-                <p className="mt-6 text-[13px] font-semibold uppercase tracking-[0.16em] text-white/35">
+                <p className="mt-6 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#E1122B]">
                   Gap {String(index + 1).padStart(2, "0")}
                 </p>
-                <p className="mt-3 text-[16px] font-medium leading-7 text-white/78">
+                <p className="mt-3 text-[16px] font-medium leading-7 text-black/68">
                   {challenge}
                 </p>
               </div>
@@ -258,21 +258,19 @@ function ConsultingServicesSection() {
       {/* CONSULTING SERVICES SECTION */}
       <section
         id="consulting-services"
-        className="border-y border-white/10 bg-[#080808] py-16 text-white sm:py-20 lg:py-24"
+        className="border-y border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <div>
-              <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#6995ff]">
-                Consulting services
-              </p>
+              <div className="flex items-center gap-3"><span className="h-0.5 w-8 bg-[#E1122B]" /><p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">Consulting services</p></div>
 
-              <h2 className="mt-5 max-w-[820px] text-[40px] font-medium leading-[1.08] tracking-[-0.04em] text-white sm:text-[54px] lg:text-[62px]">
+              <h2 className="mt-5 max-w-[820px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
                 Expert guidance across your complete growth system.
               </h2>
             </div>
 
-            <p className="max-w-[650px] text-[16px] leading-8 text-white/60">
+            <p className="max-w-[650px] text-[16px] leading-8 text-black/60">
               Every consulting area is connected with business impact, so your
               marketing becomes easier to understand, manage and scale.
             </p>
@@ -285,28 +283,30 @@ function ConsultingServicesSection() {
               return (
                 <div
                   key={service.title}
-                  className="group min-h-[310px] rounded-[6px] border border-white/10 bg-[#101010] p-6 transition hover:-translate-y-1 hover:border-[#1467f5] sm:p-7"
+                  data-aos="fade-up"
+                  data-aos-delay={(index % 3) * 80}
+                  className="group min-h-[310px] rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_42px_rgba(0,0,0,0.05)] transition hover:-translate-y-1 hover:border-[#E1122B]/45 hover:shadow-[0_24px_60px_rgba(0,0,0,0.08)] sm:p-7"
                 >
                   <div className="flex items-start justify-between gap-5">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-[4px] border border-[#1467f5]/35 bg-[#1467f5]/12 text-[#6995ff] transition group-hover:bg-[#1467f5] group-hover:text-white">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[10px] border border-[#E1122B]/20 bg-[#fff1f1] text-[#E1122B] transition group-hover:bg-[#E1122B] group-hover:text-white">
                       <Icon className="h-7 w-7" strokeWidth={1.7} />
                     </div>
 
-                    <span className="text-[13px] font-semibold text-white/28">
+                    <span className="text-[13px] font-semibold text-black/28">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
 
-                  <h3 className="mt-9 text-[25px] font-semibold leading-tight tracking-[-0.035em] text-white">
+                  <h3 className="mt-9 text-[25px] font-semibold leading-tight tracking-[-0.035em] text-black">
                     {service.title}
                   </h3>
 
-                  <p className="mt-5 text-[15px] leading-7 text-white/58">
+                  <p className="mt-5 text-[15px] leading-7 text-black/58">
                     {service.description}
                   </p>
 
-                  <div className="mt-8 flex items-center gap-3 border-t border-white/10 pt-5 text-[14px] font-medium text-white/54">
-                    <CheckCircle2 className="h-5 w-5 text-[#1467f5]" />
+                  <div className="mt-8 flex items-center gap-3 border-t border-black/10 pt-5 text-[14px] font-medium text-black/54">
+                    <CheckCircle2 className="h-5 w-5 text-[#E1122B]" />
                     <span>Strategy plus practical action plan</span>
                   </div>
                 </div>
@@ -323,19 +323,17 @@ function ConsultingFrameworkSection() {
   return (
     <>
       {/* CONSULTING FRAMEWORK SECTION */}
-      <section className="bg-black py-16 text-white sm:py-20 lg:py-24">
+      <section className="bg-white py-16 text-black sm:py-20 lg:py-24">
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
             <div className="lg:sticky lg:top-28 lg:self-start">
-              <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#6995ff]">
-                Our framework
-              </p>
+              <div className="flex items-center gap-3"><span className="h-0.5 w-8 bg-[#E1122B]" /><p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">Our framework</p></div>
 
-              <h2 className="mt-5 max-w-[720px] text-[40px] font-medium leading-[1.08] tracking-[-0.04em] text-white sm:text-[54px] lg:text-[62px]">
+              <h2 className="mt-5 max-w-[720px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
                 From audit to action, every step stays clear.
               </h2>
 
-              <p className="mt-7 max-w-[650px] text-[16px] leading-8 text-white/62">
+              <p className="mt-7 max-w-[650px] text-[16px] leading-8 text-black/62">
                 Our consulting process removes guesswork. You get diagnosis,
                 practical priorities, an execution roadmap and performance
                 reviews that help your team move faster.
@@ -343,23 +341,25 @@ function ConsultingFrameworkSection() {
             </div>
 
             <div className="space-y-4">
-              {CONSULTING_FRAMEWORK.map((item) => (
+              {CONSULTING_FRAMEWORK.map((item, index) => (
                 <div
                   key={item.title}
-                  className="grid gap-6 rounded-[6px] border border-white/10 bg-[#101010] p-6 transition hover:border-[#1467f5] sm:p-7 lg:grid-cols-[150px_1fr]"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 70}
+                  className="grid gap-6 rounded-[14px] border border-black/10 bg-[#fbfbfb] p-6 shadow-[0_12px_36px_rgba(0,0,0,0.04)] transition duration-300 hover:border-[#E1122B]/45 hover:bg-[#fff8f8] hover:shadow-[0_20px_48px_rgba(0,0,0,0.07)] sm:p-7 lg:grid-cols-[150px_1fr]"
                 >
                   <div className="flex items-center gap-4 lg:block">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-[4px] bg-[#1467f5] text-[15px] font-semibold text-white">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#E1122B] text-[15px] font-semibold text-white">
                       {item.step}
                     </div>
-                    <div className="hidden mt-5 h-px w-full bg-white/10 lg:block" />
+                    <div className="mt-5 hidden h-px w-full bg-black/10 lg:block" />
                   </div>
 
                   <div className="grid gap-4 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
-                    <h3 className="text-[30px] font-semibold leading-tight tracking-[-0.035em] text-white">
+                    <h3 className="text-[30px] font-semibold leading-tight tracking-[-0.035em] text-black">
                       {item.title}
                     </h3>
-                    <p className="text-[15px] leading-7 text-white/58">
+                    <p className="text-[15px] leading-7 text-black/58">
                       {item.description}
                     </p>
                   </div>
@@ -377,9 +377,9 @@ function ConsultingDeliverablesSection() {
   return (
     <>
       {/* CONSULTING DELIVERABLES SECTION */}
-      <section className="border-y border-white/10 bg-[#080808] py-16 text-white sm:py-20 lg:py-24">
+      <section className="border-y border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-[1800px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20 lg:px-10">
-          <div className="relative overflow-hidden rounded-[6px] border border-white/10 bg-[#101010]">
+          <div className="relative overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
             <Image
               src="/homepage/about-ai-collaboration.png"
               alt="BrainADZ consulting and AI enabled marketing planning"
@@ -400,27 +400,27 @@ function ConsultingDeliverablesSection() {
           </div>
 
           <div>
-            <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#6995ff]">
-              What you get
-            </p>
+            <div className="flex items-center gap-3"><span className="h-0.5 w-8 bg-[#E1122B]" /><p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">What you get</p></div>
 
-            <h2 className="mt-5 max-w-[820px] text-[40px] font-medium leading-[1.08] tracking-[-0.04em] text-white sm:text-[54px] lg:text-[62px]">
+            <h2 className="mt-5 max-w-[820px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
               Clear recommendations, documented priorities and action points.
             </h2>
 
-            <p className="mt-6 max-w-[760px] text-[16px] leading-8 text-white/60">
+            <p className="mt-6 max-w-[760px] text-[16px] leading-8 text-black/60">
               You get practical direction that connects creative, media, SEO,
               website, automation and reporting into one measurable growth plan.
             </p>
 
             <div className="mt-10 grid gap-3 sm:grid-cols-2">
-              {DELIVERABLES.map((item) => (
+              {DELIVERABLES.map((item, index) => (
                 <div
                   key={item}
-                  className="flex min-h-[78px] items-start gap-4 rounded-[6px] border border-white/10 bg-black p-4"
+                  data-aos="fade-up"
+                  data-aos-delay={(index % 2) * 60}
+                  className="flex min-h-[78px] items-start gap-4 rounded-[10px] border border-black/10 bg-white p-4 shadow-[0_10px_28px_rgba(0,0,0,0.04)] transition duration-300 hover:border-[#E1122B]/40 hover:bg-[#fff8f8]"
                 >
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#1467f5]" />
-                  <p className="text-[15px] font-medium leading-6 text-white/72">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#E1122B]" />
+                  <p className="text-[15px] font-medium leading-6 text-black/68">
                     {item}
                   </p>
                 </div>

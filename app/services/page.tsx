@@ -166,7 +166,7 @@ export default function ServicesPage() {
           </h1>
 
           <div className="mt-auto max-w-[720px] pb-6 sm:pb-10 lg:pb-12">
-            <p className="text-[18px] font-normal leading-[1.5] tracking-[-0.02em] text-white/88 sm:text-[22px] lg:text-[25px]">
+            <p className="text-[18px] font-normal leading-normal tracking-[-0.02em] text-white/88 sm:text-[22px] lg:text-[25px]">
               Choose focused services or build one connected growth system
               across digital marketing, websites, SEO, paid campaigns and
               creative media.
@@ -175,7 +175,7 @@ export default function ServicesPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="#service-paths"
-                className="inline-flex min-h-12 items-center justify-center gap-8 rounded-[4px] bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
+                className="inline-flex min-h-12 items-center justify-center gap-8 rounded-sm bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
               >
                 Explore Services
                 <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -183,7 +183,7 @@ export default function ServicesPage() {
 
               <Link
                 href="/contact"
-                className="inline-flex min-h-12 items-center justify-center gap-8 rounded-[4px] border border-white/22 bg-black/25 px-5 text-[15px] font-medium text-white transition hover:border-[#1467f5] hover:bg-[#1467f5] sm:min-h-14 sm:px-6"
+                className="inline-flex min-h-12 items-center justify-center gap-8 rounded-sm border border-white/22 bg-black/25 px-5 text-[15px] font-medium text-white transition hover:border-[#1467f5] hover:bg-[#1467f5] sm:min-h-14 sm:px-6"
               >
                 Get Recommendation
                 <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -199,7 +199,7 @@ export default function ServicesPage() {
           <div className="grid gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:items-center lg:gap-16">
             <Link
               href={FEATURED_SERVICE.href}
-              className="group relative min-h-[420px] overflow-hidden rounded-[6px] border border-white/10 bg-[#101010] sm:min-h-[560px]"
+              className="group relative min-h-[420px] overflow-hidden rounded-md border border-white/10 bg-[#101010] sm:min-h-[560px]"
             >
               <Image
                 src={FEATURED_SERVICE.image}
@@ -248,7 +248,7 @@ export default function ServicesPage() {
 
               <Link
                 href={FEATURED_SERVICE.href}
-                className="mt-9 inline-flex min-h-14 items-center justify-center gap-8 rounded-[4px] bg-[#1467f5] px-6 text-[15px] font-medium text-white transition hover:bg-[#0f56d6]"
+                className="mt-9 inline-flex min-h-14 items-center justify-center gap-8 rounded-sm bg-[#1467f5] px-6 text-[15px] font-medium text-white transition hover:bg-[#0f56d6]"
               >
                 View Digital Marketing
                 <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -335,7 +335,7 @@ function ServiceImageCard({
   return (
     <Link
       href={category.href}
-      className="group overflow-hidden rounded-[6px] border border-white/10 bg-[#101010] transition hover:border-[#1467f5]"
+      className="group overflow-hidden rounded-md border border-white/10 bg-[#101010] transition hover:border-[#1467f5]"
     >
       <div className="relative h-[285px] overflow-hidden bg-black sm:h-[360px]">
         <Image
@@ -400,7 +400,7 @@ function ServiceDirectoryRow({
     >
       <Link
         href={category.href}
-        className="group relative min-h-[320px] overflow-hidden rounded-[6px] border border-white/10 bg-[#101010]"
+        className="group relative min-h-80 overflow-hidden rounded-md border border-white/10 bg-[#101010]"
       >
         <Image
           src={category.image}
@@ -434,11 +434,7 @@ function ServiceDirectoryRow({
           {category.services.map((service) => (
             <Link
               key={service}
-              href={
-                service === "SMM Services"
-                  ? "/services/digital-marketing/smm-services"
-                  : `/services/${slugify(service)}`
-              }
+              href={`${category.href}/${slugify(service)}`}
               className="group flex items-start gap-3 border-b border-white/10 pb-3 text-[14px] font-medium leading-6 text-white/70 transition hover:border-[#1467f5] hover:text-white"
             >
               <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#1467f5]" />
@@ -449,7 +445,7 @@ function ServiceDirectoryRow({
 
         <Link
           href={category.href}
-          className="mt-8 inline-flex w-fit min-h-12 items-center justify-center gap-6 rounded-[4px] border border-white/18 px-5 text-[14px] font-medium text-white transition hover:border-[#1467f5] hover:bg-[#1467f5]"
+          className="mt-8 inline-flex w-fit min-h-12 items-center justify-center gap-6 rounded-sm border border-white/18 px-5 text-[14px] font-medium text-white transition hover:border-[#1467f5] hover:bg-[#1467f5]"
         >
           Open {category.title}
           <ArrowRight className="h-4 w-4" strokeWidth={1.8} />

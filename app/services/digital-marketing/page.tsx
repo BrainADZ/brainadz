@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -190,14 +191,6 @@ const AUDIT_ITEMS = [
   "Content plan, campaign calendar and reporting format",
 ];
 const FUNNEL_COLORS = ["#0FA9B6", "#D9DD48", "#1B66A8", "#BD5939"];
-const slugify = (value: string) =>
-  value
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/\//g, "-")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-
 export default function DigitalMarketingPage() {
   return (
     <main className="bg-black text-white">
@@ -249,7 +242,7 @@ function HeroSection() {
 
             <Link
               href="/contact"
-              className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-[4px] bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
+              className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-sm bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
             >
               Get the latest BrainADZ news
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -347,16 +340,12 @@ function DigitalServicesSection() {
 
               return (
                 <Link
-                  href={
-                    service.slug === "smm-services"
-                      ? `/services/digital-marketing/${service.slug}`
-                      : `/services/${service.slug}`
-                  }
+                  href={`/services/digital-marketing/${service.slug}`}
                   id={service.slug}
                   key={service.title}
-                  className="group relative min-h-[235px] overflow-hidden rounded-[24px] border border-white/10 bg-[#101010] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#1467f5]/70 hover:bg-[#141414] sm:p-6"
+                  className="group relative min-h-[235px] overflow-hidden rounded-3xl border border-white/10 bg-[#101010] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#1467f5]/70 hover:bg-[#141414] sm:p-6"
                 >
-                  <div className="absolute right-[-48px] top-[-48px] h-28 w-28 rounded-full bg-[#1467f5]/12 blur-2xl transition group-hover:bg-[#1467f5]/22" />
+                  <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#1467f5]/12 blur-2xl transition group-hover:bg-[#1467f5]/22" />
 
                   <div className="relative z-10">
                     <div className="flex items-start justify-between gap-4">
@@ -364,7 +353,7 @@ function DigitalServicesSection() {
                         <Icon className="h-6 w-6" strokeWidth={1.7} />
                       </div>
 
-                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-semibold text-white/48">
+                      <span className="rounded-full border border-white/10 bg-white/4 px-3 py-1 text-[11px] font-semibold text-white/48">
                         {service.result}
                       </span>
                     </div>
@@ -396,7 +385,7 @@ function FunnelSection() {
   return (
     <section className="relative overflow-hidden border-y border-white/10 bg-black py-16 text-white sm:py-20 lg:py-24">
       <div className="pointer-events-none absolute left-[-220px] top-[-180px] h-[460px] w-[460px] rounded-full bg-[#1467f5]/16 blur-[130px]" />
-      <div className="pointer-events-none absolute bottom-[-240px] right-[-220px] h-[520px] w-[520px] rounded-full bg-[#0FA9B6]/14 blur-[150px]" />
+      <div className="pointer-events-none absolute -bottom-60 right-[-220px] h-[520px] w-[520px] rounded-full bg-[#0FA9B6]/14 blur-[150px]" />
 
       <div className="relative z-10 mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end lg:gap-16">
@@ -418,7 +407,7 @@ function FunnelSection() {
           </p>
         </div>
 
-        <div className="mt-14 rounded-[34px] border border-white/10 bg-white/[0.025] p-5 sm:mt-16 sm:p-7 lg:p-9">
+        <div className="mt-14 rounded-[34px] border border-white/10 bg-white/2.5 p-5 sm:mt-16 sm:p-7 lg:p-9">
           <div className="relative">
             {/* MOBILE VERTICAL LINE */}
             <div className="absolute bottom-6 left-[27px] top-6 w-px bg-[linear-gradient(180deg,rgba(105,149,255,0),rgba(105,149,255,0.7),rgba(15,169,182,0.7),rgba(105,149,255,0))] lg:hidden" />
@@ -509,7 +498,7 @@ function ReportingSection() {
       {/* REPORTING SNAPSHOT SECTION */}
       <section className="border-y border-white/10 bg-[#080808] py-16 text-white sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-[1800px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-10">
-          <div className="rounded-[6px] border border-white/10 bg-black p-5 sm:p-7">
+          <div className="rounded-md border border-white/10 bg-black p-5 sm:p-7">
             <div className="flex items-start justify-between gap-5 border-b border-white/10 pb-6">
               <div>
                 <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-white/42">
@@ -519,7 +508,7 @@ function ReportingSection() {
                   Reporting that shows what moved.
                 </h2>
               </div>
-              <div className="flex h-14 w-14 items-center justify-center rounded-[4px] bg-[#1467f5] text-white">
+              <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-[#1467f5] text-white">
                 <LineChart className="h-7 w-7" strokeWidth={1.7} />
               </div>
             </div>
@@ -554,7 +543,7 @@ function ReportingSection() {
               {AUDIT_ITEMS.map((item) => (
                 <div
                   key={item}
-                  className="flex items-start gap-4 rounded-[4px] border border-white/10 bg-black p-4"
+                  className="flex items-start gap-4 rounded-sm border border-white/10 bg-black p-4"
                 >
                   <ClipboardList className="mt-0.5 h-5 w-5 shrink-0 text-[#1467f5]" />
                   <p className="text-[15px] font-medium leading-6 text-white/70">

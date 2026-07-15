@@ -62,18 +62,16 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className="scroll-mt-[164px] border-b border-white/12 bg-[#080808] py-16 text-white sm:py-20 lg:py-24"
+      className="scroll-mt-[164px] border-b border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
-        <p className="text-[13px] font-medium uppercase text-white/52">
-          Features
-        </p>
-        <h2 className="mt-4 max-w-[1220px] text-[38px] font-normal leading-[1.08] text-white sm:text-[50px] lg:text-[60px]">
+        <div className="flex items-center gap-3"><span className="h-0.5 w-8 bg-[#E1122B]" /><p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">Features</p></div>
+        <h2 className="mt-5 max-w-[1220px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
           Built for reach, engagement and measurable growth
         </h2>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-8">
-          <div className="border-t border-white/16">
+          <div className="overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_16px_45px_rgba(0,0,0,0.05)]">
             {FEATURES.map((feature, index) => {
               const isActive = activeFeature === index;
               const panelId = `feature-panel-${index}`;
@@ -81,8 +79,8 @@ export default function FeaturesSection() {
               return (
                 <div
                   key={feature.title}
-                  className={`border-b border-white/16 ${
-                    isActive ? "border-l-[3px] border-l-[#1467f5]" : ""
+                  className={`border-b border-black/10 last:border-b-0 ${
+                    isActive ? "border-l-[3px] border-l-[#E1122B] bg-[#fff8f8]" : ""
                   }`}
                 >
                   <button
@@ -90,7 +88,7 @@ export default function FeaturesSection() {
                     aria-expanded={isActive}
                     aria-controls={panelId}
                     onClick={() => setActiveFeature(index)}
-                    className="flex min-h-14 w-full items-center justify-between gap-5 px-4 py-3 text-left text-[17px] font-medium text-white transition-colors hover:bg-white/[0.06] focus-visible:bg-white/[0.06] focus-visible:outline-none"
+                    className="flex min-h-14 w-full items-center justify-between gap-5 px-4 py-3 text-left text-[17px] font-medium text-black transition-colors hover:bg-[#fff8f8] focus-visible:bg-[#fff8f8] focus-visible:outline-none"
                   >
                     <span>{feature.title}</span>
                     <ChevronDown
@@ -115,15 +113,15 @@ export default function FeaturesSection() {
                         aria-hidden={!isActive}
                         className="px-4 pb-7 pt-2"
                       >
-                        <p className="max-w-[680px] text-[14px] leading-7 text-white/66 sm:text-[15px]">
+                        <p className="max-w-[680px] text-[14px] leading-7 text-black/60 sm:text-[15px]">
                           {feature.description}
                         </p>
-                        <ul className="mt-5 space-y-2 text-[14px] leading-6 text-white/72">
+                        <ul className="mt-5 space-y-2 text-[14px] leading-6 text-black/68">
                           {feature.points.map((point) => (
                             <li key={point} className="flex items-start gap-3">
                               <span
                                 aria-hidden="true"
-                                className="text-[#6995ff]"
+                                className="text-[#E1122B]"
                               >
                                 -
                               </span>
@@ -140,7 +138,7 @@ export default function FeaturesSection() {
           </div>
 
           <figure className="lg:sticky lg:top-[188px]">
-            <div className="relative aspect-[16/9] overflow-hidden border border-white/12 bg-black">
+            <div className="relative aspect-video overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
               <Image
                 key={selectedFeature.image}
                 src={selectedFeature.image}
@@ -150,7 +148,7 @@ export default function FeaturesSection() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-            <figcaption className="mt-2 text-[13px] leading-5 text-white/48">
+            <figcaption className="mt-2 text-[13px] leading-5 text-black/48">
               Selected social media work by BrainADZ
             </figcaption>
           </figure>
