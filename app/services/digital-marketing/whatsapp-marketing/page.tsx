@@ -6,52 +6,55 @@ import Link from "next/link";
 import {
   ArrowRight,
   BarChart3,
+  BellRing,
+  Bot,
   CalendarRange,
   Check,
   ChevronDown,
   CircleGauge,
+  FileCheck2,
   FileSearch,
-  Gauge,
-  Globe2,
-  LayoutDashboard,
+  Headphones,
   Link2,
   ListChecks,
   Megaphone,
+  MessageCircle,
+  MessagesSquare,
   MousePointerClick,
   PanelsTopLeft,
-  Route,
-  Search,
-  SearchCheck,
+  RefreshCw,
+  Send,
   Settings2,
   ShieldCheck,
-  SlidersHorizontal,
+  ShoppingBag,
+  Smartphone,
   Target,
-  TestTubeDiagonal,
-  TrendingUp,
   UsersRound,
   WalletCards,
+  Workflow,
   Zap,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "SEM Services | Search Engine Marketing | BrainADZ Marketing",
+  title: "WhatsApp Marketing Services | BrainADZ Marketing",
   description:
-    "Search engine marketing services by BrainADZ Marketing for paid search campaigns, keyword targeting, conversion tracking, bidding and measurable lead generation.",
+    "WhatsApp marketing services by BrainADZ Marketing for broadcast campaigns, automated customer journeys, lead nurturing, support, CRM integration and measurable conversions.",
   alternates: {
-    canonical: "/services/digital-marketing/sem-services",
+    canonical: "/services/digital-marketing/whatsapp-marketing",
   },
   openGraph: {
-    title: "SEM Services | BrainADZ Marketing",
+    title: "WhatsApp Marketing Services | BrainADZ Marketing",
     description:
-      "Reach high-intent audiences with professionally managed paid search campaigns built for qualified traffic, leads and measurable growth.",
+      "Build permission-based WhatsApp campaigns and automated customer journeys that improve engagement, follow-up and conversions.",
     type: "website",
   },
 };
 
 const PAGE_NAV_ITEMS = [
   { label: "Overview", href: "#overview" },
-  { label: "Features", href: "#features" },
-  { label: "Campaign Types", href: "#campaign-types" },
+  { label: "Capabilities", href: "#capabilities" },
+  { label: "Use Cases", href: "#use-cases" },
+  { label: "Automation", href: "#automation" },
   { label: "Process", href: "#process" },
   { label: "Deliverables", href: "#deliverables" },
   { label: "FAQs", href: "#faqs" },
@@ -59,172 +62,214 @@ const PAGE_NAV_ITEMS = [
 
 const OVERVIEW_BENEFITS = [
   {
-    title: "High-intent visibility",
+    title: "Direct customer engagement",
     description:
-      "Place your business in front of people actively searching for the products and services you offer.",
-    icon: Search,
+      "Reach opted-in audiences through a familiar messaging channel with relevant and timely communication.",
+    icon: MessageCircle,
   },
   {
-    title: "Qualified website traffic",
+    title: "Faster lead follow-up",
     description:
-      "Target relevant keywords, locations, audiences and devices to attract users more likely to take action.",
+      "Respond to enquiries and continue sales conversations without waiting for customers to return to your website.",
+    icon: Zap,
+  },
+  {
+    title: "Automated customer journeys",
+    description:
+      "Use structured workflows for welcome messages, reminders, updates, support and repeat engagement.",
+    icon: Workflow,
+  },
+  {
+    title: "Measurable conversions",
+    description:
+      "Track message delivery, interactions, clicks, enquiries and campaign-supported customer actions.",
+    icon: BarChart3,
+  },
+];
+
+const CAPABILITIES = [
+  {
+    title: "WhatsApp strategy built around customer journeys",
+    description:
+      "Every WhatsApp program begins with a clear understanding of your audience, business objective, customer lifecycle and the role messaging should play across marketing, sales and support.",
+    points: [
+      "Business objective and use-case planning",
+      "Audience and customer journey mapping",
+      "Campaign frequency and communication rules",
+      "Performance goals and measurement framework",
+    ],
+  },
+  {
+    title: "Permission-based audience building",
+    description:
+      "We help structure clear opt-in pathways so customers understand what communication they are agreeing to receive and how WhatsApp will be used.",
+    points: [
+      "Website and landing-page opt-in flows",
+      "Lead form and enquiry consent structure",
+      "QR code and offline opt-in opportunities",
+      "Audience preference and unsubscribe planning",
+    ],
+  },
+  {
+    title: "Broadcast campaign management",
+    description:
+      "Campaigns are planned around relevant audience segments, useful messages and focused calls to action rather than sending the same communication to every contact.",
+    points: [
+      "Audience segmentation and campaign lists",
+      "Promotional and informational messaging",
+      "Campaign scheduling and frequency control",
+      "Link, offer and CTA coordination",
+    ],
+  },
+  {
+    title: "Automated WhatsApp workflows",
+    description:
+      "Trigger-based messages help customers receive timely updates and follow-ups based on enquiries, actions, transactions and service milestones.",
+    points: [
+      "Welcome and onboarding journeys",
+      "Lead nurturing and follow-up sequences",
+      "Cart, enquiry and payment reminders",
+      "Re-engagement and retention workflows",
+    ],
+  },
+  {
+    title: "Chatbot and conversation design",
+    description:
+      "Structured conversation flows help customers find information, select options, qualify enquiries and connect with the correct team.",
+    points: [
+      "Menu and quick-reply structures",
+      "Frequently asked question automation",
+      "Lead qualification and routing",
+      "Human agent handover planning",
+    ],
+  },
+  {
+    title: "CRM and business integration",
+    description:
+      "WhatsApp activity can be connected with relevant customer systems so messages, enquiries and follow-ups remain organized and actionable.",
+    points: [
+      "CRM and lead management coordination",
+      "Website form and campaign integration",
+      "Customer data and status-based triggers-based triggers",
+      "Sales and support team handoff workflows",
+    ],
+  },
+  {
+    title: "Reporting and continuous optimization",
+    description:
+      "Campaign and conversation data is reviewed to improve audience quality, message relevance, response flows and conversion performance.",
+    points: [
+      "Delivery and interaction reporting",
+      "Click and enquiry analysis",
+      "Campaign and audience comparison",
+      "Monthly optimization recommendations",
+    ],
+  },
+];
+
+const USE_CASES = [
+  {
+    title: "Promotional campaigns",
+    description:
+      "Share relevant product launches, services, offers and limited-period campaigns with opted-in customer segments.",
+    points: [
+      "Product launches",
+      "Special offers",
+      "Seasonal campaigns",
+      "Event promotions",
+    ],
+    icon: Megaphone,
+  },
+  {
+    title: "Lead nurturing",
+    description:
+      "Continue conversations with prospects through useful information, reminders and structured sales follow-ups.",
+    points: [
+      "Enquiry follow-up",
+      "Product information",
+      "Sales reminders",
+      "Lead qualification",
+    ],
+    icon: Target,
+  },
+  {
+    title: "Abandoned cart recovery",
+    description:
+      "Remind ecommerce customers about incomplete purchases and provide a simple path back to the checkout journey.",
+    points: [
+      "Cart reminders",
+      "Product recall",
+      "Checkout links",
+      "Purchase support",
+    ],
+    icon: ShoppingBag,
+  },
+  {
+    title: "Order and service updates",
+    description:
+      "Keep customers informed through timely transactional and service-related communication.",
+    points: [
+      "Order confirmation",
+      "Delivery updates",
+      "Appointment reminders",
+      "Service notifications",
+    ],
+    icon: BellRing,
+  },
+  {
+    title: "Customer support",
+    description:
+      "Help customers receive answers, raise concerns and connect with the correct support representative more efficiently.",
+    points: [
+      "FAQ automation",
+      "Issue collection",
+      "Ticket routing",
+      "Agent assistance",
+    ],
+    icon: Headphones,
+  },
+  {
+    title: "Customer re-engagement",
+    description:
+      "Reconnect with inactive or previous customers through relevant updates, offers and relationship-building communication.",
+    points: [
+      "Win-back campaigns",
+      "Repeat purchase",
+      "Renewal reminders",
+      "Customer loyalty",
+    ],
+    icon: RefreshCw,
+  },
+];
+
+const AUTOMATION_STAGES = [
+  {
+    title: "Trigger",
+    description:
+      "A customer action, enquiry, transaction, date or status change starts the relevant messaging journey.",
+    output: "Relevant journey entry",
+    icon: Zap,
+  },
+  {
+    title: "Personalize",
+    description:
+      "Messages use available customer, product and journey information to create a more relevant conversation.",
+    output: "Context-based message",
+    icon: UsersRound,
+  },
+  {
+    title: "Guide",
+    description:
+      "Quick replies, menus, links and follow-ups help customers reach the correct information or action.",
+    output: "Clear next step",
     icon: MousePointerClick,
   },
   {
-    title: "Controlled media spend",
+    title: "Handover",
     description:
-      "Manage budgets, bids and targeting around commercial priorities instead of paying for unfocused traffic.",
-    icon: WalletCards,
-  },
-  {
-    title: "Measurable business growth",
-    description:
-      "Connect clicks and campaign activity with enquiries, calls, purchases and other meaningful conversions.",
-    icon: TrendingUp,
-  },
-];
-
-const FEATURES = [
-  {
-    title: "SEM strategy aligned with business goals",
-    description:
-      "Every campaign starts with a clear understanding of your offer, target market, customer journey and commercial objective. This keeps the account focused on profitable actions instead of surface-level traffic.",
-    points: [
-      "Business, offer and market assessment",
-      "Campaign objectives and conversion priorities",
-      "Channel, location and device planning",
-      "Budget allocation and performance benchmarks",
-    ],
-  },
-  {
-    title: "Keyword and audience research",
-    description:
-      "We identify the search terms, intent patterns and audience signals most closely connected to your products or services so campaigns reach users at the right stage of decision-making.",
-    points: [
-      "Commercial and high-intent keyword research",
-      "Search intent and customer journey mapping",
-      "Negative keyword identification",
-      "Audience, location and device analysis",
-    ],
-  },
-  {
-    title: "Campaign architecture and ad creation",
-    description:
-      "Campaigns are structured around services, products, locations and search intent, with relevant advertisements designed to improve clarity, quality and click-through performance.",
-    points: [
-      "Campaign and ad-group structure",
-      "Responsive search ad copy",
-      "Headlines, descriptions and extensions",
-      "Brand, competitor and service segmentation",
-    ],
-  },
-  {
-    title: "Budget and bidding optimization",
-    description:
-      "Media spend is actively managed according to campaign priorities, search demand and conversion data so budget is directed towards stronger opportunities.",
-    points: [
-      "Daily and monthly budget management",
-      "Manual and automated bidding strategies",
-      "Cost-per-click and acquisition monitoring",
-      "Device, location and schedule adjustments",
-    ],
-  },
-  {
-    title: "Landing page and conversion alignment",
-    description:
-      "Paid traffic performs better when the advertisement and landing page communicate the same offer. We review the complete journey from search query to conversion action.",
-    points: [
-      "Ad-to-landing-page message alignment",
-      "Conversion-focused page recommendations",
-      "Form, call and WhatsApp journey review",
-      "Mobile experience and page-speed checks",
-    ],
-  },
-  {
-    title: "Tracking, testing and reporting",
-    description:
-      "Campaign decisions are guided by conversion data, search behaviour and structured testing rather than assumptions or vanity metrics.",
-    points: [
-      "Conversion and event tracking setup",
-      "Search term and audience analysis",
-      "Ad copy and landing-page testing",
-      "Performance reporting and next-step actions",
-    ],
-  },
-];
-
-const CAMPAIGN_TYPES = [
-  {
-    title: "Search advertising",
-    description:
-      "Appear on search result pages when potential customers actively look for your products, services or solutions.",
-    points: [
-      "Keyword targeting",
-      "Responsive search ads",
-      "Call extensions",
-      "Lead generation",
-    ],
-    icon: Search,
-  },
-  {
-    title: "Shopping campaigns",
-    description:
-      "Promote ecommerce products with product images, pricing and availability directly within search results.",
-    points: [
-      "Product feed setup",
-      "Shopping advertisements",
-      "Category segmentation",
-      "Purchase tracking",
-    ],
-    icon: WalletCards,
-  },
-  {
-    title: "Display campaigns",
-    description:
-      "Build visibility across relevant websites and applications using visual advertisements and audience targeting.",
-    points: [
-      "Banner advertisements",
-      "Audience targeting",
-      "Placement control",
-      "Brand awareness",
-    ],
-    icon: PanelsTopLeft,
-  },
-  {
-    title: "Remarketing campaigns",
-    description:
-      "Reconnect with people who previously visited your website, viewed services or interacted with your brand.",
-    points: [
-      "Website visitors",
-      "Engaged audiences",
-      "Product viewers",
-      "Conversion reminders",
-    ],
-    icon: Route,
-  },
-  {
-    title: "Local search campaigns",
-    description:
-      "Reach nearby customers searching for location-based services, stores, offices and immediate assistance.",
-    points: [
-      "Location targeting",
-      "Call campaigns",
-      "Map visibility",
-      "Local enquiries",
-    ],
-    icon: Globe2,
-  },
-  {
-    title: "Brand protection campaigns",
-    description:
-      "Protect important branded search terms and control the message users see when they search for your company.",
-    points: [
-      "Branded keywords",
-      "Competitor monitoring",
-      "Message control",
-      "High-intent traffic",
-    ],
-    icon: ShieldCheck,
+      "Qualified leads and complex customer concerns are transferred to the appropriate sales or support team.",
+    output: "Human-assisted resolution",
+    icon: Headphones,
   },
 ];
 
@@ -233,157 +278,188 @@ const PROCESS_STEPS = [
     number: "01",
     title: "Audit and discovery",
     description:
-      "We review your existing advertising account, website, offers, competitors, target audiences, tracking setup and business priorities.",
+      "We review your customer journey, existing communication, lead sources, CRM setup, audience data and business priorities.",
     timing: "Days 1–3",
-    output: "SEM audit and goal brief",
+    output: "WhatsApp marketing audit",
     icon: FileSearch,
   },
   {
     number: "02",
-    title: "Research search opportunities",
+    title: "Define use cases and audiences",
     description:
-      "We identify relevant keywords, search intent, competition, estimated costs, audience signals and negative keyword opportunities.",
+      "We identify the most valuable marketing, sales, transaction and support journeys along with the audiences each one should serve.",
     timing: "Week 1",
-    output: "Keyword and targeting plan",
-    icon: SearchCheck,
+    output: "Use-case and audience plan",
+    icon: Target,
   },
   {
     number: "03",
-    title: "Build the campaign structure",
+    title: "Plan consent and data flow",
     description:
-      "Campaigns, ad groups, audiences, budgets and targeting settings are organized around your services, products and conversion priorities.",
+      "Opt-in methods, contact data, audience segments, customer preferences and system handoffs are organized before campaign execution.",
     timing: "Week 1",
-    output: "Campaign architecture",
-    icon: LayoutDashboard,
+    output: "Audience and consent framework",
+    icon: ShieldCheck,
   },
   {
     number: "04",
-    title: "Create ads and tracking",
+    title: "Create messages and templates",
     description:
-      "We develop advertisements, extensions and conversion tracking while aligning each campaign with the correct landing-page journey.",
+      "Campaign messages, conversation flows, calls to action and approved message templates are prepared according to each use case.",
     timing: "Week 1–2",
-    output: "Launch-ready campaigns",
-    icon: Megaphone,
+    output: "Campaign-ready messaging",
+    icon: FileCheck2,
   },
   {
     number: "05",
-    title: "Launch and optimize",
+    title: "Build workflows and integrations",
     description:
-      "Campaigns are monitored across search terms, bids, audiences, devices, locations, schedules and conversions to reduce wasted spend.",
-    timing: "Ongoing",
-    output: "Active optimization",
-    icon: SlidersHorizontal,
+      "Triggers, audience conditions, automation steps, CRM connections and team handovers are configured and tested.",
+    timing: "Setup phase",
+    output: "Automated journeys",
+    icon: Settings2,
   },
   {
     number: "06",
-    title: "Report and scale",
+    title: "Launch and manage",
     description:
-      "We review performance, identify profitable patterns and recommend budget or campaign changes based on measurable business outcomes.",
+      "Campaigns and customer journeys are activated according to the agreed schedule while conversations and audience signals are monitored.",
+    timing: "Ongoing",
+    output: "Active WhatsApp campaigns",
+    icon: Send,
+  },
+  {
+    number: "07",
+    title: "Measure and improve",
+    description:
+      "We review delivery, response, clicks, enquiries and conversion behaviour to improve audiences, messages and automation.",
     timing: "Monthly",
-    output: "Report and growth plan",
+    output: "Report and action plan",
     icon: BarChart3,
   },
 ];
 
 const DELIVERABLES = [
   {
-    title: "SEM account audit",
+    title: "WhatsApp marketing audit",
     description:
-      "A structured review of campaigns, tracking, budget usage, search terms, targeting and current performance opportunities.",
+      "A structured review of customer communication, lead journeys, data availability, consent and automation opportunities.",
     icon: FileSearch,
   },
   {
-    title: "Keyword strategy",
+    title: "Campaign strategy",
     description:
-      "A practical keyword and negative keyword framework organized around search intent, services and commercial relevance.",
-    icon: SearchCheck,
+      "A practical plan covering objectives, audiences, use cases, campaign frequency and measurable outcomes.",
+    icon: ListChecks,
   },
   {
-    title: "Campaign setup",
+    title: "Audience segmentation",
     description:
-      "Campaigns, ad groups, advertisements, extensions, audiences and budget settings configured for launch.",
-    icon: Settings2,
+      "Organized customer groups based on lifecycle stage, interests, transactions, engagement and business relevance.",
+    icon: UsersRound,
   },
   {
-    title: "Conversion tracking",
+    title: "Message templates",
     description:
-      "Tracking for forms, calls, purchases, WhatsApp clicks and other meaningful website or campaign actions.",
+      "Clear campaign, transactional and follow-up messages created according to brand tone and customer intent.",
+    icon: MessagesSquare,
+  },
+  {
+    title: "Automation workflows",
+    description:
+      "Trigger-based journeys for welcome messages, lead nurturing, reminders, updates, support and retention.",
+    icon: Workflow,
+  },
+  {
+    title: "Chatbot conversation flow",
+    description:
+      "Menus, quick replies, FAQ paths, lead qualification and human handover journeys for common customer needs.",
+    icon: Bot,
+  },
+  {
+    title: "CRM integration plan",
+    description:
+      "A documented structure for connecting WhatsApp activity with leads, customer records, sales and support workflows.",
     icon: Link2,
-  },
-  {
-    title: "Campaign optimization",
-    description:
-      "Ongoing improvements across keywords, bids, budgets, advertisements, audiences, schedules and locations.",
-    icon: TestTubeDiagonal,
   },
   {
     title: "Performance reporting",
     description:
-      "Clear reporting covering campaign results, conversion costs, search behaviour and recommended next actions.",
+      "Clear reporting covering campaign activity, customer interactions, clicks, enquiries and optimization opportunities.",
     icon: CircleGauge,
   },
 ];
 
 const FAQS = [
   {
-    question: "What is included in your SEM service?",
+    question: "What is included in your WhatsApp marketing service?",
     answer:
-      "The service can include account audit, keyword research, campaign strategy, ad creation, targeting, budget management, conversion tracking, landing-page recommendations, ongoing optimization and performance reporting. The final scope depends on your advertising goals and platforms.",
+      "The service can include strategy, opt-in planning, audience segmentation, campaign messaging, approved message templates, broadcast management, automation, chatbot flows, CRM integration and performance reporting. The final scope depends on your customer journey and technology setup.",
   },
   {
-    question: "What is the difference between SEM, SEO and PPC?",
+    question: "What is the difference between WhatsApp Marketing and bulk messaging?",
     answer:
-      "SEM is the broader process of increasing visibility through paid search engine campaigns. PPC refers to the advertising payment model where advertisers commonly pay for clicks. SEO focuses on improving unpaid organic search visibility over time.",
+      "WhatsApp marketing uses permission-based audiences, relevant segmentation, approved communication practices and measurable customer journeys. Uncontrolled bulk messaging sends the same message to large contact lists and can create poor customer experience, complaints and account risks.",
   },
   {
-    question: "Which advertising platforms do you manage?",
+    question: "Can we send promotional messages to any phone number?",
     answer:
-      "We primarily support Google Ads and can also manage Microsoft Advertising where it is relevant to the audience and market. Campaign recommendations depend on search demand, competition, geography and available budget.",
+      "Marketing messages should only be sent to customers who have provided suitable permission to receive communication from the business. Purchased, scraped or unrelated contact lists should not be used.",
   },
   {
-    question: "How much budget is required for SEM?",
+    question: "Do you help set up the WhatsApp Business Platform?",
     answer:
-      "The required budget depends on keyword competition, location, industry, campaign objective and expected lead volume. We recommend a practical starting budget after reviewing search demand and estimated cost-per-click levels.",
+      "Yes. We can support planning and coordination for business setup, messaging use cases, templates, automation, team access and integrations. Exact setup requirements depend on the selected technology provider and current business systems.",
   },
   {
-    question: "Is advertising spend included in your management fee?",
+    question: "Can you create WhatsApp chatbots?",
     answer:
-      "No. The amount paid directly to the advertising platform is separate from campaign strategy and management fees. Both amounts are clearly defined before the campaign begins.",
+      "Yes. We can design structured chatbot flows for frequently asked questions, product selection, enquiry qualification, appointment requests, order information and human agent handover.",
   },
   {
-    question: "How quickly can SEM generate results?",
+    question: "Can WhatsApp be connected with our CRM?",
     answer:
-      "Campaigns can begin generating traffic and enquiries soon after launch, but stable performance usually requires sufficient data and ongoing optimization. Results depend on search demand, competition, budget, offer quality, landing pages and tracking accuracy.",
+      "Yes. Depending on the CRM and WhatsApp solution, customer messages, lead data, journey stages and follow-up activity can be synchronized or passed between systems.",
   },
   {
-    question: "Do you create landing pages for SEM campaigns?",
+    question: "Can you send automated order and appointment updates?",
     answer:
-      "We review existing landing pages and provide conversion-focused recommendations. Dedicated landing-page design and development can also be included when the current website does not provide a suitable campaign destination.",
+      "Yes. Transactional journeys can include order confirmations, delivery updates, payment reminders, booking confirmations, appointment reminders and service notifications when the required data and integrations are available.",
   },
   {
-    question: "How do you reduce wasted advertising spend?",
+    question: "Can WhatsApp Marketing help recover abandoned carts?",
     answer:
-      "We regularly review search terms, negative keywords, locations, devices, schedules, audience signals and conversion data. Irrelevant traffic is excluded while budgets and bids are adjusted towards stronger-performing opportunities.",
+      "Yes. Ecommerce businesses can use permission-based reminder journeys to reconnect with customers who leave items in their carts. Results depend on audience consent, timing, product relevance, pricing and checkout experience.",
   },
   {
-    question: "How do you measure SEM performance?",
+    question: "How often should WhatsApp campaigns be sent?",
     answer:
-      "Performance is measured using metrics connected to the campaign objective, including impressions, click-through rate, cost per click, conversion rate, cost per lead, calls, enquiries, purchases and return on advertising spend where revenue tracking is available.",
+      "Frequency depends on customer expectations, campaign relevance, purchase cycle and message value. WhatsApp is a personal communication channel, so excessive or repetitive messaging should be avoided.",
   },
   {
-    question: "Can you manage an existing Google Ads account?",
+    question: "How do you measure WhatsApp Marketing performance?",
     answer:
-      "Yes. We can audit and optimize an existing account or rebuild its campaign structure when necessary. Existing data is reviewed before major changes are made so useful historical insights are not lost.",
+      "Performance can be measured using delivery, read and response activity, link clicks, enquiries, qualified leads, completed purchases, support outcomes and customer opt-out behaviour where the selected platform provides these data points.",
+  },
+  {
+    question: "Do you manage customer replies after a campaign?",
+    answer:
+      "Reply management can be included through chatbot automation, shared team inbox workflows or human agent routing. Responsibilities and response timelines are defined before campaigns are launched.",
+  },
+  {
+    question: "Can WhatsApp campaigns be integrated with click-to-message ads?",
+    answer:
+      "Yes. Relevant advertising campaigns can direct users into a WhatsApp conversation where automated qualification, product information or human sales support continues the journey.",
   },
 ];
 
 const SERVICE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Search Engine Marketing Services",
-  serviceType: "Search Engine Marketing",
+  name: "WhatsApp Marketing Services",
+  serviceType: "WhatsApp Marketing",
   description:
-    "Search engine marketing services for paid search campaigns, keyword targeting, bidding, conversion tracking and measurable lead generation.",
+    "WhatsApp marketing services for broadcast campaigns, automation, lead nurturing, customer support, CRM integration and measurable conversions.",
   provider: {
     "@type": "Organization",
     name: "BrainADZ Marketing",
@@ -407,7 +483,7 @@ const FAQ_SCHEMA = {
   })),
 };
 
-export default function SemServicesPage() {
+export default function WhatsAppMarketingPage() {
   return (
     <main className="dm-sans bg-white text-[#111111]">
       <script
@@ -428,7 +504,7 @@ export default function SemServicesPage() {
       <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
         <img
           src="/about/about.avif"
-          alt="BrainADZ Marketing search engine marketing team"
+          alt="BrainADZ Marketing WhatsApp campaign and automation team"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
 
@@ -449,24 +525,25 @@ export default function SemServicesPage() {
 
             <span className="text-white/70">/</span>
 
-            <span className="text-white">SEM Services</span>
+            <span className="text-white">WhatsApp Marketing</span>
           </nav>
 
-          <h1 className="mt-7 max-w-[900px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
-            Search Engine Marketing Services
+          <h1 className="mt-7 max-w-[950px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
+            WhatsApp Marketing Services
           </h1>
 
-          <div className="mt-auto max-w-[740px] pb-6 sm:pb-10 lg:pb-12">
+          <div className="mt-auto max-w-[800px] pb-6 sm:pb-10 lg:pb-12">
             <p className="text-[14px] font-normal leading-[1.5] tracking-[-0.02em] text-white sm:text-[16px] lg:text-[20px]">
-              Reach high-intent customers with paid search campaigns built for
-              relevant traffic, qualified leads and measurable business growth.
+              Build permission-based WhatsApp campaigns and automated customer
+              journeys that improve engagement, follow-up, support and
+              measurable conversions.
             </p>
 
             <Link
               href="/contact"
               className="mt-8 inline-flex min-h-14 items-center justify-center gap-5 rounded-full bg-[#E1122B] px-7 text-[13px] font-semibold text-white transition-colors hover:bg-black"
             >
-              Launch your search campaigns
+              Start WhatsApp marketing
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
             </Link>
           </div>
@@ -476,7 +553,7 @@ export default function SemServicesPage() {
       {/* Sticky Navigation */}
       <div className="sticky top-20 z-40 border-b border-black/10 bg-white text-black shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
         <nav
-          aria-label="SEM page navigation"
+          aria-label="WhatsApp marketing page navigation"
           className="no-scrollbar mx-auto max-w-[1800px] overflow-x-auto px-5 sm:px-8 lg:px-10"
         >
           <div className="flex min-h-20 min-w-max items-center">
@@ -518,31 +595,31 @@ export default function SemServicesPage() {
             </p>
           </div>
 
-          <h2 className="mt-5 max-w-[1220px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-            Capture demand when customers are ready to act
+          <h2 className="mt-5 max-w-[1270px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
+            Turn customer conversations into connected business journeys
           </h2>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-start lg:gap-16">
             <div>
-              <p className="max-w-[700px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-                Search engine marketing connects your business with people
-                actively searching for relevant products, services and
-                solutions. BrainADZ combines keyword strategy, campaign
-                architecture, advertisement creation, bidding and conversion
-                tracking to turn search demand into measurable opportunities.
+              <p className="max-w-[720px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
+                WhatsApp marketing gives businesses a direct channel for
+                relevant customer communication. BrainADZ combines audience
+                strategy, campaign messaging, automation, chatbots and CRM
+                integration to create structured conversations across
+                marketing, sales and support.
               </p>
 
-              <p className="mt-5 max-w-[700px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-                Every campaign is managed as a complete conversion system—from
-                the user&apos;s search query and advertisement to the landing
-                page, enquiry and final business outcome.
+              <p className="mt-5 max-w-[720px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
+                From lead follow-ups and promotional campaigns to order updates
+                and customer support, every message is designed around customer
+                permission, relevance and a clear next action.
               </p>
 
               <Link
                 href="/contact"
                 className="mt-7 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
               >
-                Build your SEM strategy
+                Plan your WhatsApp strategy
                 <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
               </Link>
             </div>
@@ -550,14 +627,15 @@ export default function SemServicesPage() {
             <figure>
               <div className="relative aspect-video overflow-hidden rounded-[14px] border border-black/10 bg-[#f7f7f7] shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
                 <img
-                  src="/sem/dashboard.jpg"
-                  alt="Search engine marketing campaign dashboard and reporting"
+                  src="/whatsapp-marketing/dashboard.jpg"
+                  alt="WhatsApp marketing campaign and conversation dashboard"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
 
               <figcaption className="mt-2 text-[13px] leading-5 text-black/48">
-                Search campaign management, conversion tracking and reporting
+                WhatsApp campaigns, customer journeys and conversation
+                reporting
               </figcaption>
             </figure>
           </div>
@@ -589,9 +667,9 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Capabilities Section */}
       <section
-        id="features"
+        id="capabilities"
         className="scroll-mt-[164px] border-b border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
@@ -599,24 +677,24 @@ export default function SemServicesPage() {
             <span className="h-0.5 w-8 bg-[#E1122B]" />
 
             <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
-              Features
+              Capabilities
             </p>
           </div>
 
-          <h2 className="mt-5 max-w-[1250px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-            Built for relevant clicks and profitable conversions
+          <h2 className="mt-5 max-w-[1280px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
+            A complete system for customer messaging and automation
           </h2>
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-8">
             <div className="overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_16px_45px_rgba(0,0,0,0.05)]">
-              {FEATURES.map((feature, index) => (
+              {CAPABILITIES.map((capability, index) => (
                 <details
-                  key={feature.title}
+                  key={capability.title}
                   open={index === 0}
                   className="group border-b border-black/10 last:border-b-0 open:border-l-[3px] open:border-l-[#E1122B] open:bg-[#fff8f8]"
                 >
                   <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-5 px-5 py-4 text-left text-[17px] font-medium text-black transition-colors hover:bg-[#fff8f8] focus-visible:bg-[#fff8f8] focus-visible:outline-none [&::-webkit-details-marker]:hidden">
-                    <span>{feature.title}</span>
+                    <span>{capability.title}</span>
 
                     <ChevronDown
                       className="h-5 w-5 shrink-0 transition-transform duration-300 group-open:rotate-180 group-open:text-[#E1122B]"
@@ -626,11 +704,11 @@ export default function SemServicesPage() {
 
                   <div className="px-5 pb-7 pt-1">
                     <p className="max-w-[700px] text-[14px] leading-7 text-black/60 sm:text-[15px]">
-                      {feature.description}
+                      {capability.description}
                     </p>
 
                     <ul className="mt-5 space-y-3">
-                      {feature.points.map((point) => (
+                      {capability.points.map((point) => (
                         <li
                           key={point}
                           className="flex items-start gap-3 text-[14px] leading-6 text-black/68"
@@ -652,30 +730,30 @@ export default function SemServicesPage() {
             <figure className="lg:sticky lg:top-[188px]">
               <div className="relative aspect-video overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
                 <img
-                  src="/sem/campaign.jpg"
-                  alt="Paid search campaign management by BrainADZ Marketing"
+                  src="/whatsapp-marketing/automation.jpg"
+                  alt="WhatsApp marketing automation and chatbot workflow"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
 
               <figcaption className="mt-2 text-[13px] leading-5 text-black/48">
-                Paid search campaign strategy, advertisements and optimization
+                Automated WhatsApp journeys, chatbot flows and CRM integration
               </figcaption>
 
               <div className="mt-5 rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_45px_rgba(0,0,0,0.04)]">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[10px] bg-[#fff1f1] text-[#E1122B]">
-                    <Gauge className="h-6 w-6" strokeWidth={1.6} />
+                    <Smartphone className="h-6 w-6" strokeWidth={1.6} />
                   </div>
 
                   <div>
                     <h3 className="text-[17px] font-semibold text-black">
-                      Every click should have a purpose
+                      Personal channel, relevant communication
                     </h3>
 
                     <p className="mt-2 text-[14px] leading-6 text-black/58">
-                      Keywords, advertisements, landing pages and tracking are
-                      aligned around the same conversion objective.
+                      WhatsApp campaigns should respect customer permission,
+                      communication preferences and the value of every message.
                     </p>
                   </div>
                 </div>
@@ -685,9 +763,9 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* Campaign Types Section */}
+      {/* Use Cases Section */}
       <section
-        id="campaign-types"
+        id="use-cases"
         className="scroll-mt-[164px] border-b border-black/10 bg-white py-16 text-black sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
@@ -697,29 +775,29 @@ export default function SemServicesPage() {
                 <span className="h-0.5 w-8 bg-[#E1122B]" />
 
                 <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
-                  Campaign Types
+                  Use Cases
                 </p>
               </div>
 
-              <h2 className="mt-5 max-w-[1050px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-                The right campaign for every search objective
+              <h2 className="mt-5 max-w-[1060px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
+                The right conversation for every customer stage
               </h2>
             </div>
 
             <p className="max-w-[620px] text-[15px] leading-7 text-black/60 sm:text-[16px] sm:leading-8">
-              Campaign types are selected according to your market, audience,
-              available assets, sales journey and the business outcome paid
-              search needs to support.
+              WhatsApp journeys are selected according to customer intent,
+              lifecycle stage, available data and the action each conversation
+              needs to support.
             </p>
           </div>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {CAMPAIGN_TYPES.map((campaign, index) => {
-              const Icon = campaign.icon;
+            {USE_CASES.map((useCase, index) => {
+              const Icon = useCase.icon;
 
               return (
                 <article
-                  key={campaign.title}
+                  key={useCase.title}
                   className="group relative overflow-hidden rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_45px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/40 hover:bg-[#fff8f8] sm:p-7"
                 >
                   <span className="absolute right-5 top-4 text-[48px] font-semibold leading-none text-black/[0.035]">
@@ -731,15 +809,15 @@ export default function SemServicesPage() {
                   </div>
 
                   <h3 className="mt-7 text-[23px] font-semibold leading-tight tracking-[-0.02em] text-black">
-                    {campaign.title}
+                    {useCase.title}
                   </h3>
 
                   <p className="mt-4 text-[14px] leading-7 text-black/58">
-                    {campaign.description}
+                    {useCase.description}
                   </p>
 
                   <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 border-t border-black/10 pt-5">
-                    {campaign.points.map((point) => (
+                    {useCase.points.map((point) => (
                       <li
                         key={point}
                         className="flex items-start gap-2 text-[13px] leading-5 text-black/65"
@@ -749,6 +827,77 @@ export default function SemServicesPage() {
                       </li>
                     ))}
                   </ul>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Automation Section */}
+      <section
+        id="automation"
+        className="scroll-mt-[164px] border-b border-black/10 bg-black py-16 text-white sm:py-20 lg:py-24"
+      >
+        <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.72fr] lg:items-end lg:gap-16">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="h-0.5 w-8 bg-[#E1122B]" />
+
+                <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
+                  Automation
+                </p>
+              </div>
+
+              <h2 className="mt-5 max-w-[1100px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
+                Automate routine messages without losing the human connection
+              </h2>
+            </div>
+
+            <p className="max-w-[620px] text-[15px] leading-7 text-white/58 sm:text-[16px] sm:leading-8">
+              Automation handles predictable actions and questions while clear
+              handover rules ensure sales and support teams can step in when a
+              real conversation is required.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {AUTOMATION_STAGES.map((stage, index) => {
+              const Icon = stage.icon;
+
+              return (
+                <article
+                  key={stage.title}
+                  className="rounded-[14px] border border-white/10 bg-white/[0.035] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/55 hover:bg-white/[0.06] sm:p-7"
+                >
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[10px] border border-[#E1122B]/30 bg-[#E1122B]/10 text-[#E1122B]">
+                      <Icon className="h-7 w-7" strokeWidth={1.5} />
+                    </div>
+
+                    <span className="text-[13px] font-semibold text-white/20">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-7 text-[22px] font-semibold leading-tight text-white">
+                    {stage.title}
+                  </h3>
+
+                  <p className="mt-4 text-[14px] leading-7 text-white/55">
+                    {stage.description}
+                  </p>
+
+                  <div className="mt-6 border-t border-white/10 pt-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/35">
+                      Output
+                    </p>
+
+                    <p className="mt-2 text-[14px] font-medium text-white/78">
+                      {stage.output}
+                    </p>
+                  </div>
                 </article>
               );
             })}
@@ -772,20 +921,20 @@ export default function SemServicesPage() {
             </div>
 
             <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-              A clear process from search demand to conversion
+              A structured journey from opt-in to conversion
             </h2>
 
             <p className="mt-6 max-w-[620px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-              Every campaign follows a structured research, setup, testing and
-              optimization workflow so media spend remains focused on
-              measurable business outcomes.
+              Strategy, consent, messaging, automation and reporting work as
+              one connected system so customer communication remains relevant,
+              controlled and measurable.
             </p>
 
             <Link
               href="/contact"
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
             >
-              Plan your SEM campaign
+              Plan your WhatsApp workflow
               <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
             </Link>
           </div>
@@ -864,13 +1013,13 @@ export default function SemServicesPage() {
               </div>
 
               <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-                Everything required to manage paid search effectively
+                Everything required to run WhatsApp campaigns effectively
               </h2>
 
               <p className="mt-6 max-w-[600px] text-[15px] leading-7 text-black/60 sm:text-[16px] sm:leading-8">
-                The engagement produces a complete campaign system covering
-                research, account setup, advertising, tracking, optimization
-                and reporting.
+                The engagement produces a complete system covering audience
+                planning, messaging, automation, integrations and continuous
+                performance improvement.
               </p>
 
               <div className="mt-8 rounded-[14px] bg-black p-6 text-white sm:p-7">
@@ -880,12 +1029,13 @@ export default function SemServicesPage() {
                 />
 
                 <h3 className="mt-6 text-[22px] font-semibold leading-tight">
-                  Transparent campaign management
+                  Permission-based communication
                 </h3>
 
                 <p className="mt-3 text-[14px] leading-7 text-white/60">
-                  Campaign decisions are supported by search data, conversion
-                  performance and clearly documented next actions.
+                  Campaign planning prioritizes clear customer consent,
+                  relevant communication, easy opt-out pathways and responsible
+                  messaging frequency.
                 </p>
               </div>
             </div>
@@ -905,7 +1055,7 @@ export default function SemServicesPage() {
                       </div>
 
                       <span className="text-[13px] font-semibold text-black/20">
-                        0{index + 1}
+                        {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
 
@@ -940,12 +1090,13 @@ export default function SemServicesPage() {
             </div>
 
             <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-              Questions before launching your search campaigns?
+              Questions before starting WhatsApp Marketing?
             </h2>
 
             <p className="mt-6 max-w-[580px] text-[15px] leading-7 text-black/58 sm:text-[16px] sm:leading-8">
-              Practical information about campaign budgets, paid search
-              platforms, tracking, optimization and expected performance.
+              Practical information about customer consent, campaigns,
+              automation, chatbots, CRM integration and performance
+              measurement.
             </p>
 
             <Link

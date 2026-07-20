@@ -5,53 +5,55 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
+  BadgeCheck,
   BarChart3,
   CalendarRange,
   Check,
   ChevronDown,
   CircleGauge,
+  Clapperboard,
+  FileCheck2,
+  FileImage,
   FileSearch,
-  Gauge,
-  Globe2,
-  LayoutDashboard,
-  Link2,
-  ListChecks,
-  Megaphone,
-  MousePointerClick,
+  GalleryHorizontalEnd,
+  Image,
+  Layers3,
+  LayoutTemplate,
+  Lightbulb,
+  MessageSquareText,
+  MonitorPlay,
   PanelsTopLeft,
-  Route,
-  Search,
-  SearchCheck,
-  Settings2,
-  ShieldCheck,
-  SlidersHorizontal,
+  PenTool,
+  PlaySquare,
+  ScanSearch,
+  Sparkles,
   Target,
-  TestTubeDiagonal,
-  TrendingUp,
-  UsersRound,
-  WalletCards,
-  Zap,
+  Type,
+  Video,
+  WandSparkles,
+  Workflow,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "SEM Services | Search Engine Marketing | BrainADZ Marketing",
+  title: "Visual Content Creation Services | BrainADZ Marketing",
   description:
-    "Search engine marketing services by BrainADZ Marketing for paid search campaigns, keyword targeting, conversion tracking, bidding and measurable lead generation.",
+    "Visual content creation services by BrainADZ Marketing for social media creatives, campaign designs, videos, motion graphics, brand visuals and conversion-focused digital content.",
   alternates: {
-    canonical: "/services/digital-marketing/sem-services",
+    canonical: "/services/creative-media/visual-content-creation",
   },
   openGraph: {
-    title: "SEM Services | BrainADZ Marketing",
+    title: "Visual Content Creation Services | BrainADZ Marketing",
     description:
-      "Reach high-intent audiences with professionally managed paid search campaigns built for qualified traffic, leads and measurable growth.",
+      "Create consistent, platform-ready visual content for social media, digital campaigns, websites, advertisements and brand communication.",
     type: "website",
   },
 };
 
 const PAGE_NAV_ITEMS = [
   { label: "Overview", href: "#overview" },
-  { label: "Features", href: "#features" },
-  { label: "Campaign Types", href: "#campaign-types" },
+  { label: "Capabilities", href: "#capabilities" },
+  { label: "Content Formats", href: "#content-formats" },
+  { label: "Creative Standards", href: "#creative-standards" },
   { label: "Process", href: "#process" },
   { label: "Deliverables", href: "#deliverables" },
   { label: "FAQs", href: "#faqs" },
@@ -59,331 +61,428 @@ const PAGE_NAV_ITEMS = [
 
 const OVERVIEW_BENEFITS = [
   {
-    title: "High-intent visibility",
+    title: "Consistent brand identity",
     description:
-      "Place your business in front of people actively searching for the products and services you offer.",
-    icon: Search,
+      "Maintain one recognizable visual language across campaigns, platforms and customer touchpoints.",
+    icon: Layers3,
   },
   {
-    title: "Qualified website traffic",
+    title: "Platform-ready creativity",
     description:
-      "Target relevant keywords, locations, audiences and devices to attract users more likely to take action.",
-    icon: MousePointerClick,
-  },
-  {
-    title: "Controlled media spend",
-    description:
-      "Manage budgets, bids and targeting around commercial priorities instead of paying for unfocused traffic.",
-    icon: WalletCards,
-  },
-  {
-    title: "Measurable business growth",
-    description:
-      "Connect clicks and campaign activity with enquiries, calls, purchases and other meaningful conversions.",
-    icon: TrendingUp,
-  },
-];
-
-const FEATURES = [
-  {
-    title: "SEM strategy aligned with business goals",
-    description:
-      "Every campaign starts with a clear understanding of your offer, target market, customer journey and commercial objective. This keeps the account focused on profitable actions instead of surface-level traffic.",
-    points: [
-      "Business, offer and market assessment",
-      "Campaign objectives and conversion priorities",
-      "Channel, location and device planning",
-      "Budget allocation and performance benchmarks",
-    ],
-  },
-  {
-    title: "Keyword and audience research",
-    description:
-      "We identify the search terms, intent patterns and audience signals most closely connected to your products or services so campaigns reach users at the right stage of decision-making.",
-    points: [
-      "Commercial and high-intent keyword research",
-      "Search intent and customer journey mapping",
-      "Negative keyword identification",
-      "Audience, location and device analysis",
-    ],
-  },
-  {
-    title: "Campaign architecture and ad creation",
-    description:
-      "Campaigns are structured around services, products, locations and search intent, with relevant advertisements designed to improve clarity, quality and click-through performance.",
-    points: [
-      "Campaign and ad-group structure",
-      "Responsive search ad copy",
-      "Headlines, descriptions and extensions",
-      "Brand, competitor and service segmentation",
-    ],
-  },
-  {
-    title: "Budget and bidding optimization",
-    description:
-      "Media spend is actively managed according to campaign priorities, search demand and conversion data so budget is directed towards stronger opportunities.",
-    points: [
-      "Daily and monthly budget management",
-      "Manual and automated bidding strategies",
-      "Cost-per-click and acquisition monitoring",
-      "Device, location and schedule adjustments",
-    ],
-  },
-  {
-    title: "Landing page and conversion alignment",
-    description:
-      "Paid traffic performs better when the advertisement and landing page communicate the same offer. We review the complete journey from search query to conversion action.",
-    points: [
-      "Ad-to-landing-page message alignment",
-      "Conversion-focused page recommendations",
-      "Form, call and WhatsApp journey review",
-      "Mobile experience and page-speed checks",
-    ],
-  },
-  {
-    title: "Tracking, testing and reporting",
-    description:
-      "Campaign decisions are guided by conversion data, search behaviour and structured testing rather than assumptions or vanity metrics.",
-    points: [
-      "Conversion and event tracking setup",
-      "Search term and audience analysis",
-      "Ad copy and landing-page testing",
-      "Performance reporting and next-step actions",
-    ],
-  },
-];
-
-const CAMPAIGN_TYPES = [
-  {
-    title: "Search advertising",
-    description:
-      "Appear on search result pages when potential customers actively look for your products, services or solutions.",
-    points: [
-      "Keyword targeting",
-      "Responsive search ads",
-      "Call extensions",
-      "Lead generation",
-    ],
-    icon: Search,
-  },
-  {
-    title: "Shopping campaigns",
-    description:
-      "Promote ecommerce products with product images, pricing and availability directly within search results.",
-    points: [
-      "Product feed setup",
-      "Shopping advertisements",
-      "Category segmentation",
-      "Purchase tracking",
-    ],
-    icon: WalletCards,
-  },
-  {
-    title: "Display campaigns",
-    description:
-      "Build visibility across relevant websites and applications using visual advertisements and audience targeting.",
-    points: [
-      "Banner advertisements",
-      "Audience targeting",
-      "Placement control",
-      "Brand awareness",
-    ],
+      "Create visuals in the right dimensions, formats and content style for each digital platform.",
     icon: PanelsTopLeft,
   },
   {
-    title: "Remarketing campaigns",
+    title: "Faster content production",
     description:
-      "Reconnect with people who previously visited your website, viewed services or interacted with your brand.",
-    points: [
-      "Website visitors",
-      "Engaged audiences",
-      "Product viewers",
-      "Conversion reminders",
-    ],
-    icon: Route,
+      "Move from brief to approved assets through a clear and organized creative workflow.",
+    icon: Workflow,
   },
   {
-    title: "Local search campaigns",
+    title: "Stronger audience response",
     description:
-      "Reach nearby customers searching for location-based services, stores, offices and immediate assistance.",
+      "Use clear visual hierarchy, storytelling and calls to action to improve attention and engagement.",
+    icon: BarChart3,
+  },
+];
+
+const CAPABILITIES = [
+  {
+    title: "Visual strategy and creative direction",
+    description:
+      "Every visual project begins with the communication objective, audience, platform and brand context. This ensures that the creative work supports a clear business or campaign purpose.",
     points: [
-      "Location targeting",
-      "Call campaigns",
-      "Map visibility",
-      "Local enquiries",
+      "Audience and communication objective review",
+      "Visual mood, style and campaign direction",
+      "Content hierarchy and message planning",
+      "Reference, composition and format guidance",
     ],
-    icon: Globe2,
   },
   {
-    title: "Brand protection campaigns",
+    title: "Social media creative production",
     description:
-      "Protect important branded search terms and control the message users see when they search for your company.",
+      "We create platform-ready visual assets designed around social behaviour, content formats and the way audiences consume information across feeds and stories.",
     points: [
-      "Branded keywords",
-      "Competitor monitoring",
-      "Message control",
-      "High-intent traffic",
+      "Static social media posts",
+      "Carousel and educational content",
+      "Story, reel cover and thumbnail designs",
+      "Campaign and festival creatives",
     ],
-    icon: ShieldCheck,
+  },
+  {
+    title: "Video and motion content",
+    description:
+      "Visual ideas are converted into short-form videos, motion graphics and animated content designed for attention, storytelling and digital campaign use.",
+    points: [
+      "Reels and short-form video editing",
+      "Motion graphics and animated text",
+      "Product and service explainer videos",
+      "Campaign teasers and promotional edits",
+    ],
+  },
+  {
+    title: "Advertising and campaign creatives",
+    description:
+      "Campaign assets are developed with a clear offer, visual hierarchy and call to action for paid media, digital promotions and conversion-focused communication.",
+    points: [
+      "Social and display advertisements",
+      "Lead-generation campaign creatives",
+      "Product launch and offer visuals",
+      "Retargeting and promotional variations",
+    ],
+  },
+  {
+    title: "Website and digital visual assets",
+    description:
+      "We create website visuals that support messaging, improve page clarity and maintain consistency between brand, marketing and user experience.",
+    points: [
+      "Website banners and hero visuals",
+      "Service and product graphics",
+      "Icons, infographics and illustrations",
+      "Landing-page campaign assets",
+    ],
+  },
+  {
+    title: "Brand-aligned creative systems",
+    description:
+      "Reusable design systems make ongoing production faster while ensuring that typography, colours, layouts and imagery remain consistent.",
+    points: [
+      "Creative templates and layout systems",
+      "Typography and colour consistency",
+      "Image treatment and visual guidelines",
+      "Reusable social and campaign formats",
+    ],
+  },
+  {
+    title: "Creative adaptation and resizing",
+    description:
+      "Approved concepts are adapted for different digital placements while retaining readability, composition and brand consistency.",
+    points: [
+      "Platform-specific resizing",
+      "Portrait, square and landscape versions",
+      "Campaign and ad placement variations",
+      "Multi-language visual adaptations",
+    ],
+  },
+];
+
+const CONTENT_FORMATS = [
+  {
+    title: "Social media posts",
+    description:
+      "Create branded static visuals for awareness, engagement, education, products, services and announcements.",
+    points: [
+      "Instagram posts",
+      "Facebook creatives",
+      "LinkedIn visuals",
+      "Promotional posts",
+    ],
+    icon: Image,
+  },
+  {
+    title: "Carousels",
+    description:
+      "Organize educational, product and storytelling content into clear multi-slide visual journeys.",
+    points: [
+      "Educational slides",
+      "Product benefits",
+      "Step-by-step content",
+      "Brand storytelling",
+    ],
+    icon: GalleryHorizontalEnd,
+  },
+  {
+    title: "Reels and short videos",
+    description:
+      "Produce vertical, attention-focused videos for social discovery, product promotion and campaign communication.",
+    points: [
+      "Video editing",
+      "Animated text",
+      "Transitions",
+      "Reel covers",
+    ],
+    icon: PlaySquare,
+  },
+  {
+    title: "Motion graphics",
+    description:
+      "Use animation to explain ideas, highlight information and add energy to digital communication.",
+    points: [
+      "Logo animation",
+      "Kinetic typography",
+      "Product animation",
+      "Explainer graphics",
+    ],
+    icon: Clapperboard,
+  },
+  {
+    title: "Digital advertisements",
+    description:
+      "Create conversion-focused visual assets for social ads, display campaigns, remarketing and lead generation.",
+    points: [
+      "Meta advertisements",
+      "Display banners",
+      "Lead creatives",
+      "Campaign variations",
+    ],
+    icon: MonitorPlay,
+  },
+  {
+    title: "Infographics",
+    description:
+      "Turn data, processes and complex information into visuals that are easier to understand and share.",
+    points: [
+      "Data visualization",
+      "Process graphics",
+      "Comparison visuals",
+      "Educational content",
+    ],
+    icon: ScanSearch,
+  },
+  {
+    title: "Website graphics",
+    description:
+      "Support website messaging with banners, product visuals, service graphics, icons and branded illustrations.",
+    points: [
+      "Hero banners",
+      "Service visuals",
+      "Product graphics",
+      "Landing-page assets",
+    ],
+    icon: LayoutTemplate,
+  },
+  {
+    title: "Presentation visuals",
+    description:
+      "Create clean, structured visual assets for business presentations, proposals, sales decks and internal communication.",
+    points: [
+      "Slide graphics",
+      "Data layouts",
+      "Process diagrams",
+      "Presentation templates",
+    ],
+    icon: FileImage,
+  },
+];
+
+const CREATIVE_STANDARDS = [
+  {
+    title: "Clear communication",
+    description:
+      "Every visual prioritizes one clear message, logical hierarchy and an easily understood audience action.",
+    output: "Focused visual message",
+    icon: MessageSquareText,
+  },
+  {
+    title: "Brand consistency",
+    description:
+      "Colours, typography, imagery and design treatment remain aligned with the approved brand identity.",
+    output: "Recognizable brand system",
+    icon: BadgeCheck,
+  },
+  {
+    title: "Platform suitability",
+    description:
+      "The format, dimensions, content density and composition are adapted to the intended digital placement.",
+    output: "Platform-ready assets",
+    icon: PanelsTopLeft,
+  },
+  {
+    title: "Production quality",
+    description:
+      "Every asset is reviewed for resolution, alignment, readability, export format and final visual accuracy.",
+    output: "Quality-checked files",
+    icon: FileCheck2,
   },
 ];
 
 const PROCESS_STEPS = [
   {
     number: "01",
-    title: "Audit and discovery",
+    title: "Understand the requirement",
     description:
-      "We review your existing advertising account, website, offers, competitors, target audiences, tracking setup and business priorities.",
-    timing: "Days 1–3",
-    output: "SEM audit and goal brief",
+      "We review the brand, audience, campaign objective, platform, content requirement, message and expected customer action.",
+    timing: "Day 1",
+    output: "Creative requirement brief",
     icon: FileSearch,
   },
   {
     number: "02",
-    title: "Research search opportunities",
+    title: "Define the creative direction",
     description:
-      "We identify relevant keywords, search intent, competition, estimated costs, audience signals and negative keyword opportunities.",
-    timing: "Week 1",
-    output: "Keyword and targeting plan",
-    icon: SearchCheck,
+      "Visual references, content hierarchy, style, colour usage, composition and format requirements are organized.",
+    timing: "Days 1–2",
+    output: "Creative direction",
+    icon: Lightbulb,
   },
   {
     number: "03",
-    title: "Build the campaign structure",
+    title: "Plan the content",
     description:
-      "Campaigns, ad groups, audiences, budgets and targeting settings are organized around your services, products and conversion priorities.",
-    timing: "Week 1",
-    output: "Campaign architecture",
-    icon: LayoutDashboard,
+      "Headlines, supporting copy, visual elements, calls to action and platform variations are structured before production.",
+    timing: "Every cycle",
+    output: "Content and layout plan",
+    icon: Type,
   },
   {
     number: "04",
-    title: "Create ads and tracking",
+    title: "Create the first design",
     description:
-      "We develop advertisements, extensions and conversion tracking while aligning each campaign with the correct landing-page journey.",
-    timing: "Week 1–2",
-    output: "Launch-ready campaigns",
-    icon: Megaphone,
+      "Designers develop the primary visual concept according to the approved direction, brand system and communication goal.",
+    timing: "Production phase",
+    output: "First creative draft",
+    icon: PenTool,
   },
   {
     number: "05",
-    title: "Launch and optimize",
+    title: "Review and refine",
     description:
-      "Campaigns are monitored across search terms, bids, audiences, devices, locations, schedules and conversions to reduce wasted spend.",
-    timing: "Ongoing",
-    output: "Active optimization",
-    icon: SlidersHorizontal,
+      "The creative is reviewed for message clarity, visual quality, product accuracy, brand consistency and platform suitability.",
+    timing: "Review cycle",
+    output: "Refined creative",
+    icon: WandSparkles,
   },
   {
     number: "06",
-    title: "Report and scale",
+    title: "Adapt and resize",
     description:
-      "We review performance, identify profitable patterns and recommend budget or campaign changes based on measurable business outcomes.",
-    timing: "Monthly",
-    output: "Report and growth plan",
-    icon: BarChart3,
+      "Approved concepts are adapted into the required sizes, placements, languages and campaign variations.",
+    timing: "After approval",
+    output: "Creative variations",
+    icon: PanelsTopLeft,
+  },
+  {
+    number: "07",
+    title: "Export and deliver",
+    description:
+      "Final assets are quality-checked and exported in the agreed formats, dimensions and resolutions.",
+    timing: "Final stage",
+    output: "Ready-to-use files",
+    icon: FileCheck2,
   },
 ];
 
 const DELIVERABLES = [
   {
-    title: "SEM account audit",
+    title: "Creative direction",
     description:
-      "A structured review of campaigns, tracking, budget usage, search terms, targeting and current performance opportunities.",
-    icon: FileSearch,
+      "A clear visual approach covering references, style, composition, typography, colours and content hierarchy.",
+    icon: Lightbulb,
   },
   {
-    title: "Keyword strategy",
+    title: "Static creatives",
     description:
-      "A practical keyword and negative keyword framework organized around search intent, services and commercial relevance.",
-    icon: SearchCheck,
+      "Branded visual assets for social media, advertisements, campaigns, promotions and digital communication.",
+    icon: Image,
   },
   {
-    title: "Campaign setup",
+    title: "Carousel designs",
     description:
-      "Campaigns, ad groups, advertisements, extensions, audiences and budget settings configured for launch.",
-    icon: Settings2,
+      "Structured multi-slide content for educational, promotional, storytelling and product-focused communication.",
+    icon: GalleryHorizontalEnd,
   },
   {
-    title: "Conversion tracking",
+    title: "Video content",
     description:
-      "Tracking for forms, calls, purchases, WhatsApp clicks and other meaningful website or campaign actions.",
-    icon: Link2,
+      "Edited short-form videos, reels, promotional videos, explainers and social campaign content.",
+    icon: Video,
   },
   {
-    title: "Campaign optimization",
+    title: "Motion graphics",
     description:
-      "Ongoing improvements across keywords, bids, budgets, advertisements, audiences, schedules and locations.",
-    icon: TestTubeDiagonal,
+      "Animated text, graphic elements, product highlights, logo animation and visual storytelling assets.",
+    icon: Clapperboard,
   },
   {
-    title: "Performance reporting",
+    title: "Campaign variations",
     description:
-      "Clear reporting covering campaign results, conversion costs, search behaviour and recommended next actions.",
+      "Multiple visual versions for audiences, offers, formats, languages, platforms and paid media placements.",
+    icon: Layers3,
+  },
+  {
+    title: "Platform resizing",
+    description:
+      "Final assets adapted into square, portrait, landscape, story, reel and advertisement dimensions.",
+    icon: LayoutTemplate,
+  },
+  {
+    title: "Production-ready exports",
+    description:
+      "Final files delivered in agreed formats, resolutions and dimensions after complete quality review.",
     icon: CircleGauge,
   },
 ];
 
 const FAQS = [
   {
-    question: "What is included in your SEM service?",
+    question: "What is included in your visual content creation service?",
     answer:
-      "The service can include account audit, keyword research, campaign strategy, ad creation, targeting, budget management, conversion tracking, landing-page recommendations, ongoing optimization and performance reporting. The final scope depends on your advertising goals and platforms.",
+      "The service can include visual strategy, social media creatives, carousels, advertisements, video editing, motion graphics, website graphics, infographics, resizing and final file delivery. The exact scope depends on your platforms, campaign requirements and production volume.",
   },
   {
-    question: "What is the difference between SEM, SEO and PPC?",
+    question: "What types of visual content do you create?",
     answer:
-      "SEM is the broader process of increasing visibility through paid search engine campaigns. PPC refers to the advertising payment model where advertisers commonly pay for clicks. SEO focuses on improving unpaid organic search visibility over time.",
+      "We create static posts, carousel designs, reels, short videos, motion graphics, digital advertisements, website banners, infographics, presentation visuals, thumbnails and campaign assets.",
   },
   {
-    question: "Which advertising platforms do you manage?",
+    question: "Do you create content for all social media platforms?",
     answer:
-      "We primarily support Google Ads and can also manage Microsoft Advertising where it is relevant to the audience and market. Campaign recommendations depend on search demand, competition, geography and available budget.",
+      "Yes. Visuals can be created for Instagram, Facebook, LinkedIn, YouTube, X and other relevant platforms. Each asset is adapted according to the platform's format and content behaviour.",
   },
   {
-    question: "How much budget is required for SEM?",
+    question: "Can you follow our existing brand guidelines?",
     answer:
-      "The required budget depends on keyword competition, location, industry, campaign objective and expected lead volume. We recommend a practical starting budget after reviewing search demand and estimated cost-per-click levels.",
+      "Yes. We can work with your existing logo, colours, typography, image style and design guidelines. When detailed guidelines are not available, we can create a practical visual system for consistent content production.",
   },
   {
-    question: "Is advertising spend included in your management fee?",
+    question: "Do you write the content used in the designs?",
     answer:
-      "No. The amount paid directly to the advertising platform is separate from campaign strategy and management fees. Both amounts are clearly defined before the campaign begins.",
+      "Yes. Headlines, supporting copy, calls to action and slide content can be included. Copywriting requirements are finalized according to the project scope.",
   },
   {
-    question: "How quickly can SEM generate results?",
+    question: "Do you create reels and edit videos?",
     answer:
-      "Campaigns can begin generating traffic and enquiries soon after launch, but stable performance usually requires sufficient data and ongoing optimization. Results depend on search demand, competition, budget, offer quality, landing pages and tracking accuracy.",
+      "Yes. We can edit reels, short videos, product videos, campaign videos, explainers and social content using supplied footage, licensed assets or planned production inputs.",
   },
   {
-    question: "Do you create landing pages for SEM campaigns?",
+    question: "Can you create different sizes of the same design?",
     answer:
-      "We review existing landing pages and provide conversion-focused recommendations. Dedicated landing-page design and development can also be included when the current website does not provide a suitable campaign destination.",
+      "Yes. Approved designs can be adapted into square, portrait, landscape, story, reel cover, banner and advertisement formats while maintaining visual consistency.",
   },
   {
-    question: "How do you reduce wasted advertising spend?",
+    question: "How does the design approval process work?",
     answer:
-      "We regularly review search terms, negative keywords, locations, devices, schedules, audience signals and conversion data. Irrelevant traffic is excluded while budgets and bids are adjusted towards stronger-performing opportunities.",
+      "The initial brief and creative direction are agreed first. Drafts are then shared for consolidated feedback, revised according to the agreed scope and finalized after approval.",
   },
   {
-    question: "How do you measure SEM performance?",
+    question: "Can you handle monthly visual content requirements?",
     answer:
-      "Performance is measured using metrics connected to the campaign objective, including impressions, click-through rate, cost per click, conversion rate, cost per lead, calls, enquiries, purchases and return on advertising spend where revenue tracking is available.",
+      "Yes. We can support recurring monthly content through an editorial calendar, creative production schedule, approval workflow and organized asset delivery.",
   },
   {
-    question: "Can you manage an existing Google Ads account?",
+    question: "Do you provide editable design files?",
     answer:
-      "Yes. We can audit and optimize an existing account or rebuild its campaign structure when necessary. Existing data is reviewed before major changes are made so useful historical insights are not lost.",
+      "Editable files can be included when agreed in the project scope. Usage, source-file requirements, fonts, stock assets and software compatibility should be defined before production begins.",
+  },
+  {
+    question: "Can you create product images without a photoshoot?",
+    answer:
+      "Yes. Depending on the available product images and required output, we can create product compositions, backgrounds, campaign visuals and digitally enhanced creatives. Complex lifestyle scenes may require high-quality source images or separate production planning.",
+  },
+  {
+    question: "How do you maintain quality across a large volume of creatives?",
+    answer:
+      "We use approved templates, visual guidelines, naming systems, review checklists and structured feedback cycles to maintain consistency across recurring and high-volume production.",
   },
 ];
 
 const SERVICE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Search Engine Marketing Services",
-  serviceType: "Search Engine Marketing",
+  name: "Visual Content Creation Services",
+  serviceType: "Visual Content Creation",
   description:
-    "Search engine marketing services for paid search campaigns, keyword targeting, bidding, conversion tracking and measurable lead generation.",
+    "Visual content creation services for social media creatives, digital advertisements, videos, motion graphics, website assets and branded campaigns.",
   provider: {
     "@type": "Organization",
     name: "BrainADZ Marketing",
@@ -407,7 +506,7 @@ const FAQ_SCHEMA = {
   })),
 };
 
-export default function SemServicesPage() {
+export default function VisualContentCreationPage() {
   return (
     <main className="dm-sans bg-white text-[#111111]">
       <script
@@ -428,7 +527,7 @@ export default function SemServicesPage() {
       <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
         <img
           src="/about/about.avif"
-          alt="BrainADZ Marketing search engine marketing team"
+          alt="BrainADZ Marketing visual content creation and design team"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
 
@@ -449,24 +548,25 @@ export default function SemServicesPage() {
 
             <span className="text-white/70">/</span>
 
-            <span className="text-white">SEM Services</span>
+            <span className="text-white">Visual Content Creation</span>
           </nav>
 
-          <h1 className="mt-7 max-w-[900px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
-            Search Engine Marketing Services
+          <h1 className="mt-7 max-w-[980px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
+            Visual Content Creation Services
           </h1>
 
-          <div className="mt-auto max-w-[740px] pb-6 sm:pb-10 lg:pb-12">
+          <div className="mt-auto max-w-[810px] pb-6 sm:pb-10 lg:pb-12">
             <p className="text-[14px] font-normal leading-[1.5] tracking-[-0.02em] text-white sm:text-[16px] lg:text-[20px]">
-              Reach high-intent customers with paid search campaigns built for
-              relevant traffic, qualified leads and measurable business growth.
+              Create consistent, platform-ready visual content that strengthens
+              brand identity, captures attention and supports every digital
+              campaign.
             </p>
 
             <Link
               href="/contact"
               className="mt-8 inline-flex min-h-14 items-center justify-center gap-5 rounded-full bg-[#E1122B] px-7 text-[13px] font-semibold text-white transition-colors hover:bg-black"
             >
-              Launch your search campaigns
+              Start your creative project
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
             </Link>
           </div>
@@ -476,7 +576,7 @@ export default function SemServicesPage() {
       {/* Sticky Navigation */}
       <div className="sticky top-20 z-40 border-b border-black/10 bg-white text-black shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
         <nav
-          aria-label="SEM page navigation"
+          aria-label="Visual content creation page navigation"
           className="no-scrollbar mx-auto max-w-[1800px] overflow-x-auto px-5 sm:px-8 lg:px-10"
         >
           <div className="flex min-h-20 min-w-max items-center">
@@ -504,7 +604,7 @@ export default function SemServicesPage() {
         </nav>
       </div>
 
-      {/* Overview Section */}
+      {/* Overview */}
       <section
         id="overview"
         className="scroll-mt-[164px] border-b border-black/10 bg-white py-16 text-black sm:py-20 lg:py-24"
@@ -518,31 +618,31 @@ export default function SemServicesPage() {
             </p>
           </div>
 
-          <h2 className="mt-5 max-w-[1220px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-            Capture demand when customers are ready to act
+          <h2 className="mt-5 max-w-[1280px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
+            Turn ideas and messages into memorable visual experiences
           </h2>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-start lg:gap-16">
             <div>
-              <p className="max-w-[700px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-                Search engine marketing connects your business with people
-                actively searching for relevant products, services and
-                solutions. BrainADZ combines keyword strategy, campaign
-                architecture, advertisement creation, bidding and conversion
-                tracking to turn search demand into measurable opportunities.
+              <p className="max-w-[720px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
+                Visual content helps audiences understand your brand before
+                they read every word. BrainADZ combines creative direction,
+                graphic design, video production, motion graphics and
+                platform-specific adaptation to create visuals that communicate
+                clearly and consistently.
               </p>
 
-              <p className="mt-5 max-w-[700px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-                Every campaign is managed as a complete conversion system—from
-                the user&apos;s search query and advertisement to the landing
-                page, enquiry and final business outcome.
+              <p className="mt-5 max-w-[720px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
+                From daily social media content to product launches,
+                advertisements and website campaigns, every asset is developed
+                around the audience, platform and action it needs to support.
               </p>
 
               <Link
                 href="/contact"
                 className="mt-7 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
               >
-                Build your SEM strategy
+                Build your visual system
                 <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
               </Link>
             </div>
@@ -550,14 +650,15 @@ export default function SemServicesPage() {
             <figure>
               <div className="relative aspect-video overflow-hidden rounded-[14px] border border-black/10 bg-[#f7f7f7] shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
                 <img
-                  src="/sem/dashboard.jpg"
-                  alt="Search engine marketing campaign dashboard and reporting"
+                  src="/visual-content/creative-dashboard.jpg"
+                  alt="Visual content planning and creative production by BrainADZ Marketing"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
 
               <figcaption className="mt-2 text-[13px] leading-5 text-black/48">
-                Search campaign management, conversion tracking and reporting
+                Visual strategy, design production and creative campaign
+                management
               </figcaption>
             </figure>
           </div>
@@ -589,9 +690,9 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Capabilities */}
       <section
-        id="features"
+        id="capabilities"
         className="scroll-mt-[164px] border-b border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
@@ -599,24 +700,24 @@ export default function SemServicesPage() {
             <span className="h-0.5 w-8 bg-[#E1122B]" />
 
             <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
-              Features
+              Capabilities
             </p>
           </div>
 
-          <h2 className="mt-5 max-w-[1250px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-            Built for relevant clicks and profitable conversions
+          <h2 className="mt-5 max-w-[1280px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
+            A complete creative system from direction to delivery
           </h2>
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-8">
             <div className="overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_16px_45px_rgba(0,0,0,0.05)]">
-              {FEATURES.map((feature, index) => (
+              {CAPABILITIES.map((capability, index) => (
                 <details
-                  key={feature.title}
+                  key={capability.title}
                   open={index === 0}
                   className="group border-b border-black/10 last:border-b-0 open:border-l-[3px] open:border-l-[#E1122B] open:bg-[#fff8f8]"
                 >
                   <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-5 px-5 py-4 text-left text-[17px] font-medium text-black transition-colors hover:bg-[#fff8f8] focus-visible:bg-[#fff8f8] focus-visible:outline-none [&::-webkit-details-marker]:hidden">
-                    <span>{feature.title}</span>
+                    <span>{capability.title}</span>
 
                     <ChevronDown
                       className="h-5 w-5 shrink-0 transition-transform duration-300 group-open:rotate-180 group-open:text-[#E1122B]"
@@ -626,11 +727,11 @@ export default function SemServicesPage() {
 
                   <div className="px-5 pb-7 pt-1">
                     <p className="max-w-[700px] text-[14px] leading-7 text-black/60 sm:text-[15px]">
-                      {feature.description}
+                      {capability.description}
                     </p>
 
                     <ul className="mt-5 space-y-3">
-                      {feature.points.map((point) => (
+                      {capability.points.map((point) => (
                         <li
                           key={point}
                           className="flex items-start gap-3 text-[14px] leading-6 text-black/68"
@@ -652,30 +753,31 @@ export default function SemServicesPage() {
             <figure className="lg:sticky lg:top-[188px]">
               <div className="relative aspect-video overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
                 <img
-                  src="/sem/campaign.jpg"
-                  alt="Paid search campaign management by BrainADZ Marketing"
+                  src="/visual-content/content-production.jpg"
+                  alt="Graphic design and visual content production by BrainADZ"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
 
               <figcaption className="mt-2 text-[13px] leading-5 text-black/48">
-                Paid search campaign strategy, advertisements and optimization
+                Social creatives, campaign designs, videos and branded digital
+                assets
               </figcaption>
 
               <div className="mt-5 rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_45px_rgba(0,0,0,0.04)]">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[10px] bg-[#fff1f1] text-[#E1122B]">
-                    <Gauge className="h-6 w-6" strokeWidth={1.6} />
+                    <Sparkles className="h-6 w-6" strokeWidth={1.6} />
                   </div>
 
                   <div>
                     <h3 className="text-[17px] font-semibold text-black">
-                      Every click should have a purpose
+                      Creativity with a communication purpose
                     </h3>
 
                     <p className="mt-2 text-[14px] leading-6 text-black/58">
-                      Keywords, advertisements, landing pages and tracking are
-                      aligned around the same conversion objective.
+                      Every visual is designed to explain, attract, persuade or
+                      guide—not only to decorate the content.
                     </p>
                   </div>
                 </div>
@@ -685,9 +787,9 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* Campaign Types Section */}
+      {/* Content Formats */}
       <section
-        id="campaign-types"
+        id="content-formats"
         className="scroll-mt-[164px] border-b border-black/10 bg-white py-16 text-black sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
@@ -697,49 +799,49 @@ export default function SemServicesPage() {
                 <span className="h-0.5 w-8 bg-[#E1122B]" />
 
                 <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
-                  Campaign Types
+                  Content Formats
                 </p>
               </div>
 
-              <h2 className="mt-5 max-w-[1050px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-                The right campaign for every search objective
+              <h2 className="mt-5 max-w-[1060px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
+                Visual formats for every digital touchpoint
               </h2>
             </div>
 
             <p className="max-w-[620px] text-[15px] leading-7 text-black/60 sm:text-[16px] sm:leading-8">
-              Campaign types are selected according to your market, audience,
-              available assets, sales journey and the business outcome paid
-              search needs to support.
+              Formats are selected according to the platform, audience
+              behaviour, campaign objective, message complexity and expected
+              customer action.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {CAMPAIGN_TYPES.map((campaign, index) => {
-              const Icon = campaign.icon;
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {CONTENT_FORMATS.map((format, index) => {
+              const Icon = format.icon;
 
               return (
                 <article
-                  key={campaign.title}
-                  className="group relative overflow-hidden rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_45px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/40 hover:bg-[#fff8f8] sm:p-7"
+                  key={format.title}
+                  className="group relative overflow-hidden rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_45px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/40 hover:bg-[#fff8f8]"
                 >
-                  <span className="absolute right-5 top-4 text-[48px] font-semibold leading-none text-black/[0.035]">
-                    0{index + 1}
+                  <span className="absolute right-5 top-4 text-[42px] font-semibold leading-none text-black/[0.035]">
+                    {String(index + 1).padStart(2, "0")}
                   </span>
 
                   <div className="flex h-14 w-14 items-center justify-center rounded-[10px] border border-[#E1122B]/20 bg-[#fff1f1] text-[#E1122B]">
                     <Icon className="h-7 w-7" strokeWidth={1.5} />
                   </div>
 
-                  <h3 className="mt-7 text-[23px] font-semibold leading-tight tracking-[-0.02em] text-black">
-                    {campaign.title}
+                  <h3 className="mt-7 text-[21px] font-semibold leading-tight tracking-[-0.02em] text-black">
+                    {format.title}
                   </h3>
 
                   <p className="mt-4 text-[14px] leading-7 text-black/58">
-                    {campaign.description}
+                    {format.description}
                   </p>
 
                   <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 border-t border-black/10 pt-5">
-                    {campaign.points.map((point) => (
+                    {format.points.map((point) => (
                       <li
                         key={point}
                         className="flex items-start gap-2 text-[13px] leading-5 text-black/65"
@@ -756,7 +858,78 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Creative Standards */}
+      <section
+        id="creative-standards"
+        className="scroll-mt-[164px] border-b border-black/10 bg-black py-16 text-white sm:py-20 lg:py-24"
+      >
+        <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.72fr] lg:items-end lg:gap-16">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="h-0.5 w-8 bg-[#E1122B]" />
+
+                <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
+                  Creative Standards
+                </p>
+              </div>
+
+              <h2 className="mt-5 max-w-[1100px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
+                Built for clarity, consistency and production quality
+              </h2>
+            </div>
+
+            <p className="max-w-[620px] text-[15px] leading-7 text-white/58 sm:text-[16px] sm:leading-8">
+              Every asset is reviewed as part of a complete visual system,
+              including message clarity, brand accuracy, platform suitability
+              and technical export quality.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {CREATIVE_STANDARDS.map((standard, index) => {
+              const Icon = standard.icon;
+
+              return (
+                <article
+                  key={standard.title}
+                  className="rounded-[14px] border border-white/10 bg-white/[0.035] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/55 hover:bg-white/[0.06] sm:p-7"
+                >
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[10px] border border-[#E1122B]/30 bg-[#E1122B]/10 text-[#E1122B]">
+                      <Icon className="h-7 w-7" strokeWidth={1.5} />
+                    </div>
+
+                    <span className="text-[13px] font-semibold text-white/20">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-7 text-[22px] font-semibold leading-tight text-white">
+                    {standard.title}
+                  </h3>
+
+                  <p className="mt-4 text-[14px] leading-7 text-white/55">
+                    {standard.description}
+                  </p>
+
+                  <div className="mt-6 border-t border-white/10 pt-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/35">
+                      Output
+                    </p>
+
+                    <p className="mt-2 text-[14px] font-medium text-white/78">
+                      {standard.output}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
       <section
         id="process"
         className="scroll-mt-[164px] border-b border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24"
@@ -772,20 +945,20 @@ export default function SemServicesPage() {
             </div>
 
             <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-              A clear process from search demand to conversion
+              A clear creative workflow from brief to final asset
             </h2>
 
             <p className="mt-6 max-w-[620px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-              Every campaign follows a structured research, setup, testing and
-              optimization workflow so media spend remains focused on
-              measurable business outcomes.
+              Every design moves through structured planning, production,
+              review, adaptation and quality checks so delivery remains
+              organized and consistent.
             </p>
 
             <Link
               href="/contact"
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
             >
-              Plan your SEM campaign
+              Plan your creative workflow
               <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
             </Link>
           </div>
@@ -847,7 +1020,7 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* Deliverables Section */}
+      {/* Deliverables */}
       <section
         id="deliverables"
         className="scroll-mt-[164px] border-b border-black/10 bg-white py-16 text-black sm:py-20 lg:py-24"
@@ -864,28 +1037,29 @@ export default function SemServicesPage() {
               </div>
 
               <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-                Everything required to manage paid search effectively
+                Ready-to-use visual assets for every campaign
               </h2>
 
               <p className="mt-6 max-w-[600px] text-[15px] leading-7 text-black/60 sm:text-[16px] sm:leading-8">
-                The engagement produces a complete campaign system covering
-                research, account setup, advertising, tracking, optimization
-                and reporting.
+                The engagement can cover complete visual production—from
+                creative direction and first concepts to adaptations, final
+                exports and organized asset delivery.
               </p>
 
               <div className="mt-8 rounded-[14px] bg-black p-6 text-white sm:p-7">
-                <ShieldCheck
+                <WandSparkles
                   className="h-8 w-8 text-[#E1122B]"
                   strokeWidth={1.5}
                 />
 
                 <h3 className="mt-6 text-[22px] font-semibold leading-tight">
-                  Transparent campaign management
+                  One concept, multiple formats
                 </h3>
 
                 <p className="mt-3 text-[14px] leading-7 text-white/60">
-                  Campaign decisions are supported by search data, conversion
-                  performance and clearly documented next actions.
+                  Approved visual ideas can be adapted across social media,
+                  advertisements, websites, presentations and campaign
+                  placements.
                 </p>
               </div>
             </div>
@@ -905,7 +1079,7 @@ export default function SemServicesPage() {
                       </div>
 
                       <span className="text-[13px] font-semibold text-black/20">
-                        0{index + 1}
+                        {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
 
@@ -924,7 +1098,7 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* FAQs Section */}
+      {/* FAQs */}
       <section
         id="faqs"
         className="scroll-mt-[164px] border-b border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24"
@@ -940,12 +1114,12 @@ export default function SemServicesPage() {
             </div>
 
             <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-              Questions before launching your search campaigns?
+              Questions before starting visual production?
             </h2>
 
             <p className="mt-6 max-w-[580px] text-[15px] leading-7 text-black/58 sm:text-[16px] sm:leading-8">
-              Practical information about campaign budgets, paid search
-              platforms, tracking, optimization and expected performance.
+              Practical information about content formats, brand guidelines,
+              videos, revisions, editable files and recurring production.
             </p>
 
             <Link

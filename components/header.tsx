@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   BadgeCheck,
@@ -217,17 +217,28 @@ export default function Navbar() {
     setMobileResourcesOpen(false);
   };
 
+  const closeDesktopMenus = () => {
+    setShowMegaMenu(false);
+    setShowResources(false);
+  };
+
   return (
     <header className="dm-sans sticky top-0 z-50 border-b border-black/10 bg-white shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
       <nav className="mx-auto flex h-21 max-w-450 items-center justify-between gap-6 px-5 md:px-8 lg:px-12">
         <div className="flex flex-1 items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <img
-              src="/logo/mainlogo.png"
+          <Link
+            href="/"
+            aria-label="BrainADZ Marketing home"
+            className="flex shrink-0 items-center"
+          >
+            <Image
+              src="/logo/mainlogo-optimized.webp"
               alt="BrainADZ Marketing Logo"
               width={420}
               height={248}
-              className="h-13.5 w-auto object-contain md:h-14.5"
+              priority
+              sizes="(min-width: 768px) 118px, 108px"
+              className="h-auto w-27 object-contain md:w-29.5"
             />
           </Link>
 
@@ -270,6 +281,7 @@ export default function Navbar() {
                               <Link
                                 key={item}
                                 href={getServiceHref(category, item)}
+                                onClick={closeDesktopMenus}
                                 className="group flex min-h-6 items-center justify-between gap-3 text-[15px] font-bold leading-snug text-[#050505] transition hover:text-[#e50914]"
                               >
                                 <span className="min-w-0">{item}</span>
@@ -301,6 +313,7 @@ export default function Navbar() {
 
                     <Link
                       href="/contact"
+                      onClick={closeDesktopMenus}
                       className="inline-flex h-10 shrink-0 items-center justify-center rounded-full bg-[#e50914] px-7 text-[13px] font-bold text-white transition hover:bg-[#b70710]"
                     >
                       Get a Free Audit <ArrowRight/>
@@ -344,6 +357,7 @@ export default function Navbar() {
                 <div className="min-w-64 border border-black/10 border-t-2 border-t-[#e50914] bg-white/95 p-2 shadow-[0_18px_50px_rgba(15,23,42,0.14)] backdrop-blur">
                   <Link
                     href="/blog"
+                    onClick={closeDesktopMenus}
                     className="group flex items-center justify-between px-4 py-3 text-[15px] font-semibold text-[#050505] transition hover:bg-[#fff1f2] hover:text-[#e50914]"
                   >
                     <span>Blog</span>
@@ -354,6 +368,7 @@ export default function Navbar() {
 
                   <Link
                     href="/case-studies"
+                    onClick={closeDesktopMenus}
                     className="group flex items-center justify-between px-4 py-3 text-[15px] font-semibold text-[#050505] transition hover:bg-[#fff1f2] hover:text-[#e50914]"
                   >
                     <span>Case Studies</span>

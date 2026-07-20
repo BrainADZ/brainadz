@@ -5,53 +5,54 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
+  BadgeCheck,
   BarChart3,
   CalendarRange,
+  Camera,
   Check,
   ChevronDown,
   CircleGauge,
+  FileCheck2,
   FileSearch,
-  Gauge,
-  Globe2,
-  LayoutDashboard,
+  Handshake,
+  Heart,
   Link2,
   ListChecks,
   Megaphone,
+  MessageCircle,
   MousePointerClick,
   PanelsTopLeft,
-  Route,
   Search,
-  SearchCheck,
-  Settings2,
   ShieldCheck,
-  SlidersHorizontal,
+  ShoppingBag,
+  Sparkles,
   Target,
-  TestTubeDiagonal,
-  TrendingUp,
   UsersRound,
-  WalletCards,
+  Video,
+  Workflow,
   Zap,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "SEM Services | Search Engine Marketing | BrainADZ Marketing",
+  title: "Influencer Marketing Services | BrainADZ Marketing",
   description:
-    "Search engine marketing services by BrainADZ Marketing for paid search campaigns, keyword targeting, conversion tracking, bidding and measurable lead generation.",
+    "Influencer marketing services by BrainADZ Marketing for creator discovery, campaign strategy, content coordination, audience reach, engagement and measurable brand growth.",
   alternates: {
-    canonical: "/services/digital-marketing/sem-services",
+    canonical: "/services/digital-marketing/influencer-marketing",
   },
   openGraph: {
-    title: "SEM Services | BrainADZ Marketing",
+    title: "Influencer Marketing Services | BrainADZ Marketing",
     description:
-      "Reach high-intent audiences with professionally managed paid search campaigns built for qualified traffic, leads and measurable growth.",
+      "Build authentic creator partnerships and measurable influencer campaigns with BrainADZ Marketing.",
     type: "website",
   },
 };
 
 const PAGE_NAV_ITEMS = [
   { label: "Overview", href: "#overview" },
-  { label: "Features", href: "#features" },
-  { label: "Campaign Types", href: "#campaign-types" },
+  { label: "Capabilities", href: "#capabilities" },
+  { label: "Collaboration Models", href: "#collaboration-models" },
+  { label: "Content Formats", href: "#content-formats" },
   { label: "Process", href: "#process" },
   { label: "Deliverables", href: "#deliverables" },
   { label: "FAQs", href: "#faqs" },
@@ -59,331 +60,402 @@ const PAGE_NAV_ITEMS = [
 
 const OVERVIEW_BENEFITS = [
   {
-    title: "High-intent visibility",
+    title: "Relevant creator partnerships",
     description:
-      "Place your business in front of people actively searching for the products and services you offer.",
-    icon: Search,
+      "Work with creators whose audience, content style and credibility align with your market and campaign objective.",
+    icon: UsersRound,
   },
   {
-    title: "Qualified website traffic",
+    title: "Authentic brand communication",
     description:
-      "Target relevant keywords, locations, audiences and devices to attract users more likely to take action.",
-    icon: MousePointerClick,
+      "Present products and services through creator-led stories that feel natural to the platform and audience.",
+    icon: MessageCircle,
   },
   {
-    title: "Controlled media spend",
+    title: "Stronger audience reach",
     description:
-      "Manage budgets, bids and targeting around commercial priorities instead of paying for unfocused traffic.",
-    icon: WalletCards,
+      "Extend brand visibility through trusted voices and communities that already influence customer attention.",
+    icon: Megaphone,
   },
   {
-    title: "Measurable business growth",
+    title: "Measurable campaign impact",
     description:
-      "Connect clicks and campaign activity with enquiries, calls, purchases and other meaningful conversions.",
-    icon: TrendingUp,
-  },
-];
-
-const FEATURES = [
-  {
-    title: "SEM strategy aligned with business goals",
-    description:
-      "Every campaign starts with a clear understanding of your offer, target market, customer journey and commercial objective. This keeps the account focused on profitable actions instead of surface-level traffic.",
-    points: [
-      "Business, offer and market assessment",
-      "Campaign objectives and conversion priorities",
-      "Channel, location and device planning",
-      "Budget allocation and performance benchmarks",
-    ],
-  },
-  {
-    title: "Keyword and audience research",
-    description:
-      "We identify the search terms, intent patterns and audience signals most closely connected to your products or services so campaigns reach users at the right stage of decision-making.",
-    points: [
-      "Commercial and high-intent keyword research",
-      "Search intent and customer journey mapping",
-      "Negative keyword identification",
-      "Audience, location and device analysis",
-    ],
-  },
-  {
-    title: "Campaign architecture and ad creation",
-    description:
-      "Campaigns are structured around services, products, locations and search intent, with relevant advertisements designed to improve clarity, quality and click-through performance.",
-    points: [
-      "Campaign and ad-group structure",
-      "Responsive search ad copy",
-      "Headlines, descriptions and extensions",
-      "Brand, competitor and service segmentation",
-    ],
-  },
-  {
-    title: "Budget and bidding optimization",
-    description:
-      "Media spend is actively managed according to campaign priorities, search demand and conversion data so budget is directed towards stronger opportunities.",
-    points: [
-      "Daily and monthly budget management",
-      "Manual and automated bidding strategies",
-      "Cost-per-click and acquisition monitoring",
-      "Device, location and schedule adjustments",
-    ],
-  },
-  {
-    title: "Landing page and conversion alignment",
-    description:
-      "Paid traffic performs better when the advertisement and landing page communicate the same offer. We review the complete journey from search query to conversion action.",
-    points: [
-      "Ad-to-landing-page message alignment",
-      "Conversion-focused page recommendations",
-      "Form, call and WhatsApp journey review",
-      "Mobile experience and page-speed checks",
-    ],
-  },
-  {
-    title: "Tracking, testing and reporting",
-    description:
-      "Campaign decisions are guided by conversion data, search behaviour and structured testing rather than assumptions or vanity metrics.",
-    points: [
-      "Conversion and event tracking setup",
-      "Search term and audience analysis",
-      "Ad copy and landing-page testing",
-      "Performance reporting and next-step actions",
-    ],
+      "Track reach, engagement, traffic, leads, sales and content performance across every creator collaboration.",
+    icon: BarChart3,
   },
 ];
 
-const CAMPAIGN_TYPES = [
+const CAPABILITIES = [
   {
-    title: "Search advertising",
+    title: "Influencer strategy built around your goals",
     description:
-      "Appear on search result pages when potential customers actively look for your products, services or solutions.",
+      "Every campaign begins with a clear understanding of the audience, product, customer journey and business outcome. This determines the right creators, platforms, content and commercial structure.",
     points: [
-      "Keyword targeting",
-      "Responsive search ads",
-      "Call extensions",
-      "Lead generation",
+      "Campaign objective and audience definition",
+      "Platform and creator category selection",
+      "Budget and collaboration model planning",
+      "Performance metrics and reporting framework",
     ],
-    icon: Search,
   },
   {
-    title: "Shopping campaigns",
+    title: "Creator discovery and evaluation",
     description:
-      "Promote ecommerce products with product images, pricing and availability directly within search results.",
+      "We identify creators using audience relevance, content quality, engagement patterns, credibility and brand suitability instead of relying only on follower count.",
     points: [
-      "Product feed setup",
-      "Shopping advertisements",
-      "Category segmentation",
-      "Purchase tracking",
+      "Niche and platform-based creator research",
+      "Audience and engagement quality review",
+      "Brand-fit and content-style assessment",
+      "Fake follower and suspicious activity checks",
     ],
-    icon: WalletCards,
   },
   {
-    title: "Display campaigns",
+    title: "Outreach and commercial coordination",
     description:
-      "Build visibility across relevant websites and applications using visual advertisements and audience targeting.",
+      "Creator communication is managed through a structured process covering availability, commercials, timelines, content requirements and usage expectations.",
     points: [
-      "Banner advertisements",
-      "Audience targeting",
-      "Placement control",
-      "Brand awareness",
+      "Creator outreach and negotiation",
+      "Commercial and deliverable coordination",
+      "Campaign timelines and publishing dates",
+      "Content usage and exclusivity discussions",
     ],
-    icon: PanelsTopLeft,
   },
   {
-    title: "Remarketing campaigns",
+    title: "Campaign briefs and creative direction",
     description:
-      "Reconnect with people who previously visited your website, viewed services or interacted with your brand.",
+      "Creators receive clear guidance without removing the authenticity that makes their content effective. The brief defines the message while allowing space for the creator's natural voice.",
     points: [
-      "Website visitors",
-      "Engaged audiences",
-      "Product viewers",
-      "Conversion reminders",
+      "Campaign concept and message hierarchy",
+      "Mandatory claims, talking points and CTA",
+      "Visual, product and brand guidelines",
+      "Platform-specific content requirements",
     ],
-    icon: Route,
   },
   {
-    title: "Local search campaigns",
+    title: "Content review and campaign management",
     description:
-      "Reach nearby customers searching for location-based services, stores, offices and immediate assistance.",
+      "Draft content, scripts, captions and final assets are reviewed through an organized approval workflow before publication.",
     points: [
-      "Location targeting",
-      "Call campaigns",
-      "Map visibility",
-      "Local enquiries",
+      "Script and concept review",
+      "Brand, product and claim accuracy checks",
+      "Revision and approval coordination",
+      "Publishing and campaign tracking",
     ],
-    icon: Globe2,
   },
   {
-    title: "Brand protection campaigns",
+    title: "Performance reporting and optimization",
     description:
-      "Protect important branded search terms and control the message users see when they search for your company.",
+      "Campaign data is analyzed to identify which creators, formats, audiences and messages produced the strongest brand and business outcomes.",
     points: [
-      "Branded keywords",
-      "Competitor monitoring",
-      "Message control",
-      "High-intent traffic",
+      "Reach and engagement analysis",
+      "Traffic, lead and conversion tracking",
+      "Creator and content comparison",
+      "Recommendations for future campaigns",
+    ],
+  },
+];
+
+const COLLABORATION_MODELS = [
+  {
+    title: "Nano influencers",
+    description:
+      "Work with smaller, highly focused communities where creator-audience relationships are often personal and engaged.",
+    points: [
+      "Niche communities",
+      "Local influence",
+      "High relatability",
+      "Product advocacy",
+    ],
+    icon: Heart,
+  },
+  {
+    title: "Micro influencers",
+    description:
+      "Reach relevant audiences through creators who combine focused expertise with scalable engagement.",
+    points: [
+      "Category expertise",
+      "Audience trust",
+      "Product education",
+      "Focused reach",
+    ],
+    icon: BadgeCheck,
+  },
+  {
+    title: "Macro influencers",
+    description:
+      "Build wider campaign visibility through established creators with significant platform reach and recognition.",
+    points: [
+      "Large audiences",
+      "Campaign awareness",
+      "High visibility",
+      "Content amplification",
+    ],
+    icon: Megaphone,
+  },
+  {
+    title: "Celebrity partnerships",
+    description:
+      "Connect major launches and brand campaigns with recognizable public personalities where broader impact is required.",
+    points: [
+      "Mass visibility",
+      "Brand association",
+      "Launch campaigns",
+      "Premium positioning",
+    ],
+    icon: Sparkles,
+  },
+  {
+    title: "Industry experts",
+    description:
+      "Build credibility through professionals, specialists and thought leaders who influence technical or business decisions.",
+    points: [
+      "Professional authority",
+      "B2B audiences",
+      "Technical content",
+      "Thought leadership",
     ],
     icon: ShieldCheck,
+  },
+  {
+    title: "Long-term ambassadors",
+    description:
+      "Develop ongoing creator relationships that build repeated exposure, familiarity and deeper brand association.",
+    points: [
+      "Always-on content",
+      "Brand familiarity",
+      "Consistent advocacy",
+      "Long-term trust",
+    ],
+    icon: Handshake,
+  },
+];
+
+const CONTENT_FORMATS = [
+  {
+    title: "Product demonstrations",
+    description:
+      "Show how the product works, what makes it useful and how it fits naturally into the creator's routine or expertise.",
+    output: "Product understanding",
+    icon: ShoppingBag,
+  },
+  {
+    title: "Reviews and testimonials",
+    description:
+      "Communicate genuine creator experiences, product observations and practical recommendations to relevant audiences.",
+    output: "Trust and consideration",
+    icon: MessageCircle,
+  },
+  {
+    title: "Reels and short videos",
+    description:
+      "Create high-attention vertical content designed for discovery, storytelling and fast audience engagement.",
+    output: "Reach and engagement",
+    icon: Video,
+  },
+  {
+    title: "Stories and live content",
+    description:
+      "Use informal, time-sensitive creator content to support launches, offers, events and direct audience interaction.",
+    output: "Immediate action",
+    icon: Camera,
+  },
+  {
+    title: "Giveaways and contests",
+    description:
+      "Encourage audience participation through clearly structured campaign mechanics, eligibility and brand actions.",
+    output: "Participation and reach",
+    icon: Zap,
+  },
+  {
+    title: "Event and launch coverage",
+    description:
+      "Extend the visibility of events, openings, exhibitions and product launches through creator-led on-ground content.",
+    output: "Launch amplification",
+    icon: PanelsTopLeft,
   },
 ];
 
 const PROCESS_STEPS = [
   {
     number: "01",
-    title: "Audit and discovery",
+    title: "Define the campaign objective",
     description:
-      "We review your existing advertising account, website, offers, competitors, target audiences, tracking setup and business priorities.",
+      "We clarify the target audience, product, platform, campaign message, expected action, budget and performance goals.",
     timing: "Days 1–3",
-    output: "SEM audit and goal brief",
-    icon: FileSearch,
+    output: "Campaign goal brief",
+    icon: Target,
   },
   {
     number: "02",
-    title: "Research search opportunities",
+    title: "Research and shortlist creators",
     description:
-      "We identify relevant keywords, search intent, competition, estimated costs, audience signals and negative keyword opportunities.",
+      "Potential creators are evaluated across audience relevance, content quality, engagement, credibility, brand safety and commercial suitability.",
     timing: "Week 1",
-    output: "Keyword and targeting plan",
-    icon: SearchCheck,
+    output: "Creator shortlist",
+    icon: Search,
   },
   {
     number: "03",
-    title: "Build the campaign structure",
+    title: "Coordinate commercials",
     description:
-      "Campaigns, ad groups, audiences, budgets and targeting settings are organized around your services, products and conversion priorities.",
-    timing: "Week 1",
-    output: "Campaign architecture",
-    icon: LayoutDashboard,
+      "We manage outreach, creator availability, commercials, deliverables, usage requirements and publishing expectations.",
+    timing: "Week 1–2",
+    output: "Confirmed collaborations",
+    icon: Handshake,
   },
   {
     number: "04",
-    title: "Create ads and tracking",
+    title: "Build the campaign brief",
     description:
-      "We develop advertisements, extensions and conversion tracking while aligning each campaign with the correct landing-page journey.",
-    timing: "Week 1–2",
-    output: "Launch-ready campaigns",
-    icon: Megaphone,
+      "The campaign concept, core message, mandatory information, product details, content format and CTA are documented clearly.",
+    timing: "Week 2",
+    output: "Creator campaign brief",
+    icon: FileCheck2,
   },
   {
     number: "05",
-    title: "Launch and optimize",
+    title: "Create and approve content",
     description:
-      "Campaigns are monitored across search terms, bids, audiences, devices, locations, schedules and conversions to reduce wasted spend.",
-    timing: "Ongoing",
-    output: "Active optimization",
-    icon: SlidersHorizontal,
+      "Creator concepts, scripts, captions and draft assets are reviewed for accuracy, brand alignment and campaign compliance.",
+    timing: "Every campaign",
+    output: "Approved content",
+    icon: Workflow,
   },
   {
     number: "06",
-    title: "Report and scale",
+    title: "Publish and amplify",
     description:
-      "We review performance, identify profitable patterns and recommend budget or campaign changes based on measurable business outcomes.",
-    timing: "Monthly",
-    output: "Report and growth plan",
+      "Approved content is published according to the campaign calendar and supported through reposting or paid amplification where required.",
+    timing: "Launch phase",
+    output: "Live creator campaign",
+    icon: CalendarRange,
+  },
+  {
+    number: "07",
+    title: "Measure and improve",
+    description:
+      "Campaign performance is reviewed across creators, content formats, audience response and measurable business actions.",
+    timing: "Post-campaign",
+    output: "Campaign report",
     icon: BarChart3,
   },
 ];
 
 const DELIVERABLES = [
   {
-    title: "SEM account audit",
+    title: "Influencer campaign strategy",
     description:
-      "A structured review of campaigns, tracking, budget usage, search terms, targeting and current performance opportunities.",
-    icon: FileSearch,
+      "A structured campaign plan covering audience, platforms, creator categories, formats, budget and measurable objectives.",
+    icon: ListChecks,
   },
   {
-    title: "Keyword strategy",
+    title: "Creator shortlist",
     description:
-      "A practical keyword and negative keyword framework organized around search intent, services and commercial relevance.",
-    icon: SearchCheck,
+      "A relevant list of evaluated creators with audience, engagement, content and brand-fit observations.",
+    icon: UsersRound,
   },
   {
-    title: "Campaign setup",
+    title: "Creator outreach",
     description:
-      "Campaigns, ad groups, advertisements, extensions, audiences and budget settings configured for launch.",
-    icon: Settings2,
+      "Professional communication covering availability, campaign requirements, commercials and collaboration expectations.",
+    icon: MessageCircle,
   },
   {
-    title: "Conversion tracking",
+    title: "Campaign brief",
     description:
-      "Tracking for forms, calls, purchases, WhatsApp clicks and other meaningful website or campaign actions.",
+      "Clear creative direction covering the campaign concept, key messages, mandatory points, visual requirements and CTA.",
+    icon: FileCheck2,
+  },
+  {
+    title: "Content approval system",
+    description:
+      "An organized workflow for reviewing scripts, captions, drafts, corrections and final creator content.",
+    icon: Workflow,
+  },
+  {
+    title: "Publishing calendar",
+    description:
+      "A structured schedule covering creator deliverables, approval dates, publishing dates and campaign milestones.",
+    icon: CalendarRange,
+  },
+  {
+    title: "Campaign tracking",
+    description:
+      "Tracking for content links, discount codes, enquiries, website visits and other measurable campaign actions.",
     icon: Link2,
   },
   {
-    title: "Campaign optimization",
+    title: "Performance report",
     description:
-      "Ongoing improvements across keywords, bids, budgets, advertisements, audiences, schedules and locations.",
-    icon: TestTubeDiagonal,
-  },
-  {
-    title: "Performance reporting",
-    description:
-      "Clear reporting covering campaign results, conversion costs, search behaviour and recommended next actions.",
+      "A clear report covering creator results, content performance, engagement, traffic, conversions and future recommendations.",
     icon: CircleGauge,
   },
 ];
 
 const FAQS = [
   {
-    question: "What is included in your SEM service?",
+    question: "What is included in your influencer marketing service?",
     answer:
-      "The service can include account audit, keyword research, campaign strategy, ad creation, targeting, budget management, conversion tracking, landing-page recommendations, ongoing optimization and performance reporting. The final scope depends on your advertising goals and platforms.",
+      "The service can include campaign strategy, creator research, influencer shortlisting, outreach, commercial coordination, campaign briefs, content review, publishing management, tracking and reporting. The final scope depends on the campaign size and objectives.",
   },
   {
-    question: "What is the difference between SEM, SEO and PPC?",
+    question: "How do you select the right influencers?",
     answer:
-      "SEM is the broader process of increasing visibility through paid search engine campaigns. PPC refers to the advertising payment model where advertisers commonly pay for clicks. SEO focuses on improving unpaid organic search visibility over time.",
+      "Creators are evaluated using audience relevance, engagement quality, content style, credibility, category expertise, brand safety and commercial suitability. Follower count is only one part of the assessment.",
   },
   {
-    question: "Which advertising platforms do you manage?",
+    question: "Do you work with nano, micro and celebrity influencers?",
     answer:
-      "We primarily support Google Ads and can also manage Microsoft Advertising where it is relevant to the audience and market. Campaign recommendations depend on search demand, competition, geography and available budget.",
+      "Yes. We can work with nano, micro, macro, celebrity and industry-focused creators. The recommended mix depends on the target audience, campaign objective, platform and available budget.",
   },
   {
-    question: "How much budget is required for SEM?",
+    question: "Which platforms do you support?",
     answer:
-      "The required budget depends on keyword competition, location, industry, campaign objective and expected lead volume. We recommend a practical starting budget after reviewing search demand and estimated cost-per-click levels.",
+      "Campaigns can be planned for Instagram, YouTube, Facebook, LinkedIn and other relevant creator platforms. The platform mix is selected according to audience behaviour and content requirements.",
   },
   {
-    question: "Is advertising spend included in your management fee?",
+    question: "Is influencer cost included in your management fee?",
     answer:
-      "No. The amount paid directly to the advertising platform is separate from campaign strategy and management fees. Both amounts are clearly defined before the campaign begins.",
+      "Creator commercials are generally separate from strategy and campaign management fees. Estimated creator costs and management scope are defined before the campaign begins.",
   },
   {
-    question: "How quickly can SEM generate results?",
+    question: "Can you guarantee influencer campaign sales?",
     answer:
-      "Campaigns can begin generating traffic and enquiries soon after launch, but stable performance usually requires sufficient data and ongoing optimization. Results depend on search demand, competition, budget, offer quality, landing pages and tracking accuracy.",
+      "No responsible influencer campaign can guarantee a fixed number of sales. Results depend on the creator, audience, offer, product fit, pricing, content quality, landing experience and campaign tracking.",
   },
   {
-    question: "Do you create landing pages for SEM campaigns?",
+    question: "Do you review influencer content before publishing?",
     answer:
-      "We review existing landing pages and provide conversion-focused recommendations. Dedicated landing-page design and development can also be included when the current website does not provide a suitable campaign destination.",
+      "Yes. Content can be reviewed for campaign messaging, product accuracy, brand guidelines, claims, CTA and required disclosures. Final approval responsibilities are defined during campaign setup.",
   },
   {
-    question: "How do you reduce wasted advertising spend?",
+    question: "Do influencers need to disclose paid partnerships?",
     answer:
-      "We regularly review search terms, negative keywords, locations, devices, schedules, audience signals and conversion data. Irrelevant traffic is excluded while budgets and bids are adjusted towards stronger-performing opportunities.",
+      "Paid or sponsored collaborations should follow applicable platform rules, advertising requirements and disclosure guidelines. Required labels and disclosures are included in the campaign brief and approval process.",
   },
   {
-    question: "How do you measure SEM performance?",
+    question: "Can influencer content be reused in advertisements?",
     answer:
-      "Performance is measured using metrics connected to the campaign objective, including impressions, click-through rate, cost per click, conversion rate, cost per lead, calls, enquiries, purchases and return on advertising spend where revenue tracking is available.",
+      "Creator content can only be reused when usage rights, duration, channels and paid media permissions are agreed with the creator. These rights should be documented before publication.",
   },
   {
-    question: "Can you manage an existing Google Ads account?",
+    question: "How do you track influencer campaign performance?",
     answer:
-      "Yes. We can audit and optimize an existing account or rebuild its campaign structure when necessary. Existing data is reviewed before major changes are made so useful historical insights are not lost.",
+      "Performance can be measured using reach, views, engagement, audience responses, profile visits, website clicks, tracked links, coupon codes, enquiries, purchases and content quality indicators.",
+  },
+  {
+    question: "Do you manage long-term brand ambassador programs?",
+    answer:
+      "Yes. We can plan ongoing creator relationships with regular content, campaign themes, performance reviews and long-term brand association.",
   },
 ];
 
 const SERVICE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Search Engine Marketing Services",
-  serviceType: "Search Engine Marketing",
+  name: "Influencer Marketing Services",
+  serviceType: "Influencer Marketing",
   description:
-    "Search engine marketing services for paid search campaigns, keyword targeting, bidding, conversion tracking and measurable lead generation.",
+    "Influencer marketing services for creator discovery, campaign strategy, content coordination, audience reach and measurable brand growth.",
   provider: {
     "@type": "Organization",
     name: "BrainADZ Marketing",
@@ -407,7 +479,7 @@ const FAQ_SCHEMA = {
   })),
 };
 
-export default function SemServicesPage() {
+export default function InfluencerMarketingPage() {
   return (
     <main className="dm-sans bg-white text-[#111111]">
       <script
@@ -428,7 +500,7 @@ export default function SemServicesPage() {
       <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
         <img
           src="/about/about.avif"
-          alt="BrainADZ Marketing search engine marketing team"
+          alt="BrainADZ Marketing influencer campaign team"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
 
@@ -449,24 +521,24 @@ export default function SemServicesPage() {
 
             <span className="text-white/70">/</span>
 
-            <span className="text-white">SEM Services</span>
+            <span className="text-white">Influencer Marketing</span>
           </nav>
 
-          <h1 className="mt-7 max-w-[900px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
-            Search Engine Marketing Services
+          <h1 className="mt-7 max-w-[940px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
+            Influencer Marketing Services
           </h1>
 
-          <div className="mt-auto max-w-[740px] pb-6 sm:pb-10 lg:pb-12">
+          <div className="mt-auto max-w-[780px] pb-6 sm:pb-10 lg:pb-12">
             <p className="text-[14px] font-normal leading-[1.5] tracking-[-0.02em] text-white sm:text-[16px] lg:text-[20px]">
-              Reach high-intent customers with paid search campaigns built for
-              relevant traffic, qualified leads and measurable business growth.
+              Build authentic creator partnerships and campaigns that increase
+              brand reach, audience trust and measurable customer action.
             </p>
 
             <Link
               href="/contact"
               className="mt-8 inline-flex min-h-14 items-center justify-center gap-5 rounded-full bg-[#E1122B] px-7 text-[13px] font-semibold text-white transition-colors hover:bg-black"
             >
-              Launch your search campaigns
+              Launch an influencer campaign
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
             </Link>
           </div>
@@ -476,7 +548,7 @@ export default function SemServicesPage() {
       {/* Sticky Navigation */}
       <div className="sticky top-20 z-40 border-b border-black/10 bg-white text-black shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
         <nav
-          aria-label="SEM page navigation"
+          aria-label="Influencer marketing page navigation"
           className="no-scrollbar mx-auto max-w-[1800px] overflow-x-auto px-5 sm:px-8 lg:px-10"
         >
           <div className="flex min-h-20 min-w-max items-center">
@@ -518,31 +590,31 @@ export default function SemServicesPage() {
             </p>
           </div>
 
-          <h2 className="mt-5 max-w-[1220px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-            Capture demand when customers are ready to act
+          <h2 className="mt-5 max-w-[1260px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
+            Turn creator influence into meaningful brand growth
           </h2>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-start lg:gap-16">
             <div>
-              <p className="max-w-[700px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-                Search engine marketing connects your business with people
-                actively searching for relevant products, services and
-                solutions. BrainADZ combines keyword strategy, campaign
-                architecture, advertisement creation, bidding and conversion
-                tracking to turn search demand into measurable opportunities.
+              <p className="max-w-[710px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
+                Influencer marketing works when the creator, audience, message
+                and business objective are properly aligned. BrainADZ combines
+                campaign strategy, creator discovery, outreach, content
+                coordination and performance measurement into one structured
+                system.
               </p>
 
-              <p className="mt-5 max-w-[700px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-                Every campaign is managed as a complete conversion system—from
-                the user&apos;s search query and advertisement to the landing
-                page, enquiry and final business outcome.
+              <p className="mt-5 max-w-[710px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
+                We focus on credible partnerships and platform-native content
+                that helps audiences discover your brand, understand the offer
+                and take a relevant next step.
               </p>
 
               <Link
                 href="/contact"
                 className="mt-7 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
               >
-                Build your SEM strategy
+                Plan your creator campaign
                 <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
               </Link>
             </div>
@@ -550,14 +622,15 @@ export default function SemServicesPage() {
             <figure>
               <div className="relative aspect-video overflow-hidden rounded-[14px] border border-black/10 bg-[#f7f7f7] shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
                 <img
-                  src="/sem/dashboard.jpg"
-                  alt="Search engine marketing campaign dashboard and reporting"
+                  src="/influencer-marketing/campaign-dashboard.jpg"
+                  alt="Influencer marketing campaign management and creator performance"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
 
               <figcaption className="mt-2 text-[13px] leading-5 text-black/48">
-                Search campaign management, conversion tracking and reporting
+                Creator discovery, campaign coordination and performance
+                reporting
               </figcaption>
             </figure>
           </div>
@@ -589,9 +662,9 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Capabilities Section */}
       <section
-        id="features"
+        id="capabilities"
         className="scroll-mt-[164px] border-b border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
@@ -599,24 +672,24 @@ export default function SemServicesPage() {
             <span className="h-0.5 w-8 bg-[#E1122B]" />
 
             <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
-              Features
+              Capabilities
             </p>
           </div>
 
-          <h2 className="mt-5 max-w-[1250px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-            Built for relevant clicks and profitable conversions
+          <h2 className="mt-5 max-w-[1260px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
+            A complete influencer campaign system
           </h2>
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-8">
             <div className="overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_16px_45px_rgba(0,0,0,0.05)]">
-              {FEATURES.map((feature, index) => (
+              {CAPABILITIES.map((capability, index) => (
                 <details
-                  key={feature.title}
+                  key={capability.title}
                   open={index === 0}
                   className="group border-b border-black/10 last:border-b-0 open:border-l-[3px] open:border-l-[#E1122B] open:bg-[#fff8f8]"
                 >
                   <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-5 px-5 py-4 text-left text-[17px] font-medium text-black transition-colors hover:bg-[#fff8f8] focus-visible:bg-[#fff8f8] focus-visible:outline-none [&::-webkit-details-marker]:hidden">
-                    <span>{feature.title}</span>
+                    <span>{capability.title}</span>
 
                     <ChevronDown
                       className="h-5 w-5 shrink-0 transition-transform duration-300 group-open:rotate-180 group-open:text-[#E1122B]"
@@ -626,11 +699,11 @@ export default function SemServicesPage() {
 
                   <div className="px-5 pb-7 pt-1">
                     <p className="max-w-[700px] text-[14px] leading-7 text-black/60 sm:text-[15px]">
-                      {feature.description}
+                      {capability.description}
                     </p>
 
                     <ul className="mt-5 space-y-3">
-                      {feature.points.map((point) => (
+                      {capability.points.map((point) => (
                         <li
                           key={point}
                           className="flex items-start gap-3 text-[14px] leading-6 text-black/68"
@@ -652,30 +725,31 @@ export default function SemServicesPage() {
             <figure className="lg:sticky lg:top-[188px]">
               <div className="relative aspect-video overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
                 <img
-                  src="/sem/campaign.jpg"
-                  alt="Paid search campaign management by BrainADZ Marketing"
+                  src="/influencer-marketing/creator-campaign.jpg"
+                  alt="Creator collaboration and influencer campaign planning"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
 
               <figcaption className="mt-2 text-[13px] leading-5 text-black/48">
-                Paid search campaign strategy, advertisements and optimization
+                Creator research, campaign briefing and content coordination
               </figcaption>
 
               <div className="mt-5 rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_45px_rgba(0,0,0,0.04)]">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[10px] bg-[#fff1f1] text-[#E1122B]">
-                    <Gauge className="h-6 w-6" strokeWidth={1.6} />
+                    <BadgeCheck className="h-6 w-6" strokeWidth={1.6} />
                   </div>
 
                   <div>
                     <h3 className="text-[17px] font-semibold text-black">
-                      Every click should have a purpose
+                      Relevance matters more than follower count
                     </h3>
 
                     <p className="mt-2 text-[14px] leading-6 text-black/58">
-                      Keywords, advertisements, landing pages and tracking are
-                      aligned around the same conversion objective.
+                      The right creator is selected through audience fit,
+                      content credibility, engagement quality and campaign
+                      suitability.
                     </p>
                   </div>
                 </div>
@@ -685,9 +759,9 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* Campaign Types Section */}
+      {/* Collaboration Models Section */}
       <section
-        id="campaign-types"
+        id="collaboration-models"
         className="scroll-mt-[164px] border-b border-black/10 bg-white py-16 text-black sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
@@ -697,29 +771,29 @@ export default function SemServicesPage() {
                 <span className="h-0.5 w-8 bg-[#E1122B]" />
 
                 <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
-                  Campaign Types
+                  Collaboration Models
                 </p>
               </div>
 
               <h2 className="mt-5 max-w-[1050px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-                The right campaign for every search objective
+                The right creator mix for every campaign
               </h2>
             </div>
 
             <p className="max-w-[620px] text-[15px] leading-7 text-black/60 sm:text-[16px] sm:leading-8">
-              Campaign types are selected according to your market, audience,
-              available assets, sales journey and the business outcome paid
-              search needs to support.
+              Collaboration models are selected according to audience size,
+              trust, content requirements, campaign duration and the business
+              outcome the partnership needs to support.
             </p>
           </div>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {CAMPAIGN_TYPES.map((campaign, index) => {
-              const Icon = campaign.icon;
+            {COLLABORATION_MODELS.map((model, index) => {
+              const Icon = model.icon;
 
               return (
                 <article
-                  key={campaign.title}
+                  key={model.title}
                   className="group relative overflow-hidden rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_45px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/40 hover:bg-[#fff8f8] sm:p-7"
                 >
                   <span className="absolute right-5 top-4 text-[48px] font-semibold leading-none text-black/[0.035]">
@@ -731,15 +805,15 @@ export default function SemServicesPage() {
                   </div>
 
                   <h3 className="mt-7 text-[23px] font-semibold leading-tight tracking-[-0.02em] text-black">
-                    {campaign.title}
+                    {model.title}
                   </h3>
 
                   <p className="mt-4 text-[14px] leading-7 text-black/58">
-                    {campaign.description}
+                    {model.description}
                   </p>
 
                   <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 border-t border-black/10 pt-5">
-                    {campaign.points.map((point) => (
+                    {model.points.map((point) => (
                       <li
                         key={point}
                         className="flex items-start gap-2 text-[13px] leading-5 text-black/65"
@@ -749,6 +823,77 @@ export default function SemServicesPage() {
                       </li>
                     ))}
                   </ul>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Content Formats Section */}
+      <section
+        id="content-formats"
+        className="scroll-mt-[164px] border-b border-black/10 bg-black py-16 text-white sm:py-20 lg:py-24"
+      >
+        <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.72fr] lg:items-end lg:gap-16">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="h-0.5 w-8 bg-[#E1122B]" />
+
+                <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
+                  Content Formats
+                </p>
+              </div>
+
+              <h2 className="mt-5 max-w-[1100px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
+                Creator content built for attention and action
+              </h2>
+            </div>
+
+            <p className="max-w-[620px] text-[15px] leading-7 text-white/58 sm:text-[16px] sm:leading-8">
+              Content formats are selected according to the product, creator
+              style, platform behaviour and the response expected from the
+              audience.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {CONTENT_FORMATS.map((format, index) => {
+              const Icon = format.icon;
+
+              return (
+                <article
+                  key={format.title}
+                  className="rounded-[14px] border border-white/10 bg-white/[0.035] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/55 hover:bg-white/[0.06] sm:p-7"
+                >
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[10px] border border-[#E1122B]/30 bg-[#E1122B]/10 text-[#E1122B]">
+                      <Icon className="h-7 w-7" strokeWidth={1.5} />
+                    </div>
+
+                    <span className="text-[13px] font-semibold text-white/20">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-7 text-[22px] font-semibold leading-tight text-white">
+                    {format.title}
+                  </h3>
+
+                  <p className="mt-4 text-[14px] leading-7 text-white/55">
+                    {format.description}
+                  </p>
+
+                  <div className="mt-6 border-t border-white/10 pt-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/35">
+                      Primary outcome
+                    </p>
+
+                    <p className="mt-2 text-[14px] font-medium text-white/78">
+                      {format.output}
+                    </p>
+                  </div>
                 </article>
               );
             })}
@@ -772,20 +917,20 @@ export default function SemServicesPage() {
             </div>
 
             <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-              A clear process from search demand to conversion
+              A clear process from creator selection to results
             </h2>
 
             <p className="mt-6 max-w-[620px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-              Every campaign follows a structured research, setup, testing and
-              optimization workflow so media spend remains focused on
-              measurable business outcomes.
+              Every collaboration moves through research, commercial
+              coordination, briefing, approval, publishing and reporting so the
+              campaign remains controlled and measurable.
             </p>
 
             <Link
               href="/contact"
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
             >
-              Plan your SEM campaign
+              Plan your influencer workflow
               <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
             </Link>
           </div>
@@ -864,13 +1009,13 @@ export default function SemServicesPage() {
               </div>
 
               <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-                Everything required to manage paid search effectively
+                Everything required to manage creator campaigns
               </h2>
 
               <p className="mt-6 max-w-[600px] text-[15px] leading-7 text-black/60 sm:text-[16px] sm:leading-8">
                 The engagement produces a complete campaign system covering
-                research, account setup, advertising, tracking, optimization
-                and reporting.
+                creator research, coordination, briefing, approvals, publishing
+                and measurable reporting.
               </p>
 
               <div className="mt-8 rounded-[14px] bg-black p-6 text-white sm:p-7">
@@ -880,12 +1025,13 @@ export default function SemServicesPage() {
                 />
 
                 <h3 className="mt-6 text-[22px] font-semibold leading-tight">
-                  Transparent campaign management
+                  Transparent creator partnerships
                 </h3>
 
                 <p className="mt-3 text-[14px] leading-7 text-white/60">
-                  Campaign decisions are supported by search data, conversion
-                  performance and clearly documented next actions.
+                  Campaign expectations, paid partnership disclosures, content
+                  usage and approval responsibilities are defined before
+                  publishing.
                 </p>
               </div>
             </div>
@@ -905,7 +1051,7 @@ export default function SemServicesPage() {
                       </div>
 
                       <span className="text-[13px] font-semibold text-black/20">
-                        0{index + 1}
+                        {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
 
@@ -940,12 +1086,13 @@ export default function SemServicesPage() {
             </div>
 
             <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-              Questions before launching your search campaigns?
+              Questions before starting an influencer campaign?
             </h2>
 
             <p className="mt-6 max-w-[580px] text-[15px] leading-7 text-black/58 sm:text-[16px] sm:leading-8">
-              Practical information about campaign budgets, paid search
-              platforms, tracking, optimization and expected performance.
+              Practical information about creator selection, commercials,
+              content approval, disclosures, usage rights and campaign
+              measurement.
             </p>
 
             <Link

@@ -154,7 +154,10 @@ export default function ServicesPage() {
             aria-label="Breadcrumb"
             className="flex items-center gap-2 text-[14px] font-medium leading-none"
           >
-            <Link href="/" className="text-[#1467f5] transition hover:text-white">
+            <Link
+              href="/"
+              className="text-[#1467f5] transition hover:text-white"
+            >
               Home
             </Link>
             <span className="text-white/70">/</span>
@@ -194,7 +197,10 @@ export default function ServicesPage() {
       </section>
 
       {/* FEATURED SERVICE SECTION */}
-      <section id="service-paths" className="border-b border-white/10 bg-black py-16 text-white sm:py-20 lg:py-24">
+      <section
+        id="service-paths"
+        className="border-b border-white/10 bg-black py-16 text-white sm:py-20 lg:py-24"
+      >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:items-center lg:gap-16">
             <Link
@@ -317,8 +323,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-
     </main>
   );
 }

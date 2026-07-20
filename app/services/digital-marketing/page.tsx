@@ -22,7 +22,6 @@ import {
   Sparkles,
   Target,
   FileText,
-
   ImageIcon,
   type LucideIcon,
   Users,
@@ -199,7 +198,6 @@ export default function DigitalMarketingPage() {
       <DigitalServicesSection />
       <FunnelSection />
       <ReportingSection />
-
     </main>
   );
 }
@@ -223,7 +221,10 @@ function HeroSection() {
             aria-label="Breadcrumb"
             className="flex items-center gap-2 text-[14px] font-medium leading-none"
           >
-            <Link href="/" className="text-[#1467f5] transition hover:text-white">
+            <Link
+              href="/"
+              className="text-[#1467f5] transition hover:text-white"
+            >
               Home
             </Link>
             <span className="text-white/70">/</span>
@@ -254,8 +255,6 @@ function HeroSection() {
   );
 }
 
-
-
 function MetricRow({
   label,
   value,
@@ -277,9 +276,6 @@ function MetricRow({
     </div>
   );
 }
-
-
-
 
 function DigitalServicesSection() {
   return (
@@ -489,8 +485,6 @@ function FunnelSection() {
     </section>
   );
 }
-
-
 
 function ReportingSection() {
   return (

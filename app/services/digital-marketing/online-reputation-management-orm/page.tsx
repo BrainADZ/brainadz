@@ -4,54 +4,56 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
+  AlertTriangle,
   ArrowRight,
+  BadgeCheck,
   BarChart3,
+  BellRing,
+  Building2,
   CalendarRange,
   Check,
   ChevronDown,
   CircleGauge,
+  FileCheck,
   FileSearch,
-  Gauge,
   Globe2,
-  LayoutDashboard,
-  Link2,
+  HeartHandshake,
   ListChecks,
-  Megaphone,
-  MousePointerClick,
-  PanelsTopLeft,
-  Route,
+  MapPin,
+  MessagesSquare,
+  Newspaper,
+  Reply,
   Search,
-  SearchCheck,
   Settings2,
   ShieldCheck,
-  SlidersHorizontal,
+  Star,
   Target,
-  TestTubeDiagonal,
   TrendingUp,
-  UsersRound,
-  WalletCards,
-  Zap,
+  UserRoundCheck,
+  Workflow,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "SEM Services | Search Engine Marketing | BrainADZ Marketing",
+  title: "Online Reputation Management Services | BrainADZ Marketing",
   description:
-    "Search engine marketing services by BrainADZ Marketing for paid search campaigns, keyword targeting, conversion tracking, bidding and measurable lead generation.",
+    "Online reputation management services by BrainADZ Marketing for brand monitoring, review management, response strategy, crisis handling and measurable reputation growth.",
   alternates: {
-    canonical: "/services/digital-marketing/sem-services",
+    canonical:
+      "/services/digital-marketing/online-reputation-management",
   },
   openGraph: {
-    title: "SEM Services | BrainADZ Marketing",
+    title: "Online Reputation Management Services | BrainADZ Marketing",
     description:
-      "Reach high-intent audiences with professionally managed paid search campaigns built for qualified traffic, leads and measurable growth.",
+      "Monitor brand conversations, manage reviews, respond to reputation risks and build stronger digital trust with BrainADZ Marketing.",
     type: "website",
   },
 };
 
 const PAGE_NAV_ITEMS = [
   { label: "Overview", href: "#overview" },
-  { label: "Features", href: "#features" },
-  { label: "Campaign Types", href: "#campaign-types" },
+  { label: "Capabilities", href: "#capabilities" },
+  { label: "Monitoring", href: "#monitoring" },
+  { label: "Response Framework", href: "#response-framework" },
   { label: "Process", href: "#process" },
   { label: "Deliverables", href: "#deliverables" },
   { label: "FAQs", href: "#faqs" },
@@ -59,331 +61,388 @@ const PAGE_NAV_ITEMS = [
 
 const OVERVIEW_BENEFITS = [
   {
-    title: "High-intent visibility",
+    title: "Early issue detection",
     description:
-      "Place your business in front of people actively searching for the products and services you offer.",
-    icon: Search,
+      "Identify negative mentions, review patterns and emerging concerns before they develop into larger reputation risks.",
+    icon: BellRing,
   },
   {
-    title: "Qualified website traffic",
+    title: "Stronger brand trust",
     description:
-      "Target relevant keywords, locations, audiences and devices to attract users more likely to take action.",
-    icon: MousePointerClick,
+      "Build confidence through professional responses, consistent messaging and visible customer care across digital channels.",
+    icon: ShieldCheck,
   },
   {
-    title: "Controlled media spend",
+    title: "Better review management",
     description:
-      "Manage budgets, bids and targeting around commercial priorities instead of paying for unfocused traffic.",
-    icon: WalletCards,
+      "Organize how reviews are monitored, answered, escalated and used to improve the customer experience.",
+    icon: Star,
   },
   {
-    title: "Measurable business growth",
+    title: "Measurable reputation growth",
     description:
-      "Connect clicks and campaign activity with enquiries, calls, purchases and other meaningful conversions.",
+      "Track ratings, sentiment, response quality and recurring issues to guide practical reputation improvements.",
     icon: TrendingUp,
   },
 ];
 
-const FEATURES = [
+const CAPABILITIES = [
   {
-    title: "SEM strategy aligned with business goals",
+    title: "Brand mention and sentiment monitoring",
     description:
-      "Every campaign starts with a clear understanding of your offer, target market, customer journey and commercial objective. This keeps the account focused on profitable actions instead of surface-level traffic.",
+      "We monitor relevant digital conversations to understand where your brand is being discussed, what audiences are saying and which issues require attention.",
     points: [
-      "Business, offer and market assessment",
-      "Campaign objectives and conversion priorities",
-      "Channel, location and device planning",
-      "Budget allocation and performance benchmarks",
+      "Brand, product and leadership mention tracking",
+      "Positive, neutral and negative sentiment review",
+      "Recurring customer concern identification",
+      "Priority alerts for significant reputation risks",
     ],
   },
   {
-    title: "Keyword and audience research",
+    title: "Review and rating management",
     description:
-      "We identify the search terms, intent patterns and audience signals most closely connected to your products or services so campaigns reach users at the right stage of decision-making.",
+      "Customer reviews are managed through a structured system that supports timely responses, issue escalation and a more consistent brand experience.",
     points: [
-      "Commercial and high-intent keyword research",
-      "Search intent and customer journey mapping",
-      "Negative keyword identification",
-      "Audience, location and device analysis",
+      "Review platform and rating monitoring",
+      "Positive and negative review response support",
+      "Recurring complaint and service-gap analysis",
+      "Review request process recommendations",
     ],
   },
   {
-    title: "Campaign architecture and ad creation",
+    title: "Professional response management",
     description:
-      "Campaigns are structured around services, products, locations and search intent, with relevant advertisements designed to improve clarity, quality and click-through performance.",
+      "We develop clear, brand-appropriate responses that acknowledge customer concerns, avoid unnecessary conflict and guide conversations towards resolution.",
     points: [
-      "Campaign and ad-group structure",
-      "Responsive search ad copy",
-      "Headlines, descriptions and extensions",
-      "Brand, competitor and service segmentation",
+      "Response templates and tone guidelines",
+      "Issue-specific response recommendations",
+      "Sensitive complaint handling support",
+      "Internal approval and escalation workflow",
     ],
   },
   {
-    title: "Budget and bidding optimization",
+    title: "Search reputation improvement",
     description:
-      "Media spend is actively managed according to campaign priorities, search demand and conversion data so budget is directed towards stronger opportunities.",
+      "We review what users see when they search for your brand and identify opportunities to strengthen accurate, credible and useful digital assets.",
     points: [
-      "Daily and monthly budget management",
-      "Manual and automated bidding strategies",
-      "Cost-per-click and acquisition monitoring",
-      "Device, location and schedule adjustments",
+      "Branded search result assessment",
+      "Owned profile and content optimization",
+      "Positive asset visibility recommendations",
+      "Outdated or inaccurate information review",
     ],
   },
   {
-    title: "Landing page and conversion alignment",
+    title: "Crisis and escalation planning",
     description:
-      "Paid traffic performs better when the advertisement and landing page communicate the same offer. We review the complete journey from search query to conversion action.",
+      "A documented response framework helps your team act quickly and consistently when a sensitive issue, public complaint or sudden reputation event occurs.",
     points: [
-      "Ad-to-landing-page message alignment",
-      "Conversion-focused page recommendations",
-      "Form, call and WhatsApp journey review",
-      "Mobile experience and page-speed checks",
+      "Risk level and severity classification",
+      "Internal escalation matrix",
+      "Holding statements and response guidance",
+      "Stakeholder and channel coordination",
     ],
   },
   {
-    title: "Tracking, testing and reporting",
+    title: "Reputation reporting and insights",
     description:
-      "Campaign decisions are guided by conversion data, search behaviour and structured testing rather than assumptions or vanity metrics.",
+      "Monitoring data is translated into clear insights about sentiment, review trends, customer concerns and the actions most likely to improve trust.",
     points: [
-      "Conversion and event tracking setup",
-      "Search term and audience analysis",
-      "Ad copy and landing-page testing",
-      "Performance reporting and next-step actions",
+      "Sentiment and review trend reporting",
+      "Response time and resolution analysis",
+      "Issue category and pattern tracking",
+      "Monthly recommendations and action priorities",
     ],
   },
 ];
 
-const CAMPAIGN_TYPES = [
+const MONITORING_CHANNELS = [
   {
-    title: "Search advertising",
+    title: "Search results",
     description:
-      "Appear on search result pages when potential customers actively look for your products, services or solutions.",
+      "Review what potential customers see when they search for your brand, products, services or leadership team.",
     points: [
-      "Keyword targeting",
-      "Responsive search ads",
-      "Call extensions",
-      "Lead generation",
+      "Branded queries",
+      "Search snippets",
+      "News visibility",
+      "Owned assets",
     ],
     icon: Search,
   },
   {
-    title: "Shopping campaigns",
+    title: "Google Business Profile",
     description:
-      "Promote ecommerce products with product images, pricing and availability directly within search results.",
+      "Monitor ratings, reviews, customer questions and public business information connected to local discovery.",
     points: [
-      "Product feed setup",
-      "Shopping advertisements",
-      "Category segmentation",
-      "Purchase tracking",
+      "Google reviews",
+      "Business details",
+      "Customer questions",
+      "Local reputation",
     ],
-    icon: WalletCards,
+    icon: MapPin,
   },
   {
-    title: "Display campaigns",
+    title: "Social media",
     description:
-      "Build visibility across relevant websites and applications using visual advertisements and audience targeting.",
+      "Track comments, posts, tags and conversations that may influence how audiences understand your brand.",
     points: [
-      "Banner advertisements",
-      "Audience targeting",
-      "Placement control",
-      "Brand awareness",
+      "Public comments",
+      "Brand tags",
+      "Direct concerns",
+      "Viral discussions",
     ],
-    icon: PanelsTopLeft,
+    icon: MessagesSquare,
   },
   {
-    title: "Remarketing campaigns",
+    title: "Review platforms",
     description:
-      "Reconnect with people who previously visited your website, viewed services or interacted with your brand.",
+      "Monitor industry and customer-review websites relevant to your products, services and market category.",
     points: [
-      "Website visitors",
-      "Engaged audiences",
-      "Product viewers",
-      "Conversion reminders",
+      "Ratings",
+      "Testimonials",
+      "Complaints",
+      "Competitor trends",
     ],
-    icon: Route,
+    icon: Star,
   },
   {
-    title: "Local search campaigns",
+    title: "News and media",
     description:
-      "Reach nearby customers searching for location-based services, stores, offices and immediate assistance.",
+      "Identify relevant press coverage, public mentions and stories that may influence brand perception.",
     points: [
-      "Location targeting",
-      "Call campaigns",
-      "Map visibility",
-      "Local enquiries",
+      "News mentions",
+      "Media coverage",
+      "Leadership mentions",
+      "Industry stories",
+    ],
+    icon: Newspaper,
+  },
+  {
+    title: "Forums and communities",
+    description:
+      "Review public discussions where customers and industry audiences share experiences, concerns and recommendations.",
+    points: [
+      "Forum discussions",
+      "Community posts",
+      "Customer questions",
+      "Industry conversations",
     ],
     icon: Globe2,
   },
+];
+
+const RESPONSE_FRAMEWORK = [
   {
-    title: "Brand protection campaigns",
+    title: "Assess the situation",
     description:
-      "Protect important branded search terms and control the message users see when they search for your company.",
-    points: [
-      "Branded keywords",
-      "Competitor monitoring",
-      "Message control",
-      "High-intent traffic",
-    ],
-    icon: ShieldCheck,
+      "Verify the source, context, audience reach, evidence and potential business impact before choosing a response.",
+    output: "Verified issue context",
+    icon: FileSearch,
+  },
+  {
+    title: "Prioritize the risk",
+    description:
+      "Classify the issue according to urgency, sensitivity, visibility and the internal teams required for resolution.",
+    output: "Risk and escalation level",
+    icon: AlertTriangle,
+  },
+  {
+    title: "Respond appropriately",
+    description:
+      "Use a clear, empathetic and brand-aligned response that acknowledges the concern and supports the next action.",
+    output: "Approved public response",
+    icon: Reply,
+  },
+  {
+    title: "Resolve and learn",
+    description:
+      "Track the outcome, document recurring issues and convert customer feedback into practical operational improvements.",
+    output: "Resolution and insights",
+    icon: HeartHandshake,
   },
 ];
 
 const PROCESS_STEPS = [
   {
     number: "01",
-    title: "Audit and discovery",
+    title: "Audit the digital reputation",
     description:
-      "We review your existing advertising account, website, offers, competitors, target audiences, tracking setup and business priorities.",
-    timing: "Days 1–3",
-    output: "SEM audit and goal brief",
+      "We review branded search results, public profiles, reviews, ratings, media mentions, social conversations and existing response practices.",
+    timing: "Days 1–4",
+    output: "Reputation audit",
     icon: FileSearch,
   },
   {
     number: "02",
-    title: "Research search opportunities",
+    title: "Map channels and risks",
     description:
-      "We identify relevant keywords, search intent, competition, estimated costs, audience signals and negative keyword opportunities.",
+      "We identify the platforms, search terms, customer touchpoints and reputation issues that require ongoing monitoring.",
     timing: "Week 1",
-    output: "Keyword and targeting plan",
-    icon: SearchCheck,
+    output: "Monitoring and risk map",
+    icon: Target,
   },
   {
     number: "03",
-    title: "Build the campaign structure",
+    title: "Build the response framework",
     description:
-      "Campaigns, ad groups, audiences, budgets and targeting settings are organized around your services, products and conversion priorities.",
+      "Response guidelines, tone, templates, ownership and escalation rules are documented for common and sensitive situations.",
     timing: "Week 1",
-    output: "Campaign architecture",
-    icon: LayoutDashboard,
+    output: "Response playbook",
+    icon: Workflow,
   },
   {
     number: "04",
-    title: "Create ads and tracking",
+    title: "Monitor and classify",
     description:
-      "We develop advertisements, extensions and conversion tracking while aligning each campaign with the correct landing-page journey.",
-    timing: "Week 1–2",
-    output: "Launch-ready campaigns",
-    icon: Megaphone,
+      "Mentions, reviews and conversations are reviewed and categorized according to sentiment, urgency and potential business impact.",
+    timing: "Ongoing",
+    output: "Prioritized reputation activity",
+    icon: BellRing,
   },
   {
     number: "05",
-    title: "Launch and optimize",
+    title: "Respond and coordinate",
     description:
-      "Campaigns are monitored across search terms, bids, audiences, devices, locations, schedules and conversions to reduce wasted spend.",
-    timing: "Ongoing",
-    output: "Active optimization",
-    icon: SlidersHorizontal,
+      "Approved responses are prepared while service, sales, HR, legal or leadership teams are involved when internal action is required.",
+    timing: "As required",
+    output: "Managed public responses",
+    icon: MessagesSquare,
   },
   {
     number: "06",
-    title: "Report and scale",
+    title: "Strengthen positive visibility",
     description:
-      "We review performance, identify profitable patterns and recommend budget or campaign changes based on measurable business outcomes.",
+      "Credible profiles, customer stories and useful brand content are improved to create a more balanced and accurate digital presence.",
     timing: "Monthly",
-    output: "Report and growth plan",
+    output: "Positive asset plan",
+    icon: BadgeCheck,
+  },
+  {
+    number: "07",
+    title: "Report and improve",
+    description:
+      "We review sentiment, review trends, response quality and recurring issues to recommend the next reputation priorities.",
+    timing: "Monthly",
+    output: "ORM performance report",
     icon: BarChart3,
   },
 ];
 
 const DELIVERABLES = [
   {
-    title: "SEM account audit",
+    title: "Online reputation audit",
     description:
-      "A structured review of campaigns, tracking, budget usage, search terms, targeting and current performance opportunities.",
+      "A structured assessment of branded search results, reviews, ratings, social conversations and digital trust signals.",
     icon: FileSearch,
   },
   {
-    title: "Keyword strategy",
+    title: "Monitoring framework",
     description:
-      "A practical keyword and negative keyword framework organized around search intent, services and commercial relevance.",
-    icon: SearchCheck,
+      "A defined list of brand terms, platforms, profiles and reputation risks that require regular monitoring.",
+    icon: BellRing,
   },
   {
-    title: "Campaign setup",
+    title: "Response playbook",
     description:
-      "Campaigns, ad groups, advertisements, extensions, audiences and budget settings configured for launch.",
-    icon: Settings2,
+      "Practical tone guidelines, templates and response principles for reviews, complaints and sensitive situations.",
+    icon: FileCheck,
   },
   {
-    title: "Conversion tracking",
+    title: "Review management plan",
     description:
-      "Tracking for forms, calls, purchases, WhatsApp clicks and other meaningful website or campaign actions.",
-    icon: Link2,
+      "A process for monitoring, responding to, escalating and learning from customer reviews across relevant platforms.",
+    icon: Star,
   },
   {
-    title: "Campaign optimization",
+    title: "Escalation matrix",
     description:
-      "Ongoing improvements across keywords, bids, budgets, advertisements, audiences, schedules and locations.",
-    icon: TestTubeDiagonal,
+      "Clear ownership and approval rules for operational complaints, legal concerns, media issues and public crises.",
+    icon: ListChecks,
   },
   {
-    title: "Performance reporting",
+    title: "Search improvement plan",
     description:
-      "Clear reporting covering campaign results, conversion costs, search behaviour and recommended next actions.",
+      "Recommendations to strengthen accurate owned profiles, useful content and positive branded search visibility.",
+    icon: Search,
+  },
+  {
+    title: "Monthly ORM report",
+    description:
+      "Reporting covering sentiment, rating changes, review activity, responses, risks and recurring customer concerns.",
     icon: CircleGauge,
+  },
+  {
+    title: "Reputation action plan",
+    description:
+      "Prioritized recommendations for customer experience, communication, content and internal process improvements.",
+    icon: Settings2,
   },
 ];
 
 const FAQS = [
   {
-    question: "What is included in your SEM service?",
+    question: "What is included in your ORM service?",
     answer:
-      "The service can include account audit, keyword research, campaign strategy, ad creation, targeting, budget management, conversion tracking, landing-page recommendations, ongoing optimization and performance reporting. The final scope depends on your advertising goals and platforms.",
+      "The service can include reputation auditing, brand mention monitoring, review management, response strategy, sentiment analysis, escalation planning, search reputation recommendations and monthly reporting. The final scope depends on your brand size, active platforms and risk level.",
   },
   {
-    question: "What is the difference between SEM, SEO and PPC?",
+    question: "What is online reputation management?",
     answer:
-      "SEM is the broader process of increasing visibility through paid search engine campaigns. PPC refers to the advertising payment model where advertisers commonly pay for clicks. SEO focuses on improving unpaid organic search visibility over time.",
+      "Online reputation management is the process of monitoring, understanding and improving how a brand, business or individual is represented across search engines, review platforms, social media, news websites and other public digital channels.",
   },
   {
-    question: "Which advertising platforms do you manage?",
+    question: "Can you remove negative reviews?",
     answer:
-      "We primarily support Google Ads and can also manage Microsoft Advertising where it is relevant to the audience and market. Campaign recommendations depend on search demand, competition, geography and available budget.",
+      "Legitimate negative reviews generally cannot and should not be removed simply because they are critical. Reviews may be reported when they clearly violate a platform's policies, but removal decisions remain with the platform. Our focus is on professional responses, resolution and long-term reputation improvement.",
   },
   {
-    question: "How much budget is required for SEM?",
+    question: "Do you respond to customer reviews on our behalf?",
     answer:
-      "The required budget depends on keyword competition, location, industry, campaign objective and expected lead volume. We recommend a practical starting budget after reviewing search demand and estimated cost-per-click levels.",
+      "Yes. We can prepare or manage responses according to an approved tone, process and escalation framework. Sensitive or operational complaints may require information and approval from your internal team before a public response is posted.",
   },
   {
-    question: "Is advertising spend included in your management fee?",
+    question: "Which platforms do you monitor?",
     answer:
-      "No. The amount paid directly to the advertising platform is separate from campaign strategy and management fees. Both amounts are clearly defined before the campaign begins.",
+      "Monitoring can cover Google search results, Google Business Profile, social media channels, review websites, news sources, forums and relevant industry communities. The exact channel mix depends on where your audiences discuss or evaluate your brand.",
   },
   {
-    question: "How quickly can SEM generate results?",
+    question: "How do you handle a reputation crisis?",
     answer:
-      "Campaigns can begin generating traffic and enquiries soon after launch, but stable performance usually requires sufficient data and ongoing optimization. Results depend on search demand, competition, budget, offer quality, landing pages and tracking accuracy.",
+      "We first verify the issue, assess its visibility and impact, classify the risk and identify the required stakeholders. A coordinated response is then developed with clear messaging, approval, channel selection and follow-up actions.",
   },
   {
-    question: "Do you create landing pages for SEM campaigns?",
+    question: "How long does ORM take to show results?",
     answer:
-      "We review existing landing pages and provide conversion-focused recommendations. Dedicated landing-page design and development can also be included when the current website does not provide a suitable campaign destination.",
+      "Response quality and monitoring can improve immediately after implementation. Ratings, branded search perception and long-term trust usually require consistent customer experience, useful content and reputation management over several months.",
   },
   {
-    question: "How do you reduce wasted advertising spend?",
+    question: "Can ORM improve Google ratings?",
     answer:
-      "We regularly review search terms, negative keywords, locations, devices, schedules, audience signals and conversion data. Irrelevant traffic is excluded while budgets and bids are adjusted towards stronger-performing opportunities.",
+      "ORM can improve how reviews are monitored, answered and requested from genuine customers. However, ratings depend primarily on real customer experiences and authentic feedback. We do not support fake reviews or manipulative rating practices.",
   },
   {
-    question: "How do you measure SEM performance?",
+    question: "Do you manage personal reputation for founders or executives?",
     answer:
-      "Performance is measured using metrics connected to the campaign objective, including impressions, click-through rate, cost per click, conversion rate, cost per lead, calls, enquiries, purchases and return on advertising spend where revenue tracking is available.",
+      "Yes. The service can include branded search monitoring, leadership profile review, media mention tracking, thought-leadership recommendations and response planning for founders, executives or public-facing professionals.",
   },
   {
-    question: "Can you manage an existing Google Ads account?",
+    question: "How do you measure ORM performance?",
     answer:
-      "Yes. We can audit and optimize an existing account or rebuild its campaign structure when necessary. Existing data is reviewed before major changes are made so useful historical insights are not lost.",
+      "Performance can be measured through rating trends, review volume, sentiment patterns, response time, issue resolution, branded search visibility, recurring complaint categories and changes in positive or negative conversation share.",
+  },
+  {
+    question: "Can you work with our customer service or legal team?",
+    answer:
+      "Yes. ORM often requires coordination with customer service, operations, HR, legal, public relations and leadership. We define ownership, approvals and escalation rules so public responses remain accurate and controlled.",
   },
 ];
 
 const SERVICE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Search Engine Marketing Services",
-  serviceType: "Search Engine Marketing",
+  name: "Online Reputation Management Services",
+  serviceType: "Online Reputation Management",
   description:
-    "Search engine marketing services for paid search campaigns, keyword targeting, bidding, conversion tracking and measurable lead generation.",
+    "Online reputation management services for brand monitoring, review management, response strategy, crisis handling and measurable reputation growth.",
   provider: {
     "@type": "Organization",
     name: "BrainADZ Marketing",
@@ -407,7 +466,7 @@ const FAQ_SCHEMA = {
   })),
 };
 
-export default function SemServicesPage() {
+export default function OnlineReputationManagementPage() {
   return (
     <main className="dm-sans bg-white text-[#111111]">
       <script
@@ -428,7 +487,7 @@ export default function SemServicesPage() {
       <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
         <img
           src="/about/about.avif"
-          alt="BrainADZ Marketing search engine marketing team"
+          alt="BrainADZ Marketing online reputation management team"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
 
@@ -449,24 +508,27 @@ export default function SemServicesPage() {
 
             <span className="text-white/70">/</span>
 
-            <span className="text-white">SEM Services</span>
+            <span className="text-white">
+              Online Reputation Management
+            </span>
           </nav>
 
-          <h1 className="mt-7 max-w-[900px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
-            Search Engine Marketing Services
+          <h1 className="mt-7 max-w-[980px] text-[38px] font-semibold leading-[1.06] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
+            Online Reputation Management Services
           </h1>
 
-          <div className="mt-auto max-w-[740px] pb-6 sm:pb-10 lg:pb-12">
+          <div className="mt-auto max-w-[780px] pb-6 sm:pb-10 lg:pb-12">
             <p className="text-[14px] font-normal leading-[1.5] tracking-[-0.02em] text-white sm:text-[16px] lg:text-[20px]">
-              Reach high-intent customers with paid search campaigns built for
-              relevant traffic, qualified leads and measurable business growth.
+              Monitor brand conversations, manage reviews, respond to
+              reputation risks and build stronger digital trust across every
+              important customer touchpoint.
             </p>
 
             <Link
               href="/contact"
               className="mt-8 inline-flex min-h-14 items-center justify-center gap-5 rounded-full bg-[#E1122B] px-7 text-[13px] font-semibold text-white transition-colors hover:bg-black"
             >
-              Launch your search campaigns
+              Protect your brand reputation
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
             </Link>
           </div>
@@ -476,7 +538,7 @@ export default function SemServicesPage() {
       {/* Sticky Navigation */}
       <div className="sticky top-20 z-40 border-b border-black/10 bg-white text-black shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
         <nav
-          aria-label="SEM page navigation"
+          aria-label="ORM page navigation"
           className="no-scrollbar mx-auto max-w-[1800px] overflow-x-auto px-5 sm:px-8 lg:px-10"
         >
           <div className="flex min-h-20 min-w-max items-center">
@@ -518,31 +580,31 @@ export default function SemServicesPage() {
             </p>
           </div>
 
-          <h2 className="mt-5 max-w-[1220px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-            Capture demand when customers are ready to act
+          <h2 className="mt-5 max-w-[1280px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
+            Build a reputation customers can see and trust
           </h2>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-start lg:gap-16">
             <div>
-              <p className="max-w-[700px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-                Search engine marketing connects your business with people
-                actively searching for relevant products, services and
-                solutions. BrainADZ combines keyword strategy, campaign
-                architecture, advertisement creation, bidding and conversion
-                tracking to turn search demand into measurable opportunities.
+              <p className="max-w-[710px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
+                Your online reputation is shaped by reviews, search results,
+                customer conversations, media coverage and the way your brand
+                responds publicly. BrainADZ brings these touchpoints into one
+                structured reputation management system.
               </p>
 
-              <p className="mt-5 max-w-[700px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-                Every campaign is managed as a complete conversion system—from
-                the user&apos;s search query and advertisement to the landing
-                page, enquiry and final business outcome.
+              <p className="mt-5 max-w-[710px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
+                We combine monitoring, response management, review strategy,
+                search visibility and reporting to help your team manage
+                concerns professionally while building stronger long-term
+                digital trust.
               </p>
 
               <Link
                 href="/contact"
                 className="mt-7 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
               >
-                Build your SEM strategy
+                Request a reputation audit
                 <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
               </Link>
             </div>
@@ -550,14 +612,14 @@ export default function SemServicesPage() {
             <figure>
               <div className="relative aspect-video overflow-hidden rounded-[14px] border border-black/10 bg-[#f7f7f7] shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
                 <img
-                  src="/sem/dashboard.jpg"
-                  alt="Search engine marketing campaign dashboard and reporting"
+                  src="/orm/monitoring-dashboard.jpg"
+                  alt="Online reputation monitoring and sentiment dashboard"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
 
               <figcaption className="mt-2 text-[13px] leading-5 text-black/48">
-                Search campaign management, conversion tracking and reporting
+                Brand monitoring, review tracking and reputation reporting
               </figcaption>
             </figure>
           </div>
@@ -589,9 +651,9 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Capabilities Section */}
       <section
-        id="features"
+        id="capabilities"
         className="scroll-mt-[164px] border-b border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
@@ -599,24 +661,24 @@ export default function SemServicesPage() {
             <span className="h-0.5 w-8 bg-[#E1122B]" />
 
             <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
-              Features
+              Capabilities
             </p>
           </div>
 
-          <h2 className="mt-5 max-w-[1250px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-            Built for relevant clicks and profitable conversions
+          <h2 className="mt-5 max-w-[1280px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
+            A complete system for monitoring and improving brand trust
           </h2>
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-8">
             <div className="overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_16px_45px_rgba(0,0,0,0.05)]">
-              {FEATURES.map((feature, index) => (
+              {CAPABILITIES.map((capability, index) => (
                 <details
-                  key={feature.title}
+                  key={capability.title}
                   open={index === 0}
                   className="group border-b border-black/10 last:border-b-0 open:border-l-[3px] open:border-l-[#E1122B] open:bg-[#fff8f8]"
                 >
                   <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-5 px-5 py-4 text-left text-[17px] font-medium text-black transition-colors hover:bg-[#fff8f8] focus-visible:bg-[#fff8f8] focus-visible:outline-none [&::-webkit-details-marker]:hidden">
-                    <span>{feature.title}</span>
+                    <span>{capability.title}</span>
 
                     <ChevronDown
                       className="h-5 w-5 shrink-0 transition-transform duration-300 group-open:rotate-180 group-open:text-[#E1122B]"
@@ -626,11 +688,11 @@ export default function SemServicesPage() {
 
                   <div className="px-5 pb-7 pt-1">
                     <p className="max-w-[700px] text-[14px] leading-7 text-black/60 sm:text-[15px]">
-                      {feature.description}
+                      {capability.description}
                     </p>
 
                     <ul className="mt-5 space-y-3">
-                      {feature.points.map((point) => (
+                      {capability.points.map((point) => (
                         <li
                           key={point}
                           className="flex items-start gap-3 text-[14px] leading-6 text-black/68"
@@ -652,30 +714,32 @@ export default function SemServicesPage() {
             <figure className="lg:sticky lg:top-[188px]">
               <div className="relative aspect-video overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
                 <img
-                  src="/sem/campaign.jpg"
-                  alt="Paid search campaign management by BrainADZ Marketing"
+                  src="/orm/reputation-management.jpg"
+                  alt="Online reputation management strategy by BrainADZ Marketing"
                   className="h-full w-full object-cover object-top"
                 />
               </div>
 
               <figcaption className="mt-2 text-[13px] leading-5 text-black/48">
-                Paid search campaign strategy, advertisements and optimization
+                Reputation monitoring, response planning and customer trust
+                management
               </figcaption>
 
               <div className="mt-5 rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_45px_rgba(0,0,0,0.04)]">
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[10px] bg-[#fff1f1] text-[#E1122B]">
-                    <Gauge className="h-6 w-6" strokeWidth={1.6} />
+                    <ShieldCheck className="h-6 w-6" strokeWidth={1.6} />
                   </div>
 
                   <div>
                     <h3 className="text-[17px] font-semibold text-black">
-                      Every click should have a purpose
+                      Reputation is managed through action
                     </h3>
 
                     <p className="mt-2 text-[14px] leading-6 text-black/58">
-                      Keywords, advertisements, landing pages and tracking are
-                      aligned around the same conversion objective.
+                      Professional responses matter, but long-term reputation
+                      improvement also requires better customer experiences and
+                      internal resolution.
                     </p>
                   </div>
                 </div>
@@ -685,9 +749,9 @@ export default function SemServicesPage() {
         </div>
       </section>
 
-      {/* Campaign Types Section */}
+      {/* Monitoring Channels Section */}
       <section
-        id="campaign-types"
+        id="monitoring"
         className="scroll-mt-[164px] border-b border-black/10 bg-white py-16 text-black sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
@@ -697,29 +761,29 @@ export default function SemServicesPage() {
                 <span className="h-0.5 w-8 bg-[#E1122B]" />
 
                 <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
-                  Campaign Types
+                  Monitoring Channels
                 </p>
               </div>
 
               <h2 className="mt-5 max-w-[1050px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-                The right campaign for every search objective
+                Understand where your reputation is being shaped
               </h2>
             </div>
 
             <p className="max-w-[620px] text-[15px] leading-7 text-black/60 sm:text-[16px] sm:leading-8">
-              Campaign types are selected according to your market, audience,
-              available assets, sales journey and the business outcome paid
-              search needs to support.
+              Reputation signals are spread across search, reviews, social
+              platforms, media and public communities. We organize the most
+              relevant channels into one monitoring framework.
             </p>
           </div>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {CAMPAIGN_TYPES.map((campaign, index) => {
-              const Icon = campaign.icon;
+            {MONITORING_CHANNELS.map((channel, index) => {
+              const Icon = channel.icon;
 
               return (
                 <article
-                  key={campaign.title}
+                  key={channel.title}
                   className="group relative overflow-hidden rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_45px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/40 hover:bg-[#fff8f8] sm:p-7"
                 >
                   <span className="absolute right-5 top-4 text-[48px] font-semibold leading-none text-black/[0.035]">
@@ -731,24 +795,96 @@ export default function SemServicesPage() {
                   </div>
 
                   <h3 className="mt-7 text-[23px] font-semibold leading-tight tracking-[-0.02em] text-black">
-                    {campaign.title}
+                    {channel.title}
                   </h3>
 
                   <p className="mt-4 text-[14px] leading-7 text-black/58">
-                    {campaign.description}
+                    {channel.description}
                   </p>
 
                   <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 border-t border-black/10 pt-5">
-                    {campaign.points.map((point) => (
+                    {channel.points.map((point) => (
                       <li
                         key={point}
                         className="flex items-start gap-2 text-[13px] leading-5 text-black/65"
                       >
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E1122B]" />
+
                         <span>{point}</span>
                       </li>
                     ))}
                   </ul>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Response Framework Section */}
+      <section
+        id="response-framework"
+        className="scroll-mt-[164px] border-b border-black/10 bg-black py-16 text-white sm:py-20 lg:py-24"
+      >
+        <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+          <div className="grid gap-6 lg:grid-cols-[1fr_0.72fr] lg:items-end lg:gap-16">
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="h-0.5 w-8 bg-[#E1122B]" />
+
+                <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
+                  Response Framework
+                </p>
+              </div>
+
+              <h2 className="mt-5 max-w-[1100px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[58px]">
+                Respond with clarity before emotion takes control
+              </h2>
+            </div>
+
+            <p className="max-w-[620px] text-[15px] leading-7 text-white/58 sm:text-[16px] sm:leading-8">
+              Not every complaint requires the same response. A structured
+              framework helps teams verify issues, control risk and communicate
+              with empathy and accuracy.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {RESPONSE_FRAMEWORK.map((stage, index) => {
+              const Icon = stage.icon;
+
+              return (
+                <article
+                  key={stage.title}
+                  className="rounded-[14px] border border-white/10 bg-white/[0.035] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/55 hover:bg-white/[0.06] sm:p-7"
+                >
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-[10px] border border-[#E1122B]/30 bg-[#E1122B]/10 text-[#E1122B]">
+                      <Icon className="h-7 w-7" strokeWidth={1.5} />
+                    </div>
+
+                    <span className="text-[13px] font-semibold text-white/20">
+                      0{index + 1}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-7 text-[22px] font-semibold leading-tight text-white">
+                    {stage.title}
+                  </h3>
+
+                  <p className="mt-4 text-[14px] leading-7 text-white/55">
+                    {stage.description}
+                  </p>
+
+                  <div className="mt-6 border-t border-white/10 pt-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/35">
+                      Output
+                    </p>
+
+                    <p className="mt-2 text-[14px] font-medium text-white/78">
+                      {stage.output}
+                    </p>
+                  </div>
                 </article>
               );
             })}
@@ -772,20 +908,20 @@ export default function SemServicesPage() {
             </div>
 
             <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-              A clear process from search demand to conversion
+              A controlled process from monitoring to improvement
             </h2>
 
             <p className="mt-6 max-w-[620px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">
-              Every campaign follows a structured research, setup, testing and
-              optimization workflow so media spend remains focused on
-              measurable business outcomes.
+              Every reputation signal is reviewed through a clear system of
+              verification, prioritization, response, resolution and long-term
+              learning.
             </p>
 
             <Link
               href="/contact"
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
             >
-              Plan your SEM campaign
+              Plan your ORM workflow
               <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
             </Link>
           </div>
@@ -864,28 +1000,29 @@ export default function SemServicesPage() {
               </div>
 
               <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-                Everything required to manage paid search effectively
+                Practical tools for managing reputation consistently
               </h2>
 
               <p className="mt-6 max-w-[600px] text-[15px] leading-7 text-black/60 sm:text-[16px] sm:leading-8">
-                The engagement produces a complete campaign system covering
-                research, account setup, advertising, tracking, optimization
-                and reporting.
+                The engagement produces clear systems, response guidance and
+                reporting that your marketing and customer-facing teams can use
+                every day.
               </p>
 
               <div className="mt-8 rounded-[14px] bg-black p-6 text-white sm:p-7">
-                <ShieldCheck
+                <UserRoundCheck
                   className="h-8 w-8 text-[#E1122B]"
                   strokeWidth={1.5}
                 />
 
                 <h3 className="mt-6 text-[22px] font-semibold leading-tight">
-                  Transparent campaign management
+                  Authentic reputation improvement
                 </h3>
 
                 <p className="mt-3 text-[14px] leading-7 text-white/60">
-                  Campaign decisions are supported by search data, conversion
-                  performance and clearly documented next actions.
+                  We do not support fake reviews, misleading feedback or the
+                  suppression of legitimate customer concerns. The focus
+                  remains on trust, transparency and resolution.
                 </p>
               </div>
             </div>
@@ -905,7 +1042,7 @@ export default function SemServicesPage() {
                       </div>
 
                       <span className="text-[13px] font-semibold text-black/20">
-                        0{index + 1}
+                        {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
 
@@ -940,12 +1077,12 @@ export default function SemServicesPage() {
             </div>
 
             <h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">
-              Questions before launching your search campaigns?
+              Questions before managing your online reputation?
             </h2>
 
             <p className="mt-6 max-w-[580px] text-[15px] leading-7 text-black/58 sm:text-[16px] sm:leading-8">
-              Practical information about campaign budgets, paid search
-              platforms, tracking, optimization and expected performance.
+              Practical information about reputation monitoring, reviews,
+              crisis response, search visibility and performance measurement.
             </p>
 
             <Link
