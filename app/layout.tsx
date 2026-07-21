@@ -4,7 +4,8 @@ import "./globals.css";
 import "aos/dist/aos.css";
 import AosInit from "@/components/AosInit";
 import Navbar from "@/components/header";
-import Footer from "@/components/Footer"
+import Footer from "@/components/Footer";
+import ServicePageInteractions from "@/components/ServicePageInteractions";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,9 +33,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AosInit />
+        <ServicePageInteractions />
         <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

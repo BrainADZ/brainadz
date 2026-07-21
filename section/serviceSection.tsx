@@ -9,7 +9,7 @@ const SERVICES = [
     description:
       "SEO, social media, content strategy, and digital campaigns designed to strengthen your online presence and connect with the right audience.",
     href: "/services/digital-marketing",
-    image: "/image3.jpg",
+    image: "/home/digital-marketing.webp",
     imageAlt: "Digital marketing campaign illustration",
     imageClassName: "object-cover",
     tileClassName: "lg:col-span-2 lg:row-span-2",
@@ -39,7 +39,7 @@ const SERVICES = [
     description:
       "Fast, responsive, and conversion-focused websites built to support your brand, business goals, and digital growth.",
     href: "/services/web-design-development",
-    image: "/image4.jpg",
+    image: "/home/website-development.webp",
     imageAlt: "Website development illustration",
     imageClassName: "object-cover",
     tileClassName: "bg-[#151515]",
