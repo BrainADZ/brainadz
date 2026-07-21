@@ -1,11 +1,13 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
+
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { FiArrowRight, FiExternalLink } from "react-icons/fi";
 
-const ACCENT = "#e50914";
+const ACCENT = "#E1122B";
 
 /* ========================= TABS ========================= */
 
@@ -16,7 +18,6 @@ type TabKey =
   | "Facebook Profiles"
   | "Youtube Profiles"
   | "Linkedin Profiles"
-
   | "Graphic Design";
 
 const TABS: TabKey[] = [
@@ -38,8 +39,17 @@ type PortfolioItem = {
   href?: string;
 };
 
+const PORTFOLIO_MEDIA_HEIGHTS = [
+  "h-[280px] sm:h-[320px] lg:h-[360px]",
+  "h-[400px] sm:h-[460px] lg:h-[520px]",
+  "h-[330px] sm:h-[380px] lg:h-[430px]",
+  "h-[440px] sm:h-[500px] lg:h-[560px]",
+  "h-[300px] sm:h-[350px] lg:h-[400px]",
+  "h-[380px] sm:h-[430px] lg:h-[480px]",
+] as const;
+
 const PORTFOLIO_DATA: Record<TabKey, PortfolioItem[]> = {
-    "Web Design": [
+  "Web Design": [
     {
       title: "Khadi Organic",
       image: "/portfolio/web/1.png",
@@ -48,7 +58,7 @@ const PORTFOLIO_DATA: Record<TabKey, PortfolioItem[]> = {
     {
       title: "Comac India",
       image: "/portfolio/web/2.png",
-      href: "https://comacindia.com/"
+      href: "https://comacindia.com/",
     },
     {
       title: "Jaskirat Exports",
@@ -105,12 +115,12 @@ const PORTFOLIO_DATA: Record<TabKey, PortfolioItem[]> = {
   ],
 
   "Instagram Profiles": [
-        {
+    {
       title: "Cremica",
       image: "/portfolio/instagram/7.png",
       href: "https://www.instagram.com/cremicafoods/",
     },
-        {
+    {
       title: "Eclectic Bay India",
       image: "/portfolio/instagram/5.png",
       href: "https://www.instagram.com/eclecticbayindia/",
@@ -135,7 +145,6 @@ const PORTFOLIO_DATA: Record<TabKey, PortfolioItem[]> = {
       image: "/portfolio/instagram/4.png",
       href: "https://www.instagram.com/okcookware/",
     },
-
   ],
 
   "Facebook Profiles": [
@@ -192,8 +201,6 @@ const PORTFOLIO_DATA: Record<TabKey, PortfolioItem[]> = {
     },
   ],
 
-
-
   "Graphic Design": [
     {
       title: "Graphic 1",
@@ -224,7 +231,7 @@ const PORTFOLIO_DATA: Record<TabKey, PortfolioItem[]> = {
 
 export default function Page() {
   return (
-    <main className="w-full overflow-x-hidden bg-black text-white">
+    <main className="dm-sans w-full overflow-x-hidden bg-white text-[#111111]">
       <CaseStudiesHero />
       <PortfolioTabsSection />
     </main>
@@ -253,14 +260,14 @@ function CaseStudiesHero() {
           aria-label="Breadcrumb"
           className="flex items-center gap-2 text-[14px] font-medium leading-none"
         >
-          <Link href="/" className="text-[#ff5a64] transition hover:text-white">
+          <Link href="/" className="text-[#E1122B] transition hover:text-white">
             Home
           </Link>
           <span className="text-white/60">/</span>
           <span className="text-white">Case Studies</span>
         </nav>
 
-        <h1 className="mt-7 max-w-[800px] text-[36px] font-normal leading-[1.04] text-white sm:text-[48px] lg:text-[62px]">
+        <h1 className="mt-7 max-w-[800px] text-[36px] font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-[48px] lg:text-[62px]">
           Case Studies
         </h1>
 
@@ -273,14 +280,14 @@ function CaseStudiesHero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="#portfolio"
-              className="inline-flex min-h-14 items-center justify-center gap-7 rounded-[4px] bg-[#e50914] px-6 text-[15px] font-medium text-white transition hover:bg-[#b70710]"
+              className="inline-flex min-h-14 items-center justify-center gap-7 rounded-full bg-[#E1122B] px-6 text-[15px] font-semibold text-white transition hover:bg-black"
             >
               Explore our work
               <FiArrowRight />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex min-h-14 items-center justify-center gap-7 rounded-[4px] border border-white/24 bg-black/30 px-6 text-[15px] font-medium text-white transition hover:border-[#e50914] hover:bg-[#e50914]"
+              className="inline-flex min-h-14 items-center justify-center gap-7 rounded-full border border-white/45 bg-black/25 px-6 text-[15px] font-semibold text-white transition hover:border-[#E1122B] hover:bg-[#E1122B]"
             >
               Start a project
               <FiArrowRight />
@@ -344,8 +351,9 @@ function LegacyHeroSection() {
             </p>
 
             <h1 className="mt-6 text-4xl md:text-5xl font-extrabold leading-[1.05] tracking-tight text-white">
-              Explore our <span style={{ color: "#E9FFFE" }}>selected work</span>{" "}
-              across brands & industries.
+              Explore our{" "}
+              <span style={{ color: "#E9FFFE" }}>selected work</span> across
+              brands & industries.
             </h1>
 
             <p className="mt-6 max-w-2xl text-sm md:text-base leading-relaxed text-white/85">
@@ -385,7 +393,8 @@ function LegacyHeroSection() {
                 </h2>
 
                 <p className="mt-2 text-sm text-white/75 leading-relaxed">
-                  Share your requirement — we’ll get back with the best approach.
+                  Share your requirement — we’ll get back with the best
+                  approach.
                 </p>
 
                 <div className="mt-6 h-px w-full bg-white/15" />
@@ -511,7 +520,10 @@ function PortfolioTabsSection() {
   const items = PORTFOLIO_DATA[active];
 
   return (
-    <section id="portfolio" className="w-full scroll-mt-24 bg-[#080808] text-white">
+    <section
+      id="portfolio"
+      className="w-full scroll-mt-24 bg-[#fbfbfb] text-black"
+    >
       <div className="mx-auto max-w-[1800px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
         <div className="flex flex-wrap items-center justify-center gap-3">
           {TABS.map((t) => {
@@ -522,16 +534,16 @@ function PortfolioTabsSection() {
                 type="button"
                 onClick={() => setActive(t)}
                 className={[
-                  "min-h-12 rounded-[4px] border px-5 text-sm font-semibold transition-all duration-200",
+                  "min-h-12 rounded-full border px-5 text-sm font-semibold transition-all duration-200",
                   isActive
-                    ? "border-[#e50914] text-white"
-                    : "border-white/12 bg-black text-white/70 hover:border-[#e50914] hover:text-white",
+                    ? "border-[#E1122B] text-white"
+                    : "border-black/10 bg-white text-black/70 hover:border-[#E1122B] hover:text-[#E1122B]",
                 ].join(" ")}
                 style={
                   isActive
                     ? {
-                      background: ACCENT,
-                    }
+                        background: ACCENT,
+                      }
                     : undefined
                 }
                 aria-pressed={isActive}
@@ -542,25 +554,25 @@ function PortfolioTabsSection() {
           })}
         </div>
 
-        <div className="mt-12 border-t border-white/12 pt-10">
-          <p className="text-xs font-semibold uppercase text-white/50">
+        <div className="mt-12 border-t border-black/10 pt-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
             Selected Category
           </p>
 
-          <h3 className="mt-3 text-2xl font-medium text-white md:text-3xl">
+          <h3 className="mt-3 text-2xl font-semibold tracking-[-0.035em] text-black md:text-3xl">
             {activeMeta.title}
           </h3>
 
           <div className="mt-3 h-0.5 w-24" style={{ background: ACCENT }} />
 
-          <p className="mt-4 max-w-3xl text-sm text-white/62 md:text-base">
+          <p className="mt-4 max-w-3xl text-sm text-black/60 md:text-base">
             {activeMeta.desc}
           </p>
 
           {active === "Graphic Design" ? (
-            <GraphicGrid items={items} />
+            <GraphicGrid items={items} category={active} />
           ) : (
-            <BrowserGrid items={items} />
+            <BrowserGrid items={items} category={active} />
           )}
         </div>
       </div>
@@ -570,60 +582,22 @@ function PortfolioTabsSection() {
 
 /* ========================= BROWSER STYLE GRID ========================= */
 
-function BrowserGrid({ items }: { items: PortfolioItem[] }) {
+function BrowserGrid({
+  items,
+  category,
+}: {
+  items: PortfolioItem[];
+  category: TabKey;
+}) {
   return (
-    <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <div className="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-3">
       {items.map((item, index) => (
-        <article
+        <PortfolioCard
           key={`${item.title}-${index}`}
-          className="group overflow-hidden rounded-[6px] border border-white/12 bg-black transition-all duration-300 hover:-translate-y-1 hover:border-[#e50914]/70"
-        >
-          <div className="border-b border-white/10 bg-[#101010] px-4 py-3">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
-                <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
-                <span className="h-3 w-3 rounded-full bg-[#28C840]" />
-              </div>
-
-              <div className="hidden sm:flex flex-1 justify-center">
-                <div className="w-full max-w-[220px] truncate rounded-[3px] border border-white/10 bg-black px-3 py-1 text-[11px] text-white/45">
-                  {item.href || "www.project-link.com"}
-                </div>
-              </div>
-
-              <div className="text-[11px] font-medium text-white/40">Preview</div>
-            </div>
-          </div>
-
-          <div className="relative aspect-14/8 w-full overflow-hidden bg-[#080808]">
-            <Image
-              src={item.image}
-              alt={item.title}
-              fill
-              className="object-contain object-top transition-transform duration-500 group-hover:scale-[1.03]"
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            />
-          </div>
-
-          <div className="p-5">
-            <h4 className="text-lg font-semibold text-white">{item.title}</h4>
-
-            {item.href ? (
-              <div className="mt-5">
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-[4px] border border-[#e50914]/45 px-4 py-2 text-sm font-semibold text-[#ff5a64] transition-all duration-200 hover:bg-[#e50914] hover:text-white"
-                  style={{ background: `${ACCENT}1A` }}
-                >
-                  Visit Project <FiExternalLink />
-                </a>
-              </div>
-            ) : null}
-          </div>
-        </article>
+          item={item}
+          category={category}
+          index={index}
+        />
       ))}
     </div>
   );
@@ -631,25 +605,89 @@ function BrowserGrid({ items }: { items: PortfolioItem[] }) {
 
 /* ========================= GRAPHIC ONLY GRID ========================= */
 
-function GraphicGrid({ items }: { items: PortfolioItem[] }) {
+function GraphicGrid({
+  items,
+  category,
+}: {
+  items: PortfolioItem[];
+  category: TabKey;
+}) {
   return (
-    <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    <div className="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-3">
       {items.map((item, index) => (
-        <div
+        <PortfolioCard
           key={`${item.title}-${index}`}
-          className="group overflow-hidden rounded-[6px] border border-white/12 bg-black transition-colors hover:border-[#e50914]/70"
-        >
-          <div className="relative aspect-4/5 w-full overflow-hidden bg-[#080808]">
-            <Image
-              src={item.image}
-              alt={item.title}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            />
-          </div>
-        </div>
+          item={item}
+          category={category}
+          index={index}
+        />
       ))}
     </div>
+  );
+}
+
+function PortfolioCard({
+  item,
+  category,
+  index,
+}: {
+  item: PortfolioItem;
+  category: TabKey;
+  index: number;
+}) {
+  const mediaHeight =
+    PORTFOLIO_MEDIA_HEIGHTS[index % PORTFOLIO_MEDIA_HEIGHTS.length];
+
+  const content = (
+    <>
+      <div className="overflow-hidden bg-white shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-[border-radius] duration-500 ease-out group-hover:rounded-lg">
+        <img
+          src={item.image}
+          alt={item.title}
+          loading="lazy"
+          decoding="async"
+          className={`block w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04] group-hover:rotate-1 ${mediaHeight}`}
+        />
+      </div>
+
+      <div className="pt-4">
+        <h4 className="text-[18px] font-semibold leading-tight text-black">
+          {item.title}
+        </h4>
+        <div className="relative mt-1 h-5 overflow-hidden text-[12px] font-medium">
+          <span className="absolute left-0 top-0 text-black/50 transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0">
+            {category}
+          </span>
+          {item.href ? (
+            <span className="absolute left-0 top-0 inline-flex translate-y-4 items-center gap-1 text-[#E1122B] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              Visit Project
+              <FiExternalLink className="h-3.5 w-3.5" />
+            </span>
+          ) : null}
+        </div>
+      </div>
+    </>
+  );
+
+  return (
+    <article
+      data-aos="fade-up"
+      data-aos-delay={(index % 3) * 80}
+      className="group mb-8 inline-block w-full break-inside-avoid"
+    >
+      {item.href ? (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit ${item.title} project`}
+          className="block"
+        >
+          {content}
+        </a>
+      ) : (
+        <div>{content}</div>
+      )}
+    </article>
   );
 }

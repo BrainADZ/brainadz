@@ -45,7 +45,7 @@ const BLOG_POSTS = [
 
 export default function BlogPage() {
   return (
-    <main className="bg-black text-white">
+    <main className="dm-sans bg-white text-[#111111]">
       <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
         <Image
           src="/about/about.avif"
@@ -64,14 +64,17 @@ export default function BlogPage() {
             aria-label="Breadcrumb"
             className="flex items-center gap-2 text-[14px] font-medium leading-none"
           >
-            <Link href="/" className="text-[#1467f5] transition hover:text-white">
+            <Link
+              href="/"
+              className="text-[#E1122B] transition hover:text-white"
+            >
               Home
             </Link>
             <span className="text-white/70">/</span>
             <span className="text-white">Blog</span>
           </nav>
 
-          <h1 className="mt-7 max-w-[760px] text-[32px] font-normal leading-[1.04] text-white sm:text-[42px] lg:text-[52px]">
+          <h1 className="mt-7 max-w-[760px] text-[32px] font-semibold leading-[1.04] tracking-[-0.04em] text-white sm:text-[42px] lg:text-[52px]">
             Blog &amp; Insights
           </h1>
 
@@ -83,7 +86,7 @@ export default function BlogPage() {
 
             <Link
               href="#articles"
-              className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-[4px] bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
+              className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-full bg-[#E1122B] px-5 text-[15px] font-semibold text-white transition hover:bg-black sm:min-h-14 sm:px-6"
             >
               Explore articles
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
@@ -94,19 +97,19 @@ export default function BlogPage() {
 
       <section
         id="articles"
-        className="scroll-mt-24 bg-[#080808] py-16 text-white sm:py-20 lg:py-24"
+        className="scroll-mt-24 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24"
       >
         <div className="mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
-          <div className="grid gap-6 border-b border-white/12 pb-10 lg:grid-cols-[1fr_0.65fr] lg:items-end lg:gap-16">
+          <div className="grid gap-6 border-b border-black/10 pb-10 lg:grid-cols-[1fr_0.65fr] lg:items-end lg:gap-16">
             <div>
-              <p className="text-[13px] font-medium uppercase text-white/52">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
                 Latest insights
               </p>
-              <h2 className="mt-4 max-w-[920px] text-[38px] font-normal leading-[1.08] text-white sm:text-[50px] lg:text-[60px]">
+              <h2 className="mt-4 max-w-[920px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[50px] lg:text-[60px]">
                 Ideas you can put to work
               </h2>
             </div>
-            <p className="max-w-[620px] text-[15px] leading-7 text-white/62 sm:text-[16px] sm:leading-8">
+            <p className="max-w-[620px] text-[15px] leading-7 text-black/60 sm:text-[16px] sm:leading-8">
               Browse practical guidance across marketing, social media, search,
               paid campaigns, content and digital experiences.
             </p>
@@ -118,9 +121,9 @@ export default function BlogPage() {
                 <article
                   id={post.id}
                   key={post.title}
-                  className="group scroll-mt-28 overflow-hidden rounded-[6px] border border-white/12 bg-black transition-colors hover:border-[#1467f5]/70"
+                  className="group scroll-mt-28 overflow-hidden rounded-[14px] border border-black/10 bg-white shadow-[0_16px_42px_rgba(0,0,0,0.05)] transition duration-300 hover:-translate-y-1 hover:border-[#E1122B]/45 hover:shadow-[0_24px_60px_rgba(0,0,0,0.08)]"
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 bg-[#101010]">
+                  <div className="relative aspect-[16/10] overflow-hidden border-b border-black/10 bg-white">
                     <Image
                       src={post.image}
                       alt={post.imageAlt}
@@ -136,23 +139,23 @@ export default function BlogPage() {
 
                   <div className="flex min-h-[285px] flex-col p-6 sm:p-7">
                     <div className="flex flex-wrap items-center justify-between gap-3">
-                      <p className="text-[12px] font-semibold uppercase text-[#6995ff]">
+                      <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#E1122B]">
                         {post.category}
                       </p>
-                      <span className="inline-flex items-center gap-2 text-[12px] text-white/46">
+                      <span className="inline-flex items-center gap-2 text-[12px] text-black/46">
                         <Clock3 className="h-4 w-4" strokeWidth={1.6} />
                         {post.readTime}
                       </span>
                     </div>
 
-                    <h3 className="mt-5 text-[25px] font-medium leading-[1.2] text-white sm:text-[28px]">
+                    <h3 className="mt-5 text-[25px] font-semibold leading-[1.2] tracking-[-0.035em] text-black sm:text-[28px]">
                       {post.title}
                     </h3>
-                    <p className="mt-4 text-[14px] leading-7 text-white/60 sm:text-[15px]">
+                    <p className="mt-4 text-[14px] leading-7 text-black/60 sm:text-[15px]">
                       {post.excerpt}
                     </p>
 
-                    <p className="mt-auto pt-7 text-[13px] font-medium text-white/42">
+                    <p className="mt-auto pt-7 text-[13px] font-medium text-black/42">
                       Article coming soon
                     </p>
                   </div>

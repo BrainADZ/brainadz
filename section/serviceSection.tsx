@@ -29,7 +29,7 @@ const SERVICES = [
     description:
       "Brand creatives, videos, reels, campaign concepts, and visual content that help your brand communicate with clarity and impact.",
     href: "/services/creative-media",
-    image: "/image5.jpg",
+    image: "/home/creative-media.webp",
     imageAlt: "Creative media design illustration",
     imageClassName: "object-cover",
     tileClassName: "bg-[#0f0f0f]",
@@ -49,7 +49,7 @@ const SERVICES = [
     description:
       "Paid media, conversion campaigns, landing funnels, and remarketing systems built to improve leads, sales, and return on ad spend.",
     href: "/services/performance-marketing",
-    image: "/image1.jpeg",
+    image: "/home/performance-marketing.webp",
     imageAlt: "Performance marketing growth illustration",
     imageClassName: "object-cover",
     tileClassName: "bg-[#0d0d0d]",

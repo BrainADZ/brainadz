@@ -48,8 +48,8 @@ export default function BlogSidebar() {
 
   return (
     <aside className="space-y-5 self-start lg:sticky lg:top-[108px]">
-      <div className="rounded-[6px] border border-white/12 bg-black p-6">
-        <p className="text-[12px] font-semibold uppercase text-[#6995ff]">
+      <div className="rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_42px_rgba(0,0,0,0.05)]">
+        <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
           Categories
         </p>
         <nav aria-label="Blog categories" className="mt-5">
@@ -57,14 +57,14 @@ export default function BlogSidebar() {
             <a
               key={category.label}
               href={category.href}
-              className="group flex min-h-13 items-center gap-3 border-b border-white/12 text-[14px] text-white/72 transition-colors last:border-b-0 hover:text-white"
+              className="group flex min-h-13 items-center gap-3 border-b border-black/10 text-[14px] text-black/72 transition-colors last:border-b-0 hover:text-[#E1122B]"
             >
               <span className="flex-1">{category.label}</span>
-              <span className="text-[12px] text-white/38">
+              <span className="text-[12px] text-black/38">
                 {String(category.count).padStart(2, "0")}
               </span>
               <ChevronRight
-                className="h-4 w-4 text-[#6995ff] transition-transform group-hover:translate-x-1"
+                className="h-4 w-4 text-[#E1122B] transition-transform group-hover:translate-x-1"
                 strokeWidth={1.7}
               />
             </a>
@@ -72,14 +72,14 @@ export default function BlogSidebar() {
         </nav>
       </div>
 
-      <div className="rounded-[6px] border border-white/12 bg-[#101010] p-6">
-        <p className="text-[12px] font-semibold uppercase text-[#6995ff]">
+      <div className="rounded-[14px] border border-black/10 bg-white p-6 shadow-[0_16px_42px_rgba(0,0,0,0.05)]">
+        <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
           Stay informed
         </p>
-        <h3 className="mt-4 text-[25px] font-medium leading-tight text-white">
+        <h3 className="mt-4 text-[25px] font-semibold leading-tight tracking-[-0.035em] text-black">
           Get useful insights in your inbox
         </h3>
-        <p className="mt-3 text-[14px] leading-6 text-white/56">
+        <p className="mt-3 text-[14px] leading-6 text-black/56">
           Choose what you care about and send us your update request.
         </p>
 
@@ -87,7 +87,7 @@ export default function BlogSidebar() {
           <div>
             <label
               htmlFor="blog-email"
-              className="mb-2 block text-[13px] font-medium text-white/68"
+              className="mb-2 block text-[13px] font-medium text-black/68"
             >
               Email address
             </label>
@@ -98,21 +98,21 @@ export default function BlogSidebar() {
               required
               autoComplete="email"
               placeholder="name@company.com"
-              className="h-12 w-full rounded-[4px] border border-white/14 bg-black px-4 text-[14px] text-white outline-none transition placeholder:text-white/28 focus:border-[#1467f5]"
+              className="h-12 w-full rounded-[10px] border border-black/14 bg-white px-4 text-[14px] text-black outline-none transition placeholder:text-black/28 focus:border-[#E1122B]"
             />
           </div>
 
           <div>
             <label
               htmlFor="blog-topic"
-              className="mb-2 block text-[13px] font-medium text-white/68"
+              className="mb-2 block text-[13px] font-medium text-black/68"
             >
               Topic preference
             </label>
             <select
               id="blog-topic"
               name="topic"
-              className="h-12 w-full rounded-[4px] border border-white/14 bg-black px-4 text-[14px] text-white outline-none transition focus:border-[#1467f5]"
+              className="h-12 w-full rounded-[10px] border border-black/14 bg-white px-4 text-[14px] text-black outline-none transition focus:border-[#E1122B]"
             >
               {TOPICS.map((topic) => (
                 <option key={topic} value={topic}>
@@ -124,7 +124,7 @@ export default function BlogSidebar() {
 
           <button
             type="submit"
-            className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-[4px] bg-[#1467f5] px-5 text-[14px] font-semibold text-white transition hover:bg-[#0f56d6]"
+            className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full bg-[#E1122B] px-5 text-[14px] font-semibold text-white transition hover:bg-black"
           >
             Request updates
             <ArrowRight className="h-4 w-4" strokeWidth={1.8} />
@@ -133,7 +133,7 @@ export default function BlogSidebar() {
           {submitted ? (
             <p
               role="status"
-              className="flex items-start gap-2 text-[12px] leading-5 text-[#7fa0ff]"
+              className="flex items-start gap-2 text-[12px] leading-5 text-[#E1122B]"
             >
               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
               Your email app is ready with the request.
