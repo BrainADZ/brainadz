@@ -37,7 +37,7 @@ export default function AboutSection() {
             data-aos="fade-up"
           >
             <img
-              src="/homepage/about.png"
+              src="/homepage/home-about.webp"
               alt="BrainADZ Marketing team"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />

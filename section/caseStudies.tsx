@@ -35,7 +35,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   {
     title: "Apps Discover",
     category: "Digital Marketing",
-    media: "/portfolio/app-discover.jpg",
+    media: "/portfolio/insights1.webp",
     mediaType: "image",
     href: "/case-studies",
   },
