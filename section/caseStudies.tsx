@@ -71,7 +71,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   {
     title: "Framework",
     category: "Website Development",
-    media: "/portfolio/Framework-Thumbnail.webp",
+    media: "/portfolio/insights2.webp",
     mediaType: "image",
     href: "/case-studies",
   },

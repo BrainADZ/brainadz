@@ -52,21 +52,21 @@ const PROJECT_MANAGERS: TeamMember[] = [
 
 const CORE_TEAM: TeamMember[] = [
   {
-    name: "Shivam Goyal",
-    designation: "Data Manager",
-    image: "/teams/Tusharika.webp",
+    name: "Deepak Awasthi",
+    designation: "SEO Manager",
+    image: "/teams/Deepak.webp",
     linkedin: "#",
   },
   {
     name: "Rishabh Pratap",
     designation: "Software Developer",
-    image: "/teams/darpan-sharma.webp",
+    image: "/teams/Rishabh.webp",
     linkedin: "#",
   },
   {
-    name: "Nisha Kushwaha",
-    designation: "Social Media Manager",
-    image: "/teams/Divyani.webp",
+    name: "Ashish Saini",
+    designation: "Sr. Graphic Designer",
+    image: "/teams/Ashish.webp",
     linkedin: "#",
   },
   {
