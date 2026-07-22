@@ -17,15 +17,18 @@ import {
 const TEAM_STATS = [
   {
     value: "ONE",
-    label: "A connected team working with shared ownership and clear accountability",
+    label:
+      "A connected team working with shared ownership and clear accountability",
   },
   {
     value: "360°",
-    label: "Strategy, creative, technology and performance aligned under one system",
+    label:
+      "Strategy, creative, technology and performance aligned under one system",
   },
   {
     value: "SYNC",
-    label: "Fast communication, transparent workflows and consistent project delivery",
+    label:
+      "Fast communication, transparent workflows and consistent project delivery",
   },
 ];
 
@@ -90,7 +93,11 @@ export default function TeamPage() {
       <TeamIntroductionSection />
 
       <div id="team-members" className="scroll-mt-24">
-        <TeamShowcaseSection ctaHref="/contact" ctaLabel="Work With Us" />
+        <TeamShowcaseSection
+          ctaHref="/contact"
+          ctaLabel="Work With Us"
+          showFullCoreTeam
+        />
       </div>
 
       <TeamValuesSection />

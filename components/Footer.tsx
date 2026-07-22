@@ -102,10 +102,10 @@ const BUSINESS_UNITS = [
 ];
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "#", icon: FaInstagram },
-  { label: "LinkedIn", href: "#", icon: FaLinkedinIn },
-  { label: "Facebook", href: "#", icon: FaFacebookF },
-  { label: "YouTube", href: "#", icon: FaYoutube },
+  { label: "Instagram", href: "https://www.instagram.com/brainadzofficial/", icon: FaInstagram },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/brainadz/", icon: FaLinkedinIn },
+  { label: "Facebook", href: "https://www.facebook.com/BrainADZofficial", icon: FaFacebookF },
+  { label: "YouTube", href: "https://www.youtube.com/@brainadz", icon: FaYoutube },
 ];
 
 export default function Footer() {

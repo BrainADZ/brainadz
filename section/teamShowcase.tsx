@@ -47,7 +47,6 @@ const PROJECT_MANAGERS: TeamMember[] = [
     image: "/teams/malika.webp",
     linkedin: "#",
   },
-
 ];
 
 const CORE_TEAM: TeamMember[] = [
@@ -83,6 +82,130 @@ const CORE_TEAM: TeamMember[] = [
   },
 ];
 
+const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
+  ...CORE_TEAM,
+  {
+    name: "A",
+    designation: "Software Developer",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "S",
+    designation: "Frontend Developer",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "R",
+    designation: "UI/UX Designer",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "Q",
+    designation: "SEO Executive",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "P",
+    designation: "Performance Marketing Executive",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "O",
+    designation: "Content Strategist",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "N",
+    designation: "Business Development Executive",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "M",
+    designation: "Content Head",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "L",
+    designation: "Graphic Designer",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "K",
+    designation: "Graphic Designer",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "J",
+    designation: "Marketing Executive",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "I",
+    designation: "Software Developer",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "H",
+    designation: "SEO Executive",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "G",
+    designation: "Senior SEO Executive",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "F",
+    designation: "Senior Graphic Designer",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "E",
+    designation: "Senior Graphic Designer",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "D",
+    designation: "Senior Graphic Designer",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "C",
+    designation: "Senior Graphic Designer",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "B",
+    designation: "Social Media Executive",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+  {
+    name: "A",
+    designation: "Video Editor",
+    image: "/teams/.webp",
+    linkedin: "#",
+  },
+];
+
 const TEAM_GROUPS: TeamGroup[] = [
   {
     label: "Project Management",
@@ -101,26 +224,31 @@ const TEAM_GROUPS: TeamGroup[] = [
 type TeamShowcaseSectionProps = {
   ctaHref?: string;
   ctaLabel?: string;
+  showFullCoreTeam?: boolean;
 };
 
 export default function TeamShowcaseSection({
-
+  showFullCoreTeam = false,
 }: TeamShowcaseSectionProps) {
+  const teamGroups = showFullCoreTeam
+    ? TEAM_GROUPS.map((group) =>
+        group.label === "Core Team"
+          ? { ...group, members: TEAMS_PAGE_CORE_TEAM }
+          : group,
+      )
+    : TEAM_GROUPS;
+
   return (
     <section
       className=" bg-white text-black"
       aria-labelledby="team-showcase-title"
     >
       <div className="mx-auto max-w-[1800px] px-5 md:px-10 lg:px-12 py-16 md:py-20">
-
-
         <div className="space-y-20">
-          {TEAM_GROUPS.map((group) => (
-            
+          {teamGroups.map((group) => (
             <TeamGroupBlock key={group.title} group={group} />
           ))}
         </div>
-
       </div>
     </section>
   );
@@ -130,26 +258,22 @@ function TeamGroupBlock({ group }: { group: TeamGroup }) {
   return (
     <section className="[contain-intrinsic-size:auto_900px] [content-visibility:auto]">
       <header className="mx-auto mb-10 max-w-[820px] text-center">
-          <div className="flex justify-center items-center gap-3">
-            <span className="h-0.5 w-8 bg-[#E1122B]" />
+        <div className="flex justify-center items-center gap-3">
+          <span className="h-0.5 w-8 bg-[#E1122B]" />
 
-            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-black/50">
-              {group.label}
-            </p>
-          </div>
+          <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-black/50">
+            {group.label}
+          </p>
+        </div>
 
         <h3 className="mt-3 text-[34px] font-semibold leading-tight tracking-[-0.035em] text-black sm:text-[44px]">
           {group.title}
         </h3>
-
       </header>
 
       <div className="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
         {group.members.map((member) => (
-          <TeamCard
-            key={`${group.title}-${member.name}`}
-            member={member}
-          />
+          <TeamCard key={`${group.title}-${member.name}`} member={member} />
         ))}
       </div>
     </section>
@@ -175,7 +299,9 @@ function TeamCard({ member }: { member: TeamMember }) {
 
         <Link
           href={member.linkedin || "#"}
-          target={member.linkedin && member.linkedin !== "#" ? "_blank" : undefined}
+          target={
+            member.linkedin && member.linkedin !== "#" ? "_blank" : undefined
+          }
           rel={
             member.linkedin && member.linkedin !== "#"
               ? "noopener noreferrer"

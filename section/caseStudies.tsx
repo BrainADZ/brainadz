@@ -40,7 +40,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Packaging design",
+    title: "Packaging Design",
     category: "Creative Media",
     media: "/portfolio/package-insight.webp",
     mediaType: "image",
