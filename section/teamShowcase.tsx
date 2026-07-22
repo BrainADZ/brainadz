@@ -52,7 +52,7 @@ const PROJECT_MANAGERS: TeamMember[] = [
 
 const CORE_TEAM: TeamMember[] = [
   {
-    name: "Raushan Kumar",
+    name: "Roushan Kumar",
     designation: "Creative Head",
     image: "/teams/Deepak.webp",
     linkedin: "#",
