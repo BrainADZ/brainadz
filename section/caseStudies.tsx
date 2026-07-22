@@ -33,21 +33,21 @@ const FILTERS: FilterKey[] = [
 
 const CASE_STUDIES: CaseStudyItem[] = [
   {
-    title: "Apps Discover",
+    title: "Brochure Design",
     category: "Digital Marketing",
     media: "/portfolio/insights1.webp",
     mediaType: "image",
     href: "/case-studies",
   },
   {
-    title: "Blind Relief Association",
+    title: "Packaging design",
     category: "Creative Media",
     media: "/portfolio/package-insight.webp",
     mediaType: "image",
     href: "/case-studies",
   },
   {
-    title: "Calm Thumbnail",
+    title: "Business Card Design",
     category: "Creative Media",
     media: "/portfolio/card-insight.webp",
     mediaType: "image",
@@ -62,7 +62,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   },
 
   {
-    title: "Everest Global",
+    title: "Logo Design",
     category: "Performance Marketing",
     media: "/portfolio/logo-insight.webp",
     mediaType: "image",
@@ -76,7 +76,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Muskaan Consulting Service",
+    title: "Calendar Design",
     category: "Creative Media",
     media: "/portfolio/calendar-insight.webp",
     mediaType: "image",
@@ -90,7 +90,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Water Treatment Supply",
+    title: "Newspaper Design",
     category: "SEO",
     media: "/portfolio/news-insight.webp",
     mediaType: "image",
@@ -126,7 +126,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Blume Planters",
+    title: "Video Editing",
     category: "Creative Media",
     media: "/portfolio/video1.mp4",
     mediaType: "video",
