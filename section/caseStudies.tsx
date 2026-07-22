@@ -64,7 +64,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   {
     title: "Everest Global",
     category: "Performance Marketing",
-    media: "/portfolio/Everest-global-3.webp",
+    media: "/portfolio/logo-insight.webp",
     mediaType: "image",
     href: "/case-studies",
   },

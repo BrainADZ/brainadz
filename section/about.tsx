@@ -5,17 +5,17 @@ const PILLARS = [
   {
     title: "Strategy",
     copy: "Positioning, offer, funnel and campaign plan.",
-    iconSrc: "/icons/strategy.svg",
+    iconSrc: "/icons/strategy-icon.svg",
   },
   {
     title: "Creative",
     copy: "Ad visuals, social content, reels and brand assets.",
-    iconSrc: "/icons/creative.svg",
+    iconSrc: "/icons/creative-icon.svg",
   },
   {
     title: "Performance",
     copy: "SEO, paid media, tracking and clear reporting.",
-    iconSrc: "/icons/performance.svg",
+    iconSrc: "/icons/performance-icon.svg",
   },
 ];
 
