@@ -92,7 +92,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   {
     title: "Water Treatment Supply",
     category: "SEO",
-    media: "/portfolio/watertreatmentsupply-1024x1024-1.webp",
+    media: "/portfolio/news-insight.webp",
     mediaType: "image",
     href: "/case-studies",
   },
@@ -128,7 +128,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   {
     title: "Blume Planters",
     category: "Creative Media",
-    media: "/portfolio/Blume.mp4",
+    media: "/portfolio/video1.mp4",
     mediaType: "video",
     href: "/case-studies",
   },
