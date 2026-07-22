@@ -20,14 +20,14 @@ const PROJECT_MANAGERS: TeamMember[] = [
   {
     name: "Preeti Jaiswal",
     designation: "CEO",
-    image: "/teams/darpan-sharma.webp",
+    image: "/teams/Preeti-J.webp",
     linkedin: "#",
   },
   {
-    name: "Aastha Sharma",
+    name: "Aastha Singh",
     designation: "Sr. Business Development Manager",
-    image: "/teams/Aastha.webp",
-    linkedin: "#",
+    image: "/teams/Aastha (2).webp",
+    linkedin: "https://www.linkedin.com/in/aastha-singh-78a531211/",
   },
   {
     name: "Ayushi Baliyan",
@@ -51,21 +51,21 @@ const PROJECT_MANAGERS: TeamMember[] = [
 
 const CORE_TEAM: TeamMember[] = [
   {
-    name: "Roushan Kumar",
+    name: "Roshan Kumar",
     designation: "Creative Head",
-    image: "/teams/Deepak.webp",
+    image: "/teams/Roshan.webp",
     linkedin: "#",
   },
   {
     name: "Mayur Sharma",
     designation: "Marketing Head",
-    image: "/teams/Rishabh.webp",
+    image: "/teams/Mayur.webp",
     linkedin: "#",
   },
   {
     name: "Vinay Rathour",
     designation: "IT Head",
-    image: "/teams/Aashish.webp",
+    image: "/teams/Vinay.webp",
     linkedin: "#",
   },
   {
@@ -85,51 +85,51 @@ const CORE_TEAM: TeamMember[] = [
 const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
   ...CORE_TEAM,
   {
-    name: "A",
-    designation: "Software Developer",
-    image: "/teams/.webp",
+    name: "Jai Karan",
+    designation: "Social Media Manager",
+    image: "/teams/Jai.webp",
+    linkedin: "https://www.linkedin.com/in/jai-karan-071033268/",
+  },
+  {
+    name: "Preeti Yadav",
+    designation: "Social Media Executive",
+    image: "/teams/Preeti.webp",
+    linkedin: "https://www.linkedin.com/in/preeti-yadav-47067819a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+  },
+  {
+    name: "Deepak Awasthi",
+    designation: "SEO Manager",
+    image: "/teams/Deepak.webp",
     linkedin: "#",
   },
   {
-    name: "S",
-    designation: "Frontend Developer",
-    image: "/teams/.webp",
+    name: "Aashish Saini",
+    designation: "Sr. Graphic Designer",
+    image: "/teams/Aashish.webp",
     linkedin: "#",
   },
   {
-    name: "R",
-    designation: "UI/UX Designer",
-    image: "/teams/.webp",
+    name: "Chirag Qureshi",
+    designation: "Sr. Graphic Designer",
+    image: "/teams/Chirag.webp",
     linkedin: "#",
   },
   {
-    name: "Q",
+    name: "Akshansh",
+    designation: "Video Editor",
+    image: "/teams/Akshansh.webp",
+    linkedin: "#",
+  },
+  {
+    name: "Loveneet",
     designation: "SEO Executive",
-    image: "/teams/.webp",
+    image: "/teams/Loveneet.webp",
     linkedin: "#",
   },
   {
-    name: "P",
-    designation: "Performance Marketing Executive",
-    image: "/teams/.webp",
-    linkedin: "#",
-  },
-  {
-    name: "O",
-    designation: "Content Strategist",
-    image: "/teams/.webp",
-    linkedin: "#",
-  },
-  {
-    name: "N",
-    designation: "Business Development Executive",
-    image: "/teams/.webp",
-    linkedin: "#",
-  },
-  {
-    name: "M",
-    designation: "Content Head",
-    image: "/teams/.webp",
+    name: "Komal Kushwaha",
+    designation: "Graphic Designer",
+    image: "/teams/Komal.webp",
     linkedin: "#",
   },
   {
