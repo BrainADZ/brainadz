@@ -119,7 +119,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Robinsons",
+    title: "Social Media Design",
     category: "Creative Media",
     media: "/portfolio/design-insight.webp",
     mediaType: "image",
