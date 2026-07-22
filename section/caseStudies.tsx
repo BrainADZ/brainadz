@@ -104,7 +104,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Nore",
+    title: "E-Commerce Website Design",
     category: "Website Development",
     media: "/portfolio/web-insight1.webp",
     mediaType: "image",
@@ -140,9 +140,9 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Growgether",
+    title: "Classic Hotel",
     category: "Creative Media",
-    media: "/portfolio/Growgether.mp4",
+    media: "/portfolio/classic-video.mp4",
     mediaType: "video",
     href: "/case-studies",
   },
