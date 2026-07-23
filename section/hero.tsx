@@ -34,38 +34,30 @@ export default function Hero() {
         preload="auto"
         poster="/hero/hero-poster.jpg"
       >
-        <source src="/hero/hero_video.mp4" type="video/mp4" />
+        <source src="/hero/Marketing-video.mp4" type="video/mp4" />
       </video>
 
-      {/* LIGHT MAIN OVERLAY */}
-      <div className="absolute inset-0 bg-black/5" />
-
-      {/* LEFT BLACK SHADOW - RIGHT SIDE LIGHTER */}
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.78)_18%,rgba(0,0,0,0.48)_36%,rgba(0,0,0,0.20)_55%,rgba(0,0,0,0.06)_72%,rgba(0,0,0,0)_100%)]" />
-
-      {/* BOTTOM FADE - REDUCED */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.08)_58%,rgba(0,0,0,0.45)_100%)]" />
 
       {/* MAIN CONTENT WRAPPER */}
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-58px)] max-w-450 items-start md:items-end justify-between gap-10 px-6 pt-27 md:pt-0 pb-4 md:pb-27 md:px-10">
         {/* LEFT CONTAINER */}
         <div className="w-full max-w-132.5">
           <h1 className="text-[38px] font-semibold leading-[1.16] tracking-[-1.2px] text-white sm:text-[40px] md:text-[48px] lg:text-[58px]">
-            360° Marketing Solutions That Turn Brands Into Growth Engines
+            {/* 360° Marketing Solutions That Turn Brands Into Growth Engines */}
           </h1>
 
           <p className="mt-7 max-w-190 text-[14px] font-normal leading-[1.65] tracking-[-0.1px] text-white/90 md:text-[16px]">
-           BrainADZ Marketing helps businesses grow with strategy, creativity, performance marketing, SEO, social media, paid ads, website development, branding, and custom digital solutions — all built to generate leads, improve visibility, and scale revenue.
+           {/* BrainADZ Marketing helps businesses grow with strategy, creativity, performance marketing, SEO, social media, paid ads, website development, branding, and custom digital solutions — all built to generate leads, improve visibility, and scale revenue. */}
           </p>
 
           <div className="mt-8.5">
-            <a
+            {/* <a
               href="/contact"
               className="inline-flex h-14.5 min-w-71.25 cursor-pointer items-center justify-center gap-4 rounded-full bg-[#497dd8] px-8 text-[12px] font-medium text-white shadow-[0_14px_45px_rgba(60,91,155,0.35)] transition duration-300 hover:bg-[#1467f5]"
             >
               Get Free Marketing Consultation
               <span className="text-[20px] leading-none"><ArrowUpRight className="w-5 h-5" /></span>
-            </a>
+            </a> */}
           </div>
         </div>
 

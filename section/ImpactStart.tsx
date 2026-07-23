@@ -16,7 +16,7 @@ const IMPACT_STATS: ImpactStat[] = [
     label: "CLIENTS SERVED",
     description:
       "trusted by businesses across industries for digital marketing, branding, creative, website, and performance-driven growth solutions",
-    image: "/slider.jpg",
+    image: "/client-served.webp",
     imageAlt: "BrainADZ Marketing clients and brand growth",
     imageClassName: "object-cover object-center",
   },
@@ -52,7 +52,7 @@ const IMPACT_STATS: ImpactStat[] = [
     label: "FULL-TIME EXPERTS",
     description:
       "working across strategy, SEO, paid ads, social media, design, content, video, development, automation, and client servicing",
-    image: "/scale.png",
+    image: "/full-time-experts.webp",
     imageAlt: "BrainADZ Marketing full-time expert team",
     imageClassName: "object-contain p-8",
   },
