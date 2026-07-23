@@ -91,7 +91,7 @@ const BUSINESS_UNITS = [
   },
   {
     name: "BrainADZ Exhibits",
-    logo: "/logo/exhibits-optimized.webp",
+    logo: "/logo/Exhibits-Logo.jpg",
     href: "#",
   },
   {
