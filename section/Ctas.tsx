@@ -9,7 +9,7 @@ export default function ContactCtaSection() {
         <div className="grid overflow-hidden bg-[#0e276f] md:grid-cols-[32%_68%]">
           <div className="relative min-h-[220px] md:min-h-[330px]">
             <img
-              src="/about/about.avif"
+              src="/cta.png"
               alt="BrainADZ digital growth planning"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-center"

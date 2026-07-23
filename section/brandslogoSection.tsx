@@ -65,7 +65,7 @@ async function getBrandLogos(): Promise<BrandLogo[]> {
 
 function BrandCard({ logo }: { logo: BrandLogo }) {
   return (
-    <div className="flex h-28 w-36 shrink-0 items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-5 shadow-[0_10px_28px_rgba(0,0,0,0.055)] transition-colors duration-300 hover:border-[#d71920] hover:bg-[#fff8f8] sm:h-[120px] sm:w-[166px] lg:h-32 lg:w-[178px]">
+    <div className="flex h-22 w-36 shrink-0 items-center justify-center rounded-xl border border-black/10 bg-white px-4 py-5 shadow-[0_10px_28px_rgba(0,0,0,0.055)] transition-colors duration-300 hover:border-[#d71920] hover:bg-[#fff8f8] sm:h-[100px] sm:w-[156px] lg:h-22 lg:w-[168px]">
       <div className="flex w-full items-center justify-center">
         <img
           src={logo.src}
@@ -92,11 +92,10 @@ function BrandMarqueeRow({
   return (
     <div className="group overflow-hidden">
       <div
-        className={`flex w-max items-center gap-4 will-change-transform group-hover:[animation-play-state:paused] sm:gap-5 ${
-          direction === "right"
+        className={`flex w-max items-center gap-4 will-change-transform group-hover:[animation-play-state:paused] sm:gap-5 ${direction === "right"
             ? "brand-marquee-right"
             : "brand-marquee-left"
-        }`}
+          }`}
       >
         {marqueeLogos.map((logo, index) => (
           <BrandCard key={`${logo.name}-${index}`} logo={logo} />
@@ -118,13 +117,13 @@ export default async function BrandLogosCarousel() {
     <section className="overflow-hidden bg-white py-6 text-[#111111] sm:py-10 lg:py-14">
       <div className="mx-auto max-w-[1500px] px-5 text-center">
 
-<div className="flex items-center gap-3">
-            <span className="h-0.5 w-8 bg-[#E1122B]" />
+<div className="flex w-full items-center justify-center gap-3">
+  <span className="h-0.5 w-8 shrink-0 bg-[#E1122B]" />
 
-            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-black/50">
-              Brand Partners
-            </p>
-          </div>
+  <p className="m-0 text-[13px] font-semibold uppercase tracking-[0.14em] text-black/50">
+    Brand Partners
+  </p>
+</div>
         <h2 className="mx-auto text-black max-w-[760px] text-[38px] font-semibold leading-[1.12] tracking-[-0.03em] sm:text-[48px] lg:text-[58px]">
           Strategic Alliances that <span className="text-[#d71920]">Power Innovation</span>
         </h2>
