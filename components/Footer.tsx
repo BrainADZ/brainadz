@@ -113,7 +113,20 @@ export default function Footer() {
     <>
       <FooterCta />
 
-      <footer className="overflow-hidden bg-[#111013] text-white">
+      <footer className="relative isolate overflow-hidden bg-[#111013] text-white">
+  {/* Full-footer background image */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: "url('/000000.webp')" }}
+  />
+
+  {/* Black overlay */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 -z-10 bg-black/40"
+  />
+
         <div className="mx-auto max-w-[1800px] px-5 pb-6 pt-5 sm:px-8 lg:px-12">
           <section
             aria-label="Our locations"

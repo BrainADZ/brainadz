@@ -44,7 +44,7 @@ const PROJECT_MANAGERS: TeamMember[] = [
   {
     name: "Sharthak Raina",
     designation: "Business Development Manager",
-    image: "/teams/malika.webp",
+    image: "/teams/Sharthak.webp",
     linkedin: "#",
   },
 ];
