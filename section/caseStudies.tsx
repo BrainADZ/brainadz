@@ -56,8 +56,8 @@ const CASE_STUDIES: CaseStudyItem[] = [
     {
     title: "Allure Website",
     category: "Website Development",
-    media: "/portfolio/web-insight3.webp",
-    mediaType: "image",
+    media: "/portfolio/classic-video.mp4",
+    mediaType: "video",
     href: "/case-studies",
   },
 
@@ -97,9 +97,9 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Capri Loans Impact Report",
+    title: "Stall Design",
     category: "Creative Media",
-    media: "/portfolio/CapriLoans_CreativeNexus-Impact-Report-1.png",
+    media: "/portfolio/stall-insight.webp",
     mediaType: "image",
     href: "/case-studies",
   },
@@ -121,7 +121,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
   {
     title: "Social Media Design",
     category: "Creative Media",
-    media: "/portfolio/design-insight.webp",
+    media: "/portfolio/social-media-design.webp",
     mediaType: "image",
     href: "/case-studies",
   },
@@ -133,10 +133,10 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "ICICI Report",
+    title: "Billboard Design",
     category: "Creative Media",
-    media: "/portfolio/Icici.mp4",
-    mediaType: "video",
+    media: "/portfolio/billboard.webp",
+    mediaType: "image",
     href: "/case-studies",
   },
   {

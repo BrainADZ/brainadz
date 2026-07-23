@@ -36,9 +36,9 @@ const PROJECT_MANAGERS: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/ayushi-baliyan-61b607283?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
-    name: "Preeti Chaudhary",
+    name: "Pooja Paswan",
     designation: "Business Development Manager",
-    image: "/teams/Kavish.webp",
+    image: "/teams/Pooja.webp",
     linkedin: "#",
   },
   {
@@ -133,9 +133,9 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
     linkedin: "#",
   },
   {
-    name: "L",
-    designation: "Graphic Designer",
-    image: "/teams/.webp",
+    name: "Virendar",
+    designation: "Sr. Graphic Designer",
+    image: "/teams/Virendar.webp",
     linkedin: "#",
   },
   {
