@@ -111,10 +111,10 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Tiger Logistics",
+    title: "In-House Studio",
     category: "Creative Media",
     media:
-      "/portfolio/Creative-nexus_Tiger-Logistics-branding-Annual-Report-Website-Development-Secrets_Video-Production-Filmmaking_Digital-Marketing.webp",
+      "/portfolio/inhouse-studio.webp",
     mediaType: "image",
     href: "/case-studies",
   },
