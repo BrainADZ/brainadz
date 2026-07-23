@@ -33,7 +33,7 @@ const PROJECT_MANAGERS: TeamMember[] = [
     name: "Ayushi Baliyan",
     designation: "Business Development Manager",
     image: "/teams/Ayushi.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/ayushi-baliyan-61b607283?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Preeti Chaudhary",
@@ -116,19 +116,19 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
   },
   {
     name: "Akshansh",
-    designation: "Video Editor",
+    designation: "Sr. Video Editor",
     image: "/teams/Akshansh.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/akshansh-raw-00b75033a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
-    name: "Loveneet",
+    name: "Loveneet Pawar",
     designation: "SEO Executive",
     image: "/teams/Loveneet.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/loveneet-pawar-9a9aaa301/",
   },
   {
     name: "Komal Kushwaha",
-    designation: "Graphic Designer",
+    designation: "Sr. Graphic Designer",
     image: "/teams/Komal.webp",
     linkedin: "#",
   },
