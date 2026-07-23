@@ -111,7 +111,7 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "In-House Studio",
+    title: "In-House Studio Setup",
     category: "Creative Media",
     media:
       "/portfolio/inhouse-studio.webp",
