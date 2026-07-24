@@ -12,7 +12,7 @@ type Founder = {
 
 const FOUNDER: Founder = {
   name: "Preeti Jaiswal",
-  title: "Founder & MD, BrainADZ",
+  title: "Founder & MD, BrainADZ Marketing",
   photo: "/teams/Co-Founder.png",
   p1: "BrainADZ was built with a simple belief: marketing should make business clearer, sharper, and easier to trust. Every campaign, website, and brand experience we create starts with understanding the client, the market, and the outcome that matters.",
   p2: "Our role is to bring strategy, creativity, technology, media, and execution together in one accountable workflow. We focus on transparent communication, measurable work, and long-term partnerships that help brands grow with confidence.",
@@ -92,7 +92,7 @@ export default function FounderDeskSameToSame() {
               {FOUNDER.name}
             </p>
 
-            <p className="mt-1.5 text-[11px] font-medium uppercase tracking-[0.08em] text-black/45">
+            <p className="mt-1.5 text-[12px] font-medium tracking-[0.08em] text-black/45">
               {FOUNDER.title}
             </p>
           </div>

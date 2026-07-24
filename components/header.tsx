@@ -24,6 +24,7 @@ import {
   MonitorUp,
   MousePointerClick,
   PenTool,
+  Phone,
   Presentation,
   RotateCcw,
   Search,
@@ -396,20 +397,21 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-6 sm:flex">
+          <a
+            href="tel:+919540468023"
+            aria-label="Call BrainADZ Marketing at +91 95404 68023"
+            className="hidden items-center gap-2 whitespace-nowrap text-[15px] font-semibold text-[#111111] transition hover:text-[#e50914] xl:inline-flex"
+          >
+            <Phone size={18} strokeWidth={1.7} />
+            <span>+91 95404 68023</span>
+          </a>
+
           <button
             type="button"
             aria-label="Search"
             className="text-black/70 transition hover:text-[#e50914]"
           >
             <Search size={20} strokeWidth={1.5} />
-          </button>
-
-          <button
-            type="button"
-            aria-label="Language"
-            className="text-black/70 transition hover:text-[#e50914]"
-          >
-            <Globe size={20} strokeWidth={1.5} />
           </button>
 
           <button
@@ -578,6 +580,16 @@ export default function Navbar() {
               </Link>
             </div>
           )}
+
+          <a
+            href="tel:+919540468023"
+            onClick={closeMobileMenu}
+            aria-label="Call BrainADZ Marketing at +91 95404 68023"
+            className="flex items-center gap-3 border-b border-black/10 px-5 py-5 text-[18px] font-medium text-[#111111] transition hover:text-[#e50914]"
+          >
+            <Phone size={20} strokeWidth={1.7} />
+            <span>+91 95404 68023</span>
+          </a>
 
           {normalLinks.slice(3).map((link) => (
             <Link

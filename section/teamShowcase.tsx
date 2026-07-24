@@ -1,18 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
+
 import Link from "next/link";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Phone } from "lucide-react";
 
 type TeamMember = {
   name: string;
   designation: string;
   image: string;
   linkedin?: string;
+  phone?: string;
 };
 
 type TeamGroup = {
   label: string;
   title: string;
-  // description: string;
   members: TeamMember[];
 };
 
@@ -22,30 +23,36 @@ const PROJECT_MANAGERS: TeamMember[] = [
     designation: "CEO",
     image: "/teams/Preeti-J.webp",
     linkedin: "#",
+    phone: "+91 00000 00000", // Replace with actual number
   },
   {
     name: "Aastha Singh",
     designation: "Sr. Business Development Manager",
     image: "/teams/Aastha (2).webp",
     linkedin: "https://www.linkedin.com/in/aastha-singh-78a531211/",
+    phone: "+91 00000 00000", // Replace with actual number
   },
   {
     name: "Ayushi Baliyan",
     designation: "Business Development Manager",
     image: "/teams/Ayushi.webp",
-    linkedin: "https://www.linkedin.com/in/ayushi-baliyan-61b607283?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    linkedin:
+      "https://www.linkedin.com/in/ayushi-baliyan-61b607283?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    phone: "+91 00000 00000", // Replace with actual number
   },
   {
     name: "Pooja Paswan",
     designation: "Business Development Manager",
     image: "/teams/Pooja.webp",
     linkedin: "#",
+    phone: "+91 00000 00000", // Replace with actual number
   },
   {
     name: "Sharthak Raina",
     designation: "Business Development Manager",
     image: "/teams/Sharthak.webp",
     linkedin: "#",
+    phone: "+91 00000 00000", // Replace with actual number
   },
 ];
 
@@ -94,7 +101,8 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
     name: "Preeti Yadav",
     designation: "Social Media Executive",
     image: "/teams/Preeti.webp",
-    linkedin: "https://www.linkedin.com/in/preeti-yadav-47067819a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    linkedin:
+      "https://www.linkedin.com/in/preeti-yadav-47067819a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
   },
   {
     name: "Deepak Awasthi",
@@ -118,7 +126,8 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
     name: "Akshansh",
     designation: "Sr. Video Editor",
     image: "/teams/Akshansh.webp",
-    linkedin: "https://www.linkedin.com/in/akshansh-raw-00b75033a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    linkedin:
+      "https://www.linkedin.com/in/akshansh-raw-00b75033a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Loveneet Pawar",
@@ -144,6 +153,7 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
     image: "/teams/.webp",
     linkedin: "#",
   },
+
   // {
   //   name: "J",
   //   designation: "Marketing Executive",
@@ -210,13 +220,11 @@ const TEAM_GROUPS: TeamGroup[] = [
   {
     label: "Project Management",
     title: "Meet Our Project Managers",
-
     members: PROJECT_MANAGERS,
   },
   {
     label: "Core Team",
     title: "Meet Our Core Team",
-
     members: CORE_TEAM,
   },
 ];
@@ -233,17 +241,20 @@ export default function TeamShowcaseSection({
   const teamGroups = showFullCoreTeam
     ? TEAM_GROUPS.map((group) =>
         group.label === "Core Team"
-          ? { ...group, members: TEAMS_PAGE_CORE_TEAM }
+          ? {
+              ...group,
+              members: TEAMS_PAGE_CORE_TEAM,
+            }
           : group,
       )
     : TEAM_GROUPS;
 
   return (
     <section
-      className=" bg-white text-black"
+      className="bg-white text-black"
       aria-labelledby="team-showcase-title"
     >
-      <div className="mx-auto max-w-[1800px] px-5 md:px-10 lg:px-12 py-16 md:py-20">
+      <div className="mx-auto max-w-[1800px] px-5 py-16 md:px-10 md:py-20 lg:px-12">
         <div className="space-y-20">
           {teamGroups.map((group) => (
             <TeamGroupBlock key={group.title} group={group} />
@@ -258,7 +269,7 @@ function TeamGroupBlock({ group }: { group: TeamGroup }) {
   return (
     <section className="[contain-intrinsic-size:auto_900px] [content-visibility:auto]">
       <header className="mx-auto mb-10 max-w-[820px] text-center">
-        <div className="flex justify-center items-center gap-3">
+        <div className="flex items-center justify-center gap-3">
           <span className="h-0.5 w-8 bg-[#E1122B]" />
 
           <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-black/50">
@@ -281,6 +292,8 @@ function TeamGroupBlock({ group }: { group: TeamGroup }) {
 }
 
 function TeamCard({ member }: { member: TeamMember }) {
+  const clickablePhone = member.phone?.replace(/[^\d+]/g, "");
+
   return (
     <article className="group">
       <div className="relative aspect-square overflow-hidden rounded-[10px] border border-black/10 bg-[#f3f3f3]">
@@ -297,21 +310,17 @@ function TeamCard({ member }: { member: TeamMember }) {
 
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-black/30 to-transparent" />
 
-        <Link
-          href={member.linkedin || "#"}
-          target={
-            member.linkedin && member.linkedin !== "#" ? "_blank" : undefined
-          }
-          rel={
-            member.linkedin && member.linkedin !== "#"
-              ? "noopener noreferrer"
-              : undefined
-          }
-          aria-label={`${member.name} on LinkedIn`}
-          className="absolute right-3 top-3 z-10 grid h-9 w-9 -translate-y-2 place-items-center rounded-full bg-white text-black opacity-0 shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#193175] hover:text-white"
-        >
-          <Linkedin className="h-4 w-4" strokeWidth={1.8} />
-        </Link>
+        {member.linkedin && member.linkedin !== "#" && (
+          <Link
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${member.name} on LinkedIn`}
+            className="absolute right-3 top-3 z-10 grid h-9 w-9 -translate-y-2 place-items-center rounded-full bg-white text-black opacity-0 shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#193175] hover:text-white"
+          >
+            <Linkedin className="h-4 w-4" strokeWidth={1.8} />
+          </Link>
+        )}
       </div>
 
       <div className="pt-4">
@@ -324,6 +333,17 @@ function TeamCard({ member }: { member: TeamMember }) {
         <p className="mt-1 text-[14px] font-medium leading-5 text-black/50">
           {member.designation}
         </p>
+
+        {member.phone && clickablePhone && (
+          <a
+            href={`tel:${clickablePhone}`}
+            aria-label={`Call ${member.name} at ${member.phone}`}
+            className="mt-2 inline-flex items-center gap-1.5 text-[14px] font-semibold text-black transition-colors duration-300 hover:text-[#E1122B]"
+          >
+            <Phone className="h-3.5 w-3.5" strokeWidth={2} />
+            <span>{member.phone}</span>
+          </a>
+        )}
       </div>
     </article>
   );
