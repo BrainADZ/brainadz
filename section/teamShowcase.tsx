@@ -1,13 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Link from "next/link";
-import { Linkedin, Phone } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 
 type TeamMember = {
   name: string;
   designation: string;
   image: string;
   linkedin?: string;
+  email?: string;
   phone?: string;
 };
 
@@ -21,7 +22,7 @@ const PROJECT_MANAGERS: TeamMember[] = [
   {
     name: "Aastha Singh",
     designation: "Sr. Business Development Manager",
-    image: "/teams/Aastha (2).webp",
+    image: "/teams/Aastha.webp",
     linkedin: "https://www.linkedin.com/in/aastha-singh-78a531211/",
     phone: "+91 92116 03152", // Replace with actual number
   },
@@ -29,8 +30,7 @@ const PROJECT_MANAGERS: TeamMember[] = [
     name: "Ayushi Baliyan",
     designation: "Business Development Manager",
     image: "/teams/Ayushi.webp",
-    linkedin:
-      "https://www.linkedin.com/in/ayushi-baliyan-61b607283?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    linkedin: "https://www.linkedin.com/in/ayushi-baliyan-61b607283?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     phone: "+91 95602 73794", // Replace with actual number
   },
   {
@@ -41,18 +41,18 @@ const PROJECT_MANAGERS: TeamMember[] = [
     phone: "+91 70489 15802", // Replace with actual number
   },
   {
-    name: "Preeti Jaiswal",
-    designation: "CEO",
-    image: "/teams/Preeti-J.webp",
+    name: "Rakesh Kumar",
+    designation: "Sr. Business Development Manager",
+    image: "/teams/Rakesh.webp",
     linkedin: "#",
-    phone: "+91 00000 00000", // Replace with actual number
+    phone: "+91 99110 78143", // Replace with actual number
   },
   {
     name: "Sharthak Raina",
     designation: "Business Development Manager",
     image: "/teams/Sharthak.webp",
     linkedin: "#",
-    phone: "+91 00000 00000", // Replace with actual number
+    phone: "+91 92112 93332", // Replace with actual number
   },
 ];
 
@@ -147,12 +147,12 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
     image: "/teams/Virendar.webp",
     linkedin: "#",
   },
-  {
-    name: "K",
-    designation: "Graphic Designer",
-    image: "/teams/.webp",
-    linkedin: "#",
-  },
+  // {
+  //   name: "K",
+  //   designation: "Graphic Designer",
+  //   image: "/teams/.webp",
+  //   linkedin: "#",
+  // },
 
   // {
   //   name: "J",
@@ -310,17 +310,40 @@ function TeamCard({ member }: { member: TeamMember }) {
 
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-black/30 to-transparent" />
 
-        {member.linkedin && member.linkedin !== "#" && (
-          <Link
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${member.name} on LinkedIn`}
-            className="absolute right-3 top-3 z-10 grid h-9 w-9 -translate-y-2 place-items-center rounded-full bg-white text-black opacity-0 shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-[#193175] hover:text-white"
+        <div className="absolute right-3 top-3 z-10 flex flex-col gap-2">
+          {member.linkedin && member.linkedin !== "#" ? (
+            <Link
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${member.name} on LinkedIn`}
+              className="grid h-9 w-9 place-items-center rounded-full bg-white text-black shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition-colors duration-300 hover:bg-[#E1122B] hover:text-white"
+            >
+              <Linkedin className="h-4 w-4" strokeWidth={1.8} />
+            </Link>
+          ) : (
+            <span
+              aria-label={`LinkedIn profile not added for ${member.name}`}
+              title="LinkedIn profile not added"
+              className="grid h-9 w-9 cursor-not-allowed place-items-center rounded-full bg-white/90 text-black/40 shadow-[0_8px_20px_rgba(0,0,0,0.18)]"
+            >
+              <Linkedin className="h-4 w-4" strokeWidth={1.8} />
+            </span>
+          )}
+
+          <a
+            href={member.email ? `mailto:${member.email}` : "mailto:"}
+            aria-label={
+              member.email
+                ? `Email ${member.name} at ${member.email}`
+                : `Email ${member.name}`
+            }
+            title={member.email || `Email ${member.name}`}
+            className="grid h-9 w-9 place-items-center rounded-full bg-white text-black shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition-colors duration-300 hover:bg-[#E1122B] hover:text-white"
           >
-            <Linkedin className="h-4 w-4" strokeWidth={1.8} />
-          </Link>
-        )}
+            <Mail className="h-4 w-4" strokeWidth={1.8} />
+          </a>
+        </div>
       </div>
 
       <div className="pt-4">
