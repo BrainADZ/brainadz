@@ -19,18 +19,11 @@ type TeamGroup = {
 
 const PROJECT_MANAGERS: TeamMember[] = [
   {
-    name: "Preeti Jaiswal",
-    designation: "CEO",
-    image: "/teams/Preeti-J.webp",
-    linkedin: "#",
-    phone: "+91 00000 00000", // Replace with actual number
-  },
-  {
     name: "Aastha Singh",
     designation: "Sr. Business Development Manager",
     image: "/teams/Aastha (2).webp",
     linkedin: "https://www.linkedin.com/in/aastha-singh-78a531211/",
-    phone: "+91 00000 00000", // Replace with actual number
+    phone: "+91 92116 03152", // Replace with actual number
   },
   {
     name: "Ayushi Baliyan",
@@ -38,12 +31,19 @@ const PROJECT_MANAGERS: TeamMember[] = [
     image: "/teams/Ayushi.webp",
     linkedin:
       "https://www.linkedin.com/in/ayushi-baliyan-61b607283?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    phone: "+91 00000 00000", // Replace with actual number
+    phone: "+91 95602 73794", // Replace with actual number
   },
   {
     name: "Pooja Paswan",
     designation: "Business Development Manager",
     image: "/teams/Pooja.webp",
+    linkedin: "#",
+    phone: "+91 70489 15802", // Replace with actual number
+  },
+  {
+    name: "Preeti Jaiswal",
+    designation: "CEO",
+    image: "/teams/Preeti-J.webp",
     linkedin: "#",
     phone: "+91 00000 00000", // Replace with actual number
   },
@@ -61,31 +61,31 @@ const CORE_TEAM: TeamMember[] = [
     name: "Roshan Kumar",
     designation: "Creative Head",
     image: "/teams/Roshan.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/roshan-kumar-96626816b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Mayur Sharma",
     designation: "Marketing Head",
     image: "/teams/Mayur.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/mayur-sharma259/",
   },
   {
     name: "Vinay Rathour",
     designation: "IT Head",
     image: "/teams/Vinay.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/vinay-rathod-b4042671/",
   },
   {
     name: "Rishabh Pratap",
     designation: "Sr. Software Developer",
     image: "/teams/Rishabh.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/rishabh-pratap-445b761a2/",
   },
   {
     name: "Nisha Kushwaha",
     designation: "Social Media Manager",
     image: "/teams/Nisha.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/nisha-kushwaha-979107313/",
   },
 ];
 
@@ -108,19 +108,19 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
     name: "Deepak Awasthi",
     designation: "SEO Manager",
     image: "/teams/Deepak.webp",
-    linkedin: "#",
+    linkedin: "https://in.linkedin.com/in/deepakawasthiseo",
   },
   {
     name: "Aashish Saini",
     designation: "Sr. Graphic Designer",
     image: "/teams/Aashish.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/aashish-saini-988a14251?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Chirag Qureshi",
     designation: "Sr. Graphic Designer",
     image: "/teams/Chirag.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/chirag-qureshi-5878b1215?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Akshansh",
@@ -139,7 +139,7 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
     name: "Komal Kushwaha",
     designation: "Sr. Graphic Designer",
     image: "/teams/Komal.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/komal-kushwaha-43120b362?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
   {
     name: "Virendar",
