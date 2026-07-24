@@ -24,6 +24,7 @@ const PROJECT_MANAGERS: TeamMember[] = [
     designation: "Sr. Business Development Manager",
     image: "/teams/Aastha.webp",
     linkedin: "https://www.linkedin.com/in/aastha-singh-78a531211/",
+    email: "bdm@brainadz.marketing",
     phone: "+91 92116 03152", // Replace with actual number
   },
   {
@@ -31,27 +32,31 @@ const PROJECT_MANAGERS: TeamMember[] = [
     designation: "Business Development Manager",
     image: "/teams/Ayushi.webp",
     linkedin: "https://www.linkedin.com/in/ayushi-baliyan-61b607283?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "bd@brainadz.marketing",
     phone: "+91 95602 73794", // Replace with actual number
   },
   {
     name: "Pooja Paswan",
     designation: "Business Development Manager",
     image: "/teams/Pooja.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/pooja-paswan-620693245/",
+    email: "pooja@brainadz.marketing",
     phone: "+91 70489 15802", // Replace with actual number
   },
   {
-    name: "Rakesh Kumar",
+    name: "Rakesh Singh Rajput",
     designation: "Sr. Business Development Manager",
     image: "/teams/Rakesh.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/rakesh-singh-rajput-a4957419/",
+    email: "rakesh@brainadz.marketing",
     phone: "+91 99110 78143", // Replace with actual number
   },
   {
     name: "Sharthak Raina",
-    designation: "Business Development Manager",
+    designation: "Corporate Sale & Project Manager",
     image: "/teams/Sharthak.webp",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/sarthak-raina-693427165/",
+    email: "sharthak@brainadz.marketing",
     phone: "+91 92112 93332", // Replace with actual number
   },
 ];
@@ -96,56 +101,63 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
     designation: "Social Media Manager",
     image: "/teams/Jai.webp",
     linkedin: "https://www.linkedin.com/in/jai-karan-071033268/",
+    email: "jai.brainadz@gmail.com",
   },
   {
     name: "Preeti Yadav",
     designation: "Social Media Executive",
     image: "/teams/Preeti.webp",
-    linkedin:
-      "https://www.linkedin.com/in/preeti-yadav-47067819a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    linkedin:"https://www.linkedin.com/in/preeti-yadav-47067819a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    email: "#",
   },
   {
     name: "Deepak Awasthi",
     designation: "SEO Manager",
     image: "/teams/Deepak.webp",
     linkedin: "https://in.linkedin.com/in/deepakawasthiseo",
+    email: "seo@brainadz.marketing",
   },
   {
     name: "Aashish Saini",
     designation: "Sr. Graphic Designer",
     image: "/teams/Aashish.webp",
     linkedin: "https://www.linkedin.com/in/aashish-saini-988a14251?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "#",
   },
   {
     name: "Chirag Qureshi",
     designation: "Sr. Graphic Designer",
     image: "/teams/Chirag.webp",
     linkedin: "https://www.linkedin.com/in/chirag-qureshi-5878b1215?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "#",
   },
   {
     name: "Akshansh",
     designation: "Sr. Video Editor",
     image: "/teams/Akshansh.webp",
-    linkedin:
-      "https://www.linkedin.com/in/akshansh-raw-00b75033a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    linkedin:"https://www.linkedin.com/in/akshansh-raw-00b75033a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "#",
   },
   {
     name: "Loveneet Pawar",
     designation: "SEO Executive",
     image: "/teams/Loveneet.webp",
     linkedin: "https://www.linkedin.com/in/loveneet-pawar-9a9aaa301/",
+    email: "#",
   },
   {
     name: "Komal Kushwaha",
     designation: "Sr. Graphic Designer",
     image: "/teams/Komal.webp",
     linkedin: "https://www.linkedin.com/in/komal-kushwaha-43120b362?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "#",
   },
   {
-    name: "Virendar",
+    name: "Virendar Kumar",
     designation: "Sr. Graphic Designer",
     image: "/teams/Virendar.webp",
     linkedin: "#",
+    email: "#",
   },
   // {
   //   name: "K",
