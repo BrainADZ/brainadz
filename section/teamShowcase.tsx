@@ -40,7 +40,7 @@ const PROJECT_MANAGERS: TeamMember[] = [
     designation: "Business Development Manager",
     image: "/teams/Pooja.webp",
     linkedin: "https://www.linkedin.com/in/pooja-paswan-620693245/",
-    email: "pooja@brainadz.marketing",
+    email: "info@brainadzlive.com",
     phone: "+91 70489 15802", // Replace with actual number
   },
   {
@@ -48,7 +48,7 @@ const PROJECT_MANAGERS: TeamMember[] = [
     designation: "Sr. Business Development Manager",
     image: "/teams/Rakesh.webp",
     linkedin: "https://www.linkedin.com/in/rakesh-singh-rajput-a4957419/",
-    email: "rakesh@brainadz.marketing",
+    email: "sales@brainadzlive.com",
     phone: "+91 99110 78143", // Replace with actual number
   },
   {
@@ -56,7 +56,7 @@ const PROJECT_MANAGERS: TeamMember[] = [
     designation: "Corporate Sale & Project Manager",
     image: "/teams/Sarthak.webp",
     linkedin: "https://www.linkedin.com/in/sarthak-raina-693427165/",
-    email: "sarthak@brainadz.marketing",
+    email: "cropsaales@brainadzlive.com",
     phone: "+91 92112 93332", // Replace with actual number
   },
 ];
@@ -67,12 +67,14 @@ const CORE_TEAM: TeamMember[] = [
     designation: "Creative Head",
     image: "/teams/Roshan.webp",
     linkedin: "https://www.linkedin.com/in/roshan-kumar-96626816b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "design@brainadz.com",
   },
   {
     name: "Mayur Sharma",
     designation: "Marketing Head",
     image: "/teams/Mayur.webp",
     linkedin: "https://www.linkedin.com/in/mayur-sharma259/",
+    email: "marketing@brainadz.com",
   },
   {
     name: "Vinay Rathour",
@@ -85,12 +87,14 @@ const CORE_TEAM: TeamMember[] = [
     designation: "Sr. Software Developer",
     image: "/teams/Rishabh.webp",
     linkedin: "https://www.linkedin.com/in/rishabh-pratap-445b761a2/",
+    email: "web@brainadz.marketing",
   },
   {
     name: "Nisha Kushwaha",
     designation: "Social Media Manager",
     image: "/teams/Nisha.webp",
     linkedin: "https://www.linkedin.com/in/nisha-kushwaha-979107313/",
+    email: "dm@brainadz.com",
   },
 ];
 
@@ -108,7 +112,7 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
     designation: "Social Media Executive",
     image: "/teams/Preeti.webp",
     linkedin:"https://www.linkedin.com/in/preeti-yadav-47067819a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
-    email: "#",
+    email: "dm@brainadz.com",
   },
   {
     name: "Deepak Awasthi",
@@ -122,35 +126,35 @@ const TEAMS_PAGE_CORE_TEAM: TeamMember[] = [
     designation: "Sr. Graphic Designer",
     image: "/teams/Aashish.webp",
     linkedin: "https://www.linkedin.com/in/aashish-saini-988a14251?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    email: "#",
+    email: "design@brainadz.com",
   },
   {
     name: "Chirag Qureshi",
     designation: "Sr. Graphic Designer",
     image: "/teams/Chirag.webp",
     linkedin: "https://www.linkedin.com/in/chirag-qureshi-5878b1215?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    email: "#",
+    email: "design@brainadz.com",
   },
   {
     name: "Akshansh",
     designation: "Sr. Video Editor",
     image: "/teams/Akshansh.webp",
     linkedin:"https://www.linkedin.com/in/akshansh-raw-00b75033a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    email: "#",
+    email: "design@brainadz.com",
   },
   {
     name: "Loveneet Pawar",
     designation: "SEO Executive",
     image: "/teams/Loveneet.webp",
     linkedin: "https://www.linkedin.com/in/loveneet-pawar-9a9aaa301/",
-    email: "#",
+    email: "dm@brainadz.com",
   },
   {
     name: "Komal Kushwaha",
     designation: "Sr. Graphic Designer",
     image: "/teams/Komal.webp",
     linkedin: "https://www.linkedin.com/in/komal-kushwaha-43120b362?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    email: "#",
+    email: "design@brainadz.com",
   },
   {
     name: "Virendar Kumar",
