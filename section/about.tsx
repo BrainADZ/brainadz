@@ -31,9 +31,9 @@ export default function AboutSection() {
   return (
     <section className="bg-white px-5 py-16 text-[#111111] md:px-10 sm:py-20 lg:px-12 lg:py-24">
       <div className="mx-auto max-w-[1800px] overflow-hidden rounded-[14px] border border-black/10 bg-white">
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div
-            className="relative min-h-[430px] overflow-hidden border-b border-black/10 bg-[#111111] lg:min-h-full lg:border-b-0 lg:border-r"
+            className="relative min-h-[430px] overflow-hidden border-b border-black/10 bg-[#111111] lg:aspect-[4/3] lg:min-h-0 lg:border-b-0 lg:border-r"
             data-aos="fade-up"
           >
             <img
@@ -52,14 +52,14 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <div className="absolute inset-x-5 bottom-5 rounded-lg border border-white/20 bg-white/92 p-5 text-black shadow-[0_18px_45px_rgba(0,0,0,0.24)] sm:inset-x-7 sm:bottom-7">
+            {/* <div className="absolute inset-x-5 bottom-5 rounded-lg border border-white/20 bg-white/92 p-5 text-black shadow-[0_18px_45px_rgba(0,0,0,0.24)] sm:inset-x-7 sm:bottom-7">
               <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[#d71920]">
                 We build attention into action
               </p>
               <p className="mt-3 text-[24px] font-normal leading-[1.14] tracking-[-0.03em] sm:text-[30px]">
                 Strategy, creative and media working as one team.
               </p>
-            </div>
+            </div> */}
           </div>
 
           <div className="bg-[#fbfbfb]">
