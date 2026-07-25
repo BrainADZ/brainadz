@@ -52,11 +52,11 @@ const PROJECT_MANAGERS: TeamMember[] = [
     phone: "+91 99110 78143", // Replace with actual number
   },
   {
-    name: "Sharthak Raina",
+    name: "Sarthak Raina",
     designation: "Corporate Sale & Project Manager",
-    image: "/teams/Sharthak.webp",
+    image: "/teams/Sarthak.webp",
     linkedin: "https://www.linkedin.com/in/sarthak-raina-693427165/",
-    email: "sharthak@brainadz.marketing",
+    email: "sarthak@brainadz.marketing",
     phone: "+91 92112 93332", // Replace with actual number
   },
 ];
