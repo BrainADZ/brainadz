@@ -237,6 +237,13 @@ export default function Footer() {
                     <Phone className="mt-0.5 h-4 w-4 shrink-0" />
                     +91 95404 68023
                   </a>
+                                    <a
+                    href="tel:+919289092708"
+                    className="flex items-start gap-2.5 transition hover:text-white"
+                  >
+                    <Phone className="mt-0.5 h-4 w-4 shrink-0" />
+                    +91 92890 92708
+                  </a>
                   <p className="flex items-start gap-2.5">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
                     Delhi / Mumbai / Dubai / Thailand
