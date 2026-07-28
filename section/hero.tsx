@@ -34,7 +34,7 @@ export default function Hero() {
         preload="auto"
         poster="/hero/hero-poster.jpg"
       >
-        <source src="/hero/home-video.mp4" type="video/mp4" />
+        <source src="/hero/hero-video.webm" type="video/mp4" />
       </video>
 
 
