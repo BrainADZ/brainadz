@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
@@ -34,7 +35,7 @@ export default function Hero() {
         preload="auto"
         poster="/hero/hero-poster.jpg"
       >
-        <source src="/hero/Marketing-video.mp4" type="video/mp4" />
+        <source src="/hero/hero-video.webm" type="video/mp4" />
       </video>
 
 
