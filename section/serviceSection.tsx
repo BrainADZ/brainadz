@@ -18,7 +18,7 @@ const SERVICES = [
     title: "Search Enginer Optimization (SEO)",
     description:
       "Data-driven paid campaigns, lead generation, retargeting, and funnel optimization focused on measurable business results.",
-    href: "/services/seo",
+    href: "/services/seo-services",
     image: "/image2.jpeg",
     imageAlt: "SEO optimization illustration",
     imageClassName: "object-cover",

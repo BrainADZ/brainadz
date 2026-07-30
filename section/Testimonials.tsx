@@ -63,13 +63,6 @@ const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-const TRUST_POINTS = [
-  { value: "4.9/5", label: "Average client rating" },
-  { value: "13+", label: "Years of digital execution" },
-  { value: "360", label: "Strategy, creative and tech support" },
-  { value: "24/7", label: "Campaign visibility and reporting" },
-];
-
 function Stars() {
   return (
     <div className="flex gap-1" aria-label="5 out of 5 stars">
@@ -136,7 +129,7 @@ export default function TestimonialSection() {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-white py-16 text-black md:py-20"
+      className="relative overflow-hidden bg-white py-3 text-black md:py-5"
     >
       <div className="relative mx-auto max-w-[1800px] px-5 md:px-8 lg:px-12">
         <div className="mb-12 grid gap-7 border-b border-black/10 pb-10 lg:grid-cols-[1fr_0.62fr] lg:items-end lg:gap-16 lg:pb-12">
@@ -218,25 +211,6 @@ export default function TestimonialSection() {
               <ReviewCard key={item.name} item={item} index={index} />
             ))}
           </div>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          className="mt-5 grid overflow-hidden rounded-[10px] border border-black/10 bg-[#fbfbfb] sm:grid-cols-2 lg:grid-cols-4"
-        >
-          {TRUST_POINTS.map((point) => (
-            <div
-              key={point.label}
-              className="border-b border-black/10 p-6 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0"
-            >
-              <p className="text-[30px] font-semibold leading-none tracking-[-0.04em] text-black">
-                {point.value}
-              </p>
-              <p className="mt-3 max-w-[220px] text-[13px] font-medium leading-5 text-black/52">
-                {point.label}
-              </p>
-            </div>
-          ))}
         </div>
       </div>
     </section>

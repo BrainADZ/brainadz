@@ -1,185 +1,196 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  BarChart3,
-  CalendarDays,
-  CheckCircle2,
   ClipboardList,
-  FileSearch,
+  Code2,
+  FileText,
   Gauge,
   LineChart,
-  Mail,
-  Megaphone,
-  MessageCircle,
   MousePointerClick,
-  Search,
-  Share2,
+  Settings2,
   ShieldCheck,
+  ShoppingCart,
+  Smartphone,
   Sparkles,
   Target,
-  FileText,
-  ImageIcon,
-  type LucideIcon,
-  Users,
-  Video,
+  Workflow,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services | BrainADZ Marketing",
+  title: "Web Design & Development Services | BrainADZ Marketing",
   description:
-    "BrainADZ digital marketing services for SEO, SMO, SMM, email marketing, SEM, content marketing, ORM, influencer marketing, WhatsApp marketing, and visual content creation.",
+    "BrainADZ web design and development services covering UI/UX design, custom websites, WordPress, Shopify, ecommerce, web applications, mobile apps and website maintenance.",
+  alternates: {
+    canonical: "/services/web-design-development",
+  },
+  openGraph: {
+    title: "Web Design & Development Services | BrainADZ Marketing",
+    description:
+      "Plan, design, build and maintain responsive websites, ecommerce stores, custom web applications and mobile experiences with BrainADZ Marketing.",
+    type: "website",
+    url: "/services/web-design-development",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Design & Development Services | BrainADZ Marketing",
+    description:
+      "UI/UX design, website development, WordPress, Shopify, ecommerce, custom applications, mobile apps and maintenance services.",
+  },
 };
 
-const SERVICE_NAV = [
-  "Social Media Marketing Services (SMM)",
-  "Social Media Optimization Services (SMO)",
-  "Content Marketing Services",
-  "Online Reputation Management (ORM)",
-  "Influencer Marketing",
-  "WhatsApp Marketing",
-  "Email Marketing",
-];
-
-const DIGITAL_SERVICES = [
+const WEB_SERVICES = [
   {
-    title: "Social Media Marketing Services (SMM)",
-    slug: "social-media-marketing-services",
+    title: "UI/UX Design",
+    slug: "ui-ux-design",
     description:
-      "Create, manage, and grow social media campaigns across Instagram, Facebook, LinkedIn, and other relevant platforms.",
-    icon: Users,
-    result: "Brand Reach",
+      "Create clear user journeys, wireframes and responsive interfaces that make websites easier to understand and use.",
+    icon: Sparkles,
+    result: "Better Experience",
   },
   {
-    title: "Social Media Optimization Services (SMO)",
-    slug: "social-media-optimization-services",
+    title: "Web Development Services",
+    slug: "web-development-services",
     description:
-      "Improve social profiles, content presentation, publishing consistency, and audience engagement across platforms.",
-    icon: Share2,
-    result: "Social Growth",
+      "Build responsive, fast and scalable websites with clean front-end development and reliable backend functionality.",
+    icon: Code2,
+    result: "Reliable Build",
   },
   {
-    title: "Content Marketing Services",
-    slug: "content-marketing-services",
+    title: "WordPress Development",
+    slug: "wordpress-development",
     description:
-      "Build content strategies, blogs, landing-page copy, and brand stories that support visibility, trust, and organic growth.",
+      "Develop manageable WordPress websites with custom pages, reusable sections, plugins and admin-friendly content controls.",
     icon: FileText,
-    result: "Content Engine",
+    result: "Easy Management",
   },
   {
-    title: "Online Reputation Management (ORM)",
-    slug: "online-reputation-management",
+    title: "Shopify Development",
+    slug: "shopify-development",
     description:
-      "Protect and improve your brand image through reviews, feedback handling, reputation monitoring, and response strategy.",
-    icon: ShieldCheck,
-    result: "Trust Building",
+      "Create Shopify stores with branded storefronts, product collections, payment setup and conversion-focused shopping journeys.",
+    icon: ShoppingCart,
+    result: "Store Growth",
   },
   {
-    title: "Influencer Marketing",
-    slug: "influencer-marketing",
+    title: "E-Commerce Development",
+    slug: "e-commerce-development",
     description:
-      "Connect your brand with relevant creators for authentic reach, product awareness, engagement, and campaign visibility.",
-    icon: Users,
-    result: "Creator Reach",
+      "Build complete ecommerce platforms with products, inventory, cart, checkout, payments, orders and customer management.",
+    icon: ShoppingCart,
+    result: "Online Selling",
   },
   {
-    title: "WhatsApp Marketing",
-    slug: "whatsapp-marketing",
+    title: "Custom Web Application Development",
+    slug: "custom-web-application-development",
     description:
-      "Use WhatsApp campaigns, broadcasts, follow-ups, and lead communication to improve response and conversions.",
-    icon: MessageCircle,
-    result: "Direct Leads",
+      "Develop custom portals, dashboards and workflow applications around your business processes, users and data.",
+    icon: Workflow,
+    result: "Custom Systems",
   },
   {
-    title: "Email Marketing",
-    slug: "email-marketing",
+    title: "Mobile App Development",
+    slug: "mobile-app-development",
     description:
-      "Plan email campaigns, newsletters, automation flows, and lead-nurturing journeys that support conversion and retention.",
-    icon: Mail,
-    result: "Lead Nurture",
+      "Design and develop mobile applications with user-focused screens, APIs, integrations and scalable backend systems.",
+    icon: Smartphone,
+    result: "Mobile Reach",
+  },
+  {
+    title: "Website Maintenance Services",
+    slug: "website-maintenance-services",
+    description:
+      "Keep websites secure, updated and stable through monitoring, backups, fixes, content changes and technical support.",
+    icon: Settings2,
+    result: "Ongoing Support",
   },
 ];
 
-const FUNNEL_STAGES = [
+const DELIVERY_STAGES = [
   {
-    title: "Awareness",
-    text: "Make the right audience notice your brand through search, social, creators and content.",
+    title: "Discovery",
+    text: "Understand the business, users, website goals, content, functionality, competitors and technical requirements.",
     icon: Target,
   },
   {
-    title: "Engagement",
-    text: "Use useful content, stronger creative and platform-specific messaging to build trust.",
+    title: "Design",
+    text: "Plan information architecture, user journeys, wireframes and responsive visual interfaces before development begins.",
     icon: MousePointerClick,
   },
   {
-    title: "Enquiry",
-    text: "Move users to landing pages, forms, WhatsApp, calls, offers and sales conversations.",
-    icon: MessageCircle,
+    title: "Development",
+    text: "Build pages, components, CMS controls, ecommerce functions, APIs and integrations using the agreed architecture.",
+    icon: Code2,
   },
   {
-    title: "Retention",
-    text: "Keep prospects and customers warm through email, WhatsApp, remarketing and content loops.",
+    title: "Launch & Support",
+    text: "Test the complete experience, deploy safely, monitor the live website and continue improvements after launch.",
     icon: Gauge,
   },
 ];
 
-const SPRINTS = [
-  {
-    label: "Days 1-15",
-    title: "Audit & Setup",
-    points: [
-      "Audit website, social, SEO and campaign gaps",
-      "Define audience, goal, offer and tracking needs",
-      "Fix basic profile and conversion hygiene",
-    ],
-  },
-  {
-    label: "Days 16-45",
-    title: "Content & Campaign Build",
-    points: [
-      "Build monthly content calendar and campaign themes",
-      "Create visual direction, copy and channel plan",
-      "Prepare SEO, email, WhatsApp and SEM workflows",
-    ],
-  },
-  {
-    label: "Days 46-90",
-    title: "Launch, Measure & Scale",
-    points: [
-      "Run campaign cycles and performance reviews",
-      "Improve creatives, landing pages and follow-up",
-      "Report leads, traffic, ranking, engagement and ROI",
-    ],
-  },
+const QUALITY_ROWS = [
+  { label: "Responsive Experience", value: "Validated", width: "92%" },
+  { label: "Performance Readiness", value: "Optimised", width: "84%" },
+  { label: "Security & Stability", value: "Reviewed", width: "88%" },
+  { label: "Conversion Journey", value: "Connected", width: "80%" },
 ];
 
-const REPORTING_ROWS = [
-  { label: "Lead Quality", value: "Tracked", width: "82%" },
-  { label: "Search Visibility", value: "Growing", width: "74%" },
-  { label: "Social Engagement", value: "Active", width: "68%" },
-  { label: "Follow-up Speed", value: "Improved", width: "88%" },
+const WEBSITE_CHECKLIST = [
+  "Business goals, target users and website conversion actions",
+  "Page hierarchy, navigation and information architecture",
+  "Brand consistency, UI quality and responsive behaviour",
+  "Website speed, technical SEO and accessibility foundations",
+  "Forms, calls, WhatsApp, payments and third-party integrations",
+  "CMS access, analytics, security, backups and maintenance plan",
 ];
 
-const AUDIT_ITEMS = [
-  "Website conversion path and CTA quality",
-  "SEO visibility, keywords and technical gaps",
-  "Social media consistency and creative quality",
-  "Lead source, form, call and WhatsApp tracking",
-  "Email, remarketing and follow-up opportunities",
-  "Content plan, campaign calendar and reporting format",
-];
-const FUNNEL_COLORS = ["#E1122B", "#E1122B", "#E1122B", "#E1122B"];
-export default function DigitalMarketingPage() {
+const STAGE_COLORS = ["#E1122B", "#E1122B", "#E1122B", "#E1122B"];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Web Design & Development Services",
+  serviceType: "Web Design and Development",
+  description:
+    "Web design and development services covering UI/UX design, websites, WordPress, Shopify, ecommerce, custom web applications, mobile apps and website maintenance.",
+  url: "https://www.brainadz.marketing/services/web-design-development",
+  provider: {
+    "@type": "Organization",
+    name: "BrainADZ Marketing",
+    url: "https://www.brainadz.marketing",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "India",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Web Design & Development Capabilities",
+    itemListElement: WEB_SERVICES.map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: service.title,
+        description: service.description,
+      },
+    })),
+  },
+};
+
+export default function WebDesignDevelopmentPage() {
   return (
     <main className="dm-sans bg-white text-[#111111]">
-      <HeroSection />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
 
-      <DigitalServicesSection />
-      <FunnelSection />
-      <ReportingSection />
+      <HeroSection />
+      <WebServicesSection />
+      <DeliveryJourneySection />
+      <QualitySection />
     </main>
   );
 }
@@ -187,11 +198,11 @@ export default function DigitalMarketingPage() {
 function HeroSection() {
   return (
     <>
-      {/* DIGITAL MARKETING HERO SECTION */}
+      {/* WEB DESIGN & DEVELOPMENT HERO SECTION */}
       <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
         <img
-          src="/about/about.avif"
-          alt="BrainADZ office and team workspace"
+          src="/web-design-development/web-design-development-hero.jpg"
+          alt="Web design and development team planning responsive digital experiences"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
 
@@ -210,24 +221,24 @@ function HeroSection() {
               Home
             </Link>
             <span className="text-white/70">/</span>
-            <span className="text-white">Digital Marketing</span>
+            <span className="text-white">Web Design & Development</span>
           </nav>
 
-          <h1 className="mt-7 max-w-[760px] text-[32px] font-normal leading-[1.04] tracking-[-0.045em] text-white sm:text-[42px] lg:text-[52px]">
-            Digital Marketing
+          <h1 className="mt-7 max-w-[900px] text-[32px] font-normal leading-[1.04] tracking-[-0.045em] text-white sm:text-[42px] lg:text-[52px]">
+            Web Design & Development
           </h1>
 
-          <div className="mt-auto max-w-[650px] pb-6 sm:pb-10 lg:pb-12">
+          <div className="mt-auto max-w-[760px] pb-6 sm:pb-10 lg:pb-12">
             <p className="text-[22px] font-semibold leading-[1.38] tracking-[-0.02em] text-white sm:text-[26px] lg:text-[28px]">
-              Creators, partners and clients putting digital growth to work in
-              the real world
+              Digital experiences designed around your users and developed around
+              your business requirements.
             </p>
 
             <Link
               href="/contact"
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-sm bg-[#E1122B] px-5 text-[15px] font-medium text-white transition hover:bg-black sm:min-h-14 sm:px-6"
             >
-              Get the latest BrainADZ news
+              Discuss your website project
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
             </Link>
           </div>
@@ -237,7 +248,7 @@ function HeroSection() {
   );
 }
 
-function MetricRow({
+function QualityRow({
   label,
   value,
   width,
@@ -259,7 +270,7 @@ function MetricRow({
   );
 }
 
-function DigitalServicesSection() {
+function WebServicesSection() {
   return (
     <section
       id="service-directory"
@@ -273,38 +284,40 @@ function DigitalServicesSection() {
           {/* LEFT STICKY CONTENT */}
           <div className="lg:sticky lg:top-24 lg:self-start">
             <p className="text-[13px] font-semibold uppercase tracking-[0.22em] text-[#E1122B]">
-              Digital service stack
+              Web service stack
             </p>
 
             <h2 className="mt-5 max-w-[720px] text-[34px] font-light leading-[1.08] tracking-[-0.045em] text-black sm:text-[44px] lg:text-[52px]">
-              Digital marketing services built for visibility, leads and growth.
+              Website and application services built for experience, performance
+              and long-term growth.
             </h2>
 
             <p className="mt-6 max-w-[640px] text-[15px] leading-7 text-black/62 sm:text-[16px]">
-              Explore our core digital marketing services designed to improve
-              brand visibility, generate qualified leads, build trust, and
-              support measurable business growth across every platform.
+              Explore our design, development and maintenance capabilities for
+              corporate websites, ecommerce stores, custom platforms and mobile
+              experiences.
             </p>
 
             <div className="relative mt-9 h-[300px] overflow-hidden rounded-[28px] border border-black/10 bg-[#f7f7f7] sm:h-[360px] lg:h-[430px]">
               <img
-                src="/services/digital-marketing-services.jpg"
-                alt="Digital marketing services by BrainADZ Marketing"
+                src="/web-design-development/web-design-development-services.jpg"
+                alt="Web design and development services by BrainADZ Marketing"
                 className="h-full w-full object-cover object-center"
               />
 
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.05)_0%,rgba(0,0,0,0.72)_100%)]" />
 
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-7">
-                <p className="max-w-[420px] text-[20px] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[24px]">
-                  One team for strategy, creative, campaigns and performance.
+                <p className="max-w-[460px] text-[20px] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[24px]">
+                  One team for strategy, UI/UX, development, integrations and
+                  ongoing support.
                 </p>
 
                 <Link
                   href="/contact"
                   className="mt-5 inline-flex items-center gap-3 text-[14px] font-semibold text-[#E1122B] transition hover:text-white"
                 >
-                  Discuss your growth plan
+                  Discuss your requirements
                   <ArrowRight className="h-4 w-4" strokeWidth={1.8} />
                 </Link>
               </div>
@@ -313,12 +326,12 @@ function DigitalServicesSection() {
 
           {/* RIGHT SERVICE GRID */}
           <div className="grid content-start gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {DIGITAL_SERVICES.map((service) => {
+            {WEB_SERVICES.map((service) => {
               const Icon = service.icon;
 
               return (
                 <Link
-                  href={`/services/digital-marketing/${service.slug}`}
+                  href={`/services/web-design-development/${service.slug}`}
                   id={service.slug}
                   key={service.title}
                   className="group relative min-h-[235px] overflow-hidden rounded-3xl border border-black/10 bg-white p-5 shadow-[0_16px_45px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#E1122B]/45 hover:bg-[#fff8f8] sm:p-6"
@@ -359,7 +372,7 @@ function DigitalServicesSection() {
   );
 }
 
-function FunnelSection() {
+function DeliveryJourneySection() {
   return (
     <section className="relative overflow-hidden border-y border-white/10 bg-black py-16 text-white sm:py-20 lg:py-24">
       <div className="pointer-events-none absolute left-[-220px] top-[-180px] h-[460px] w-[460px] rounded-full bg-[#E1122B]/12 blur-[130px]" />
@@ -369,19 +382,19 @@ function FunnelSection() {
         <div className="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end lg:gap-16">
           <div>
             <p className="text-[13px] font-semibold uppercase tracking-[0.2em] text-[#E1122B]">
-              Funnel map
+              Website delivery journey
             </p>
 
             <h2 className="mt-5 max-w-[760px] text-[34px] font-light leading-[1.08] tracking-[-0.045em] text-white sm:text-[44px] lg:text-[52px]">
-              Every channel has a clear place in the customer journey.
+              Every stage connects strategy, experience, technology and launch
+              readiness.
             </h2>
           </div>
 
           <p className="max-w-[760px] text-[15px] leading-7 text-white/62 sm:text-[16px]">
-            Social content without follow-up leaks leads. SEO without a
-            conversion path leaks traffic. Campaigns without reporting leak
-            money. Our funnel map connects every digital touchpoint with a clear
-            next step.
+            Strong websites are not created by designing pages in isolation. Our
+            delivery journey keeps business goals, user experience, development,
+            testing and post-launch support connected from the beginning.
           </p>
         </div>
 
@@ -394,9 +407,9 @@ function FunnelSection() {
             <div className="absolute left-8 right-8 top-[34px] hidden h-px bg-[linear-gradient(90deg,rgba(225,18,43,0),rgba(225,18,43,0.75),rgba(225,18,43,0.75),rgba(225,18,43,0.75),rgba(225,18,43,0.75),rgba(225,18,43,0))] lg:block" />
 
             <div className="grid gap-6 lg:grid-cols-4 lg:gap-5">
-              {FUNNEL_STAGES.map((stage, index) => {
+              {DELIVERY_STAGES.map((stage, index) => {
                 const Icon = stage.icon;
-                const color = FUNNEL_COLORS[index % FUNNEL_COLORS.length];
+                const color = STAGE_COLORS[index % STAGE_COLORS.length];
 
                 return (
                   <div
@@ -453,13 +466,13 @@ function FunnelSection() {
             </div>
 
             <div className="mt-16 hidden items-center justify-center gap-3 text-[13px] font-medium text-white/42 lg:flex">
-              <span>Awareness</span>
+              <span>Discovery</span>
               <span className="h-px w-16 bg-white/15" />
-              <span>Engagement</span>
+              <span>Design</span>
               <span className="h-px w-16 bg-white/15" />
-              <span>Conversion</span>
+              <span>Development</span>
               <span className="h-px w-16 bg-white/15" />
-              <span>Retention</span>
+              <span>Launch & Support</span>
             </div>
           </div>
         </div>
@@ -468,20 +481,21 @@ function FunnelSection() {
   );
 }
 
-function ReportingSection() {
+function QualitySection() {
   return (
     <>
-      {/* REPORTING SNAPSHOT SECTION */}
+      {/* WEBSITE QUALITY & LAUNCH SECTION */}
       <section className="border-y border-black/10 bg-[#fbfbfb] py-16 text-black sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-[1800px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-10">
           <div className="rounded-md border border-black/10 bg-white p-5 shadow-[0_18px_55px_rgba(0,0,0,0.08)] sm:p-7">
             <div className="flex items-start justify-between gap-5 border-b border-black/10 pb-6">
               <div>
                 <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-black/42">
-                  Monthly visibility
+                  Website quality snapshot
                 </p>
+
                 <h2 className="mt-3 text-[30px] font-semibold leading-tight tracking-[-0.04em] sm:text-[38px]">
-                  Reporting that shows what moved.
+                  Quality checks that support a confident launch.
                 </h2>
               </div>
               <div className="flex h-14 w-14 items-center justify-center rounded-sm bg-[#E1122B] text-white">
@@ -490,33 +504,36 @@ function ReportingSection() {
             </div>
 
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
-              <ReportBox label="Traffic sources" value="Mapped" />
-              <ReportBox label="Lead channels" value="Tracked" />
-              <ReportBox label="Campaign actions" value="Reviewed" />
-              <ReportBox label="Next priorities" value="Clear" />
+              <QualityBox label="Page journeys" value="Mapped" />
+              <QualityBox label="Responsive states" value="Tested" />
+              <QualityBox label="Forms & actions" value="Validated" />
+              <QualityBox label="Launch priorities" value="Clear" />
             </div>
 
             <div className="mt-7 space-y-3">
-              {REPORTING_ROWS.map((row) => (
-                <MetricRow key={row.label} {...row} />
+              {QUALITY_ROWS.map((row) => (
+                <QualityRow key={row.label} {...row} />
               ))}
             </div>
           </div>
 
           <div>
             <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#E1122B]">
-              Audit checklist
+              Website audit checklist
             </p>
+
             <h2 className="mt-5 max-w-[820px] text-[40px] font-medium leading-[1.08] tracking-[-0.04em] sm:text-[54px] lg:text-[62px]">
-              We check the whole marketing path, not just one channel.
+              We review the complete website system, not only the visual design.
             </h2>
+
             <p className="mt-6 max-w-[760px] text-[16px] leading-8 text-black/60">
-              The first step is finding where growth is leaking. Then we decide
-              which services should be fixed, launched or scaled first.
+              Before design or development starts, we identify what the website
+              needs to communicate, how users should move through it and which
+              technical foundations are required for a stable launch.
             </p>
 
             <div className="mt-9 grid gap-3">
-              {AUDIT_ITEMS.map((item) => (
+              {WEBSITE_CHECKLIST.map((item) => (
                 <div
                   key={item}
                   className="flex items-start gap-4 rounded-sm border border-black/10 bg-white p-4"
@@ -535,7 +552,7 @@ function ReportingSection() {
   );
 }
 
-function ReportBox({ label, value }: { label: string; value: string }) {
+function QualityBox({ label, value }: { label: string; value: string }) {
   return (
     <div className="border border-black/10 bg-white p-5">
       <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-black/38">
