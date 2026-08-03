@@ -201,7 +201,7 @@ function HeroSection() {
       {/* WEB DESIGN & DEVELOPMENT HERO SECTION */}
       <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
         <img
-          src="/banner/4.webp"
+          src="/banner/44.webp"
           alt="Web design and development team planning responsive digital experiences"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />

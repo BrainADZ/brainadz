@@ -236,7 +236,7 @@ function HeroSection() {
   return (
     <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
       <img
-        src="/banner/3.webp"
+        src="/banner/33.webp"
         alt="Performance marketing team managing paid media campaigns, conversion tracking and business growth"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />

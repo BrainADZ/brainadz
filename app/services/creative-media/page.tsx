@@ -269,7 +269,7 @@ function HeroSection() {
   return (
     <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
       <img
-        src="/banner/5.webp"
+        src="/banner/55.webp"
         alt="Creative design, motion graphics and professional video editing services"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
