@@ -77,7 +77,7 @@ const FOOTER_LINKS = [
     links: [
       { label: "Case Studies", href: "/#case-studies" },
       { label: "Client Testimonials", href: "/#testimonials" },
-      { label: "FAQs", href: "/#faqs" },
+      { label: "FAQs", href: "/faqs" },
       { label: "Growth Insights", href: "/#insights" },
     ],
   },
