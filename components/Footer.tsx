@@ -301,8 +301,8 @@ export default function Footer() {
               <Link className="transition hover:text-white" href="/privacy-policy">
                 Privacy Policy
               </Link>
-              <Link className="transition hover:text-white" href="/terms">
-                Terms
+              <Link className="transition hover:text-white" href="/terms-conditions">
+                Terms & Conditions
               </Link>
               <Link className="transition hover:text-white" href="/refund-policy">
                 Refund Policy
