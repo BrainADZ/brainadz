@@ -6,7 +6,6 @@ import AosInit from "@/components/AosInit";
 import Navbar from "@/components/header";
 import Footer from "@/components/Footer";
 import ServicePageInteractions from "@/components/ServicePageInteractions";
-import Popup from "@/components/Popup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,7 +71,6 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <Popup />
       </body>
     </html>
   );

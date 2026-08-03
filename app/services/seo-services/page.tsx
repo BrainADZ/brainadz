@@ -243,7 +243,7 @@ function HeroSection() {
   return (
     <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
       <img
-        src="/seo-services/seo-services-hero.jpg"
+        src="/banner/2.webp"
         alt="SEO strategy, technical optimisation and organic search growth"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />

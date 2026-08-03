@@ -190,7 +190,7 @@ function HeroSection() {
       {/* DIGITAL MARKETING HERO SECTION */}
       <section className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[500px] lg:min-h-[540px]">
         <img
-          src="/about/about.avif"
+          src="/banner/1.webp"
           alt="BrainADZ office and team workspace"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
