@@ -165,10 +165,10 @@ function ConsultingHero() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/contact"
+                href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
                 className="inline-flex min-h-14 items-center justify-center gap-5 rounded-full bg-[#E1122B] px-7 text-[13px] font-semibold text-white transition hover:bg-black"
               >
-                Book a consultation
+                Enquire Now
                 <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
               </Link>
 

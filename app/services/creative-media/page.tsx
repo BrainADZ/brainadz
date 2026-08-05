@@ -303,10 +303,10 @@ function HeroSection() {
           </p>
 
           <Link
-            href="/contact"
+            href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
             className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-sm bg-[#E1122B] px-5 text-[15px] font-medium text-white transition hover:bg-black sm:min-h-14 sm:px-6"
           >
-            Discuss your creative requirement
+            Enquire Now
             <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
           </Link>
         </div>
@@ -378,10 +378,10 @@ function CreativeServicesSection() {
                 </p>
 
                 <Link
-                  href="/contact"
+                  href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
                   className="mt-5 inline-flex items-center gap-3 text-[14px] font-semibold text-[#E1122B] transition hover:text-white"
                 >
-                  Discuss your content plan
+                  Enquire Now
                   <ArrowRight className="h-4 w-4" strokeWidth={1.8} />
                 </Link>
               </div>

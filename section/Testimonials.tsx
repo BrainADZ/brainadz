@@ -197,9 +197,11 @@ export default function TestimonialSection() {
 
                 <a
                   href="/contact"
+                  data-enquiry-trigger
+                  data-enquiry-source="Testimonials CTA"
                   className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-white/22 px-5 text-[12px] font-semibold text-white transition hover:border-[#E1122B] hover:bg-[#E1122B]"
                 >
-                  Start A Project
+                  Enquire Now
                   <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
                 </a>
               </div>

@@ -145,10 +145,10 @@ export default function AboutPageContent() {
             </p>
 
             <Link
-              href="/contact"
+              href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
               className="mt-8 inline-flex min-h-14 items-center justify-center gap-5 rounded-full bg-[#E1122B] px-7 text-[13px] font-semibold text-white transition hover:bg-black"
             >
-              Get the latest BrainADZ news
+              Enquire Now
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
             </Link>
           </div>

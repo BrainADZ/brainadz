@@ -540,10 +540,10 @@ export default function WhatsAppMarketingPage() {
             </p>
 
             <Link
-              href="/contact"
+              href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
               className="mt-8 inline-flex min-h-14 items-center justify-center gap-5 rounded-full bg-[#E1122B] px-7 text-[13px] font-semibold text-white transition-colors hover:bg-black"
             >
-              Start WhatsApp marketing
+              Enquire Now
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
             </Link>
           </div>
@@ -572,7 +572,7 @@ export default function WhatsAppMarketingPage() {
             ))}
 
             <Link
-              href="/contact"
+              href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
               className="ml-auto inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-[#E1122B] px-6 text-[13px] font-semibold text-white transition-colors hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E1122B] sm:px-7"
             >
               Get Started
@@ -616,10 +616,10 @@ export default function WhatsAppMarketingPage() {
               </p>
 
               <Link
-                href="/contact"
+                href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
                 className="mt-7 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
               >
-                Plan your WhatsApp strategy
+                Enquire Now
                 <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
               </Link>
             </div>
@@ -931,10 +931,10 @@ export default function WhatsAppMarketingPage() {
             </p>
 
             <Link
-              href="/contact"
+              href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
             >
-              Plan your WhatsApp workflow
+              Enquire Now
               <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
             </Link>
           </div>
@@ -1100,10 +1100,10 @@ export default function WhatsAppMarketingPage() {
             </p>
 
             <Link
-              href="/contact"
+              href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
             >
-              Ask another question
+              Enquire Now
               <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
             </Link>
           </div>

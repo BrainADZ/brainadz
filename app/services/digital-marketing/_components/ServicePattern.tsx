@@ -153,7 +153,7 @@ export default function ServicePattern({ config }: { config: PatternConfig }) {
                 {item.label}
               </a>
             ))}
-            <Link href="/contact" className="ml-auto inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-[#E1122B] px-6 text-[13px] font-semibold text-white transition-colors hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E1122B] sm:px-7">Get Started</Link>
+            <Link href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA" className="ml-auto inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-[#E1122B] px-6 text-[13px] font-semibold text-white transition-colors hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E1122B] sm:px-7">Get Started</Link>
           </div>
         </nav>
       </div>
@@ -165,7 +165,7 @@ export default function ServicePattern({ config }: { config: PatternConfig }) {
           <div className="mt-8 grid gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-start lg:gap-16">
             <div>
               <p className="max-w-[680px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">{config.overview.description}</p>
-              <Link href="/contact" className="mt-7 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white">{config.overview.cta}<ArrowRight className="h-5 w-5" strokeWidth={1.7} /></Link>
+              <Link href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA" className="mt-7 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white">Enquire Now <ArrowRight className="h-5 w-5" strokeWidth={1.7} /></Link>
             </div>
             <figure>
               <div className="relative aspect-video overflow-hidden rounded-[14px] border border-black/10 bg-[#f7f7f7] shadow-[0_18px_55px_rgba(0,0,0,0.08)]">
@@ -254,7 +254,7 @@ export default function ServicePattern({ config }: { config: PatternConfig }) {
           <div className="lg:sticky lg:top-[188px]">
             <Eyebrow>Process</Eyebrow><h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">{config.process.heading}</h2>
             <p className="mt-6 max-w-[620px] text-[15px] leading-7 text-black/62 sm:text-[16px] sm:leading-8">{config.process.intro}</p>
-            <Link href="/contact" className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white">{config.process.cta}<ArrowRight className="h-5 w-5" strokeWidth={1.7} /></Link>
+            <Link href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA" className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white">Enquire Now <ArrowRight className="h-5 w-5" strokeWidth={1.7} /></Link>
           </div>
           <div className="border-t border-black/10">
             {config.process.steps.map((step) => {
@@ -271,7 +271,7 @@ export default function ServicePattern({ config }: { config: PatternConfig }) {
 
       <section id="faqs" className="scroll-mt-[164px] border-b border-black/10 bg-white py-16 text-black sm:py-20 lg:py-24">
         <div className="mx-auto grid max-w-[1800px] gap-12 px-5 sm:px-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start lg:gap-16 lg:px-10">
-          <div className="lg:sticky lg:top-[188px]"><Eyebrow>FAQs</Eyebrow><h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">{config.faq.heading}</h2><p className="mt-6 max-w-[580px] text-[15px] leading-7 text-black/58 sm:text-[16px] sm:leading-8">{config.faq.intro}</p><Link href="/contact" className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white">Ask another question<ArrowRight className="h-5 w-5" strokeWidth={1.7} /></Link></div>
+          <div className="lg:sticky lg:top-[188px]"><Eyebrow>FAQs</Eyebrow><h2 className="mt-5 max-w-[700px] text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] text-black sm:text-[48px] lg:text-[58px]">{config.faq.heading}</h2><p className="mt-6 max-w-[580px] text-[15px] leading-7 text-black/58 sm:text-[16px] sm:leading-8">{config.faq.intro}</p><Link href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA" className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white">Enquire Now <ArrowRight className="h-5 w-5" strokeWidth={1.7} /></Link></div>
           <div className="border-t border-black/10">
             {config.faq.items.map((faq, index) => {
               const active = activeFaq === index;

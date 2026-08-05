@@ -158,10 +158,10 @@ function TeamHero() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
                 className="inline-flex min-h-14 items-center justify-center gap-5 rounded-full border border-white/45 bg-black/25 px-7 text-[13px] font-semibold text-white transition hover:border-[#E1122B] hover:bg-[#E1122B]"
               >
-                Work with us
+                Enquire Now
                 <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
               </Link>
             </div>

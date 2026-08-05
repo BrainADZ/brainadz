@@ -431,10 +431,10 @@ function FAQHero() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
                 className="inline-flex min-h-14 items-center justify-center gap-5 rounded-full border border-white/45 bg-black/25 px-7 text-[13px] font-semibold text-white transition hover:border-[#E1122B] hover:bg-[#E1122B]"
               >
-                Ask our team
+                Enquire Now
                 <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
               </Link>
             </div>
@@ -614,10 +614,10 @@ function FAQListingSection({
               </p>
 
               <Link
-                href="/contact"
+                href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
                 className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-4 rounded-full bg-[#E1122B] px-5 text-[13px] font-semibold text-white transition hover:bg-white hover:text-black"
               >
-                Contact our team
+                Enquire Now
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -822,10 +822,10 @@ function FAQCTASection() {
             </div>
 
             <Link
-              href="/contact"
+              href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
               className="inline-flex min-h-14 shrink-0 items-center justify-center gap-5 rounded-full bg-[#E1122B] px-7 text-[13px] font-semibold text-white transition hover:bg-white hover:text-black"
             >
-              Book a consultation
+              Enquire Now
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
             </Link>
           </div>

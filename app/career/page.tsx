@@ -265,10 +265,10 @@ export default function CareersPage() {
             </p>
 
             <Link
-              href="/contact"
+              href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
               className="mt-8 inline-flex min-h-12 items-center justify-center gap-9 rounded-[4px] bg-[#1467f5] px-5 text-[15px] font-medium text-white transition hover:bg-[#0f56d6] sm:min-h-14 sm:px-6"
             >
-              Get in Touch
+              Enquire Now
               <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
             </Link>
           </div>

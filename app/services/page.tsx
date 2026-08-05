@@ -185,10 +185,10 @@ export default function ServicesPage() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
                 className="inline-flex min-h-12 items-center justify-center gap-8 rounded-sm border border-white/22 bg-black/25 px-5 text-[15px] font-medium text-white transition hover:border-[#1467f5] hover:bg-[#1467f5] sm:min-h-14 sm:px-6"
               >
-                Get Recommendation
+                Enquire Now
                 <ArrowRight className="h-5 w-5" strokeWidth={1.8} />
               </Link>
             </div>

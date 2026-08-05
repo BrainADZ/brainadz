@@ -54,10 +54,10 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
     {
-    title: "Allure Website",
+    title: "Okay Trip",
     category: "Website Development",
-    media: "/portfolio/classic-video.mp4",
-    mediaType: "video",
+    media: "/portfolio/okay-trip.webp",
+    mediaType: "image",
     href: "/case-studies",
   },
 
@@ -69,9 +69,16 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Framework",
+    title: "Comac India",
     category: "Website Development",
     media: "/portfolio/insights2.webp",
+    mediaType: "image",
+    href: "/case-studies",
+  },
+  {
+    title: "Vogue India",
+    category: "Website Development",
+    media: "/portfolio/vogue-india.webp",
     mediaType: "image",
     href: "/case-studies",
   },
@@ -83,9 +90,9 @@ const CASE_STUDIES: CaseStudyItem[] = [
     href: "/case-studies",
   },
   {
-    title: "Native Krea",
+    title: "National Engineers",
     category: "Website Development",
-    media: "/portfolio/web-insight2.webp",
+    media: "/portfolio/national-engineers.webp",
     mediaType: "image",
     href: "/case-studies",
   },

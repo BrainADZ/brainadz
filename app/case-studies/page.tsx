@@ -39,25 +39,17 @@ type PortfolioItem = {
   href?: string;
 };
 
-const PORTFOLIO_MEDIA_HEIGHTS = [
-  "h-[280px] sm:h-[320px] lg:h-[360px]",
-  "h-[400px] sm:h-[460px] lg:h-[520px]",
-  "h-[330px] sm:h-[380px] lg:h-[430px]",
-  "h-[440px] sm:h-[500px] lg:h-[560px]",
-  "h-[300px] sm:h-[350px] lg:h-[400px]",
-  "h-[380px] sm:h-[430px] lg:h-[480px]",
-] as const;
 
 const PORTFOLIO_DATA: Record<TabKey, PortfolioItem[]> = {
   "Web Design": [
     {
       title: "Khadi Organic",
-      image: "/portfolio/web/1.png",
+      image: "/portfolio/web-insight1.webp",
       href: "http://khadiorganique.com/",
     },
     {
       title: "Comac India",
-      image: "/portfolio/web/2.png",
+      image: "/portfolio/insights2.webp",
       href: "https://comacindia.com/",
     },
     {
@@ -67,7 +59,7 @@ const PORTFOLIO_DATA: Record<TabKey, PortfolioItem[]> = {
     },
     {
       title: "National Engineers & Steel Fabricators",
-      image: "/portfolio/web/4.png",
+      image: "/portfolio/national-engineers.webp",
       href: "https://nationalengrs.com/",
     },
     {
@@ -286,11 +278,10 @@ function CaseStudiesHero() {
               <FiArrowRight />
             </Link>
             <Link
-              href="/contact"
+              href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
               className="inline-flex min-h-14 items-center justify-center gap-7 rounded-full border border-white/45 bg-black/25 px-6 text-[15px] font-semibold text-white transition hover:border-[#E1122B] hover:bg-[#E1122B]"
             >
-              Start a project
-              <FiArrowRight />
+              Enquire Now
             </Link>
           </div>
         </div>
@@ -371,10 +362,10 @@ function LegacyHeroSection() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
                 className="inline-flex h-[46px] items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold text-white border border-white/25 bg-white/10 transition-all duration-200 hover:bg-white/15"
               >
-                Start a Project <FiArrowRight />
+                Enquire Now
               </Link>
             </div>
 
@@ -635,9 +626,6 @@ function PortfolioCard({
   category: TabKey;
   index: number;
 }) {
-  const mediaHeight =
-    PORTFOLIO_MEDIA_HEIGHTS[index % PORTFOLIO_MEDIA_HEIGHTS.length];
-
   const content = (
     <>
       <div className="overflow-hidden bg-white shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-[border-radius] duration-500 ease-out group-hover:rounded-lg">
@@ -646,7 +634,7 @@ function PortfolioCard({
           alt={item.title}
           loading="lazy"
           decoding="async"
-          className={`block w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04] group-hover:rotate-1 ${mediaHeight}`}
+          className="block h-auto w-full transition-transform duration-500 ease-out group-hover:scale-[1.04] group-hover:rotate-1"
         />
       </div>
 
@@ -654,10 +642,12 @@ function PortfolioCard({
         <h4 className="text-[18px] font-semibold leading-tight text-black">
           {item.title}
         </h4>
+
         <div className="relative mt-1 h-5 overflow-hidden text-[12px] font-medium">
           <span className="absolute left-0 top-0 text-black/50 transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0">
             {category}
           </span>
+
           {item.href ? (
             <span className="absolute left-0 top-0 inline-flex translate-y-4 items-center gap-1 text-[#E1122B] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
               Visit Project

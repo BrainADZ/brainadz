@@ -2,7 +2,6 @@
 "use client";
 
 import { CheckCircle2, Loader2, X } from "lucide-react";
-import { usePathname } from "next/navigation";
 import {
   type ChangeEvent,
   type FormEvent,
@@ -49,7 +48,6 @@ const EMPTY_FORM: EnquiryPayload = {
 };
 
 export default function EnquiryPopup() {
-  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [form, setForm] = useState<EnquiryPayload>(EMPTY_FORM);
@@ -60,48 +58,6 @@ export default function EnquiryPopup() {
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  useEffect(() => {
-    const ctas = Array.from(
-      document.querySelectorAll<HTMLAnchorElement>('main a[href="/contact"]'),
-    );
-
-    const normalizedCtas = ctas.map((cta) => {
-      const originalLabel = cta.textContent?.trim() || "Website CTA";
-      const preserveLabel = originalLabel.toLowerCase() === "get started";
-      const textNodes: Text[] = [];
-      const walker = document.createTreeWalker(cta, NodeFilter.SHOW_TEXT);
-
-      while (walker.nextNode()) {
-        const textNode = walker.currentNode as Text;
-        if (textNode.textContent?.trim()) textNodes.push(textNode);
-      }
-
-      const originalTexts = textNodes.map((node) => node.textContent || "");
-      if (!preserveLabel) {
-        textNodes.forEach((node, index) => {
-          node.textContent = index === 0 ? "Enquire Now" : "";
-        });
-      }
-
-      cta.dataset.enquiryTrigger = "";
-      cta.dataset.enquirySource = `${originalLabel} - ${pathname}`;
-      cta.setAttribute("aria-label", preserveLabel ? originalLabel : "Enquire Now");
-
-      return { cta, textNodes, originalTexts };
-    });
-
-    return () => {
-      normalizedCtas.forEach(({ cta, textNodes, originalTexts }) => {
-        textNodes.forEach((node, index) => {
-          node.textContent = originalTexts[index];
-        });
-        delete cta.dataset.enquiryTrigger;
-        delete cta.dataset.enquirySource;
-        cta.removeAttribute("aria-label");
-      });
-    };
-  }, [pathname]);
 
   useEffect(() => {
     const handleTriggerClick = (event: MouseEvent) => {

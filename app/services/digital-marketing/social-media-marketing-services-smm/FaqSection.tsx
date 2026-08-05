@@ -67,10 +67,10 @@ export default function FaqSection() {
           </p>
 
           <Link
-            href="/contact"
+            href="/contact" data-enquiry-trigger data-enquiry-source="Page CTA"
             className="mt-8 inline-flex min-h-12 items-center justify-center gap-5 rounded-full border border-[#E1122B] px-5 text-[13px] font-semibold text-[#E1122B] transition-colors hover:bg-[#E1122B] hover:text-white"
           >
-            Ask another question
+            Enquire Now
             <ArrowRight className="h-5 w-5" strokeWidth={1.7} />
           </Link>
         </div>
